@@ -45,3 +45,8 @@ libraries[scrollTo][destination] = "themes/europa"
 libraries[scrollTo][directory_name] = "js/libraries"
 libraries[scrollTo][download][type] = "get"
 libraries[scrollTo][download][url] = "https://raw.githubusercontent.com/flesler/jquery.scrollTo/2.1.2/jquery.scrollTo.min.js"
+
+libraries[hitme][destination] = "themes/europa"
+libraries[hitme][directory_name] = "js/libraries"
+libraries[hitme][download][type] = "get"
+libraries[hitme][download][url] = "https://raw.githubusercontent.com/roelvangils/jquery-hitMe/master/dist/jquery.hitMe-min.js"
