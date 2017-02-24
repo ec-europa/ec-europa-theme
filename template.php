@@ -1510,3 +1510,17 @@ function europa_file_upload_help($variables) {
   // @codingStandardsIgnoreLine
   return theme_file_upload_help($variables);
 }
+
+/**
+ * Implements hook_ds_pre_render_alter().
+ *
+ * Adds hitMe functionality library for listings template.
+ */
+function europa_ds_pre_render_alter(&$layout_render_array, $context, &$vars) {
+  $layout = ds_get_layout($context['entity_type'], $context['bundle'], $context['view_mode']);
+  if (in_array($layout['layout'], ['ne_2col', 'ne_2col_sidebar', 'ne_1col', 'ne_1col_section_item', 'ne_featured_item'])) {
+    drupal_add_js('(function ($) { $(function () { $(\'.listing__item-link .listing__column-main\').hitMe(); }); })(jQuery);',
+      ['type' => 'inline', 'scope' => 'footer']
+    );
+  }
+}
