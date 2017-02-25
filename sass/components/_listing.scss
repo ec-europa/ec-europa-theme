@@ -91,13 +91,13 @@ Style guide listing.4
 */
 
 // listing--title modifier.
-.listing--title,
-ul.listing--title {
+.listing--title {
   padding: 0;
 
   .listing__item {
     // Half of the normal padding for the element.
-    padding: 0.61em 0;
+    padding-top: 0.61em;
+    padding-bottom: 0.61em;
 
     .listing__title {
       margin: 0;
