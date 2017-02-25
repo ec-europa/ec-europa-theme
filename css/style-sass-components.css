@@ -4387,6 +4387,11 @@ Style guide listing.1
 */
 .listing {
   padding: 0; }
+  .listing:before, .listing:after {
+    content: " ";
+    display: table; }
+  .listing:after {
+    clear: both; }
 
 .listing--priorities .meta {
   display: none; }
@@ -4570,13 +4575,6 @@ Markup: html/listing--navigation.html
 
 Style guide listing.6
 */
-.listing--navigation:before, .listing--navigation:after {
-  content: " ";
-  display: table; }
-
-.listing--navigation:after {
-  clear: both; }
-
 .listing--navigation .listing__item-link {
   display: block;
   padding: 0;
@@ -4752,13 +4750,17 @@ a.listing__title {
   font-size: 1.222em; }
 
 .listing__read-more {
-  display: block;
+  display: inline-block;
   padding-top: 0.5em;
   font-size: 0.833em;
   font-weight: 600;
-  text-align: right;
   text-transform: uppercase;
-  clear: both; }
+  float: right; }
+  .listing__read-more:before, .listing__read-more:after {
+    content: " ";
+    display: table; }
+  .listing__read-more:after {
+    clear: both; }
   .listing__read-more::after {
     font-size: 0.778em; }
   .listing__read-more + .free-text {

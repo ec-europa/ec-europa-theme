@@ -33,7 +33,7 @@ li > ul {
   list-style-type: disc;
 }
 
-.field ul:not(.social-media-links__list, .file__translations-list) {
+.field ul:not(.social-media-links__list, .file__translations-list, .listing--title) {
   list-style: disc outside;
   padding-left: 1em;
 }
