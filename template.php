@@ -1514,13 +1514,16 @@ function europa_file_upload_help($variables) {
 /**
  * Implements hook_ds_pre_render_alter().
  *
- * Adds hitMe functionality library for listings template.
+ * Set a variable for building the link to non-node entities in the ds tpl.
  */
 function europa_ds_pre_render_alter(&$layout_render_array, $context, &$vars) {
-  $layout = ds_get_layout($context['entity_type'], $context['bundle'], $context['view_mode']);
-  if (in_array($layout['layout'], ['ne_2col', 'ne_2col_sidebar', 'ne_1col', 'ne_1col_section_item', 'ne_featured_item'])) {
-    drupal_add_js('(function ($) { $(function () { $(\'.listing__item-link .listing__column-main\').hitMe(); }); })(jQuery);',
-      ['type' => 'inline', 'scope' => 'footer']
-    );
+  switch ($context['entity_type']) {
+    case 'user':
+      $vars['node_url'] = drupal_get_path_alias('user/' . $vars['id']);
+      break;
+
+    case 'taxonomy_term':
+        $vars['node_url'] = drupal_get_path_alias('taxonomy/term/' . $vars['tid']);
+      break;
   }
 }

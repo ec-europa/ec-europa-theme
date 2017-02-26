@@ -472,6 +472,7 @@ a.listing__title {
   width: 100%;
   padding: 1.111em 0;
   border-bottom: 1px solid $grey-lighter;
+  position: relative;
 
   &:first-child {
     border-top: 1px solid $grey-lighter;
@@ -479,7 +480,8 @@ a.listing__title {
 
   // @todo: check if we can remove safely position relative that is applied
   // in this class in the file _mixins.scss line 139, and then this can removed.
-  .listing__title {
+  .listing__title,
+  .contextual-links-region {
     position: static;
   }
 
@@ -512,7 +514,13 @@ a.listing__title {
 
 // .listing__item-link element
 .listing__item-link {
-  @extend .listing__item-nolink;
+  color: $grey-base;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 
   &:active,
   &:focus {
@@ -545,6 +553,13 @@ a.listing__title {
   float: left;
   width: 100%;
   padding-left: 0;
+
+  &:after {
+    content: " ";
+    clear: left;
+    height: 1px;
+    display: block;
+  }
 }
 
 .listing__column-second--no-link {

@@ -14,7 +14,7 @@
     <?php print render($title_suffix['contextual_links']); ?>
   <?php endif; ?>
   <?php if (!isset($prevent_link)) : ?>
-    <div class="listing__item-link">
+    <a href="<?php print $node_url; ?>" class="listing__item-link"></a>
   <?php else: ?>
     <div class="listing__item-nolink">
   <?php endif; ?>

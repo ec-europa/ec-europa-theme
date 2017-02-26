@@ -16,7 +16,7 @@
   <?php if (!empty($second)): ?>
     <<?php print $main_wrapper; ?> class="listing__column-main listing__column-main--sidebar-next column-main <?php print $main_classes; ?>">
       <?php if (!isset($prevent_link)) : ?>
-        <a href="<?php print $node_url; ?>" class="listing__item-link">
+        <a href="<?php print $node_url; ?>" class="listing__item-link"></a>
       <?php else: ?>
         <div class="listing__item-nolink">
       <?php endif; ?>
@@ -39,9 +39,7 @@
       <<?php print $main_wrapper; ?> class="listing__column-main column-main <?php print $main_classes; ?>">
         <?php print $main; ?>
       </<?php print $main_wrapper; ?>>
-    <?php if (!isset($prevent_link)) : ?>
-      </a>
-    <?php else: ?>
+    <?php if (isset($prevent_link)) : ?>
       </div>
     <?php endif; ?>
   <?php endif; ?>
