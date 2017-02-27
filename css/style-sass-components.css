@@ -4531,25 +4531,27 @@ Style guide listing.3
     .listing--nostripe .listing__item:last-child .listing__item-link {
       padding-bottom: 0; }
 
-.listing--cta .listing__item-link {
-  padding: 1.222em;
-  background-color: #004494; }
-  .listing--cta .listing__item-link:hover .listing__title, .listing--cta .listing__item-link:active .listing__title, .listing--cta .listing__item-link:focus .listing__title {
+.listing--cta {
+  color: #ffffff; }
+  .listing--cta .listing__item-link .listing__title {
     color: #ffffff; }
-
-.listing--cta .listing__item {
-  border: none; }
-  .listing--cta .listing__item .listing__title,
-  .listing--cta .listing__item a {
-    color: #ffffff; }
-  .listing--cta .listing__item:first-child {
-    border-top: none; }
-  .listing--cta .listing__item:last-child {
-    padding-bottom: 1.222em; }
-
-.listing--cta .listing__title {
-  position: relative;
-  padding-right: 1.3em; }
+  .listing--cta .listing__item {
+    border: none;
+    background-color: #004494;
+    padding: 1.111em;
+    margin: 1.111em 0; }
+    .listing--cta .listing__item:hover {
+      text-decoration: underline; }
+    .listing--cta .listing__item .listing__title,
+    .listing--cta .listing__item a {
+      color: #ffffff; }
+    .listing--cta .listing__item:first-child {
+      border-top: none; }
+    .listing--cta .listing__item:last-child {
+      padding-bottom: 1.222em; }
+  .listing--cta .listing__title {
+    position: relative;
+    padding-right: 1.3em; }
 
 .listing--no-padding ul {
   padding-left: 0 !important; }
@@ -4672,6 +4674,9 @@ a.listing__title {
   .listing__item .listing__column-main > p,
   .listing__item .listing__item-link > p {
     font-size: 0.889em; }
+  .listing__item a:not(.listing__item-link) {
+    position: relative;
+    z-index: 2; }
 
 .listing__item-nolink {
   display: block;
@@ -4686,7 +4691,8 @@ a.listing__title {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  z-index: 1; }
   .listing__item-link:active, .listing__item-link:focus {
     text-decoration: none; }
     .listing__item-link:active .listing__title, .listing__item-link:focus .listing__title {

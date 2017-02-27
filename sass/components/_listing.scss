@@ -277,21 +277,25 @@ Style guide listing.3
 
 // .listing--cta modifier.
 .listing--cta {
-  .listing__item-link {
-    padding: $font-size-mid;
-    background-color: $brand-primary;
+  color: $white;
 
-    &:hover,
-    &:active,
-    &:focus {
-      .listing__title {
-        color: $white;
-      }
+  .listing__item-link {
+    //padding: $font-size-mid;
+    .listing__title {
+      color: $white;
     }
   }
 
   .listing__item {
     border: none;
+    background-color: $brand-primary;
+    padding: 1.111em;
+    margin: 1.111em 0;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
 
     .listing__title,
     a {
@@ -503,6 +507,11 @@ a.listing__title {
   .listing__item-link > p {
     font-size: $font-size-little;
   }
+
+  a:not(.listing__item-link) { 
+    position: relative;
+    z-index: 2; 
+  }
 }
 
 .listing__item-nolink {
@@ -521,6 +530,7 @@ a.listing__title {
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 1;
 
   &:active,
   &:focus {
