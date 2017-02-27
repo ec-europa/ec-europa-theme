@@ -279,23 +279,22 @@ Style guide listing.3
 .listing--cta {
   color: $white;
 
-  .listing__item-link {
-    //padding: $font-size-mid;
-    .listing__title {
-      color: $white;
-    }
-  }
-
   .listing__item {
     border: none;
-    background-color: $brand-primary;
-    padding: 1.111em;
     margin: 1.111em 0;
 
     &:hover {
-      text-decoration: underline;
+      .listing__title,
+      a {
+        text-decoration: underline;
+      }
     }
 
+    .listing__item__wrapper,
+    .node {
+      padding: 1.111em;
+      background-color: $brand-primary;
+    }
 
     .listing__title,
     a {
@@ -486,6 +485,7 @@ a.listing__title {
   // in this class in the file _mixins.scss line 139, and then this can removed.
   .listing__title,
   .contextual-links-region {
+    color: $brand-primary;
     position: static;
   }
 
@@ -493,7 +493,8 @@ a.listing__title {
   &:active,
   &:focus {
     a .listing__title,
-    a.listing__title {
+    a.listing__title,
+    .listing__title {
       text-decoration: underline;
     }
   }
@@ -534,7 +535,6 @@ a.listing__title {
 
   &:active,
   &:focus {
-    text-decoration: none;
 
     .listing__title {
       color: $grey-base;
