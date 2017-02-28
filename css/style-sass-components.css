@@ -4402,50 +4402,26 @@ Markup: html/listing--title.html
 
 Style guide listing.4
 */
-.listing--title,
-ul.listing--title {
+.listing--title {
   padding: 0; }
-  .listing--title .listing__item,
-  ul.listing--title .listing__item {
+  .listing--title .listing__item {
     padding: 0.61em 0; }
-    .listing--title .listing__item .listing__title,
-    ul.listing--title .listing__item .listing__title {
-      margin: 0; }
-    .listing--title .listing__item:hover a .listing__title, .listing--title .listing__item:active a .listing__title, .listing--title .listing__item:focus a .listing__title,
-    ul.listing--title .listing__item:hover a .listing__title,
-    ul.listing--title .listing__item:active a .listing__title,
-    ul.listing--title .listing__item:focus a .listing__title {
+    .listing--title .listing__item .listing__title {
+      display: block;
+      margin: 0;
+      padding-right: 2em;
       text-decoration: none; }
-  .listing--title .listing__item-link,
-  .listing--title .listing__title,
-  ul.listing--title .listing__item-link,
-  ul.listing--title .listing__title {
-    display: block;
-    margin: 0;
-    padding: 0; }
-  .listing--title a.listing__title,
-  .listing--title a .listing__title,
-  ul.listing--title a.listing__title,
-  ul.listing--title a .listing__title {
-    display: block;
-    padding-right: 2em; }
-  .listing--title a.listing__title::after,
-  ul.listing--title a.listing__title::after {
-    line-height: 1.6; }
-
-.listing--title .listing__title:hover, .listing--title .listing__title:focus {
-  color: #404040;
-  text-decoration: underline !important; }
+      .listing--title .listing__item .listing__title:after {
+        line-height: 1.6; }
+      .listing--title-medium.listing--title .listing__item .listing__title {
+        margin-top: 0.2em;
+        margin-bottom: 0.4em;
+        font-size: 1.222em; }
+    .listing--title .listing__item:hover .listing__title, .listing--title .listing__item:focus .listing__title {
+      color: #404040; }
 
 .listing--frontpage p {
   line-height: 1.375em; }
-
-.listing--title-medium .listing__title {
-  margin-top: 0.2em;
-  margin-bottom: 0.4em; }
-
-.listing--title-medium .listing__title {
-  font-size: 1.222em; }
 
 /*
 Listing agenda

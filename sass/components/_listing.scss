@@ -73,7 +73,7 @@ Style guide listing.1
   padding: 0;
 }
 
-// .listing--priorities modifier.
+// @todo Remove this.
 .listing--priorities .meta {
   display: none;
 }
@@ -91,8 +91,7 @@ Style guide listing.4
 */
 
 // listing--title modifier.
-.listing--title,
-ul.listing--title {
+.listing--title {
   padding: 0;
 
   .listing__item {
@@ -100,57 +99,34 @@ ul.listing--title {
     padding: 0.61em 0;
 
     .listing__title {
+      display: block;
       margin: 0;
-    }
+      padding-right: 2em;
+      text-decoration: none;
 
-    &:hover,
-    &:active,
-    &:focus {
-      a .listing__title {
-        text-decoration: none;
+      // @todo What is this here for?
+      &:after {
+        line-height: 1.6;
+      }
+
+      @at-root .listing--title-medium#{&} {
+        margin-top: 0.2em;
+        margin-bottom: 0.4em;
+        font-size: $font-size-h3;
       }
     }
-  }
-
-  .listing__item-link,
-  .listing__title {
-    display: block;
-    margin: 0;
-    padding: 0;
-  }
-
-  a.listing__title,
-  a .listing__title {
-    display: block;
-    padding-right: 2em;
-  }
-
-  a.listing__title::after {
-    line-height: 1.6;
-  }
-}
-
-.listing--title .listing__title {
-  &:hover,
-  &:focus {
-    color: $grey-base;
-    text-decoration: underline !important;
+    
+    &:hover,
+    &:focus {
+      .listing__title {
+        color: $grey-base;
+      }
+    }
   }
 }
 
 .listing--frontpage p {
   line-height: 1.375em;
-}
-
-// .listing--title-medium modifier.
-.listing--title-medium .listing__title {
-  margin-top: 0.2em;
-  margin-bottom: 0.4em;
-}
-
-// .listing--title-medium modifier.
-.listing--title-medium .listing__title {
-  font-size: $font-size-h3;
 }
 
 /*
