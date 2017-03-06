@@ -19,9 +19,7 @@ Style guide: siteswitcher
 }
 
 .site-switcher__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  @extend .reset-lists;
 }
 
 .site-switcher__option {

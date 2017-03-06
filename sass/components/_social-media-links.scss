@@ -34,9 +34,7 @@ Style guide social
 }
 
 .social-media-links__list {
-  list-style-type: none;
-  padding: 0 !important;
-  margin: 0 !important;
+  @extend .reset-lists;
 }
 
 .social-media-links__horizontal {

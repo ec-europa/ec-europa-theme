@@ -1,3 +1,12 @@
+
+#admin-menu-wrapper ul {
+  max-width: none;
+}
+
+.wtShareNetworks {
+  margin-bottom: 0;
+}
+
 .views-exposed-form .views-exposed-widget {
   padding: 0;
 }
@@ -57,6 +66,7 @@
   .field--field-event-website .field__items {
     font-weight: bold;
   }
+
   #practicalinformation .field--attend .field__items span {
     clear: left;
     padding: 0;
