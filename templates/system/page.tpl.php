@@ -54,7 +54,7 @@
  *   associated with the page, and the node ID is the second argument
  *   in the page's path (e.g. node/12345 and node/12345/revisions, but not
  *   comment/reply/12345).
- * - $field_core_introduction: field that should be available in most of the
+ * - $field_introduction: field that should be available in most of the
  *   content types.
  *
  * Regions:
@@ -169,8 +169,8 @@
           <?php endif; ?>
           <?php print render($title_suffix); ?>
 
-          <?php if(!empty($field_core_introduction)): ?>
-            <?php print render($field_core_introduction); ?>
+          <?php if(!empty($ec_europa_introduction)): ?>
+            <?php print render($ec_europa_introduction); ?>
           <?php endif; ?>
         </div>
       </div>
