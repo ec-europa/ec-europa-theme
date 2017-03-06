@@ -1438,7 +1438,7 @@ function europa_file_widget($variables) {
   $field_name = $element['#field_name'];
 
   // Checks if its to use the DT component in the front end.
-  $check_use = variable_get('dt_shared_functions_dt_file_use_component_' . $bundle . '_' . $field_name, TRUE);
+  $check_use = variable_get('nexteuropa_theme_functions_dt_file_use_component_' . $bundle . '_' . $field_name, TRUE);
   if ($check_use) {
     $has_file = FALSE;
     if (!empty($element['#default_value']['fid'])) {
@@ -1484,7 +1484,7 @@ function europa_file_widget($variables) {
     }
 
     // Checks if the upload button is to added to the front end.
-    $check_upload = variable_get('dt_shared_functions_dt_file_show_upload_' . $bundle . '_' . $field_name, TRUE);
+    $check_upload = variable_get('nexteuropa_theme_functions_dt_file_show_upload_' . $bundle . '_' . $field_name, TRUE);
     if ($check_upload) {
       // The newline is to give the same space that we have in the style guide.
       $output .= "\n" . drupal_render($upload_button);
