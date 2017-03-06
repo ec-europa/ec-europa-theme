@@ -1510,6 +1510,23 @@ function europa_file_upload_help($variables) {
 }
 
 /**
+ * Implements hook_ds_pre_render_alter().
+ *
+ * Set a variable for building the link to non-node entities in the ds tpl.
+ */
+function europa_ds_pre_render_alter(&$layout_render_array, $context, &$vars) {
+  switch ($context['entity_type']) {
+    case 'user':
+      $vars['node_url'] = drupal_get_path_alias('user/' . $vars['id']);
+      break;
+
+    case 'taxonomy_term':
+        $vars['node_url'] = drupal_get_path_alias('taxonomy/term/' . $vars['tid']);
+      break;
+  }
+}
+
+/**
  * Implements template_preprocess_comment_wrapper().
  */
 function europa_preprocess_comment_wrapper(&$variables) {
@@ -1530,3 +1547,4 @@ function europa_preprocess_comment(&$variables) {
   $variables['permalink'] = t('Permalink');
   $variables['title_attributes_array']['class'] = 'comment__title';
 }
+

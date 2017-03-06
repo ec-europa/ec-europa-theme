@@ -7,12 +7,11 @@
 ?>
 
 <div class="listing listing--navigation">
-  <a href="<?php print $node_url; ?>" class="listing__item-link">
+  <a href="<?php print $node_url; ?>" class="listing__item-link"></a>
     <h2 class="listing__section-title"><?php print $title; ?></h2>
     <?php if ($description && !$children): ?>
       <p class="listing__description"><?php print $description; ?></p>
     <?php endif; ?>
-  </a>
   <?php if ($children): ?>
     <?php print $children; ?>
   <?php endif; ?>
