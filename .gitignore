@@ -19,3 +19,6 @@ js/libraries/
 
 # Ignore styleguide
 styleguide/assets/
+
+# Ignore components
+components
