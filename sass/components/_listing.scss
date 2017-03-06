@@ -70,7 +70,9 @@ Style guide listing.1
 */
 
 .listing {
-  padding: 0;
+  @include clearfix();
+
+  @extend .reset-lists;
 }
 
 // .listing--priorities modifier.
@@ -91,10 +93,7 @@ Style guide listing.4
 */
 
 // listing--title modifier.
-.listing--title,
-ul.listing--title {
-  padding: 0;
-
+.listing--title {
   .listing__item {
     // Half of the normal padding for the element.
     padding-top: 0.61em;
@@ -319,6 +318,8 @@ Style guide listing.3
 }
 
 // .listing--no-padding modifier.
+//
+// @todo Check if this it still valid.
 .listing--no-padding ul {
   padding-left: 0 !important;
 }
@@ -345,8 +346,6 @@ Style guide listing.6
 */
 
 .listing--navigation {
-  @include clearfix();
-
   // Top of the block:
   // - listing__section-title or
   // - listing__item-link
@@ -458,7 +457,8 @@ a.listing__title {
 
 // .listing__wrapper element.
 .listing__wrapper {
-  @include clearfix;
+  @include clearfix();
+
   margin-bottom: 1.667em;
 
   .listing {
@@ -624,13 +624,14 @@ a.listing__title {
 
 // .listing__read_more element.
 .listing__read-more {
-  display: block;
+  @include clearfix();
+
+  display: inline-block;
   padding-top: 0.5em;
   font-size: $font-size-tiny;
   font-weight: $font-weight-bold;
-  text-align: right;
   text-transform: uppercase;
-  clear: both;
+  float: right;
 
   &::after {
     @extend .icon--after;

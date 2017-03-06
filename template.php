@@ -963,8 +963,10 @@ function europa_preprocess_page(&$variables) {
 
   if (isset($node)) {
     // Adding generic introduction field to be later rendered in page template.
-    $variables['field_core_introduction'] = isset($node->field_core_introduction)
-        ? field_view_field('node', $node, 'field_core_introduction', ['label' => 'hidden']) : NULL;
+    $introduction = variable_get('ec_europa_introduction_field', FALSE);
+
+    $variables['ec_europa_introduction'] = isset($node->{$introduction})
+        ? field_view_field('node', $node, $introduction, ['label' => 'hidden']) : NULL;
 
     // Check if Display Suite is handling node.
     if (module_exists('ds')) {
@@ -1505,4 +1507,26 @@ function europa_file_upload_help($variables) {
   // this normally.
   // @codingStandardsIgnoreLine
   return theme_file_upload_help($variables);
+}
+
+/**
+ * Implements template_preprocess_comment_wrapper().
+ */
+function europa_preprocess_comment_wrapper(&$variables) {
+  $variables['comment_count'] = '';
+  if ($variables['node']->comment_count > 0) {
+    $variables['comment_count'] = $variables['node']->comment_count;
+  }
+}
+
+/**
+ * Implements template_preprocess_comment().
+ */
+function europa_preprocess_comment(&$variables) {
+  $comment = $variables['elements']['#comment'];
+  $variables['created'] = format_date($comment->created, 'ec_date');
+  $variables['submitted'] = t('!username', ['!username' => $variables['author']]) . '<span class="submitted-date">' . $variables['created'] . '</span>';
+  $variables['title']     = check_plain($comment->subject);
+  $variables['permalink'] = t('Permalink');
+  $variables['title_attributes_array']['class'] = 'comment__title';
 }
