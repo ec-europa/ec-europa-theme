@@ -1515,8 +1515,9 @@ function europa_file_upload_help($variables) {
  * Setting variables for non-node entities in the DS templates.
  */
 function europa_ds_pre_render_alter(&$layout_render_array, $context, &$variables) {
-  $entity_type = $variables['elements']['#entity_type'];
   $entity = $variables['elements'];
+  $entity_type = $entity['#entity_type'];
+
 
   switch ($entity_type) {
     case 'user':
