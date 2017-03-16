@@ -2511,8 +2511,7 @@ Style guide filters.filters
 .filters__btn-reset {
   width: 100%;
   display: block;
-  position: relative;
-  top: 10px; }
+}
   .filters__btn-reset--small {
     float: right; }
 
