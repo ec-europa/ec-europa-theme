@@ -237,7 +237,6 @@ function europa_form_element(&$variables) {
   switch ($element['#title_display']) {
     case 'before':
     case 'invisible':
-
       $output .= ' ' . theme('form_element_label', $variables);
       $output .= ' ' . $prefix . $element['#children'] . $suffix . "\n";
 
@@ -1518,7 +1517,6 @@ function europa_ds_pre_render_alter(&$layout_render_array, $context, &$variables
   $entity = $variables['elements'];
   $entity_type = $entity['#entity_type'];
 
-
   switch ($entity_type) {
     case 'user':
       $uri = entity_uri($entity_type, $variables['elements']['#account']);
@@ -1543,6 +1541,7 @@ function europa_ds_pre_render_alter(&$layout_render_array, $context, &$variables
       $variables['node_url'] = url($uri['path']);
       $variables['title'] = $entity['#term']->name;
       break;
+
   }
 }
 
