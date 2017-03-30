@@ -46,7 +46,7 @@
   .listing__wrapper--row-two .listing:after {
     clear: both; }
 
-.col-xs-1, .col-sm-1, .file__icon, .col-md-1, .file__icon, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .context-nav__label, .col-lg-3, .col-xs-4, .col-sm-4, .file__btn, .col-md-4, .file__btn, .listing__wrapper--three-columns .listing, .listing__wrapper--row-three .listing__item, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .featured-item__image, .col-lg-5, .col-xs-6, .col-sm-6, .file__metadata, .file__translations .file__metadata, .hero-links__items .hero-links__item, .listing__wrapper--two-columns .listing, .col-md-6, .banner__left, .banner__paragraph, .comment__form-wrapper, .file__metadata, .file__translations .file__metadata, .listing__wrapper--row-two .listing__item, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .featured-item__content, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .listing__wrapper--maxwidth .listing, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .context-nav__items, .col-lg-9, .col-xs-10, .file__metadata, .file--link .file__metadata--link, .col-sm-10, .file--link .file__metadata--link, .col-md-10, .file--link .file__metadata--link, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .context-nav__label, .context-nav__items, .file__btn, .file__translations .file__metadata, .hero-links__items .hero-links__item, .col-sm-12, .col-md-12, .listing__wrapper--three-columns .featured-item__image, .listing__wrapper--three-columns .featured-item__content, .col-lg-12 {
+.col-xs-1, .col-sm-1, .file__icon, .col-md-1, .file__icon, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .context-nav__label, .col-lg-3, .col-xs-4, .col-sm-4, .file__btn, .col-md-4, .file__btn, .footer__column, .listing__wrapper--three-columns .listing, .listing__wrapper--row-three .listing__item, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .featured-item__image, .col-lg-5, .col-xs-6, .col-sm-6, .file__metadata, .file__translations .file__metadata, .hero-links__items .hero-links__item, .listing__wrapper--two-columns .listing, .col-md-6, .banner__left, .banner__paragraph, .comment__form-wrapper, .file__metadata, .file__translations .file__metadata, .listing__wrapper--row-two .listing__item, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .featured-item__content, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .listing__wrapper--maxwidth .listing, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .context-nav__items, .col-lg-9, .col-xs-10, .file__metadata, .file--link .file__metadata--link, .col-sm-10, .file--link .file__metadata--link, .col-md-10, .file--link .file__metadata--link, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .context-nav__label, .context-nav__items, .file__btn, .file__translations .file__metadata, .hero-links__items .hero-links__item, .col-sm-12, .col-md-12, .listing__wrapper--three-columns .featured-item__image, .listing__wrapper--three-columns .featured-item__content, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -315,7 +315,7 @@
     margin-left: 100%; } }
 
 @media (min-width: 992px) {
-  .col-md-1, .file__icon, .col-md-2, .col-md-3, .context-nav__label, .col-md-4, .file__btn, .listing__wrapper--three-columns .listing, .listing__wrapper--row-three .listing__item, .col-md-5, .featured-item__image, .col-md-6, .banner__left, .banner__paragraph, .comment__form-wrapper, .file__metadata, .file__translations .file__metadata, .listing__wrapper--row-two .listing__item, .col-md-7, .featured-item__content, .col-md-8, .listing__wrapper--maxwidth .listing, .col-md-9, .context-nav__items, .col-md-10, .file--link .file__metadata--link, .col-md-11, .col-md-12, .listing__wrapper--three-columns .featured-item__image, .listing__wrapper--three-columns .featured-item__content {
+  .col-md-1, .file__icon, .col-md-2, .col-md-3, .context-nav__label, .col-md-4, .file__btn, .footer__column, .listing__wrapper--three-columns .listing, .listing__wrapper--row-three .listing__item, .col-md-5, .featured-item__image, .col-md-6, .banner__left, .banner__paragraph, .comment__form-wrapper, .file__metadata, .file__translations .file__metadata, .listing__wrapper--row-two .listing__item, .col-md-7, .featured-item__content, .col-md-8, .listing__wrapper--maxwidth .listing, .col-md-9, .context-nav__items, .col-md-10, .file--link .file__metadata--link, .col-md-11, .col-md-12, .listing__wrapper--three-columns .featured-item__image, .listing__wrapper--three-columns .featured-item__content {
     float: left; }
   .col-md-1, .file__icon {
     width: 8.3333333333%; }
@@ -323,7 +323,7 @@
     width: 16.6666666667%; }
   .col-md-3, .context-nav__label {
     width: 25%; }
-  .col-md-4, .file__btn, .listing__wrapper--three-columns .listing, .listing__wrapper--row-three .listing__item {
+  .col-md-4, .file__btn, .footer__column, .listing__wrapper--three-columns .listing, .listing__wrapper--row-three .listing__item {
     width: 33.3333333333%; }
   .col-md-5, .featured-item__image {
     width: 41.6666666667%; }
@@ -617,7 +617,8 @@ a.label:hover, a.label:focus {
   speak: none; }
 
 @media print {
-  .hidden-print, .btn, .inpage-nav__navbar .inpage-nav__toggle, .breadcrumb, .ui-datepicker .ui-datepicker-header .ui-datepicker-title select, .feedback-form__wrapper, .file, .footer, .help-block, .inpage-nav__wrapper, .lang-select-site, .lang-select-page, .icon.lang-select-page__icon, .date-picker .lang-select-page__icon.date-picker--icon, .lang-select-page__icon.search-form__btn, select.lang-select-page__list, .feedback-message, .notification, .site-switcher, .search-form, .site-menu, .site-menu__toggle, .skip-link,
+  .hidden-print, .btn, .inpage-nav__navbar .inpage-nav__toggle, .breadcrumb, .ui-datepicker .ui-datepicker-header .ui-datepicker-title select, .feedback-form__wrapper, .file, .footer__top,
+  .footer__bottom, .help-block, .inpage-nav__wrapper, .lang-select-site, .lang-select-page, .icon.lang-select-page__icon, .date-picker .lang-select-page__icon.date-picker--icon, .lang-select-page__icon.search-form__btn, select.lang-select-page__list, .feedback-message, .notification, .site-switcher, .search-form, .site-menu, .site-menu__toggle, .skip-link,
   #skip-link, .social-media-links, .social-media-links--field {
     display: none !important; } }
 
@@ -2654,36 +2655,67 @@ Markup: html/footer.html
 
 Style guide footer
 */
-.footer {
+.footer__top {
+  background-color: #3066a6; }
+
+.footer__bottom {
   background-color: #004494;
-  font-size: 0.889em;
-  color: #ffffff;
-  text-align: center; }
-  .footer a {
+  padding: 0.9em 0; }
+  .footer__bottom .footer__menu {
+    margin-bottom: 0; }
+
+.footer__top,
+.footer__bottom {
+  color: #ffffff; }
+  .footer__top a,
+  .footer__bottom a {
     color: #ffffff;
     text-decoration: underline; }
-    .footer a:hover, .footer a:active, .footer a:focus {
+    .footer__top a:hover, .footer__top a:active, .footer__top a:focus,
+    .footer__bottom a:hover,
+    .footer__bottom a:active,
+    .footer__bottom a:focus {
       text-decoration: none; }
-
-.footer__column-main {
-  padding-bottom: 30px;
-  padding-top: 30px; }
+  .footer__top .list-inline .footer__menu-item, .footer__top .list-inline .footer__menu .footer__menu-item-right, .footer__menu .footer__top .list-inline .footer__menu-item-right,
+  .footer__bottom .list-inline .footer__menu-item,
+  .footer__bottom .list-inline .footer__menu .footer__menu-item-right, .footer__menu
+  .footer__bottom .list-inline .footer__menu-item-right {
+    padding-right: 15px; }
 
 .footer__label {
   display: block;
   margin-right: 20px; }
 
+.footer__title {
+  color: #ffffff;
+  border-bottom: 2px solid #769EC1;
+  margin-bottom: 0.2em; }
+  @media (min-width: 992px) {
+    .footer__title {
+      margin-bottom: 1.1em;
+      min-height: 3.2em; } }
+  @media (min-width: 1291px) {
+    .footer__title {
+      min-height: auto; } }
+
 .footer__menu {
   margin: 0;
-  padding-left: 0; }
+  padding-left: 0;
+  max-width: 100%;
+  margin-bottom: 0; }
   .footer__menu .footer__menu-item, .footer__menu .footer__menu-item-right {
     margin-right: 15px;
-    margin-bottom: 0.5em;
-    padding: 0; }
+    padding: 0;
+    font-size: 0.889em; }
     .footer__menu .footer__menu-item:first-child > a, .footer__menu .footer__menu-item-right:first-child > a {
       padding-left: 0; }
+    .footer__menu .footer__menu-item:last-child, .footer__menu .footer__menu-item-right:last-child {
+      margin-bottom: 0; }
+    @media (min-width: 992px) {
+      .footer__menu .footer__menu-item, .footer__menu .footer__menu-item-right {
+        margin-bottom: 0.5em; } }
     .footer__menu .footer__menu-item a, .footer__menu .footer__menu-item-right a {
-      padding: 0 1.1em 0 0; }
+      padding: 0; }
       .footer__menu .footer__menu-item a:focus, .footer__menu .footer__menu-item-right a:focus {
         outline: 3px solid #ffd617;
         outline-offset: 5px;
@@ -2694,47 +2726,27 @@ Style guide footer
   .footer__menu .footer__menu-item-right {
     float: right; }
 
-.footer__menu--separator {
-  width: 100%;
-  margin-top: 0.6em;
-  padding-top: 1.2em;
-  border-top: 1px solid #4d7cb4; }
-
 .footer__icon--social::before {
-  position: relative;
-  top: 4px;
   margin-right: 8px !important; }
 
 .footer__icon--social::after {
   content: none !important;
   display: none !important; }
 
-.footer__icon--facebook::before {
-  font-size: 22px; }
-
-.footer__icon--twitter::before {
-  font-size: 18px; }
-
-@media (min-width: 768px) {
-  .footer {
-    text-align: left; }
-  .footer__column-main {
-    padding-top: 60px;
-    padding-bottom: 60px; }
-  .footer__column-right {
-    float: right;
-    padding-bottom: 0; }
-  .footer__label {
-    display: inline-block; }
-    .footer__label ~ .footer__menu {
-      display: inline-block; } }
+.footer__column {
+  padding-top: 1.6em; }
+  .footer__column:last-child {
+    padding-bottom: 1.6em; }
+  @media (min-width: 992px) {
+    .footer__column {
+      padding-top: 2em;
+      padding-bottom: 2em; }
+      .footer__column:last-child {
+        padding-bottom: 2em; } }
 
 .footer a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"])::after {
   position: absolute;
   line-height: 2.2; }
-
-.footer .footer__icon--social {
-  padding-right: 0 !important; }
 
 .footer a.footer__site-switcher {
   padding-right: 30px !important; }

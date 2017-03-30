@@ -8,28 +8,38 @@ Markup: html/footer.html
 Style guide footer
 */
 
-.footer {
-  @extend .hidden-print;
+.footer__top {
+  background-color: $blue-medium;
+}
+
+.footer__bottom {
   background-color: $brand-primary;
-  font-size: $font-size-little;
+  padding: 0.9em 0;
+  .footer__menu {
+    margin-bottom: 0;
+  }
+}
+
+.footer__top,
+.footer__bottom {
+  @extend .hidden-print;
   color: $white;
-  text-align: center;
 
   a {
     color: $white;
     text-decoration: underline;
-
     &:hover,
     &:active,
     &:focus {
       text-decoration: none;
     }
   }
-}
-
-.footer__column-main {
-  padding-bottom: 30px;
-  padding-top: 30px;
+    // Inline listings need more padding-right on the footer.
+  .list-inline {
+    .footer__menu-item {
+      padding-right: 15px;
+    }
+  }
 }
 
 .footer__label {
@@ -37,24 +47,48 @@ Style guide footer
   margin-right: 20px;
 }
 
+.footer__title {
+  color: $white;
+  border-bottom: 2px solid $blue-medium-light;
+  margin-bottom: 0.2em;
+  @include breakpoint(screen-md-min) {
+    margin-bottom: 1.1em;
+
+    // Make titles same height on mobile breakpoint.
+    min-height: 3.2em;
+  }
+
+  // Make titles height auto on large screens.
+  @media (min-width: 1291px) {
+    min-height: auto;
+  }
+
+}
+
 // Menus.
 .footer__menu {
   margin: 0;
   padding-left: 0;
+  max-width: 100%;
+  margin-bottom: 0;
 
   .footer__menu-item {
     margin-right: 15px;
-    margin-bottom: 0.5em;
     padding: 0;
-
+    font-size: $font-size-little;
     &:first-child > a {
       padding-left: 0;
     }
+    &:last-child {
+      margin-bottom: 0;
+    }
+    @include breakpoint(screen-md-min) {
+      margin-bottom: 0.5em;
+    }
 
     a {
-      padding: 0 1.1em 0 0;
+      padding: 0;
       @include _focus_outline_border(3px, $yellow-light, 5px);
-
       &:hover,
       &:active,
       &:focus {
@@ -70,60 +104,29 @@ Style guide footer
   }
 }
 
-.footer__menu--separator {
-  width: 100%;
-  margin-top: 0.6em;
-  padding-top: 1.2em;
-  border-top: 1px solid #4d7cb4;
-}
-
 // Icons.
 .footer__icon--social {
   &::before {
-    position: relative;
-    top: 4px;
     margin-right: 8px !important;
   }
-
   &::after {
     content: none !important;
     display: none !important;
   }
 }
 
-.footer__icon--facebook {
-  &::before {
-    font-size: 22px;
+// Footer columns.
+.footer__column {
+  @extend .col-md-4;
+  padding-top: 1.6em;
+  &:last-child {
+    padding-bottom: 1.6em;
   }
-}
-
-.footer__icon--twitter {
-  &::before {
-    font-size: 18px;
-  }
-}
-
-@include breakpoint(screen-sm-min) {
-  .footer {
-    text-align: left;
-  }
-
-  // Columns.
-  .footer__column-main {
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
-
-  .footer__column-right {
-    float: right;
-    padding-bottom: 0;
-  }
-
-  .footer__label {
-    display: inline-block;
-
-    & ~ .footer__menu {
-      display: inline-block;
+  @include breakpoint(screen-md-min) {
+    padding-top: 2em;
+    padding-bottom: 2em;
+    &:last-child {
+      padding-bottom: 2em;
     }
   }
 }
@@ -143,10 +146,6 @@ Style guide footer
         @include _footer_external_link_mixin();
       }
     }
-  }
-
-  .footer__icon--social {
-    padding-right: 0 !important;
   }
 
   a.footer__site-switcher {

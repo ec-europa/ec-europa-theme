@@ -1,40 +1,42 @@
 // Bootstrap overrides and new variables.
 
 // Colors.
-$white:           #ffffff;
+$white:             #ffffff;
 
-$black:           #000000;
+$black:             #000000;
 
-$grey-dark:       #575757;
-$grey-base:       #404040;
-$grey:            #b3b4b5;
-$grey-light:      #e2e2e2;
-$grey-lighter:    #ececec;
-$grey-lightest:   #f2f2f2;
+$grey-dark:         #575757;
+$grey-base:         #404040;
+$grey:              #b3b4b5;
+$grey-light:        #e2e2e2;
+$grey-lighter:      #ececec;
+$grey-lightest:     #f2f2f2;
 
-$blue-darkest:    #023066;
-$blue-darker:     #012b58;
-$blue-dark:       #004494;
-$blue:            #006fb4;
-$blue-light:      #b0c5de;
+$blue-darkest:      #023066;
+$blue-darker:       #012b58;
+$blue-dark:         #004494;
+$blue:              #006fb4;
+$blue-medium:       #3066a6;
+$blue-light:        #b0c5de;
+$blue-medium-light: #769EC1;
 
-$yellow-dark:     #f2a615;
-$yellow:          #ffc412;
-$yellow-light:    #ffd617;
-$yellow-lighter:  #ffe574;
+$yellow-dark:       #f2a615;
+$yellow:            #ffc412;
+$yellow-light:      #ffd617;
+$yellow-lighter:    #ffe574;
 
-$green:           #467a39;
+$green:             #467a39;
 
-$red:             #da2131;
+$red:               #da2131;
 
-$brand-primary:   $blue-dark;
-$brand-political: $blue-darker;
-$brand-success:   $green;
-$brand-info:      $grey-dark;
-$brand-warning:   $yellow-dark;
-$brand-danger:    $red;
+$brand-primary:     $blue-dark;
+$brand-political:   $blue-darker;
+$brand-success:     $green;
+$brand-info:        $grey-dark;
+$brand-warning:     $yellow-dark;
+$brand-danger:      $red;
 
-$text-color:      $grey-base;
+$text-color:        $grey-base;
 
 // Typography.
 $font-family-sans-serif:  Arial, sans-serif;
