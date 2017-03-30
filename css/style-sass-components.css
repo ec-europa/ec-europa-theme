@@ -621,15 +621,6 @@ a.label:hover, a.label:focus {
   #skip-link, .social-media-links, .social-media-links--field {
     display: none !important; } }
 
-/**
-* Single responsibility helper/utility classes.
-* Logic: equal to inline styling.
-* @see: http://davidtheclark.com/on-utility-classes/
-*/
-.clear-bottom-spacing, .clear-page-content-bottom-spacing .page-content {
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important; }
-
 .reset-lists, .file__translations .file__translations-list, .listing, .site-switcher__list, .site-user-menu__list, .social-media-links__list {
   max-width: none;
   margin-bottom: 0;
@@ -4420,7 +4411,8 @@ Markup: html/listing--title.html
 Style guide listing.4
 */
 .listing--title .listing__item {
-  padding: 0.61em 0; }
+  padding-top: 0.61em;
+  padding-bottom: 0.61em; }
   .listing--title .listing__item .listing__title {
     margin: 0; }
   .listing--title .listing__item:hover a .listing__title, .listing--title .listing__item:active a .listing__title, .listing--title .listing__item:focus a .listing__title {
