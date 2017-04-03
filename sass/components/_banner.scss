@@ -93,9 +93,8 @@ Style guide: banner.background
 */
 
 .banner--background {
-  @extend .row;
-
   position: relative;
+  overflow: hidden;
 
   h3 {
     padding-top: 1.365em;
@@ -108,9 +107,11 @@ Style guide: banner.background
 }
 
 .banner__image {
-  @extend .col-md-12;
+  height: 370px;
 
-  max-height: 370px;
+  img {
+    max-width: none;
+  }
 }
 
 .banner__content {
@@ -128,17 +129,24 @@ Style guide: banner.background
 }
 
 @include breakpoint(screen-md-min) {
+  .banner--background {
+    min-height: 370px;
+    max-height: 370px;
+  }
+
   .banner__image {
     position: absolute;
     z-index: 1;
   }
 
   .banner__content {
-    @include make-md-column(5);
+    @include make-md-column(6);
 
     position: relative;
     float: right !important;
-    margin: 3.9em 4.7em 3.3em 0;
+    max-height: 250px;
+    margin: 3.35em 3.35em 0 0;
+    overflow: hidden;
     z-index: 2;
   }
 }
