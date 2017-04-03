@@ -1350,7 +1350,7 @@ Style guide: banner.background
     max-width: none; }
 
 .banner__content {
-  padding: 0 24px 6px;
+  padding: 0 24px 6px !important;
   background-color: #fff;
   border-top: 3px solid #004494; }
 

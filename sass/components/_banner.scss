@@ -117,7 +117,7 @@ Style guide: banner.background
 .banner__content {
   @extend .col-md-12;
 
-  padding: 0 24px 6px;
+  padding: 0 24px 6px !important;
   background-color: #fff;
   border-top: 3px solid $blue-dark;
 }
