@@ -149,6 +149,9 @@ a.kss-nav__menu-link {
     text-align: center;
     max-width: none; }
 
+#kss-node #kssref-banner-background .kss-modifier__example {
+  max-width: 1140px; }
+
 .section-styleguide-random {
   background: #666;
   text-align: center;

@@ -1,6 +1,8 @@
 @import "mixins";
 @import "variables";
 
+$large-desktop-width: ($container-lg - $grid-gutter-width) !default;
+
 .hide-menu {
   position: fixed;
   top: 0;
@@ -139,6 +141,12 @@ a.kss-nav__menu-link {
     p {
       text-align: center;
       max-width: none;
+    }
+  }
+
+  #kssref-banner-background {
+    .kss-modifier__example {
+      max-width: $large-desktop-width;
     }
   }
 }

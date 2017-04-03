@@ -10,12 +10,12 @@ Style guide: banner
 /*
 Quote Banner
 
-Markup: html/banner-quote.html
+Markup: html/banner--quote.html
 
 Style guide: banner.quote
 */
 
-$quote_border_offset: 0.556em;
+$quote-border-offset: 0.556em;
 
 .banner {
   @include clearfix();
@@ -23,8 +23,9 @@ $quote_border_offset: 0.556em;
 
 .banner--quote {
   @include make-md-column(8);
-  padding-left: $quote_border_offset;
-  border-left: $quote_border_offset solid $yellow-light;
+
+  padding-left: $quote-border-offset;
+  border-left: $quote-border-offset solid $yellow-light;
 
   blockquote {
     max-width: none;
@@ -47,7 +48,7 @@ $quote_border_offset: 0.556em;
 /*
 Video Banner
 
-Markup: html/banner-video.html
+Markup: html/banner--video.html
 
 Style guide: banner.video
 */
@@ -68,6 +69,7 @@ Style guide: banner.video
 
 .banner__paragraph {
   @extend .col-md-6;
+
   margin-top: 1em;
   font-size: $font-size-little;
 }
@@ -79,5 +81,72 @@ Style guide: banner.video
 @include breakpoint(screen-md-min) {
   .banner__paragraph {
     margin-top: 0;
+  }
+}
+
+/*
+Background Banner
+
+Markup: html/banner--background.html
+
+Style guide: banner.background
+*/
+
+.banner--background {
+  position: relative;
+  overflow: hidden;
+
+  h3 {
+    padding-top: 1.365em;
+    color: $blue-dark;
+  }
+
+  p {
+    line-height: 1.45;
+  }
+}
+
+.banner__image {
+  height: 370px;
+
+  img {
+    max-width: none;
+  }
+}
+
+.banner__content {
+  @extend .col-md-12;
+
+  padding: 0 24px 6px !important;
+  background-color: #fff;
+  border-top: 3px solid $blue-dark;
+}
+
+@media (max-width: $screen-md-min) {
+  .banner__image {
+    padding: 0;
+  }
+}
+
+@include breakpoint(screen-md-min) {
+  .banner--background {
+    min-height: 370px;
+    max-height: 370px;
+  }
+
+  .banner__image {
+    position: absolute;
+    z-index: 1;
+  }
+
+  .banner__content {
+    @include make-md-column(6);
+
+    position: relative;
+    float: right !important;
+    max-height: 250px;
+    margin: 3.35em 3.35em 0 0;
+    overflow: hidden;
+    z-index: 2;
   }
 }
