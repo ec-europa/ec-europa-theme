@@ -150,6 +150,7 @@ $section-spacing: 1.667em;
   & > * {
     margin-left: auto !important;
     margin-right: auto !important;
+    @extend .container-fluid;
   }
 }
 
