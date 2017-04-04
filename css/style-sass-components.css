@@ -2907,6 +2907,11 @@ Style guide: siteheader.header-search-bar
   .header-search-bar .block-nexteuropa-europa-search {
     float: right;
     width: auto; }
+    .header-search-bar .block-nexteuropa-europa-search:before, .header-search-bar .block-nexteuropa-europa-search:after {
+      content: " ";
+      display: table; }
+    .header-search-bar .block-nexteuropa-europa-search:after {
+      clear: both; }
     .header-search-bar .block-nexteuropa-europa-search .search-form {
       float: right;
       margin-bottom: 0;

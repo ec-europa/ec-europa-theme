@@ -4864,14 +4864,8 @@ textarea.error {
   .site-header--homepage .top-bar {
     height: 156px; } }
 
-.site-menu__toggle {
-  float: right;
-  width: 25%;
-  padding-left: 15px; }
-
 .block-nexteuropa-europa-search {
-  float: left;
-  width: 75%; }
+  float: left; }
 
 @media (min-width: 992px) {
   .top-bar {
@@ -4884,14 +4878,9 @@ textarea.error {
       padding: 0;
       margin: 0; }
     .top-bar .block-nexteuropa-europa-search {
-      width: auto;
-      margin-left: 15px; }
-      .top-bar .block-nexteuropa-europa-search .search-form .search-form__textfield-wrapper {
-        width: 240px; }
-    .top-bar .site-menu__toggle {
       width: auto; }
-      .top-bar .site-menu__toggle .btn {
-        margin-bottom: auto; } }
+      .top-bar .block-nexteuropa-europa-search .search-form .search-form__textfield-wrapper {
+        width: 240px; } }
 
 .ceiling {
   border-top: #ffd617 solid 10px; }

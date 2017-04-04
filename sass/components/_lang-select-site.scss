@@ -10,6 +10,7 @@ Style guide: siteheader.langselect
 
 .lang-select-site {
   @extend .hidden-print;
+
   position: absolute;
   top: 0;
   right: $grid-gutter-width / 2;
