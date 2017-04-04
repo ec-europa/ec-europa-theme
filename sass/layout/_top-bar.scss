@@ -25,10 +25,6 @@
   }
 }
 
-.block-nexteuropa-europa-search {
-  float: left;
-}
-
 @include breakpoint(screen-md-min) {
   .top-bar {
     width: auto;
@@ -43,7 +39,7 @@
     }
 
     .block-nexteuropa-europa-search {
-      width: auto;
+      float: left;
 
       .search-form .search-form__textfield-wrapper {
         width: 240px;

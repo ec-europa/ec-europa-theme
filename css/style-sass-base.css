@@ -4864,9 +4864,6 @@ textarea.error {
   .site-header--homepage .top-bar {
     height: 156px; } }
 
-.block-nexteuropa-europa-search {
-  float: left; }
-
 @media (min-width: 992px) {
   .top-bar {
     width: auto;
@@ -4878,7 +4875,7 @@ textarea.error {
       padding: 0;
       margin: 0; }
     .top-bar .block-nexteuropa-europa-search {
-      width: auto; }
+      float: left; }
       .top-bar .block-nexteuropa-europa-search .search-form .search-form__textfield-wrapper {
         width: 240px; } }
 
