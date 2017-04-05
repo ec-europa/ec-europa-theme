@@ -1,6 +1,6 @@
 name = Europa
 description = NextEuropa base theme, based on Bootstrap 3.
-base theme = bootstrap
+base theme = atomium
 core = 7.x
 php = 5.2.4
 
