@@ -97,9 +97,9 @@
 
 <header class="site-header" role="banner">
   <div class="container-fluid">
-    <a href="<?php print $front_page; ?>" class="<?php print $logo_classes; ?>" title="<?php print $page_logo_title; ?>"><span class="sr-only"><?php print $page_logo_title; ?></span></a>
+    <a href="<?php print $front_page; ?>" class="<?php print render($logo_classes); ?>" title="<?php print render($page_logo_title); ?>"><span class="sr-only"><?php print render($page_logo_title); ?></span></a>
     <?php if ($is_front && !empty($site_slogan)): ?>
-      <p class="site-slogan"><?php print $site_slogan; ?></p>
+      <p class="site-slogan"><?php print render($site_slogan); ?></p>
     <?php endif; ?>
 
     <?php if (!empty($page['header'])): ?>
@@ -107,7 +107,7 @@
         <div>
           <div class="top-bar__wrapper">
             <?php if ($is_front): ?>
-              <h1 class="sr-only"><?php print $site_name; ?></h1>
+              <h1 class="sr-only"><?php print render($site_name); ?></h1>
               <h2 class="sr-only"><?php print t('Classes'); ?></h2>
             <?php endif; ?>
             <?php print render($page['header']); ?>
@@ -119,7 +119,7 @@
 </header>
 
 <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
-  <section id="navbar" role="banner" class="<?php print $navbar_classes; ?>">
+  <section id="navbar" role="banner" class="<?php print render($navbar_classes); ?>">
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -165,7 +165,7 @@
           <?php if (!empty($page['custom_title'])): ?>
             <?php print render($page['custom_title']); ?>
           <?php else: ?>
-            <h1><?php print $title; ?></h1>
+            <h1><?php print render($title); ?></h1>
           <?php endif; ?>
           <?php print render($title_suffix); ?>
 
@@ -222,7 +222,7 @@
           <?php endif; ?>
 
           <?php if (!empty($messages)): ?>
-            <?php print $messages; ?>
+            <?php print render($messages); ?>
           <?php endif; ?>
 
           <?php print render($page['content']); ?>

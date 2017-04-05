@@ -46,18 +46,9 @@
  * @ingroup themeable
  */
 ?>
-<section id="<?php print render($block_html_id); ?>" class="<?php print render($classes); ?> clearfix"<?php print render($attributes); ?>>
-
-  <?php print render($title_prefix); ?>
-  <?php if (!empty($title)): ?>
-    <h3<?php print render($title_attributes); ?>><?php print render($title); ?></h3>
-  <?php endif; ?>
-  <?php print render($title_suffix); ?>
-
-  <?php if (!empty($content)): ?>
-  <div class="block__content">
-    <?php print render($content); ?>
-  </div>
-  <?php endif; ?>
-
-</section>
+<?php print render($title_prefix); ?>
+<?php if (!empty($title)): ?>
+  <h4 class="footer__title" <?php print render($title_attributes); ?>><?php print render($title); ?></h4>
+<?php endif; ?>
+<?php print render($title_suffix); ?>
+<?php print render($content); ?>

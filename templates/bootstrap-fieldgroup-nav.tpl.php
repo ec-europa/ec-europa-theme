@@ -18,14 +18,14 @@
 ?>
 <?php if (!$is_empty) : ?>
 
-  <div class="js-tabs <?php print $wrapper_classes; ?>">
+  <div class="js-tabs <?php print render($wrapper_classes); ?>">
 
     <?php if ($flip) : ?>
-      <div class="tab-content <?php print $pane_classes; ?>">
+      <div class="tab-content <?php print render($pane_classes); ?>">
         <?php foreach ($panes as $index => $pane) : ?>
           <div id="<?php print $pane['id']; ?>" class="js-tabcontent tab-pane <?php if ($index === $active) : print 'active';
          endif; ?>">
-            <?php print $pane['content']; ?>
+            <?php print render($pane['content']); ?>
           </div>
         <?php endforeach; ?>
       </div>
@@ -37,7 +37,7 @@
           <li class="js-tablist__item <?php if ($index === $active) : print 'active';
          endif; ?>">
             <?php
-            print $nav['content'];
+            print render($nav['content']);
             ?>
           </li>
         <?php endforeach; ?>
@@ -49,7 +49,7 @@
         <?php foreach ($panes as $index => $pane) : ?>
           <div id="<?php print $pane['id']; ?>" class="js-tabcontent <?php if ($index === $active) : print 'active';
          endif; ?>">
-            <?php print $pane['content']; ?>
+            <?php print render($pane['content']); ?>
           </div>
         <?php endforeach; ?>
       </div>
