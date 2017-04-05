@@ -8,7 +8,7 @@
 /**
  * Implements hook_atomium_definition_HOOK().
  */
-function atomium_europa_atomium_definition_breadcrumb() {
+function europa_atomium_definition_breadcrumb() {
   return array(
     'label' => 'Breadcrumb',
     'description' => 'Site breadcrumb.',
@@ -37,9 +37,10 @@ function atomium_europa_atomium_definition_breadcrumb() {
 /**
  * Implements hook_preprocess_HOOK().
  */
-function atomium_europa_preprocess_breadcrumb(&$variables, $hook) {
+function europa_preprocess_breadcrumb(&$variables, $hook) {
   if (empty($variables[$hook])) {
-    return;
+   //@TODO why did we add this ?
+   // return;
   }
 
   $variables['attributes_array']['class'][] = 'breadcrumb__segments-wrapper';
@@ -57,13 +58,13 @@ function atomium_europa_preprocess_breadcrumb(&$variables, $hook) {
         ),
       );
     }
-
+//@TODO check why the option is not passed
     $item['#options']['attributes']['class'][] = 'breadcrumb__link';
     $item['#attributes']['class'][] = 'breadcrumb__segment';
 
     $breadcrumb_items[] = $item;
-  }
 
+  }
   $variables[$hook] = array(
     'title' => array(
       '#markup' => t('You are here:'),
