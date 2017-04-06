@@ -1514,6 +1514,28 @@ function europa_file_upload_help($variables) {
 }
 
 /**
+ * Implements hook_ds_pre_render_alter().
+ *
+ * Setting node_url variable with the link to non-node entities in the
+ * DS templates.
+ */
+function europa_ds_pre_render_alter(&$layout_render_array, $context, &$variables) {
+  $object = $variables['elements']['#entity_type'];
+  switch ($object) {
+    case 'user':
+      $uri = entity_uri($object, $variables['elements']['#account']);
+      $variables['node_url'] = url($uri['path']);
+      break;
+
+    case 'taxonomy_term':
+      $uri = entity_uri($object, $variables['term']);
+      $variables['node_url'] = url($uri['path']);
+      break;
+
+  }
+}
+
+/**
  * Implements template_preprocess_comment_wrapper().
  */
 function europa_preprocess_comment_wrapper(&$variables) {
@@ -1530,7 +1552,7 @@ function europa_preprocess_comment(&$variables) {
   $comment = $variables['elements']['#comment'];
   $variables['created'] = format_date($comment->created, 'ec_date');
   $variables['submitted'] = t('!username', ['!username' => $variables['author']]) . '<span class="submitted-date">' . $variables['created'] . '</span>';
-  $variables['title']     = check_plain($comment->subject);
+  $variables['title'] = check_plain($comment->subject);
   $variables['permalink'] = t('Permalink');
   $variables['title_attributes_array']['class'] = 'comment__title';
 }

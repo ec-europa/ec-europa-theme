@@ -76,6 +76,7 @@ Style guide listing.1
 }
 
 // .listing--priorities modifier.
+// @todo Remove this.
 .listing--priorities .meta {
   display: none;
 }
@@ -94,62 +95,28 @@ Style guide listing.4
 
 // listing--title modifier.
 .listing--title {
-  .listing__item {
-    // Half of the normal padding for the element.
-    padding: 0.61em 0;
+  // Half of the normal padding for the element.
+  padding: 0.61em 0;
 
-    .listing__title {
-      margin: 0;
-    }
-
-    &:hover,
-    &:active,
-    &:focus {
-      a .listing__title {
-        text-decoration: none;
-      }
-    }
-  }
-
-  .listing__item-link,
   .listing__title {
     display: block;
     margin: 0;
-    padding: 0;
-  }
-
-  a.listing__title,
-  a .listing__title {
-    display: block;
     padding-right: 2em;
-  }
+    text-decoration: none;
 
-  a.listing__title::after {
-    line-height: 1.6;
-  }
-}
+    // @todo What is this here for?
+    &::after {
+      line-height: 1.6;
+    }
 
-.listing--title .listing__title {
-  &:hover,
-  &:focus {
-    color: $grey-base;
-    text-decoration: underline !important;
+    @at-root .listing--title-medium#{&} {
+      font-size: $font-size-h3;
+    }
   }
 }
 
 .listing--frontpage p {
   line-height: 1.375em;
-}
-
-// .listing--title-medium modifier.
-.listing--title-medium .listing__title {
-  margin-top: 0.2em;
-  margin-bottom: 0.4em;
-}
-
-// .listing--title-medium modifier.
-.listing--title-medium .listing__title {
-  font-size: $font-size-h3;
 }
 
 /*
@@ -164,35 +131,24 @@ Style guide listing.5
 
 // .listing--agenda modifier.
 .listing--agenda {
-  p {
-    margin: 0;
-  }
-
   .listing__item {
-    padding-top: 0.85em;
-    padding-bottom: 1em;
-  }
+    p {
+      margin: 0;
+    }
 
-  .meta {
-    margin-bottom: 0;
-
-    div {
+    // @todo Remove or redefine.
+    .meta div {
       display: inline-block;
     }
-  }
 
-  .listing__item-link {
-    padding: 0;
-  }
+    .listing__title {
+      color: $grey-base;
+    }
 
-  h3.listing__title {
-    font-size: $font-size-medium;
-    color: $grey-base;
-  }
-
-  .listing__author {
-    margin-top: 1em;
-    font-size: $font-size-tiny;
+    .listing__author {
+      margin-top: 1em;
+      font-size: $font-size-tiny;
+    }
   }
 }
 
@@ -276,25 +232,33 @@ Style guide listing.3
 
 // .listing--cta modifier.
 .listing--cta {
-  .listing__item-link {
-    padding: $font-size-mid;
-    background-color: $brand-primary;
-
-    &:hover,
-    &:active,
-    &:focus {
-      .listing__title {
-        color: $white;
-      }
-    }
-  }
+  color: #fff;
 
   .listing__item {
     border: none;
+    margin: 1.111em 0;
+
+    &:hover,
+    &:active,
+    &:focus  {
+      .listing__title,
+      .listing__title a,
+      a {
+        color: #fff;
+        text-decoration: underline;
+      }
+    }
+
+    .listing__item__wrapper,
+    .node {
+      padding: 1.111em;
+      background-color: $brand-primary;
+    }
 
     .listing__title,
+    .listing__title a,
     a {
-      color: $white;
+      color: #fff;
     }
 
     &:first-child {
@@ -370,7 +334,7 @@ Style guide listing.6
     padding: (12/16)+em 0 (24/16)+em 0; // 12px 0 24px 0
     line-height: 1.2728em;
     font-size: (16/15)+em; // 16px
-    color: $navigation-title-color;
+    color: $brand-primary;
   }
 
   .listing__description {
@@ -415,7 +379,7 @@ Style guide listing.6
 
     // Only listing__section-title.
     .listing__section-title {
-      font-size: (22/18)+em; // 22px
+      font-size: $font-size-mid;
     }
 
     // Only listing__item-link.
@@ -435,10 +399,6 @@ Style guide listing.6
   }
 }
 
-a.listing__title {
-  color: $brand-primary;
-}
-
 // .listing__date element.
 .listing__date {
   float: left;
@@ -456,8 +416,6 @@ a.listing__title {
 
 // .listing__wrapper element.
 .listing__wrapper {
-  @include clearfix();
-
   margin-bottom: 1.667em;
 
   .listing {
@@ -468,65 +426,75 @@ a.listing__title {
 // .listing__item element.
 .listing__item {
   list-style: none;
+  position: relative;
   float: left;
   width: 100%;
   padding: 1.111em 0;
   border-bottom: 1px solid $grey-lighter;
 
+  // .listing__item-link element
+  .listing__item-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+    @include _focus_outline_border(3px, $yellow-light, 2px);
+  }
+
   &:first-child {
     border-top: 1px solid $grey-lighter;
   }
 
-  // @todo: check if we can remove safely position relative that is applied
-  // in this class in the file _mixins.scss line 139, and then this can removed.
-  .listing__title {
+  // @todo: Apply a solution where we don't need to apply anynmore the property
+  // float to the classes .listing__column-main, .listing__column-second, etc.
+  // and this can be removed.
+  .contextual-links-region {
     position: static;
   }
 
   &:hover,
-  &:active,
-  &:focus {
-    a .listing__title,
+  &:focus,
+  &:active {
+    .listing__title a,
     a.listing__title {
+      color: $grey-base;
       text-decoration: underline;
     }
   }
 
   p {
     margin-bottom: 0;
-  }
-
-  > p,
-  .listing__column-main > p,
-  .listing__item-link > p {
     font-size: $font-size-little;
   }
-}
 
-.listing__item-nolink {
-  display: block;
-  float: left;
-  width: 100%;
-  color: $grey-base;
-}
-
-// .listing__item-link element
-.listing__item-link {
-  @extend .listing__item-nolink;
-
-  &:active,
-  &:focus {
-    text-decoration: none;
-
-    .listing__title {
-      color: $grey-base;
-      text-decoration: underline;
-    }
+  a:not(.listing__item-link, .listing__title) {
+    z-index: 2;
   }
 
-  &#{"[" + $external_link_pattern + "]"}:not(.is-internal) {
-    &:not(#{$ec_url_patterns}) {
-      @include _listing_external_link_mixin();
+  a.listing__title {
+    color: $brand-primary;
+  }
+
+  .listing__title {
+    @extend .h3;
+    position: relative;
+    margin-bottom: 0.5em;
+    padding: 0;
+    line-height: 1.3;
+    font-family: $font-family-sans-serif;
+    font-size: $font-size-medium;
+
+    a {
+      color: $brand-primary;
+
+      &#{"[" + $external_link_pattern + "]"}:not(.is-internal) {
+        &:not(#{$ec_url_patterns}) {
+          @include _listing_external_link_mixin();
+        }
+      }
     }
   }
 }
@@ -545,6 +513,13 @@ a.listing__title {
   float: left;
   width: 100%;
   padding-left: 0;
+
+  &::after {
+    content: " ";
+    clear: left;
+    height: 1px;
+    display: block;
+  }
 }
 
 .listing__column-second--no-link {
@@ -591,23 +566,6 @@ a.listing__title {
     .btn {
       margin-top: 1.667em;
     }
-  }
-}
-
-// .listing__title element.
-//  Modifiers: .listing__title--arrow.
-.listing__title {
-  @extend .h3;
-  position: relative;
-  margin-bottom: 0.5em;
-  padding: 0;
-  line-height: 1.3;
-  font-family: $font-family-sans-serif;
-  font-size: 1em;
-
-  a:link &,
-  a:visited & {
-    color: $brand-primary;
   }
 }
 
