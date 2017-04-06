@@ -2947,6 +2947,19 @@ Style guide gallery
     height: auto; } }
 
 /*
+Gallery Overlay
+
+Gallery overlay component.
+
+
+Markup: html/gallery-overlay.html
+
+Style guide: gallery.overlay
+*/
+.gallery-overlay {
+  display: flex; }
+
+/*
 Site header search bar
 
 Markup: html/header-search-bar.html
