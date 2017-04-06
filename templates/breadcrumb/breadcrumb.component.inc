@@ -29,8 +29,7 @@ function europa_preprocess_breadcrumb(&$variables, $hook) {
         ),
       );
     }
-//@TODO check why the option is not passed
-    $item['#options']['attributes']['class'][] = 'breadcrumb__link';
+    $item['link']['#options']['attributes_array']['class'][] = 'breadcrumb__link';
     $item['#attributes']['class'][] = 'breadcrumb__segment';
 
     $breadcrumb_items[] = $item;
