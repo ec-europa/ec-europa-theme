@@ -8,7 +8,7 @@
 /**
  * Implements hook_atomium_theme_HOOK().
  */
-function atomium_europa_atomium_theme_timelines() {
+function europa_atomium_theme_timelines() {
   return array(
     'timelines' => array(
       'variables' => array(
@@ -24,7 +24,7 @@ function atomium_europa_atomium_theme_timelines() {
 /**
  * Implements hook_atomium_definition_HOOK().
  */
-function atomium_europa_atomium_definition_timelines() {
+function europa_atomium_definition_timelines() {
   return array(
     'label' => 'Timelines',
     'description' => 'Timelines.',
