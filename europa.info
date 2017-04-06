@@ -57,33 +57,6 @@ scripts[] = js/components/table-responsive.js
 ; Settings
 ; ========================================
 
-; Region Wells
-; --------------
-settings[bootstrap_region_well-sidebar_first] = ''
-
-; Tooltips
-; --------------
-settings[bootstrap_tooltip_enabled] = 0
-
-; Anchors
-; --------------
-settings[bootstrap_anchors_fix] = 0
-settings[bootstrap_anchors_smooth_scrolling] = 0
-
-; Popover
-; --------------
-settings[bootstrap_popover_enabled] = 1
-
-; Breadcrumbs
-; --------------
-settings[bootstrap_breadcrumb] = 0
-settings[bootstrap_breadcrumb_home] = 1
-settings[bootstrap_breadcrumb_title] = 1
-
-; Advanced
-; --------------
-settings[bootstrap_cdn] = ""
-
 ; Breakpoints
 ; --------------
 breakpoints[wide] = only screen and (min-width: 992px)
