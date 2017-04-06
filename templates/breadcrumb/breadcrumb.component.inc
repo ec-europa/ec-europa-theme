@@ -6,35 +6,6 @@
  */
 
 /**
- * Implements hook_atomium_definition_HOOK().
- */
-function europa_atomium_definition_breadcrumb() {
-  return array(
-    'label' => 'Breadcrumb',
-    'description' => 'Site breadcrumb.',
-    'preview' => array(
-      'breadcrumb' => array(
-        array(
-          '#theme' => array('link'),
-          '#text' => t('Home'),
-          '#href' => '/',
-        ),
-        array(
-          '#theme' => array('link'),
-          '#text' => t('News'),
-          '#href' => '/',
-        ),
-        array(
-          '#theme' => array('link'),
-          '#text' => t('My news title'),
-          '#href' => '/',
-        ),
-      ),
-    ),
-  );
-}
-
-/**
  * Implements hook_preprocess_HOOK().
  */
 function europa_preprocess_breadcrumb(&$variables, $hook) {
