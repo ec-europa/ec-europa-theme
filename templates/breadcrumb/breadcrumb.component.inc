@@ -10,8 +10,7 @@
  */
 function europa_preprocess_breadcrumb(&$variables, $hook) {
   if (empty($variables[$hook])) {
-   //@TODO why did we add this ?
-   // return;
+   return;
   }
 
   $variables['attributes_array']['class'][] = 'breadcrumb__segments-wrapper';
