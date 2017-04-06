@@ -45,11 +45,11 @@
  * @ingroup themeable
  */
 ?>
-<div class="social-media-links--field field <?php print $classes; ?>"<?php print $attributes; ?>>
+<div class="social-media-links--field field <?php print render($classes); ?>"<?php print $attributes; ?>>
   <?php if (!$label_hidden): ?>
-    <div class="field__label"<?php print $title_attributes; ?>><?php print $label; ?></div>
+    <div class="field__label"<?php print render($title_attributes); ?>><?php print $label; ?></div>
   <?php endif; ?>
-  <ul class="field__items social-media-links__list social-media-links__horizontal"<?php print $content_attributes; ?>>
+  <ul class="field__items social-media-links__list social-media-links__horizontal"<?php print render($content_attributes); ?>>
     <?php foreach ($items as $delta => $item): ?>
       <li class="social-media-links__item icon-social--smaller" <?php print $item_attributes[$delta]; ?>><?php print render($item); ?></li>
     <?php endforeach; ?>
