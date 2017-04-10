@@ -602,7 +602,8 @@ a.label:hover, a.label:focus {
     padding-bottom: 75%; }
 
 .icon--after, .btn.btn-ctn::after, .inpage-nav__navbar .btn-ctn.inpage-nav__toggle::after, .btn.btn-time-line::after, .inpage-nav__navbar .btn-time-line.inpage-nav__toggle::after, .btn.btn-menu::after, .inpage-nav__navbar .btn-menu.inpage-nav__toggle::after, .is-external::after, a[href^="http"]:not([href*="ec.europa.eu"]):not(.is-internal)::after, .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .listing__title::after,
-.listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .highlighted-item h3::after, .breadcrumb__link-arrow, a.breadcrumb__link::after, .no-js .breadcrumb__segment--first::before, .breadcrumb--collapsible .breadcrumb__btn-separator::after, .file__btn::after, .file__translations .file__translations-control::after, .lang-select-page--transparent select.lang-select-page__list::after, .listing__title--arrow::after, .listing--cta .listing__title::after, .site-menu .field--field-site-menu-links .listing__item .listing__title::after, .listing__read-more::after, .notification__content .notification__btn::after, .facet-tag--close .facet-tag__value::after, .facet-tag--close .facet-tag__value:hover::after {
+.listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .highlighted-item h3::after, .breadcrumb__link-arrow, a.breadcrumb__link::after, .no-js .breadcrumb__segment--first::before, .breadcrumb--collapsible .breadcrumb__btn-separator::after, .file__btn::after, .file__translations .file__translations-control::after, .gallery-overlay__main .gallery-overlay__media-previous a::before,
+.gallery-overlay__main .gallery-overlay__media-next a::before, .gallery-overlay__close a::after, .gallery-overlay__download a::after, .gallery-overlay__share::after, .lang-select-page--transparent select.lang-select-page__list::after, .listing__title--arrow::after, .listing--cta .listing__title::after, .site-menu .field--field-site-menu-links .listing__item .listing__title::after, .listing__read-more::after, .notification__content .notification__btn::after, .facet-tag--close .facet-tag__value::after, .facet-tag--close .facet-tag__value:hover::after {
   display: inline-block;
   margin-left: 4px;
   line-height: 1;
@@ -616,6 +617,9 @@ a.label:hover, a.label:focus {
   text-decoration: none;
   speak: none; }
 
+/**
+ * Show icons only, hide copy.
+ */
 @media print {
   .hidden-print, .btn, .inpage-nav__navbar .inpage-nav__toggle, .breadcrumb, .ui-datepicker .ui-datepicker-header .ui-datepicker-title select, .feedback-form__wrapper, .file, .footer__top,
   .footer__bottom, .help-block, .inpage-nav__wrapper, .lang-select-site, .lang-select-page, .icon.lang-select-page__icon, .date-picker .lang-select-page__icon.date-picker--icon, .lang-select-page__icon.search-form__btn, select.lang-select-page__list, .feedback-message, .notification, .site-switcher, .search-form, .site-menu, .site-menu__toggle, .skip-link,
@@ -1076,6 +1080,7 @@ Markup: html/icon.html
 .icon--in - In icon
 .icon--presentation - Presentation icon
 .icon--info - Info icon
+.icon--share - Share icon
 
 Style guide: icon
 */
@@ -1215,13 +1220,13 @@ Style guide: icon
 .icon--language, .icon--language::before {
   content: '\e824'; }
 
-.icon--left, .icon--left::before {
+.icon--left, .icon--left::before, .gallery-overlay__main .gallery-overlay__media-previous a::before {
   content: '\e826'; }
 
 .icon--up, .icon--up::before {
   content: '\e827'; }
 
-.icon--right, .btn.btn-ctn::after, .inpage-nav__navbar .btn-ctn.inpage-nav__toggle::after, .btn.btn-time-line::after, .inpage-nav__navbar .btn-time-line.inpage-nav__toggle::after, .icon--right::before, .listing__title--arrow::after, .listing--cta .listing__title::after, .site-menu .field--field-site-menu-links .listing__item .listing__title::after, .listing__read-more::after, .notification__content .notification__btn::after {
+.icon--right, .btn.btn-ctn::after, .inpage-nav__navbar .btn-ctn.inpage-nav__toggle::after, .btn.btn-time-line::after, .inpage-nav__navbar .btn-time-line.inpage-nav__toggle::after, .icon--right::before, .gallery-overlay__main .gallery-overlay__media-next a::before, .listing__title--arrow::after, .listing--cta .listing__title::after, .site-menu .field--field-site-menu-links .listing__item .listing__title::after, .listing__read-more::after, .notification__content .notification__btn::after {
   content: '\e828'; }
 
 .icon--global, .icon--global::before {
@@ -1233,7 +1238,7 @@ Style guide: icon
 .icon--regulation, .icon--regulation::before {
   content: '\e82b'; }
 
-.icon--close, .icon--close::before {
+.icon--close, .icon--close::before, .gallery-overlay__close a::after {
   content: '\e82c'; }
 
 .icon--close-dark, .icon--close-dark::before {
@@ -1248,7 +1253,7 @@ Style guide: icon
 .icon--breadcrumb, .icon--breadcrumb::before, .breadcrumb__link-arrow::before, .no-js .breadcrumb__segment--first::before {
   content: '\e828'; }
 
-.icon--download, .icon--download::before, .file__btn::after {
+.icon--download, .icon--download::before, .file__btn::after, .gallery-overlay__download a::after {
   content: '\e806'; }
 
 .icon--tag-close, .icon--tag-close::before, .facet-tag--close .facet-tag__value::after {
@@ -1258,10 +1263,13 @@ Style guide: icon
   content: '\e82e'; }
 
 .icon--camera, .icon--camera::before {
-  content: '\e900'; }
+  content: '\e800'; }
 
 .icon--slides, .icon--slides::before {
   content: '\e80e'; }
+
+.icon--share, .icon--share::before, .gallery-overlay__share::after {
+  content: '\e808'; }
 
 .icon--blue-dark, .file__translations .file__translations-control::after {
   color: #004494; }
@@ -2957,7 +2965,142 @@ Markup: html/gallery-overlay.html
 Style guide: gallery.overlay
 */
 .gallery-overlay {
-  display: flex; }
+  max-width: 1400px;
+  background-color: #000;
+  color: #fff;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column; }
+  .gallery-overlay a {
+    color: #fff; }
+  @media (min-width: 1200px) {
+    .gallery-overlay {
+      flex-direction: row; } }
+
+.gallery-overlay__main {
+  flex: 4;
+  position: relative;
+  max-width: 960px;
+  max-height: 800px; }
+  .gallery-overlay__main .gallery-overlay__media-previous,
+  .gallery-overlay__main .gallery-overlay__media-next {
+    position: absolute;
+    top: calc(50% - 1.8em);
+    padding: 0 6px; }
+    .gallery-overlay__main .gallery-overlay__media-previous a,
+    .gallery-overlay__main .gallery-overlay__media-next a {
+      font-size: 1.4em;
+      display: inline-block;
+      visibility: hidden;
+      width: 1.2em; }
+      .gallery-overlay__main .gallery-overlay__media-previous a:before, .gallery-overlay__main .gallery-overlay__media-previous a:after,
+      .gallery-overlay__main .gallery-overlay__media-next a:before,
+      .gallery-overlay__main .gallery-overlay__media-next a:after {
+        visibility: visible; }
+      html.lte8 .gallery-overlay__main .gallery-overlay__media-previous a, html.lte8
+      .gallery-overlay__main .gallery-overlay__media-next a {
+        visibility: visible;
+        text-indent: -999em;
+        overflow: hidden;
+        float: left; }
+        html.lte8 .gallery-overlay__main .gallery-overlay__media-previous a:before, html.lte8 .gallery-overlay__main .gallery-overlay__media-previous a:after, html.lte8
+        .gallery-overlay__main .gallery-overlay__media-next a:before, html.lte8
+        .gallery-overlay__main .gallery-overlay__media-next a:after {
+          text-indent: 0;
+          position: absolute;
+          overflow: hidden;
+          margin-left: 999em; }
+      .gallery-overlay__main .gallery-overlay__media-previous a:hover,
+      .gallery-overlay__main .gallery-overlay__media-next a:hover {
+        color: #b3b4b5; }
+    @media (min-width: 480px) {
+      .gallery-overlay__main .gallery-overlay__media-previous,
+      .gallery-overlay__main .gallery-overlay__media-next {
+        padding: 0; }
+        .gallery-overlay__main .gallery-overlay__media-previous a,
+        .gallery-overlay__main .gallery-overlay__media-next a {
+          font-size: 2.2em; } }
+  .gallery-overlay__main .gallery-overlay__media-next {
+    right: 0; }
+
+.gallery-overlay__media {
+  margin: 0 auto;
+  padding: 0 40px;
+  height: 100%; }
+  .gallery-overlay__media .gallery-overlay__media-wrapper--center {
+    height: 100%;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden; }
+  .gallery-overlay__media ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+    max-width: none; }
+  .gallery-overlay__media .gallery-overlay__media-item {
+    display: none; }
+    .gallery-overlay__media .gallery-overlay__media-item > * {
+      display: block;
+      margin: 0 auto;
+      max-height: 325px; }
+    .gallery-overlay__media .gallery-overlay__media-item.active {
+      display: block; }
+  @media (min-width: 1200px) {
+    .gallery-overlay__media {
+      padding: 60px; }
+      .gallery-overlay__media .gallery-overlay__media-item {
+        display: none; }
+        .gallery-overlay__media .gallery-overlay__media-item > * {
+          max-height: 800px; } }
+
+.gallery-overlay__sidebar {
+  -webkit-flex: 1;
+  flex: 1;
+  background-color: #404040;
+  padding: 10px;
+  font-size: 0.833em; }
+  @media (min-width: 480px) {
+    .gallery-overlay__sidebar {
+      padding: 30px; } }
+  @media (min-width: 1200px) {
+    .gallery-overlay__sidebar {
+      padding: 50px; } }
+
+.gallery-overlay__close {
+  background-color: #404040;
+  text-align: right;
+  padding: 8px;
+  font-size: 0.833em; }
+  .gallery-overlay__close a {
+    text-decoration: none; }
+  @media (min-width: 1200px) {
+    .gallery-overlay__close {
+      position: absolute;
+      z-index: 1;
+      top: 20px;
+      right: 30px;
+      padding: 0;
+      background: none; } }
+
+.gallery-overlay__count {
+  font-weight: 600; }
+
+.gallery-overlay__meta {
+  margin-bottom: 2em; }
+  .gallery-overlay__meta > span {
+    padding-right: 15px; }
+    .gallery-overlay__meta > span:last-child {
+      padding-right: 0; }
+
+.gallery-overlay__description {
+  font-weight: 600; }
+  .gallery-overlay__description p:last-child {
+    margin-bottom: 0; }
+
+.gallery-overlay__copyright {
+  font-size: 0.778em; }
 
 /*
 Site header search bar

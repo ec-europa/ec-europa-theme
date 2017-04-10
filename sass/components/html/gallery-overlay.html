@@ -1,35 +1,47 @@
 <div class="gallery-overlay">
+  <span class="gallery-overlay__close"><a href="#">Close</a></span>
 
   <div class="gallery-overlay__main">
-
     <div class="gallery-overlay__media-previous">
-      <a href="#" class=""><span class="icon icon--left"></span> Previous</a>
+      <a href="#">Previous</a>
     </div>
 
     <div class="gallery-overlay__media">
       <div class="gallery-overlay__media-wrapper--center">
-        <img typeof="foaf:Image" class="img-responsive" src="http://lorempixel.com/840/600/business" alt="">
+        <ul>
+          <li class="gallery-overlay__media-item">
+            <img typeof="foaf:Image" class="img-responsive" src="http://lorempixel.com/840/600/business" alt="">
+          </li>
+          <li class="gallery-overlay__media-item">
+            <iframe src="/avservices/audio/play.cfm?sitelang=en&amp;ref=I136480&amp;starttime=0&amp;endtime=0&amp;videolang=EN" scrolling="no" id="videoplayerI136480" width="670" height="200" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+          </li>
+          <li class="gallery-overlay__media-item">
+            <iframe src="http://ec.europa.eu/avservices/play.cfm?sitelang=en&amp;ref=I131927&amp;starttime=0&amp;endtime=0&amp;autoStart=false&amp;videolang=INT" scrolling="no" id="videoplayerI131927" width="670" height="378" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+          </li>
+          <li class="gallery-overlay__media-item active">
+            <img typeof="foaf:Image" class="img-responsive" src="http://lorempixel.com/840/1200/business" alt="">
+          </li>
+        </ul>
       </div>
     </div>
 
     <div class="gallery-overlay__media-next">
-      <a href="#" class="">Next <span class="icon icon--right"></span></a>
+      <a href="#">Next</a>
     </div>
-
   </div>
 
   <div class="gallery-overlay__sidebar">
-    <span class="gallery-overlay__close"> <span class="icon icon--close"></span> Close</span>
     <div class="gallery-overlay__meta">
       <span class="gallery-overlay__count">2/15</span>
-      <span class="gallery-overlay__download"><a href="#" class="">Download <span class="icon icon--download"></span></a></span>
-      <span class="gallery-overlay__share icon-social"><a href="#" class="">Share <span class="icon icon--share"></span></a></span>
+      <span class="gallery-overlay__download"><a href="#">Download</a></span>
+      <span class="gallery-overlay__share"><a href="#">Share</a></span>
     </div>
 
     <div class="gallery-overlay__description">
-      <p>Media description here...</p>
+      <p>Nulla consequat massa quis enim. Donec pede justo.</p>
+      <p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.</p>
     </div>
-    <div class="gallery-overlay__copyright">&copy; Copyright info</div>
-  </div>
 
+    <div class="gallery-overlay__copyright">&copy; Copyright holder, Author name, License type</div>
+  </div>
 </div>

@@ -4249,6 +4249,9 @@ button.close {
   text-decoration: none;
   speak: none; }
 
+/**
+ * Show icons only, hide copy.
+ */
 @media print {
   .hidden-print, .btn-group, .form-control, .form-group, ul.nav-tabs,
   .nav-tabs, .utility {
