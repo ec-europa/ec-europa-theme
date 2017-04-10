@@ -603,7 +603,7 @@ a.label:hover, a.label:focus {
 
 .icon--after, .btn.btn-ctn::after, .inpage-nav__navbar .btn-ctn.inpage-nav__toggle::after, .btn.btn-time-line::after, .inpage-nav__navbar .btn-time-line.inpage-nav__toggle::after, .btn.btn-menu::after, .inpage-nav__navbar .btn-menu.inpage-nav__toggle::after, .is-external::after, a[href^="http"]:not([href*="ec.europa.eu"]):not(.is-internal)::after, .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .listing__title::after,
 .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .highlighted-item h3::after, .breadcrumb__link-arrow, a.breadcrumb__link::after, .no-js .breadcrumb__segment--first::before, .breadcrumb--collapsible .breadcrumb__btn-separator::after, .file__btn::after, .file__translations .file__translations-control::after, .gallery-overlay__main .gallery-overlay__media-previous a::before,
-.gallery-overlay__main .gallery-overlay__media-next a::before, .gallery-overlay__close a::after, .gallery-overlay__download a::after, .gallery-overlay__share::after, .lang-select-page--transparent select.lang-select-page__list::after, .listing__title--arrow::after, .listing--cta .listing__title::after, .site-menu .field--field-site-menu-links .listing__item .listing__title::after, .listing__read-more::after, .notification__content .notification__btn::after, .facet-tag--close .facet-tag__value::after, .facet-tag--close .facet-tag__value:hover::after {
+.gallery-overlay__main .gallery-overlay__media-next a::before, .gallery-overlay__close a::after, .gallery-overlay__meta .gallery-overlay__download a::after, .gallery-overlay__meta .gallery-overlay__share::after, .lang-select-page--transparent select.lang-select-page__list::after, .listing__title--arrow::after, .listing--cta .listing__title::after, .site-menu .field--field-site-menu-links .listing__item .listing__title::after, .listing__read-more::after, .notification__content .notification__btn::after, .facet-tag--close .facet-tag__value::after, .facet-tag--close .facet-tag__value:hover::after {
   display: inline-block;
   margin-left: 4px;
   line-height: 1;
@@ -1253,7 +1253,7 @@ Style guide: icon
 .icon--breadcrumb, .icon--breadcrumb::before, .breadcrumb__link-arrow::before, .no-js .breadcrumb__segment--first::before {
   content: '\e828'; }
 
-.icon--download, .icon--download::before, .file__btn::after, .gallery-overlay__download a::after {
+.icon--download, .icon--download::before, .file__btn::after, .gallery-overlay__meta .gallery-overlay__download a::after {
   content: '\e806'; }
 
 .icon--tag-close, .icon--tag-close::before, .facet-tag--close .facet-tag__value::after {
@@ -1268,7 +1268,7 @@ Style guide: icon
 .icon--slides, .icon--slides::before {
   content: '\e80e'; }
 
-.icon--share, .icon--share::before, .gallery-overlay__share::after {
+.icon--share, .icon--share::before, .gallery-overlay__meta .gallery-overlay__share::after {
   content: '\e808'; }
 
 .icon--blue-dark, .file__translations .file__translations-control::after {
@@ -2959,7 +2959,6 @@ Gallery Overlay
 
 Gallery overlay component.
 
-
 Markup: html/gallery-overlay.html
 
 Style guide: gallery.overlay
@@ -3084,23 +3083,20 @@ Style guide: gallery.overlay
       padding: 0;
       background: none; } }
 
-.gallery-overlay__count {
-  font-weight: 600; }
-
 .gallery-overlay__meta {
   margin-bottom: 2em; }
   .gallery-overlay__meta > span {
     padding-right: 15px; }
     .gallery-overlay__meta > span:last-child {
       padding-right: 0; }
-
-.gallery-overlay__description {
-  font-weight: 600; }
-  .gallery-overlay__description p:last-child {
-    margin-bottom: 0; }
-
-.gallery-overlay__copyright {
-  font-size: 0.778em; }
+  .gallery-overlay__meta .gallery-overlay__count {
+    font-weight: 600; }
+  .gallery-overlay__meta .gallery-overlay__description {
+    font-weight: 600; }
+    .gallery-overlay__meta .gallery-overlay__description p:last-child {
+      margin-bottom: 0; }
+  .gallery-overlay__meta .gallery-overlay__copyright {
+    font-size: 0.778em; }
 
 /*
 Site header search bar
