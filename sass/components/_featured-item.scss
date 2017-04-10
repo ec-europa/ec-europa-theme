@@ -22,6 +22,10 @@ Style guide featured-item.1
   .listing__wrapper--three-columns & {
     padding-top: 15px;
   }
+
+  .section--row-three & {
+    padding-top: 0;
+  }
 }
 
 /*
@@ -66,9 +70,10 @@ Style guide featured-item.2
   }
 }
 
-.featured-item__image,
-.featured-item__content {
-  .listing__wrapper--three-columns & {
+.listing__wrapper--three-columns,
+.section--row-three {
+  .featured-item__image,
+  .featured-item__content {
     @extend .col-md-12;
     clear: left;
   }
