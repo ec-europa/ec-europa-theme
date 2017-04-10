@@ -8,6 +8,16 @@
 /**
  * Implements hook_preprocess_HOOK().
  */
+function europa_menu_tree__user_menu(&$variables) {
+  $tree = $variables['tree'];
+  global $user;
+  $logged_in_user = t('Logged in as %username', array('%username' => format_username($user)));
+  return '<ul class="site-user-menu__list">' . $logged_in_user . $tree . '</ul>';
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
 function europa_menu_tree__menu_nexteuropa_service_links(&$variables) {
   return _europa_menu_tree_footer($variables['tree'], TRUE);
 }
