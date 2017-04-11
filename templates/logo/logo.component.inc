@@ -12,7 +12,9 @@ function europa_atomium_theme_logo() {
   return array(
     'logo' => array(
       'template' => 'logo',
-      'variables' => array(),
+      'variables' => array(
+        'page_logo_title' => t('Home'),
+      ),
     ),
   );
 }
