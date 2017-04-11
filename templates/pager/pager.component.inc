@@ -27,6 +27,9 @@ function europa_atomium_definition_pager() {
  * Implements hook_preprocess_HOOK().
  */
 function europa_preprocess_pager(&$variables, $hook) {
+  if (empty($variables[$hook])) {
+    return;
+  }
   foreach ($variables['pager']['pager']['#items'] as $key => &$item) {
     $item['#attributes']['class'][] = 'pager__item';
 
