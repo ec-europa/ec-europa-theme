@@ -14,6 +14,7 @@ function europa_atomium_theme_site_header() {
       'template' => 'site_header',
       'variables' => array(
         'dummy' => t('Home'),
+        'logo' => NULL,
       ),
     ),
   );
@@ -27,5 +28,14 @@ function europa_atomium_definition_site_header() {
     'label' => 'Site Header',
     'description' => 'Site header.',
     'preview' => array(),
+  );
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function europa_preprocess_site_header(&$variables, $hook) {
+  $variables['logo'] = array(
+    '#theme' => array('logo'),
   );
 }
