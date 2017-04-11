@@ -94,7 +94,7 @@
   </div>
 </section>
 <?php endif; ?>
-
+<?php print render($site_header); ?>
 <header class="site-header" role="banner">
   <div class="container-fluid">
     <?php print render($logo); ?>

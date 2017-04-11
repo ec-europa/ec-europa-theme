@@ -78,6 +78,6 @@ function europa_preprocess_page(&$variables, $hook) {
       }
     }
   }
-  $variables['logo'] = array('#theme' => array('logo'));
+  $variables['site_header'] = array('#theme' => array('site_header'));
   $variables['messages'] = $variables['show_messages'] ? array('#theme' => array('status_messages')) : '';
 }
