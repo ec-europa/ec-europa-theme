@@ -45,10 +45,10 @@
  */
 ?><!DOCTYPE html>
 <!--[if IE 8 ]>
-  <html class="no-js ie8" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>"<?php print $rdf_namespaces;?>>
+  <html class="no-js ie8" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>" prefix="<?php print $rdf_namespaces;?>">
 <![endif]-->
 <!--[if (gt IE 8)|!(IE)]><!-->
-  <html class="no-js" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>"<?php print render($rdf_namespaces);?>>
+  <html class="no-js" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>" prefix="<?php print $rdf_namespaces;?>">
 <!--<![endif]-->
 <head profile="<?php print $grddl_profile; ?>">
   <meta charset="utf-8">
