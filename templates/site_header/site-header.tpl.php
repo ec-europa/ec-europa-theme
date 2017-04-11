@@ -8,17 +8,9 @@
 <header class="site-header site-header--homepage" role="banner">
     <div class="container-fluid site-header__container">
         <section class="top-bar" aria-label="Site tools">
-            <div class="top-bar__wrapper">
-                <div class="lang-select-site clearfix">
-                    <a href="#" class="lang-select-site__link">
-                        <span class="lang-select-site__label">English</span>
-                        <span class="lang-select-site__code">
-      <span class="icon icon--language lang-select-site__icon"></span>
-                        <span class="lang-select-site__code-text">en</span>
-                        </span>
-                    </a>
-                </div>
-            </div>
+          <div class="top-bar__wrapper">
+            <?php print render($lang_select_site); ?>                
+          </div>
         </section>
         <?php print render($logo); ?>
     </div>
