@@ -32,7 +32,7 @@ regions[footer_bottom] = Footer bottom
 ; ========================================
 stylesheets[all][] = assets/css/style-sass-base.css
 stylesheets[all][] = assets/css/style-sass-components.css
-
+stylesheets[all][] = assets/css/europa.css
 ; ========================================
 ; Scripts
 ; ========================================
