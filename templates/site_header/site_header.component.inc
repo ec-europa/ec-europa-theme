@@ -11,9 +11,8 @@
 function europa_atomium_theme_site_header() {
   return array(
     'site_header' => array(
-      'template' => 'site_header',
+      'template' => 'site-header',
       'variables' => array(
-        'dummy' => t('Home'),
         'logo' => NULL,
       ),
     ),
