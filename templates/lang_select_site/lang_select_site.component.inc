@@ -13,7 +13,9 @@ function europa_atomium_theme_lang_select_site() {
     'lang_select_site' => array(
       'template' => 'lang-select-site',
       'variables' => array(
-        'lang' => NULL,
+        'url' => NULL,
+        'code' => NULL,
+        'label' => NULL,
       ),
     ),
   );
@@ -28,7 +30,7 @@ function europa_atomium_definition_lang_select_site() {
     'label' => 'Site language selector',
     'description' => 'Site language selector.',
     'preview' => array(
-      'link' => '#',
+      'url' => '#',
       'code' => isset($language->prefix) ? $language->prefix : $language->language,
       'label' => $language->native,
     ),
