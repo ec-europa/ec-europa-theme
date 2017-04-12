@@ -23,10 +23,15 @@ function europa_atomium_theme_lang_select_site() {
  * Implements hook_atomium_definition_HOOK().
  */
 function europa_atomium_definition_lang_select_site() {
+  global $language;
   return array(
     'label' => 'Site language selector',
     'description' => 'Site language selector.',
-    'preview' => array(),
+    'preview' => array(
+      'link' => '#',
+      'code' => isset($language->prefix) ? $language->prefix : $language->language,
+      'label' => $language->native,
+    ),
   );
 }
 
@@ -34,5 +39,14 @@ function europa_atomium_definition_lang_select_site() {
  * Implements hook_preprocess_HOOK().
  */
 function europa_preprocess_lang_select_site(&$variables, $hook) {
-  $variables['lang'] = 'fr';
+  $lang_select = module_invoke('language_selector_site', 'block_view', 'language_selector_site');
+  $variables['code'] = $lang_select['content']['code'];
+  $variables['label'] = $lang_select['content']['label'];
+  $options = array(
+    'html' => TRUE,
+    'query' => array(
+      drupal_get_destination(),
+    ),
+  );
+  $variables['url'] = url('language-selector/site-language', $options);
 }
