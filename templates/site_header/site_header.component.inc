@@ -13,8 +13,12 @@ function europa_atomium_theme_site_header() {
     'site_header' => array(
       'template' => 'site-header',
       'variables' => array(
-        'logo' => NULL,
-        'lang_select_site' => NULL,
+        'logo' => array(
+          '#theme' => array('logo'),
+        ),
+        'lang_select_site' => array(
+          '#theme' => array('lang_select_site'),
+        ),
       ),
     ),
   );
@@ -35,10 +39,5 @@ function europa_atomium_definition_site_header() {
  * Implements hook_preprocess_HOOK().
  */
 function europa_preprocess_site_header(&$variables, $hook) {
-  $variables['logo'] = array(
-    '#theme' => array('logo'),
-  );
-  $variables['lang_select_site'] = array(
-    '#theme' => array('lang_select_site'),
-  );
+  // Todo: This preprocess could be removed.
 }
