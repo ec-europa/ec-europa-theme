@@ -6,6 +6,7 @@
  */
 
 atomium_include('atomium', 'includes/alter');
+atomium_include('europa', 'includes/alter');
 
 /**
  * Implements hook_form_BASE_FORM_ID_alter().

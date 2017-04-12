@@ -19,6 +19,9 @@ function europa_atomium_theme_site_header() {
         'lang_select_site' => array(
           '#theme' => array('lang_select_site'),
         ),
+        'search_bar' => array(
+          '#theme' => array('search_bar'),
+        ),
       ),
     ),
   );
