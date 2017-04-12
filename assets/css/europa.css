@@ -6399,34 +6399,6 @@ Style guide datepicker
   #ui-datepicker-div {
     left: 0 !important; } }
 
-/*
-Expandable
-*/
-.expandable__content {
-  float: left;
-  width: 100%;
-  background-color: #f2f2f2; }
-  .expandable__content > p {
-    margin: 0.8em 0.8em 0.8em 3.2em;
-    font-size: 0.875rem; }
-
-.expandable__toggle {
-  float: left;
-  width: 100%;
-  background: #ffd617; }
-  .expandable__toggle.collapsed {
-    background: none; }
-  .expandable__toggle .ecl-icon {
-    margin-right: 0.833em; }
-  .expandable__toggle h3 {
-    font-size: 1.25rem; }
-  .expandable__toggle:link {
-    text-decoration: none; }
-  .expandable__toggle:hover, .expandable__toggle:focus {
-    background: #ffd617;
-    outline: none;
-    text-decoration: underline; }
-
 /**
  * Featured items
  */
