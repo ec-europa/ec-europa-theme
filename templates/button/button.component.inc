@@ -10,12 +10,12 @@
  */
 function europa_atomium_definition_button() {
   return array(
-    'label' => 'Button',
-    'description' => 'Button template.',
+    'label' => 'Buttons',
+    'description' => 'Button templates. These can be formatted in UI. Check nexteuropa_formatters feature for more details.',
     'preview' => array(
       array(
         'type' => 'submit',
-        'value' => 'Default',
+        'value' => 'Button default',
         'attributes' => array(
           'class' => array(
             'btn-default',
@@ -24,7 +24,7 @@ function europa_atomium_definition_button() {
       ),
       array(
         'type' => 'submit',
-        'value' => 'Primary',
+        'value' => 'Button primary',
         'attributes' => array(
           'class' => array(
             'btn-primary',
@@ -33,7 +33,7 @@ function europa_atomium_definition_button() {
       ),
       array(
         'type' => 'submit',
-        'value' => 'Secondary',
+        'value' => 'Button secondary',
         'attributes' => array(
           'class' => array(
             'btn-secondary',
@@ -42,7 +42,7 @@ function europa_atomium_definition_button() {
       ),
       array(
         'type' => 'submit',
-        'value' => 'Button with contour',
+        'value' => 'Button call to action',
         'attributes' => array(
           'class' => array(
             'btn-ctn',
@@ -51,7 +51,7 @@ function europa_atomium_definition_button() {
       ),
       array(
         'type' => 'submit',
-        'value' => 'Button with border',
+        'value' => 'Button call to action with border',
         'attributes' => array(
           'class' => array(
             'btn-ctn--border',
@@ -60,7 +60,7 @@ function europa_atomium_definition_button() {
       ),
       array(
         'type' => 'submit',
-        'value' => 'Button for menus',
+        'value' => 'Button menu',
         'attributes' => array(
           'class' => array(
             'btn-menu',
