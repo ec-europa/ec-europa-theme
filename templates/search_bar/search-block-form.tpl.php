@@ -32,7 +32,6 @@
 <div class="input-group">
   <label class="search-form__textfield-wrapper">
     <?php print $search['search_block_form']; ?>
-    </span>
   </label>
   <span class="search-form__button-wrapper input-group-btn">
     <?php print $search['actions']; ?>

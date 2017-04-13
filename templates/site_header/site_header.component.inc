@@ -45,7 +45,11 @@ function europa_atomium_definition_site_header() {
  */
 function europa_preprocess_site_header(&$variables, $hook) {
   if (drupal_is_front_page() && !empty(variable_get('site_slogan'))) {
-    $variables['site_slogan'] = '<p>' . variable_get('site_slogan') . '</p>';
+    $variables['site_slogan'] = array(
+      '#type' => 'html_tag',
+      '#tag' => 'p',
+      '#value' => variable_get('site_slogan'),
+    );
   }
   $variables['site_name'] = variable_get('site_name', '');
 }
