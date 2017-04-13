@@ -95,7 +95,10 @@
 </section>
 <?php endif; ?>
 
-<?php print render($site_header); ?>
+<header class="site-header" role="banner">
+ <?php print render($site_header); ?>
+ <?php print render($page['header']); ?>
+</header>
 
 <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
   <section id="navbar" role="banner" class="<?php print render($navbar_classes); ?>">

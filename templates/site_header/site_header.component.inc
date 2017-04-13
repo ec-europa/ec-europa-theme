@@ -23,6 +23,7 @@ function europa_atomium_theme_site_header() {
           '#theme' => array('search_bar'),
         ),
         'site_slogan' => NULL,
+        'site_name' => NULL,
       ),
     ),
   );
@@ -46,5 +47,5 @@ function europa_preprocess_site_header(&$variables, $hook) {
   if (drupal_is_front_page() && !empty(variable_get('site_slogan'))) {
     $variables['site_slogan'] = '<p>' . variable_get('site_slogan') . '</p>';
   }
-
+  $variables['site_name'] = variable_get('site_name', '');
 }
