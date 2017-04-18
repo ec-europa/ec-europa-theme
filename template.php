@@ -18,13 +18,6 @@ function europa_date_popup_process_alter(&$element, &$form_state, $context) {
 }
 
 /**
- * Implements hook_bootstrap_colorize_text_alter().
- */
-function europa_bootstrap_colorize_text_alter(&$texts) {
-  $texts['contains'][t('Save')] = 'primary';
-}
-
-/**
  * Override theme_file_link().
  */
 function europa_file_link($variables) {
@@ -41,17 +34,6 @@ function europa_file_link($variables) {
   }
   else {
     return theme_file_link($variables);
-  }
-}
-
-/**
- * Implements hook_preprocess_views_view().
- */
-function europa_preprocess_views_view(&$variables) {
-  // Checking if exposed filters are set and add variable that stores active
-  // filters.
-  if (module_exists('dt_exposed_filter_data')) {
-    $variables['active_filters'] = _dt_exposed_filter_data_get_exposed_filter_output();
   }
 }
 
