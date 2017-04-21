@@ -11,7 +11,10 @@
 function europa_menu_tree__user_menu(&$variables) {
   $tree = $variables['tree'];
   global $user;
-  $logged_in_user = t('Logged in as %username', array('%username' => format_username($user)));
+  $logged_in_user = '';
+  if ($user->uid > 0) {
+    $logged_in_user = t('Logged in as %username', array('%username' => format_username($user)));
+  }
   return '<ul class="site-user-menu__list">' . $logged_in_user . $tree . '</ul>';
 }
 
