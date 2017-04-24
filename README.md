@@ -2,12 +2,12 @@
 Repository containing the drupal theme for the NextEuropa platform.
 
 The Ec-Europa theme is a Drupal 7 theme, the one currently used by the info website (ec.europa.eu/info).
-This theme is responsive (3 different breakpoints), it uses B.E.M naming convention, in integrates a procedure to generate a styleguide and it is based on a component driven design. 
+This theme is responsive (3 different breakpoints), it uses B.E.M naming convention, in integrates a procedure to generate a styleguide and it is based on a component driven design.
 
 ### 1. Installation
 
 Place the content of this repository into a folder in sites/all/themes and enable the theme going to admin/appearance.
-Install the needed libraries by running the included drush make file (drush make --no-core europa.make) 
+Install the needed libraries by running the included drush make file (drush make --no-core europa.make)
 The Ec-Europa-theme uses bootstrap as the base theme, so you need to have also this theme, you can get it here: https://www.drupal.org/project/bootstrap
 
 
@@ -24,3 +24,45 @@ There is a phing task named gen-styleguide which can be used to facilitate the s
 ./bin/phing gen-styleguide
 The generated files are excluded in .gitignore, so you should never notice them doing a git diff, in any case do not add those files to the repository, please.
 
+### Working with the styleguide in standalone mode
+
+You can also develop on the style guide independently from Drupal theme.
+
+- Download dependencies:
+
+```bash
+$ npm i
+
+// Or
+
+$ yarn
+```
+
+- Start development server
+
+```bash
+$ npm start
+
+// Or
+
+$ yarn start
+```
+
+Then open the http://localhost:8080 in your browser.
+
+- Clear development environment
+
+```bash
+$ npm run clean
+```
+
+- Prepare assets for deployment
+```bash
+$ npm run dist
+```
+
+- Deploy to github pages (after running `npm run dist` of course)
+
+```bash
+$ npm run deploy
+```
