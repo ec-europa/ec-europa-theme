@@ -16,8 +16,8 @@ function europa_atomium_theme_banner() {
         'author' => NULL,
       ),
       'template' => 'banner',
-    ),
-  );
+    );
+  ;
 }
 
 /**
@@ -32,16 +32,4 @@ function europa_atomium_definition_banner() {
       'author' => 'President Juncker',
     ),
   );
-}
-
-/**
- * Implements hook_preprocess_HOOK().
- */
-function europa_preprocess_banner(&$variables, $hook) {
-  $view = &$variables['view'];
-  foreach ($variables['options'] as $id => $field) {
-    if (isset($view->field[$field])) {
-      $variables[$id] = $view->style_plugin->get_field($view->row_index, $field);
-    }
-  }
 }
