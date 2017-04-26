@@ -52,4 +52,5 @@ function europa_preprocess_site_header(&$variables, $hook) {
     );
   }
   $variables['site_name'] = variable_get('site_name', '');
+  $variables['menu_str'] = t('Menu');
 }

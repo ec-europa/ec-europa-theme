@@ -14,7 +14,7 @@
         <?php print render($search_bar); ?>
          <h1 class="sr-only"><?php print $site_name; ?></h1>
         <section class="site-menu__toggle">
-          <button class="btn btn-menu">Menu</button>
+          <button class="btn btn-menu"><?php print $menu_str; ?></button>
         </section>
       </div>
     </section>

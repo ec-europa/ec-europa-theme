@@ -24,10 +24,10 @@ function europa_atomium_theme_inpage_nav() {
 /**
  * Implements hook_atomium_definition_HOOK().
  */
-function europa_atomium_definition_banner() {
+function europa_atomium_definition_inpage_nav() {
   return array(
     'label' => 'In page navigation',
-    'description' => 'Banner.',
+    'description' => 'Inpage navigation.',
     'preview' => array(
       'counter' => '3',
       'title' => 'President Juncker',

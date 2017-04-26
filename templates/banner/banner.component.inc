@@ -16,8 +16,8 @@ function europa_atomium_theme_banner() {
         'author' => NULL,
       ),
       'template' => 'banner',
-    );
-  ;
+    ),
+  );
 }
 
 /**

@@ -38,3 +38,10 @@ function europa_preprocess_table(&$variables, $hook) {
   // https://www.drupal.org/node/806982#comment-12035531
   $variables['attributes']['class'][] = 'table-responsive';
 }
+
+/**
+ * Implements hook_preprocess_views_view_table().
+ */
+function europa_preprocess_views_view_table(&$variables) {
+  $variables['classes_array'][] = 'table-responsive';
+}
