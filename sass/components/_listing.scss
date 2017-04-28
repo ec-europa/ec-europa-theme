@@ -35,7 +35,6 @@
 //    .listing--nostripe
 //    .listing--cta
 //    .listing--no-border
-//    .listing--no-padding
 //    .listing--agenda
 //    .listing--column-left
 //    .listing--meta
@@ -172,7 +171,6 @@ In this section we collect many modifiers, in the example the listing--teaser ve
 Markup: html/listing--teaser.html
 
 .listing--cta - Listing CTA
-.listing--no-padding - Listing no padding
 .listing--short-spaced - Listing short spaced
 .listing--line-left - Listing line left
 .listing--no-border - Listing with no border
@@ -280,13 +278,6 @@ Style guide listing.3
   }
 }
 
-// .listing--no-padding modifier.
-//
-// @todo Check if this it still valid.
-.listing--no-padding ul {
-  padding-left: 0 !important;
-}
-
 // .listing--no-border modifier.
 .listing--no-border .listing__item {
   border: none !important;
@@ -331,9 +322,9 @@ Style guide listing.6
 
   // Only listing__section-title.
   .listing__section-title {
-    padding: (12/16)+em 0 (24/16)+em 0; // 12px 0 24px 0
+    padding: 0.75em 0 1.5em 0;
     line-height: 1.2728em;
-    font-size: (16/15)+em; // 16px
+    font-size: $font-size-medium;
     color: $brand-primary;
   }
 
@@ -358,43 +349,23 @@ Style guide listing.6
     max-width: 32em;
     width: 100%;
     // Margin bottom 0.5em of the previous item.
-    margin: (14/15 - 0.5)+em 0 0 0; // 14px
-    padding-top: (14/15 - 0.3)+em; // 14px
+    margin: 0.611em 0 0 0;
+    padding-top: 1.111em;
     border-top: 1px solid $grey-light;
   }
 }
 
 @include breakpoint(screen-xs-min) {
   .listing--navigation {
-    margin-bottom: (90/18)+em; // 90px
-
-    // Top of the block:
-    // - listing__section-title or
-    // - listing__item-link
-
-    // Definition for both of them.
-    .listing__item-link {
-      padding: (20/22)+em 0 (52/22)+em 0; // 20px 0 52px 0
-    }
+    margin-bottom: 5em;
 
     // Only listing__section-title.
     .listing__section-title {
       font-size: $font-size-mid;
     }
 
-    // Only listing__item-link.
-    .listing__item-link {
-      padding: 0;
-    }
-
     .listing__description {
       font-size: $font-size-medium;
-    }
-
-    .listing__separator {
-      // Margin bottom 9px of the previous item.
-      margin-top: (20/18 - 9/18)+em; // 20-9px
-      padding-top: (20/18)+em; // 20px
     }
   }
 }

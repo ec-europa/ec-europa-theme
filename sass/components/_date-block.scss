@@ -71,14 +71,14 @@ Date components
 
 Markup: html/date-block-event.html
 
-.live-streaming - Live-streaming event date block
+.ongoing - Ongoing live-streaming event date block
 .cancelled      - cancelled Event date block
 
 Style guide date-block.event
 */
 
 .date-block.event {
-  &.live-streaming {
+  &.ongoing {
     background-color: $agenda-yellow;
   }
 

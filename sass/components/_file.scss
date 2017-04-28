@@ -20,6 +20,7 @@ Style guide: file.1
 .file {
   @extend .hidden-print;
   @extend .row;
+
   margin: 0 0 0.944em 0;
   padding: 1.333em;
   background-color: $grey-lighter;
@@ -28,6 +29,7 @@ Style guide: file.1
 .file__icon {
   @extend .col-md-1;
   @extend .col-sm-1;
+
   float: left;
   height: 2.556em;
   // We remove on the left (as the image has some whitespace) as it causes
@@ -48,6 +50,7 @@ Style guide: file.1
   @extend .col-md-6;
   @extend .col-sm-6;
   @extend .col-xs-10;
+
   margin-bottom: 0;
   padding-left: 0;
   padding-right: 0;
@@ -55,7 +58,9 @@ Style guide: file.1
 }
 
 .file__title {
-  line-height: initial;
+  display: inline-block;
+  margin: -0.225em 0 0.5em;
+  line-height: 1.225;
   font-weight: bold;
 }
 
@@ -63,28 +68,27 @@ Style guide: file.1
   @include media-caption();
 }
 
-.file__language {
-  display: block;
-  margin-top: 0.556em;
-  line-height: initial;
-  font-size: $font-size-little;
-  font-weight: bold;
-}
-
 .file__info {
-  margin-top: 0.778em;
-  line-height: initial;
+  line-height: 1.225;
   font-size: $font-size-xsmall;
 }
 
 .file__content-language {
+  display: inline-block;
+  margin-bottom: 0.5em;
   font-weight: bold;
+}
+
+.file__properties {
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .file__btn {
   @extend .col-md-4;
   @extend .col-sm-4;
   @extend .col-xs-12;
+
   margin-top: 0.778em;
   margin-bottom: 0;
 
@@ -150,8 +154,10 @@ Style guide: file.2
       @extend .icon--after;
       @extend .icon--down;
       @extend .icon--blue-dark;
+
       position: relative;
       margin-left: 0.525em !important;
+
       @include transition(all 0.3s ease 0s);
     }
 
@@ -193,6 +199,7 @@ Style guide: file.2
     @extend .col-md-6;
     @extend .col-sm-6;
     @extend .col-xs-12;
+
     padding-left: 0;
     padding-right: 0;
   }
@@ -200,6 +207,7 @@ Style guide: file.2
   // "Looking for another language ...".
   .file__translations-details {
     @extend .file__translations-item;
+
     padding-top: 0.5em;
     font-size: $font-size-little;
   }
@@ -221,6 +229,7 @@ Style guide: file.3
     @extend .col-md-10;
     @extend .col-sm-10;
     @extend .col-xs-10;
+
     margin-bottom: 0;
     padding-left: 0;
     padding-right: 0;

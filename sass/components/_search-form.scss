@@ -3,7 +3,7 @@ Search form
 
 Markup: html/search-form.html
 
-Style guide: siteheader.searchform
+Style guide: searchform
 */
 
 .search-form {
@@ -80,5 +80,61 @@ Style guide: siteheader.searchform
 @include breakpoint(screen-xs-min) {
   .search-form__textfield {
     min-height: 2.375em;
+  }
+}
+
+/*
+Search form for internal search
+
+Markup: html/search-form-improved.html
+
+.search-form--improved
+
+Style guide: searchform.search-form--improved
+*/
+
+.search-form--improved {
+  background: $grey-lightest;
+  padding: 1.2em 1.5em;
+
+  h5 {
+    font-size: $font-size-medium;
+    text-transform: none;
+    padding-bottom: 1.2em;
+  }
+
+  .search-form__textfield-wrapper {
+    float: none;
+    width: 100%;
+    background: #fff;
+    border: 3px solid #fff;
+    border-bottom: none;
+    @extend .icon;
+
+    &::before {
+      @extend .icon--search;
+      position: absolute;
+      top: 25%;
+      left: 1%;
+      z-index: 3;
+      color: $grey;
+    }
+  }
+
+  .search-form__textfield {
+    text-indent: 1.4em;
+    bottom: 0; 
+  }
+
+  button[type="submit"] {
+    background: $brand-primary;
+    color: #fff;
+    min-height: 2.78em;
+  }
+}
+
+@include breakpoint(screen-sm-min) {
+  .search-form--improved .search-form__textfield {
+    bottom: 3px;
   }
 }

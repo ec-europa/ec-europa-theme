@@ -8,36 +8,92 @@ Markup: html/footer.html
 Style guide footer
 */
 
-.footer__top {
-  background-color: $blue-medium;
-}
-
-.footer__bottom {
-  background-color: $brand-primary;
-  padding: 0.9em 0;
-}
-
+.footer__improved,
 .footer__top,
 .footer__bottom {
   @extend .hidden-print;
+}
 
-  color: #fff;
+/*
+Footer for improved websites
+
+Markup: html/footer-improved.html
+
+Style guide footer.footer-improved
+*/
+
+// Footer improved.
+.footer__improved {
+  background: $blue-light;
+  color: $blue-darker;
+  .footer__column {
+    padding-top: 0.8em;
+    &:last-child {
+      padding-top: 0;
+      padding-bottom: 0.8em;
+    }
+  }
+
+  .footer__menu {
+    display: inline;
+  }
+
+  .footer__menu-item {
+    font-size: $font-size-little;
+    display: inline-block;
+  }
 
   a {
-    color: #fff;
-    text-decoration: underline;
+    color: $blue-darker;
+  }
 
-    &:hover,
-    &:active,
-    &:focus {
+  h4 {
+    padding: .4em 0;
+    a {
       text-decoration: none;
+    }
+  }
+
+  // Footer improved desktop styles.
+  @include breakpoint(screen-md-min) {
+    .footer__menu-item {
+      font-size: $font-size-little;
+    }
+    .footer__column {
+      padding-bottom: 1em;
+      &:last-child {
+        padding-top: 1em;
+        .footer__menu-item {
+          display: block;
+        }
+      }
     }
   }
 }
 
-.footer__label {
-  display: block;
-  margin-right: 20px;
+// Footer top.
+.footer__top {
+  background-color: $blue-medium;
+  color: #fff;
+  a {
+    color: #fff;
+  }
+  .footer__menu-item {
+    font-size: $font-size-little;
+  }
+}
+
+// Footer bottom.
+.footer__bottom {
+  background-color: $brand-primary;
+  padding: 0.9em 0;
+  color: #fff;
+  .footer__menu-item {
+    font-size: $font-size-little;
+  }
+  a {
+    color: #fff;
+  }
 }
 
 .footer__title {
@@ -57,6 +113,12 @@ Style guide footer
   }
 }
 
+.footer__label {
+  display: inline;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
 // Menus.
 .footer__menu {
   margin: 0;
@@ -66,11 +128,7 @@ Style guide footer
 
   .footer__menu-item {
     margin-right: 15px;
-    font-size: $font-size-little;
-
-    &:first-child > a {
-      padding-left: 0;
-    }
+    padding-left: 0;
 
     &:last-child {
       margin-bottom: 0;
@@ -78,15 +136,12 @@ Style guide footer
 
     @include breakpoint(screen-md-min) {
       .footer__top & {
-        margin-bottom: 0.5em;
+        margin-bottom: 0.4em;
       }
     }
 
     a {
       padding: 0;
-
-      @include _focus_outline_border(3px, $yellow-light, 5px);
-
       &:hover,
       &:active,
       &:focus {
@@ -94,6 +149,10 @@ Style guide footer
         text-decoration: none;
       }
     }
+  }
+
+  &.ul-list-inline .footer__menu-item {
+    line-height: 0.75em;
   }
 }
 
@@ -112,7 +171,6 @@ Style guide footer
 // Footer columns.
 .footer__column {
   @extend .col-md-4;
-
   padding-top: 1.6em;
 
   &:last-child {

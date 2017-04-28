@@ -181,10 +181,10 @@
 </section>
 
 <footer class="footer">
-<?php if (!empty($page['footer_top'])): ?>
-  <section class="footer-top">
+<?php if (!empty($page['footer_improved'])): ?>
+  <section class="footer__improved">
     <div class="container-fluid">
-      <?php print render($page['footer_top']); ?>
+      <?php print render($page['footer_improved']); ?>
     </div>
   </section>
 <?php endif; ?>

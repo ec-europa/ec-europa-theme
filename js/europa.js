@@ -13,37 +13,6 @@
   Drupal.europa.breakpoints.medium = 'screen and (min-width: 480px)';
   Drupal.europa.breakpoints.small = 'screen and (min-width: 768px)';
 
-  Drupal.behaviors.timeline = {
-    attach: function (context) {
-      var $timelineSelector = $('.timeline');
-      $timelineSelector.once('timeline', function () {
-        // Add the expander functionality only if necessary.
-        if ($(this).data('expander-disable') != 1) {
-          var $timelineItem = $('.timeline .timeline__item'),
-              timelineItemsCount = $timelineItem.length,
-              timeLineButton = '<button class="btn btn-time-line">' + Drupal.t('Show all timeline') + '</button>';
-
-          if (timelineItemsCount > 4) {
-            $timelineSelector.append(timeLineButton);
-            $timelineItem.each(function (i) {
-              if (i > 3) {
-                $(this).addClass('hidden');
-              }
-            });
-
-            $('.btn-time-line', this).click(function (e) {
-              e.preventDefault();
-              $(this).hide();
-              $timelineItem.removeClass('hidden');
-              // Refreshing scrollspy to recalculate the offset.
-              $('body').scrollspy('refresh');
-            });
-          }
-        }
-      });
-    }
-  };
-
   // This is for fixing the automatic zoom in IOS.
   Drupal.behaviors.noZoom = {
     attach: function (context) {

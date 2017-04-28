@@ -3,19 +3,17 @@ Lists
 
 Markup: html/lists.html
 
-Style guide text.lists
+Style guide Typography.lists
 */
+
+ul {
+  list-style-type: disc;
+}
 
 ul,
 ol {
   max-width: 32em;
   padding-left: 1em;
-  list-style-type: disc;
-
-  ul,
-  ol {
-    list-style-type: disc;
-  }
 
   &.ul-list-inline {
     > li {
@@ -30,6 +28,7 @@ ol {
   }
 }
 
+// @todo What is this for?
 .region-content {
   ul,
   ol {

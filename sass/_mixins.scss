@@ -171,6 +171,7 @@ $modifiers: (
   camera: \e800,
   slides: \e80e,
   share: \e808,
+  faq: \21,
 );
 
 @mixin icon($modifier, $char: map-get($modifiers, $modifier)) {

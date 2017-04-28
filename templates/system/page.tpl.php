@@ -158,6 +158,13 @@
         </div>
       </nav>
     <?php endif; ?>
+    
+    <?php if (theme_get_setting('ec_europa_improved_website', 'europa')): ?>
+    <div class="container-fluid page-header__site-identification">
+      <h3><?php print $site_name; ?></h3>
+    </div>
+    <?php endif; ?>
+    
     <div class="container-fluid page-header__hero-title">
       <div class="row padding-reset">
         <div class="col-lg-9">
@@ -241,10 +248,10 @@
 </section>
 
 <footer class="footer">
-<?php if (!empty($page['footer_top'])): ?>
-  <section class="footer-top">
+<?php if (!empty($page['footer_improved'])): ?>
+  <section class="footer__improved">
     <div class="container-fluid">
-      <?php print render($page['footer_top']); ?>
+      <?php print render($page['footer_improved']); ?>
     </div>
   </section>
 <?php endif; ?>

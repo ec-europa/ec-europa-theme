@@ -107,10 +107,8 @@ Style guide: banner.background
 }
 
 .banner__image {
-  height: 370px;
-
   img {
-    max-width: none;
+    max-width: 200%;
   }
 }
 
@@ -137,6 +135,10 @@ Style guide: banner.background
   .banner__image {
     position: absolute;
     z-index: 1;
+
+    img {
+      max-width: none;
+    }
   }
 
   .banner__content {

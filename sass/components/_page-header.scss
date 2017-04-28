@@ -16,7 +16,7 @@ Page header component with xlarger intro text.
 
 Markup: html/page-header--xlarge-intro.html
 
-Style guide: page-header.xlarge-intro
+Style guide: page-header.3
 */
 
 /*
@@ -24,7 +24,7 @@ Political page header
 
 Markup: html/page-header--political.html
 
-Style guide: page-header.political
+Style guide: page-header.1
 */
 
 /*
@@ -32,12 +32,28 @@ Informational site page header
 
 Markup: html/page-header--informational.html
 
-Style guide: page-header.informational
+Style guide: page-header.2
+*/
+
+/*
+Improved websites site page header (basic)
+
+Markup: html/page-header-basic.html
+
+Style guide: page-header.4
+*/
+
+/*
+Improved websites site page header (complete)
+
+Markup: html/page-header-complete.html
+
+Style guide: page-header.5
 */
 
 .page-header {
   margin: 0;
-  padding: 0 0 1.5em;
+  padding: 0 0 1.25em;
   background-color: $brand-primary;
   color: $white;
   border-bottom: none;
@@ -56,6 +72,20 @@ Style guide: page-header.informational
 
     .paragraph {
       margin-bottom: 0;
+    }
+  }
+
+  .page-header__site-identification {
+    margin-top: 1em;
+    
+    h3 {
+      font-size: $font-size-mid;
+      color: #b0c5de;
+      font-weight: normal;
+    }
+
+    + .page-header__hero-title {
+      padding-top: 1em; 
     }
   }
 

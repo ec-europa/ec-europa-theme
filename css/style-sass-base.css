@@ -4288,16 +4288,16 @@ img {
   height: auto; }
 
 /*
-Text
+Typography
 
-Style guide text
+Style guide Typography
 */
 /*
 Blockquote
 
 Markup: html/blockquote.html
 
-Style guide text.blockquote
+Style guide Typography.blockquote
 */
 blockquote,
 .blockquote {
@@ -4540,18 +4540,15 @@ Lists
 
 Markup: html/lists.html
 
-Style guide text.lists
+Style guide Typography.lists
 */
+ul {
+  list-style-type: disc; }
+
 ul,
 ol {
   max-width: 32em;
-  padding-left: 1em;
-  list-style-type: disc; }
-  ul ul,
-  ul ol,
-  ol ul,
-  ol ol {
-    list-style-type: disc; }
+  padding-left: 1em; }
   ul.ul-list-inline > li,
   ol.ul-list-inline > li {
     display: inline-block;
@@ -4684,7 +4681,7 @@ Markup: html/paragraphs.html
 .paragraph--intro - Intro
 .paragraph--small - Small body text
 
-Style guide text.paragraphs
+Style guide Typography.paragraphs
 */
 .paragraph, p {
   display: block;
@@ -5078,16 +5075,10 @@ Style guide sections.3
 .header-top {
   background: #f2f2f2; }
   .header-top .container-fluid, .header-top .section__group--full-width > * {
-    margin-right: 0;
-    margin-left: 0;
-    padding-left: 0;
-    padding-right: 0; }
-  @media (min-width: 510px) {
+    padding: 0; }
+  @media (min-width: 992px) {
     .header-top .container-fluid, .header-top .section__group--full-width > * {
-      margin-right: auto;
-      margin-left: auto;
-      padding-left: 15px;
-      padding-right: 15px; } }
+      padding: 0 15px; } }
 
 .field-group {
   overflow: hidden;

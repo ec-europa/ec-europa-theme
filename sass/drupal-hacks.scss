@@ -1,7 +1,16 @@
 
 #admin-menu-wrapper ul,
+ul.krumo-node,
 .wtShareNetworks {
   max-width: none;
+}
+
+body.admin-menu {
+  margin-top: 0 !important;
+} 
+
+#admin-menu-wrapper {
+  display: none;
 }
 
 .wtShareNetworks {
@@ -26,6 +35,14 @@
         }
       }
     }
+  }
+
+  body.admin-menu {
+    margin-top: 20px !important;
+  }
+
+  #admin-menu-wrapper {
+    display: block;
   }
 
   .view-workbench-moderation {
