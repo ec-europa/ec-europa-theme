@@ -12,6 +12,9 @@
   text-decoration: none;
   speak: none; }
 
+/**
+ * Show icons only, hide copy.
+ */
 @media print {
   .hidden-print {
     display: none !important; } }

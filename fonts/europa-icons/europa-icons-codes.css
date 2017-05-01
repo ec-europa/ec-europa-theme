@@ -151,3 +151,6 @@
 .icon-faq:before {
   content: '\21';
 } /* '?' */
+.icon-share:before {
+  content: '\e808';
+} /* '' */

@@ -157,3 +157,216 @@ Style guide gallery
     height: auto;
   }
 }
+
+/*
+Gallery Overlay
+
+Gallery overlay component.
+
+Markup: html/gallery-overlay.html
+
+Style guide: gallery.overlay
+*/
+
+// Media outside container
+.gallery-overlay {
+  max-width: 1400px;
+  background-color: #000;
+  color: #fff;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  a {
+    color: #fff;
+  }
+
+  @include breakpoint(screen-lg-min) {
+    flex-direction: row;
+  }
+}
+
+// Media cmain ontainer.
+.gallery-overlay__main {
+  flex: 4;
+  position: relative;
+  max-width: 960px;
+  max-height: 800px;
+
+  .gallery-overlay__media-previous,
+  .gallery-overlay__media-next {
+    position: absolute;
+    top: calc(50% - 1.8em);
+    padding: 0 6px;
+    a {
+      font-size: 1.4em;
+      @include icon-only;
+      &::before {
+        @extend .icon--after;
+      }
+      &:hover {
+        color: $grey;
+      }
+    }
+
+    @include breakpoint(screen-xs-min) {
+      a {
+        font-size: 2.2em;
+      }
+      padding: 0;
+    }
+  }
+
+  // Previous button.
+  .gallery-overlay__media-previous {
+    a {
+      &::before {
+        @extend .icon--left;
+      }
+    }
+  }
+
+  // Next button.
+  .gallery-overlay__media-next {
+    right: 0;
+    a {
+      &::before {
+        @extend .icon--right;
+      }
+    }
+  }
+}
+
+// Media column.
+.gallery-overlay__media {
+  margin: 0 auto;
+  padding: 0 40px;
+  height: 100%;
+
+  .gallery-overlay__media-wrapper--center {
+    height: 100%;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+    max-width: none;
+  }
+
+  .gallery-overlay__media-item {
+    display: none;
+    & > * {
+      display: block;
+      margin: 0 auto;
+      max-height: 325px;
+    }
+    &.active{
+      display: block;
+    }
+  }
+
+  @include breakpoint(screen-lg-min) {
+    padding: 60px;
+    .gallery-overlay__media-item {
+    display: none;
+      & > * {
+        max-height: 800px;
+      }
+    }
+  }
+}
+
+// Side bar column.
+.gallery-overlay__sidebar {
+  -webkit-flex: 1;
+  flex: 1;
+  background-color: $grey-base;
+  padding: 10px;
+  font-size: $font-size-tiny;
+
+  @include breakpoint(screen-xs-min) {
+    padding: 30px;
+  }
+
+  @include breakpoint(screen-lg-min) {
+    padding: 50px;
+  }
+}
+
+.gallery-overlay__close {
+  background-color: $grey-base;
+  text-align: right;
+  padding: 8px;
+  font-size: $font-size-tiny;
+
+  a {
+    text-decoration: none;
+    &::after {
+      @extend .icon--after;
+      @extend .icon--close;
+    }
+  }
+
+  @include breakpoint(screen-lg-min) {
+    position: absolute;
+    z-index: 1;
+    top: 20px;
+    right: 30px;
+    padding: 0;
+    background: none;
+  }
+}
+
+// Media meta info.
+.gallery-overlay__meta {
+  margin-bottom: 2em;
+  > span {
+    padding-right: 15px;
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  // Media Count.
+  .gallery-overlay__count {
+    font-weight: $font-weight-bold;
+  }
+
+  // Media Download button.
+  .gallery-overlay__download {
+    a {
+      &::after {
+        @extend .icon--after;
+        @extend .icon--download;
+      }
+    }
+  }
+
+  // Media Share button.
+  .gallery-overlay__share {
+    &::after {
+      @extend .icon--after;
+      @extend .icon--share;
+    }
+  }
+
+  // Media Description.
+  .gallery-overlay__description {
+    font-weight: $font-weight-bold;
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  // Media Copyright info.
+  .gallery-overlay__copyright {
+    font-size: $font-size-xsmall;
+  }
+}
+
+
