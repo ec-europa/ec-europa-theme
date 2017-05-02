@@ -171,11 +171,12 @@ Style guide: gallery.overlay
 // Media outside container
 .gallery-overlay {
   max-width: 1400px;
-  background-color: #000;
-  color: #fff;
   display: -webkit-flex;
   display: flex;
   flex-direction: column;
+  background-color: #000;
+  color: #fff;
+
   a {
     color: #fff;
   }
@@ -197,22 +198,27 @@ Style guide: gallery.overlay
     position: absolute;
     top: calc(50% - 1.8em);
     padding: 0 6px;
+
     a {
-      font-size: 1.4em;
       @include icon-only;
+
+      font-size: 1.4em;
+
       &::before {
         @extend .icon--after;
       }
+
       &:hover {
         color: $grey;
       }
     }
 
     @include breakpoint(screen-xs-min) {
+      padding: 0;
+
       a {
         font-size: 2.2em;
       }
-      padding: 0;
     }
   }
 
@@ -228,6 +234,7 @@ Style guide: gallery.overlay
   // Next button.
   .gallery-overlay__media-next {
     right: 0;
+
     a {
       &::before {
         @extend .icon--right;
@@ -260,20 +267,24 @@ Style guide: gallery.overlay
 
   .gallery-overlay__media-item {
     display: none;
+
     & > * {
       display: block;
       margin: 0 auto;
       max-height: 325px;
     }
-    &.active{
+
+    &.active {
       display: block;
     }
   }
 
   @include breakpoint(screen-lg-min) {
     padding: 60px;
+
     .gallery-overlay__media-item {
-    display: none;
+      display: none;
+
       & > * {
         max-height: 800px;
       }
@@ -285,9 +296,9 @@ Style guide: gallery.overlay
 .gallery-overlay__sidebar {
   -webkit-flex: 1;
   flex: 1;
-  background-color: $grey-base;
   padding: 10px;
   font-size: $font-size-tiny;
+  background-color: $grey-base;
 
   @include breakpoint(screen-xs-min) {
     padding: 30px;
@@ -306,6 +317,7 @@ Style guide: gallery.overlay
 
   a {
     text-decoration: none;
+
     &::after {
       @extend .icon--after;
       @extend .icon--close;
@@ -325,8 +337,11 @@ Style guide: gallery.overlay
 // Media meta info.
 .gallery-overlay__meta {
   margin-bottom: 2em;
+
   > span {
+
     padding-right: 15px;
+
     &:last-child {
       padding-right: 0;
     }
@@ -358,6 +373,7 @@ Style guide: gallery.overlay
   // Media Description.
   .gallery-overlay__description {
     font-weight: $font-weight-bold;
+
     p:last-child {
       margin-bottom: 0;
     }
@@ -368,5 +384,3 @@ Style guide: gallery.overlay
     font-size: $font-size-xsmall;
   }
 }
-
-

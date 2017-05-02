@@ -3021,11 +3021,11 @@ Style guide: gallery.overlay
 */
 .gallery-overlay {
   max-width: 1400px;
-  background-color: #000;
-  color: #fff;
   display: -webkit-flex;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  background-color: #000;
+  color: #fff; }
   .gallery-overlay a {
     color: #fff; }
   @media (min-width: 1200px) {
@@ -3044,10 +3044,10 @@ Style guide: gallery.overlay
     padding: 0 6px; }
     .gallery-overlay__main .gallery-overlay__media-previous a,
     .gallery-overlay__main .gallery-overlay__media-next a {
-      font-size: 1.4em;
       display: inline-block;
       visibility: hidden;
-      width: 1.2em; }
+      width: 1.2em;
+      font-size: 1.4em; }
       .gallery-overlay__main .gallery-overlay__media-previous a:before, .gallery-overlay__main .gallery-overlay__media-previous a:after,
       .gallery-overlay__main .gallery-overlay__media-next a:before,
       .gallery-overlay__main .gallery-overlay__media-next a:after {
@@ -3113,9 +3113,9 @@ Style guide: gallery.overlay
 .gallery-overlay__sidebar {
   -webkit-flex: 1;
   flex: 1;
-  background-color: #404040;
   padding: 10px;
-  font-size: 0.833em; }
+  font-size: 0.833em;
+  background-color: #404040; }
   @media (min-width: 480px) {
     .gallery-overlay__sidebar {
       padding: 30px; } }
