@@ -168,7 +168,7 @@ Markup: html/gallery-overlay.html
 Style guide: gallery.overlay
 */
 
-// Media outside container
+// Outside container
 .gallery-overlay {
   max-width: 1400px;
   display: -webkit-flex;
@@ -186,7 +186,7 @@ Style guide: gallery.overlay
   }
 }
 
-// Media cmain ontainer.
+// Main container.
 .gallery-overlay__main {
   flex: 4;
   position: relative;
@@ -292,23 +292,6 @@ Style guide: gallery.overlay
   }
 }
 
-// Side bar column.
-.gallery-overlay__sidebar {
-  -webkit-flex: 1;
-  flex: 1;
-  padding: 10px;
-  font-size: $font-size-tiny;
-  background-color: $grey-base;
-
-  @include breakpoint(screen-xs-min) {
-    padding: 30px;
-  }
-
-  @include breakpoint(screen-lg-min) {
-    padding: 50px;
-  }
-}
-
 .gallery-overlay__close {
   background-color: $grey-base;
   text-align: right;
@@ -334,25 +317,43 @@ Style guide: gallery.overlay
   }
 }
 
-// Media meta info.
-.gallery-overlay__meta {
-  margin-bottom: 2em;
+// Side bar column.
+.gallery-overlay__sidebar {
+  -webkit-flex: 1;
+  flex: 1;
+  //padding: 10px;
+  padding: 3.575em 2.145em 0 2.145em;
+  font-size: $font-size-xsmall;
+  background-color: $grey-base;
 
-  > span {
+  /*@include breakpoint(screen-xs-min) {
+    padding: 30px;
+  }
 
-    padding-right: 15px;
+  @include breakpoint(screen-lg-min) {
+    padding: 50px;
+  }*/
 
-    &:last-child {
-      padding-right: 0;
+  // Meta info.
+  .gallery-overlay__meta {
+    margin-bottom: 3.575em;
+    line-height: normal;
+
+    > span {
+      margin-right: 15px;
+
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 
-  // Media Count.
+  // Count.
   .gallery-overlay__count {
     font-weight: $font-weight-bold;
   }
 
-  // Media Download button.
+  // Download button.
   .gallery-overlay__download {
     a {
       &::after {
@@ -362,15 +363,17 @@ Style guide: gallery.overlay
     }
   }
 
-  // Media Share button.
+  // Share button.
   .gallery-overlay__share {
-    &::after {
-      @extend .icon--after;
-      @extend .icon--share;
+    a {
+      &::after {
+        @extend .icon--after;
+        @extend .icon--share;
+      }
     }
   }
 
-  // Media Description.
+  // Description.
   .gallery-overlay__description {
     font-weight: $font-weight-bold;
 
@@ -379,8 +382,9 @@ Style guide: gallery.overlay
     }
   }
 
-  // Media Copyright info.
+  // Copyright info.
   .gallery-overlay__copyright {
-    font-size: $font-size-xsmall;
+    font-size: $font-size-tiny;
+    //font-size: $font-size-xsmall;
   }
 }

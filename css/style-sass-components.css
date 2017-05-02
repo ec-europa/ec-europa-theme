@@ -612,9 +612,9 @@ a.label:hover, a.label:focus {
 
 .icon--after, .btn.btn-ctn::after, .inpage-nav__navbar .btn-ctn.inpage-nav__toggle::after, .btn.btn-time-line::after, .inpage-nav__navbar .btn-time-line.inpage-nav__toggle::after, .btn.btn-menu::after, .inpage-nav__navbar .btn-menu.inpage-nav__toggle::after, .is-external::after, a[href^="http"]:not([href*="ec.europa.eu"]):not(.is-internal)::after, .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .listing__title::after,
 .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .highlighted-item h3::after, .breadcrumb__link-arrow, a.breadcrumb__link::after, .no-js .breadcrumb__segment--first::before, .breadcrumb--collapsible .breadcrumb__btn-separator::after, .file__btn::after, .file__translations .file__translations-control::after, .gallery-overlay__main .gallery-overlay__media-previous a::before,
-.gallery-overlay__main .gallery-overlay__media-next a::before, .gallery-overlay__close a::after, .gallery-overlay__meta .gallery-overlay__download a::after, .gallery-overlay__meta .gallery-overlay__share::after, .lang-select-page--transparent select.lang-select-page__list::after, .listing__title--arrow::after, .listing--cta .listing__title::after, .site-menu .field--field-site-menu-links .listing__item .listing__title::after, .listing__read-more::after, .notification__content .notification__btn::after, .facet-tag--close .facet-tag__value::after, .facet-tag--close .facet-tag__value:hover::after {
+.gallery-overlay__main .gallery-overlay__media-next a::before, .gallery-overlay__close a::after, .gallery-overlay__sidebar .gallery-overlay__download a::after, .gallery-overlay__sidebar .gallery-overlay__share a::after, .lang-select-page--transparent select.lang-select-page__list::after, .listing__title--arrow::after, .listing--cta .listing__title::after, .site-menu .field--field-site-menu-links .listing__item .listing__title::after, .listing__read-more::after, .notification__content .notification__btn::after, .facet-tag--close .facet-tag__value::after, .facet-tag--close .facet-tag__value:hover::after {
   display: inline-block;
-  margin-left: 4px;
+  margin-left: 8px;
   line-height: 1;
   font-family: 'EuropaIcons';
   font-style: normal;
@@ -1264,7 +1264,7 @@ Style guide: icon
 .icon--breadcrumb, .icon--breadcrumb::before, .breadcrumb__link-arrow::before, .no-js .breadcrumb__segment--first::before {
   content: '\e828'; }
 
-.icon--download, .icon--download::before, .file__btn::after, .gallery-overlay__meta .gallery-overlay__download a::after {
+.icon--download, .icon--download::before, .file__btn::after, .gallery-overlay__sidebar .gallery-overlay__download a::after {
   content: '\e806'; }
 
 .icon--tag-close, .icon--tag-close::before, .facet-tag--close .facet-tag__value::after {
@@ -1279,7 +1279,7 @@ Style guide: icon
 .icon--slides, .icon--slides::before {
   content: '\e80e'; }
 
-.icon--share, .icon--share::before, .gallery-overlay__meta .gallery-overlay__share::after {
+.icon--share, .icon--share::before, .gallery-overlay__sidebar .gallery-overlay__share a::after {
   content: '\e808'; }
 
 .icon--faq, .icon--faq::before {
@@ -3048,9 +3048,9 @@ Style guide: gallery.overlay
       visibility: hidden;
       width: 1.2em;
       font-size: 1.4em; }
-      .gallery-overlay__main .gallery-overlay__media-previous a:before, .gallery-overlay__main .gallery-overlay__media-previous a:after,
-      .gallery-overlay__main .gallery-overlay__media-next a:before,
-      .gallery-overlay__main .gallery-overlay__media-next a:after {
+      .gallery-overlay__main .gallery-overlay__media-previous a::before, .gallery-overlay__main .gallery-overlay__media-previous a::after,
+      .gallery-overlay__main .gallery-overlay__media-next a::before,
+      .gallery-overlay__main .gallery-overlay__media-next a::after {
         visibility: visible; }
       html.lte8 .gallery-overlay__main .gallery-overlay__media-previous a, html.lte8
       .gallery-overlay__main .gallery-overlay__media-next a {
@@ -3058,9 +3058,9 @@ Style guide: gallery.overlay
         text-indent: -999em;
         overflow: hidden;
         float: left; }
-        html.lte8 .gallery-overlay__main .gallery-overlay__media-previous a:before, html.lte8 .gallery-overlay__main .gallery-overlay__media-previous a:after, html.lte8
-        .gallery-overlay__main .gallery-overlay__media-next a:before, html.lte8
-        .gallery-overlay__main .gallery-overlay__media-next a:after {
+        html.lte8 .gallery-overlay__main .gallery-overlay__media-previous a::before, html.lte8 .gallery-overlay__main .gallery-overlay__media-previous a::after, html.lte8
+        .gallery-overlay__main .gallery-overlay__media-next a::before, html.lte8
+        .gallery-overlay__main .gallery-overlay__media-next a::after {
           text-indent: 0;
           position: absolute;
           overflow: hidden;
@@ -3110,19 +3110,6 @@ Style guide: gallery.overlay
         .gallery-overlay__media .gallery-overlay__media-item > * {
           max-height: 800px; } }
 
-.gallery-overlay__sidebar {
-  -webkit-flex: 1;
-  flex: 1;
-  padding: 10px;
-  font-size: 0.833em;
-  background-color: #404040; }
-  @media (min-width: 480px) {
-    .gallery-overlay__sidebar {
-      padding: 30px; } }
-  @media (min-width: 1200px) {
-    .gallery-overlay__sidebar {
-      padding: 50px; } }
-
 .gallery-overlay__close {
   background-color: #404040;
   text-align: right;
@@ -3139,20 +3126,34 @@ Style guide: gallery.overlay
       padding: 0;
       background: none; } }
 
-.gallery-overlay__meta {
-  margin-bottom: 2em; }
-  .gallery-overlay__meta > span {
-    padding-right: 15px; }
-    .gallery-overlay__meta > span:last-child {
-      padding-right: 0; }
-  .gallery-overlay__meta .gallery-overlay__count {
+.gallery-overlay__sidebar {
+  -webkit-flex: 1;
+  flex: 1;
+  padding: 3.575em 2.145em 0 2.145em;
+  font-size: 0.778em;
+  background-color: #404040;
+  /*@include breakpoint(screen-xs-min) {
+    padding: 30px;
+  }
+
+  @include breakpoint(screen-lg-min) {
+    padding: 50px;
+  }*/ }
+  .gallery-overlay__sidebar .gallery-overlay__meta {
+    margin-bottom: 3.575em;
+    line-height: normal; }
+    .gallery-overlay__sidebar .gallery-overlay__meta > span {
+      margin-right: 15px; }
+      .gallery-overlay__sidebar .gallery-overlay__meta > span:last-child {
+        margin-right: 0; }
+  .gallery-overlay__sidebar .gallery-overlay__count {
     font-weight: 600; }
-  .gallery-overlay__meta .gallery-overlay__description {
+  .gallery-overlay__sidebar .gallery-overlay__description {
     font-weight: 600; }
-    .gallery-overlay__meta .gallery-overlay__description p:last-child {
+    .gallery-overlay__sidebar .gallery-overlay__description p:last-child {
       margin-bottom: 0; }
-  .gallery-overlay__meta .gallery-overlay__copyright {
-    font-size: 0.778em; }
+  .gallery-overlay__sidebar .gallery-overlay__copyright {
+    font-size: 0.833em; }
 
 /*
 Site header search bar
