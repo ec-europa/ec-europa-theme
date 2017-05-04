@@ -151,19 +151,21 @@
   <!-- Page Header -->
   <div class="page-header <?php if (isset($header_back)) : print ' page-header--image';
  endif; ?>">
-    <?php if (!empty($page['header_bottom'])): ?>
-      <nav class="page-navigation" role="navigation">
-        <div class="container-fluid">
-          <?php print render($page['header_bottom']); ?>
-        </div>
-      </nav>
-    <?php endif; ?>
+  <?php if (!empty($page['header_bottom'])): ?>
+    <nav class="page-navigation" role="navigation">
+      <div class="container-fluid">
+        <?php print render($page['header_bottom']); ?>
+      </div>
+    </nav>
+  <?php endif; ?>
     
-    <?php if (theme_get_setting('ec_europa_improved_website', 'europa')): ?>
+  <?php if (theme_get_setting('ec_europa_improved_website', 'europa')): ?>
+    <?php if (!$is_front || $is_front && theme_get_setting('ec_europa_improved_website_home', 'europa')): ?>
     <div class="container-fluid page-header__site-identification">
       <h3><?php print $site_name; ?></h3>
     </div>
     <?php endif; ?>
+  <?php endif; ?>
     
     <div class="container-fluid page-header__hero-title">
       <div class="row padding-reset">

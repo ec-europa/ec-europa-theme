@@ -559,9 +559,11 @@ function europa_form_nexteuropa_europa_search_search_form_alter(&$form, &$form_s
  * Generate the first breadcrumb items basing on a custom menu.
  */
 function _europa_breadcrumb_menu(&$variables) {
-  $menu_links = menu_tree('menu-dt-breadcrumb-menu');
-  $new_items = [];
   global $language;
+
+  $menu = theme_get_setting('ec-europa-breadcrumb-menu');
+  $menu_links = menu_tree($menu);
+  $new_items = [];
   $front = drupal_is_front_page();
 
   if (!empty($menu_links)) {
@@ -688,7 +690,7 @@ function europa_preprocess_block(&$variables) {
       $variables['lang_name'] = $variables['elements']['label']['#markup'];
       // Add class to block.
       $variables['classes_array'][] = 'lang-select-site';
-      $variables['link'] = url('splash') . '?' . drupal_get_destination()['destination'];
+      $variables['link'] = url('splash') . '?destination=' . drupal_get_destination()['destination'];
       break;
   }
 
@@ -1003,6 +1005,24 @@ function europa_preprocess_node(&$variables) {
 
   // Add the language attribute.
   $variables['attributes_array']['lang'] = entity_translation_get_existing_language('node', $variables['node']);
+}
+
+/**
+ * Implements hook_preprocess_taxonomy_term().
+ */
+function europa_preprocess_taxonomy_term(&$variables) {
+  // Add information about the number of sidebars.
+  if (!empty($variables['left']) && !empty($variables['right'])) {
+    $variables['content_column_class'] = 'col-md-6';
+  }
+  elseif (!empty($variables['left']) || !empty($variables['right'])) {
+    $variables['content_column_class'] = 'col-md-9';
+  }
+  else {
+    $variables['content_column_class'] = 'col-md-12';
+  }
+
+  $variables['site_name'] = variable_get('site_name');
 }
 
 /**
