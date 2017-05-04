@@ -3020,57 +3020,43 @@ Markup: html/gallery-overlay.html
 Style guide: gallery.overlay
 */
 .gallery-overlay {
-  max-width: 1400px;
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: column;
   background-color: #000;
-  color: #fff; }
+  color: #fff;
+  position: relative;
+  margin: 0 auto; }
   .gallery-overlay a {
     color: #fff; }
-  @media (min-width: 1200px) {
+  @media (min-width: 992px) {
     .gallery-overlay {
-      flex-direction: row; } }
+      max-width: 1400px;
+      display: table; }
+      .gallery-overlay [class*="col-"] {
+        float: none;
+        display: table-cell;
+        vertical-align: top; } }
 
 .gallery-overlay__main {
-  flex: 4;
-  position: relative;
-  max-width: 960px;
-  max-height: 800px; }
+  padding: 0; }
   .gallery-overlay__main .gallery-overlay__media-previous,
   .gallery-overlay__main .gallery-overlay__media-next {
     position: absolute;
     top: calc(50% - 1.8em);
-    padding: 0 6px; }
+    padding: 0 6px;
+    margin: 0; }
     .gallery-overlay__main .gallery-overlay__media-previous a,
     .gallery-overlay__main .gallery-overlay__media-next a {
-      display: inline-block;
-      visibility: hidden;
-      width: 1.2em;
       font-size: 1.4em; }
-      .gallery-overlay__main .gallery-overlay__media-previous a::before, .gallery-overlay__main .gallery-overlay__media-previous a::after,
-      .gallery-overlay__main .gallery-overlay__media-next a::before,
-      .gallery-overlay__main .gallery-overlay__media-next a::after {
-        visibility: visible; }
-      html.lte8 .gallery-overlay__main .gallery-overlay__media-previous a, html.lte8
-      .gallery-overlay__main .gallery-overlay__media-next a {
-        visibility: visible;
-        text-indent: -999em;
-        overflow: hidden;
-        float: left; }
-        html.lte8 .gallery-overlay__main .gallery-overlay__media-previous a::before, html.lte8 .gallery-overlay__main .gallery-overlay__media-previous a::after, html.lte8
-        .gallery-overlay__main .gallery-overlay__media-next a::before, html.lte8
-        .gallery-overlay__main .gallery-overlay__media-next a::after {
-          text-indent: 0;
-          position: absolute;
-          overflow: hidden;
-          margin-left: 999em; }
+      .gallery-overlay__main .gallery-overlay__media-previous a::before,
+      .gallery-overlay__main .gallery-overlay__media-next a::before {
+        margin: 0; }
       .gallery-overlay__main .gallery-overlay__media-previous a:hover,
       .gallery-overlay__main .gallery-overlay__media-next a:hover {
         color: #b3b4b5; }
     @media (min-width: 480px) {
       .gallery-overlay__main .gallery-overlay__media-previous,
       .gallery-overlay__main .gallery-overlay__media-next {
+        max-width: 960px;
+        max-height: 800px;
         padding: 0; }
         .gallery-overlay__main .gallery-overlay__media-previous a,
         .gallery-overlay__main .gallery-overlay__media-next a {
@@ -3080,14 +3066,10 @@ Style guide: gallery.overlay
 
 .gallery-overlay__media {
   margin: 0 auto;
-  padding: 0 40px;
-  height: 100%; }
+  padding: 40px;
+  position: relative; }
   .gallery-overlay__media .gallery-overlay__media-wrapper--center {
     height: 100%;
-    display: -webkit-flex;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
     overflow: hidden; }
   .gallery-overlay__media ul {
     list-style: none;
@@ -3102,7 +3084,7 @@ Style guide: gallery.overlay
       max-height: 325px; }
     .gallery-overlay__media .gallery-overlay__media-item.active {
       display: block; }
-  @media (min-width: 1200px) {
+  @media (min-width: 992px) {
     .gallery-overlay__media {
       padding: 60px; }
       .gallery-overlay__media .gallery-overlay__media-item {
@@ -3111,34 +3093,33 @@ Style guide: gallery.overlay
           max-height: 800px; } }
 
 .gallery-overlay__close {
-  background-color: #404040;
+  position: static;
+  display: block;
   text-align: right;
-  padding: 8px;
-  font-size: 0.833em; }
-  .gallery-overlay__close a {
-    text-decoration: none; }
-  @media (min-width: 1200px) {
+  padding: 6px 14px;
+  font-size: 0.833em;
+  background-color: #404040; }
+  @media (min-width: 992px) {
     .gallery-overlay__close {
       position: absolute;
       z-index: 1;
       top: 20px;
       right: 30px;
-      padding: 0;
-      background: none; } }
+      background: none;
+      padding: 0; } }
+  .gallery-overlay__close a {
+    text-decoration: none; }
 
 .gallery-overlay__sidebar {
-  -webkit-flex: 1;
-  flex: 1;
-  padding: 3.575em 2.145em 0 2.145em;
+  padding: 3.575em 2.145em 2.145em 2.145em;
   font-size: 0.778em;
-  background-color: #404040;
-  /*@include breakpoint(screen-xs-min) {
-    padding: 30px;
-  }
-
-  @include breakpoint(screen-lg-min) {
-    padding: 50px;
-  }*/ }
+  background-color: #404040; }
+  @media (min-width: 480px) {
+    .gallery-overlay__sidebar {
+      padding: 30px; } }
+  @media (min-width: 992px) {
+    .gallery-overlay__sidebar {
+      padding: 50px; } }
   .gallery-overlay__sidebar .gallery-overlay__meta {
     margin-bottom: 3.575em;
     line-height: normal; }
