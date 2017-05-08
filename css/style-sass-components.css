@@ -3033,7 +3033,7 @@ Style guide: gallery.overlay
         margin: 0; }
       .gallery-overlay__main .gallery-overlay__media-previous a:hover,
       .gallery-overlay__main .gallery-overlay__media-next a:hover {
-        color: #b3b4b5; }
+        color: #9f9f9f; }
     @media (min-width: 480px) {
       .gallery-overlay__main .gallery-overlay__media-previous,
       .gallery-overlay__main .gallery-overlay__media-next {

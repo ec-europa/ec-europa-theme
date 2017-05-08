@@ -210,7 +210,7 @@ Style guide: gallery.overlay
       }
 
       &:hover {
-        color: $grey;
+        color: $ec-grey50;
       }
     }
 
@@ -297,7 +297,7 @@ Style guide: gallery.overlay
   text-align: right;
   padding: 6px 14px;
   font-size: $font-size-tiny;
-  background-color: $grey-base;
+  background-color: $ec-grey;
   @include breakpoint(screen-md-min) {
     position: absolute;
     z-index: 1;
@@ -321,7 +321,7 @@ Style guide: gallery.overlay
 .gallery-overlay__sidebar {
   padding: 3.575em 2.145em 2.145em 2.145em;
   font-size: $font-size-xsmall;
-  background-color: $grey-base;
+  background-color: $ec-grey;
 
   @include breakpoint(screen-xs-min) {
     padding: 30px;
@@ -382,6 +382,5 @@ Style guide: gallery.overlay
   // Copyright info.
   .gallery-overlay__copyright {
     font-size: $font-size-tiny;
-    //font-size: $font-size-xsmall;
   }
 }
