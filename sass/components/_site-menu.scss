@@ -1,6 +1,7 @@
 .site-menu {
-  @extend .hidden-print;
   margin-bottom: 0;
+
+  @extend .hidden-print;
 
   .listing__wrapper--two-columns .listing,
   .listing__wrapper {
@@ -17,12 +18,12 @@
 
     .listing__title {
       padding: 0;
-      color: $black;
+      color: #000;
     }
   }
 
   .listing__item-link {
-    @include _focus_outline_border(3px, $grey-base, 8px);
+    @include _focus_outline_border(3px, $ec-grey, 8px);
   }
 
   .smaller {
@@ -33,16 +34,16 @@
       float: left;
       width: 100%;
       margin-top: 2em;
-      color: $black;
+      color: #000;
       text-decoration: underline;
 
       &:hover {
-        color: $black;
+        color: #000;
         text-decoration: none;
       }
 
       &:focus {
-        @include _focus_outline_border(3px, $grey-base, 2px, none);
+        @include _focus_outline_border(3px, $ec-grey, 2px, none);
       }
     }
   }
@@ -53,7 +54,7 @@
 
   p {
     font-size: $font-size-little;
-    color: $black;
+    color: #000;
   }
 
   .field--field-site-menu-links {
@@ -71,11 +72,11 @@
         }
 
         &:hover {
-          color: $grey-base;
+          color: $ec-grey;
         }
 
         &:focus {
-          outline: 3px solid $grey-base;
+          outline: 3px solid $ec-grey;
         }
       }
     }

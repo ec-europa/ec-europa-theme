@@ -12,7 +12,7 @@ Style guide Typography.link
 }
 
 a {
-  @include _focus_outline_border(3px, $yellow-light, 2px);
+  @include _focus_outline_border(3px, $ec-yellow, 2px);
 
   &:link{
     text-decoration: underline;
@@ -22,12 +22,12 @@ a {
   &:active,
   &:focus {
     text-decoration: underline;
-    color: $grey-base;
+    color: $ec-grey;
   }
 
   .site-switcher &,
   .feedback-form & {
-    @include _focus_outline_border(3px, $yellow-light, 10px);
+    @include _focus_outline_border(3px, $ec-yellow, 10px);
     z-index: 999;
     text-decoration: none;
   }
@@ -54,7 +54,7 @@ a {
 
       .listing__title {
         text-decoration: underline;
-        color: $grey-base;
+        color: $ec-grey;
       }
     }
   }
@@ -69,7 +69,7 @@ a {
 
   .listing--cta & {
     &:focus {
-      color: $white;
+      color: #fff;
     }
   }
 
@@ -101,6 +101,7 @@ a {
   &::after {
     @extend .icon--after;
     @include icon('external');
+
     font-size: 75%;
     margin-left: 0.4em;
     margin-right: 0.2em;

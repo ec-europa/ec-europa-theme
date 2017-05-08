@@ -24,10 +24,12 @@ Style guide footer.footer-improved
 
 // Footer improved.
 .footer__improved {
-  background: $blue-light;
-  color: $blue-darker;
+  background-color: $ec-blue-25;
+  color: $ec-blue-120;
+
   .footer__column {
     padding-top: 0.8em;
+
     &:last-child {
       padding-top: 0;
       padding-bottom: 0.8em;
@@ -44,11 +46,12 @@ Style guide footer.footer-improved
   }
 
   a {
-    color: $blue-darker;
+    color: $ec-blue-120;
   }
 
   h4 {
     padding: .4em 0;
+
     a {
       text-decoration: none;
     }
@@ -59,10 +62,13 @@ Style guide footer.footer-improved
     .footer__menu-item {
       font-size: $font-size-little;
     }
+
     .footer__column {
       padding-bottom: 1em;
+
       &:last-child {
         padding-top: 1em;
+
         .footer__menu-item {
           display: block;
         }
@@ -73,11 +79,13 @@ Style guide footer.footer-improved
 
 // Footer top.
 .footer__top {
-  background-color: $blue-medium;
+  background-color: $ec-blue-75;
   color: #fff;
+
   a {
     color: #fff;
   }
+
   .footer__menu-item {
     font-size: $font-size-little;
   }
@@ -88,9 +96,11 @@ Style guide footer.footer-improved
   background-color: $brand-primary;
   padding: 0.9em 0;
   color: #fff;
+
   .footer__menu-item {
     font-size: $font-size-little;
   }
+
   a {
     color: #fff;
   }
@@ -98,7 +108,7 @@ Style guide footer.footer-improved
 
 .footer__title {
   color: #fff;
-  border-bottom: 2px solid $blue-medium-light;
+  border-bottom: 2px solid $ec-blue-50;
   margin-bottom: 0.2em;
 
   @include breakpoint(screen-md-min) {
@@ -142,6 +152,7 @@ Style guide footer.footer-improved
 
     a {
       padding: 0;
+
       &:hover,
       &:active,
       &:focus {
@@ -171,6 +182,7 @@ Style guide footer.footer-improved
 // Footer columns.
 .footer__column {
   @extend .col-md-4;
+
   padding-top: 1.6em;
 
   &:last-child {

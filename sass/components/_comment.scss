@@ -28,25 +28,25 @@ $twenty-five: 1.389em;
   img {
     max-width: 6.944em;
     padding: 1px;
-    border: 1px solid $yellow-light;
+    border: 1px solid $ec-yellow;
   }
 }
 
 .comment__meta {
   padding-bottom: $fifteen;
   font-size: $font-size-little;
-  color: $grey-dark;
+  color: $ec-grey75;
   text-transform: uppercase;
 
   a {
-    color: $grey-dark;
+    color: $ec-grey75;
   }
 }
 
 .comment__body {
   position: relative;
   padding: $twenty $twenty-five;
-  background-color: $white;
+  background-color: #fff;
   font-size: $font-size-little;
 }
 
@@ -55,10 +55,10 @@ $twenty-five: 1.389em;
   padding: $fifteen 0;
   font-size: $font-size-medium;
   font-weight: bold;
-  color: $grey-base;
-  border-top: 1px solid $yellow-light;
+  color: $ec-grey;
+  border-top: 1px solid $ec-yellow;
 
-  &:focus{
+  &:focus {
     outline-offset: 0;
   }
 }
@@ -114,7 +114,7 @@ $twenty-five: 1.389em;
       margin-top: -$ten;
       content: " ";
       border: $ten solid rgba(255, 255, 255, 0);
-      border-right-color: $white;
+      border-right-color: #fff;
       pointer-events: none;
     }
   }

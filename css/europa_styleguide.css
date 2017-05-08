@@ -28,7 +28,7 @@
   text-align: center;
   font-weight: bold;
   text-transform: uppercase;
-  color: #ffffff;
+  color: #fff;
   z-index: 1;
   cursor: pointer; }
 
@@ -106,7 +106,7 @@ a.kss-nav__menu-link {
 
 #kss-node .kss-modifier__name {
   background: #004494;
-  color: #ffffff;
+  color: #fff;
   width: 50%;
   margin-left: -0.6em; }
   #kss-node .kss-modifier__name::before {
@@ -135,7 +135,7 @@ a.kss-nav__menu-link {
     visibility: visible;
     background-color: #404040;
     font-weight: 600;
-    color: #ffffff;
+    color: #fff;
     cursor: pointer;
     clear: both; }
   #kss-node .kss-markup:hover {
@@ -148,7 +148,7 @@ a.kss-nav__menu-link {
 #kss-node .styleguide-example {
   padding: 1em 0 0.5em;
   background: #575757;
-  color: #ffffff;
+  color: #fff;
   clear: left;
   float: left;
   width: 100%; }
@@ -162,7 +162,7 @@ a.kss-nav__menu-link {
 .section-styleguide-random {
   background: #666;
   text-align: center;
-  color: #ffffff; }
+  color: #fff; }
 
 .section-styleguide {
   background: #ececec;

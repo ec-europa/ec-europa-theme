@@ -10,12 +10,6 @@ Markup: html/datepicker.html
 Style guide datepicker
 */
 
-// Local Variables.
-$datepicker-color-header: #393939;
-$datepicker-color-select: #4f4f4f;
-$datepicker-color-select-separator: #686868;
-$datepicker-color-background: #eaeaea;
-
 // Component.
 #ui-datepicker-div {
   width: 100%;
@@ -81,7 +75,7 @@ $datepicker-color-background: #eaeaea;
 
       span,
       select {
-        color: $white;
+        color: #fff;
       }
 
       span {
@@ -91,8 +85,10 @@ $datepicker-color-background: #eaeaea;
 
       select {
         @include form-control();
-        background: $datepicker-color-select;
-        color: $white;
+
+        position: relative;
+        background-color: $datepicker-color-select;
+        color: #fff;
         border: none;
         height: 100%;
         width: 49% !important;
@@ -101,8 +97,8 @@ $datepicker-color-background: #eaeaea;
         float: none;
         padding-right: 0;
         padding-left: 0.750em;
-        @include _focus_outline_border(3px, $yellow-light, -3px, none);
-        position: relative;
+
+        @include _focus_outline_border(3px, $ec-yellow, -3px, none);
 
         &:first-child {
           border-right: 2px solid $datepicker-color-select-separator;
@@ -116,7 +112,7 @@ $datepicker-color-background: #eaeaea;
         &:hover,
         &:active,
         &:focus {
-          color: $white;
+          color: #fff;
         }
       }
     }
@@ -137,8 +133,8 @@ $datepicker-color-background: #eaeaea;
 
   .ui-state-default {
     border: none;
-    background-color: $white;
-    color: #404040;
+    background-color: #fff;
+    color: $ec-grey;
     text-align: center;
     margin: 1px;
     padding: 5px 10px;
@@ -151,7 +147,7 @@ $datepicker-color-background: #eaeaea;
 
   .ui-state-highlight {
     background-color: #fed500;
-    color: $black;
+    color: #000;
   }
 }
 
@@ -175,12 +171,13 @@ $datepicker-color-background: #eaeaea;
 
   .date-picker--icon {
     @extend .icon;
+
     position: absolute;
     top: .35em;
     right: .5em;
     // For the icon does not interfere with the clickable area.
     pointer-events: none;
-    color: $grey;
+    color: $ec-grey50;
   }
 }
 

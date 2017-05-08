@@ -560,8 +560,7 @@ function europa_form_nexteuropa_europa_search_search_form_alter(&$form, &$form_s
  */
 function _europa_breadcrumb_menu(&$variables) {
   global $language;
-
-  $menu = theme_get_setting('ec-europa-breadcrumb-menu');
+  $menu = theme_get_setting('ec_europa_breadcrumb_menu');
   $menu_links = menu_tree($menu);
   $new_items = [];
   $front = drupal_is_front_page();
@@ -1090,15 +1089,48 @@ function europa_preprocess_page(&$variables) {
           $node->local_tabs = drupal_render($variables['tabs']);
         }
 
-        // Use page__ds_node.tpl unless it is an exception.
+        // Use page__ds.tpl.php unless it is an exception.
         $custom_page_templates = ['page__gallery'];
         if (empty(array_intersect($variables['theme_hook_suggestions'], $custom_page_templates))) {
-          $variables['theme_hook_suggestions'][] = 'page__ds_node';
+          $variables['theme_hook_suggestions'][] = 'page__ds';
         }
       }
     }
   }
+  // Default ds template for taxonomy term pages using display suite.
+  if (arg(1) == 'term' && is_numeric(arg(2))) {
+    $type = taxonomy_term_load(arg(2))->vocabulary_machine_name;
+    $ds_layout = ds_get_layout('taxonomy_term', $type, 'full');
+
+    if (module_exists('ds') && $ds_layout) {
+      $variables['theme_hook_suggestions'][] = 'page__ds';
+      $main = !empty($ds_layout['settings']['regions']['left']) ? 'col-md-9 col-md-offset-3' : 'col-md-12';
+      // Default drupal taxonomy page outputs this message
+      // when no nodes are associated with the current term.
+      if (!empty($variables['page']['content']['system_main']['no_content'])) {
+        $variables['page']['content']['system_main']['no_content']['#prefix'] = '<div class="container-fluid"><p>';
+        $variables['page']['content']['system_main']['no_content']['#suffix'] = '</p></div>';
+      }
+
+      if (!empty($variables['page']['content']['system_main']['term_heading'])) {
+        if (!empty($variables['page']['content']['system_main']['nodes'])) {
+          $variables['page']['content']['system_main']['nodes']['main'] = $main;
+          $variables['page']['content']['system_main']['nodes']['#pre_render'] = ['_europa_term_heading'];
+        }
+      }
+    }
+  }
+
   $variables['logo_classes'] = 'logo site-header__logo';
+}
+
+/**
+ * Pre-render function for taxonomy pages.
+ */
+function _europa_term_heading($element) {
+  $element['#prefix'] = '<div class="container-fluid"><div class="' . $element['main'] . '">';
+  $element['#suffix'] = '</div></div>';
+  return $element;
 }
 
 /**

@@ -12,13 +12,10 @@ Markup: html/blockquote.html
 Style guide Typography.blockquote
 */
 
-$small-quote-size: 1em;
-$small-quote-width: 0.5em;
-
 blockquote,
 .blockquote {
   max-width: 24em;
-  border-left: 0.417em solid $yellow-light;
+  border-left: 0.417em solid $ec-yellow;
   font-style: italic;
   font-size: $font-size-mid;
   line-height: 1.5;

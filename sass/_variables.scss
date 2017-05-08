@@ -1,42 +1,58 @@
 // Bootstrap overrides and new variables.
 
+// @todo replace this invalid colors with the correct ones.
+$datepicker-color-header: #393939;
+$datepicker-color-select: #4f4f4f;
+$datepicker-color-select-separator: #686868;
+$datepicker-color-background: #eaeaea;
+$agenda-yellow: #fed437;
+//.file-upload .file-upload__message in color: #999999
+//.page-header .page-header__site-identification h3 in color: #b0c5de
+//.site-menu .listing__item in border-color: #dcb812
+//.ui-datepicker .ui-state-highlight in background-color: #fed500
+//.site-user-menu__list .site-user-menu--header background: #ececec
+//.splash-page &__helper-text tbody in border-bottom: 1px solid #245898
+//.splash-page &__helper-text tbody tr in border-top: 1px solid #245898
+
+// Check properties that uses rgba values.
+
 // Colors.
-$white:             #ffffff;
+$ec-blue:           #004494;
+$ec-blue-25:        #bfd0e4;
+$ec-blue-50:        #7fa1c9;
+$ec-blue-75:        #4073af;
+$ec-blue-110:       #003d84;
+$ec-blue-120:       #003776;
 
-$black:             #000000;
+$ec-grey:           #404040;
+$ec-grey5:          #f5f5f5;
+$ec-grey10:         #ebebeb;
+$ec-grey15:         #e3e3e3;
+$ec-grey25:          #cfcfcf;
+$ec-grey50:         #9f9f9f;
+$ec-grey75:         #575757;
 
-$grey-dark:         #575757;
-$grey-base:         #404040;
-$grey:              #b3b4b5;
-$grey-light:        #e2e2e2;
-$grey-lighter:      #ececec;
-$grey-lightest:     #f2f2f2;
+$ec-yellow:         #ffd617;
+$ec-yellow25:       #fff4bb;
+$ec-yellow50:       #ffe879;
+$ec-yellow75:       #ffde39;
+$ec-yellow110 :      #fbc11d;
+$ec-yellow120:      #f8ae21;
 
-$blue-darkest:      #023066;
-$blue-darker:       #012b58;
-$blue-dark:         #004494;
-$blue:              #006fb4;
-$blue-medium:       #3066a6;
-$blue-light:        #b0c5de;
-$blue-medium-light: #769EC1;
+// Notification colors.
+$ec-blue-n:         #006fb4;
+$ec-orange-n :       #f29527;
+$ec-green-n:        #467a39;
+$ec-red-n:          #da2131;
 
-$yellow-dark:       #f2a615;
-$yellow:            #ffc412;
-$yellow-light:      #ffd617;
-$yellow-lighter:    #ffe574;
+$brand-primary:     $ec-blue;
+$brand-political:   $ec-blue-120;
+$brand-success:     $ec-green-n;
+$brand-info:        $ec-grey75;
+$brand-warning:     $ec-yellow110 ;
+$brand-danger:      $ec-red-n;
 
-$green:             #467a39;
-
-$red:               #da2131;
-
-$brand-primary:     $blue-dark;
-$brand-political:   $blue-darker;
-$brand-success:     $green;
-$brand-info:        $grey-dark;
-$brand-warning:     $yellow-dark;
-$brand-danger:      $red;
-
-$text-color:        $grey-base;
+$text-color:        $ec-grey;
 
 // Typography.
 $font-family-sans-serif:  Arial, sans-serif;
@@ -89,43 +105,43 @@ $col-1-no-percentage: (85 / $grid-columns);
 $form-control-height: 2.750em; //44px basing on form control base font size.
 
 // Form colors.
-$form-control-color-disabled:                     $grey;
+$form-control-color-disabled:                     $ec-grey50;
 
-$form-control-text-color:                         $grey-base;
-$form-control-text-color-focus:                   $black;
-$form-control-border-color:                       $grey-base;
-$form-control-border-color-focus:                 $yellow-light;
-$form-control-background-color:                   $white;
-$form-control-background-color-disabled:          $grey-light;
+$form-control-text-color:                         $ec-grey;
+$form-control-text-color-focus:                   #000;
+$form-control-border-color:                       $ec-grey;
+$form-control-border-color-focus:                 $ec-yellow;
+$form-control-background-color:                   #fff;
+$form-control-background-color-disabled:          $ec-grey15;
 $state-danger-text:                               $brand-danger;
 
 // Select.
 $form-control-border-select-color-hover:          $brand-primary;
-$form-control-border-select-color-down:           $grey-base;
+$form-control-border-select-color-down:           $ec-grey;
 
 // Checkbox and radio.
 // Unchecked.
-$form-checkbox-color-unchecked:                   $grey-dark;
-$form-checkbox-background-color-unchecked:        $grey-lighter;
+$form-checkbox-color-unchecked:                   $ec-grey75;
+$form-checkbox-background-color-unchecked:        $ec-grey10;
 
 // Unchecked, hover.
-$form-checkbox-color-unchecked-hover:             $grey-dark;
+$form-checkbox-color-unchecked-hover:             $ec-grey75;
 $form-checkbox-border-color-unchecked-hover:      $brand-primary;
-$form-checkbox-background-color-unchecked-hover:  $white;
+$form-checkbox-background-color-unchecked-hover:  #fff;
 
 // Checked.
-$form-checkbox-color-checked:                     $white;
+$form-checkbox-color-checked:                     #fff;
 $form-checkbox-background-color-checked:          $brand-primary;
 
 // Checked, hover.
-$form-checkbox-color-checked-hover:               $white;
-$form-checkbox-border-color-checked-hover:        $yellow-light;
+$form-checkbox-color-checked-hover:               #fff;
+$form-checkbox-border-color-checked-hover:        $ec-yellow;
 $form-checkbox-background-color-checked-hover:    $brand-primary;
 
 // Navigation block color settings.
-$navigation-title-color:        $blue-darker;
-$navigation-title-hover-color:  $black;
-$navigation-top-border-color:   $yellow-light;
+$navigation-title-color:        $ec-blue-120;
+$navigation-title-hover-color:  #000;
+$navigation-top-border-color:   $ec-yellow;
 
 // Icon size.
 $form-checkbox-icon-size: 1.500em; // 24px
@@ -134,7 +150,7 @@ $form-checkbox-icon-size: 1.500em; // 24px
 $form-border-width: 0.111em;
 
 // Help block.
-$form-group-help-block-text-color:            $grey-dark;
+$form-group-help-block-text-color:            $ec-grey75;
 $form-group-help-block-text-color-disabled:   $form-control-color-disabled;
 $form-group-help-block-text-color-has-error:  $form-group-help-block-text-color;
 

@@ -14,7 +14,7 @@ Style guide hero-links
 
     &:first-child {
       margin-top: 0;
-      background-color: $grey-lightest;
+      background-color: $ec-grey5;
     }
   }
 }
@@ -31,6 +31,7 @@ Style guide hero-links
   .hero-links__item {
     @extend .col-sm-6;
     @extend .col-xs-12;
+
     margin-bottom: 30px;
     text-align: center;
 
@@ -55,7 +56,7 @@ Style guide hero-links
     line-height: normal;
     font-size: $font-size-mid;
     font-weight: bold;
-    color: $white;
+    color: #fff;
   }
 
   &:hover {

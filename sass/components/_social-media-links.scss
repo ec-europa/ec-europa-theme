@@ -11,11 +11,12 @@ Style guide social
 */
 
 .social-media-links {
-  @extend .hidden-print;
   width: 100%;
   float: left;
   padding: 30px;
-  background-color: $grey-lighter;
+  background-color: $ec-grey10;
+
+  @extend .hidden-print;
 
   a {
     font-size: 0.778em;
@@ -29,8 +30,9 @@ Style guide social
 }
 
 .social-media-links--field {
-  @extend .hidden-print;
   width: 100%;
+
+  @extend .hidden-print;
 }
 
 .social-media-links__list {
@@ -60,7 +62,8 @@ Style guide social
   & > a {
     width: 100%;
     display: block;
-    @include _focus_outline_border(3px, $yellow-light, -1px);
+
+    @include _focus_outline_border(3px, $ec-yellow, -1px);
 
     &::before {
       margin-bottom: 0;
@@ -135,6 +138,7 @@ Style guide social
 
     .wtShareLink {
       @extend .social-media-links__item;
+
       font-size: $font-size-medium;
     }
   }

@@ -11,8 +11,9 @@ Style guide inpagenav
 */
 
 .inpage-nav__wrapper {
-  @extend .hidden-print;
   margin-bottom: 1.667em;
+
+  @extend .hidden-print;
 
   &.affix,
   &.affix-top {
@@ -29,7 +30,7 @@ Style guide inpagenav
     li {
       &.active {
         .inpage_nav__list-item {
-          background-color: $grey-lighter;
+          background-color: $ec-grey10;
           border-color: $brand-primary;
         }
       }
@@ -41,7 +42,7 @@ Style guide inpagenav
     padding-top: 7px;
     padding-bottom: 7px;
     padding-left: 8px;
-    color: $black;
+    color: #000;
     font-size: $font-size-little;
     font-weight: bold;
     border-left: 3px solid transparent;
@@ -53,7 +54,7 @@ Style guide inpagenav
     }
 
     &:focus {
-      background-color: $yellow-light !important;
+      background-color: $ec-yellow !important;
       outline: none;
       text-decoration: underline;
     }
@@ -61,8 +62,8 @@ Style guide inpagenav
 }
 
 .inpage-nav__navbar {
-  background-color: $white;
-  color: $white;
+  background-color: #fff;
+  color: #fff;
 
   .inpage-nav__current-wrapper {
     overflow: hidden;
@@ -80,22 +81,22 @@ Style guide inpagenav
     overflow: hidden;
     font-size: $font-size-medium;
     font-weight: bold;
-    color: $white;
+    color: #fff;
     text-overflow: ellipsis;
     white-space: nowrap;
     cursor: pointer;
 
     &:hover {
-      color: $white;
+      color: #fff;
     }
   }
 
   .inpage-nav__help {
     display: none;
     padding-top: 1.35em;
-    background-color: $grey-lighter;
+    background-color: $ec-grey10;
     font-size: $font-size-xsmall;
-    color: $grey-dark;
+    color: $ec-grey75;
     text-transform: uppercase;
   }
 
@@ -109,16 +110,17 @@ Style guide inpagenav
 
   .inpage-nav__toggle {
     @extend .btn;
+
     margin: 0;
     padding: 1em;
-    background-color: $blue-darkest;
-    border-color: $blue-darkest;
+    background-color: $ec-blue-120;
+    border-color: $ec-blue-120;
 
     &:hover,
     &:active,
     &:focus {
-      background-color: $blue-darkest;
-      color: $white;
+      background-color: $ec-blue-120;
+      color: #fff;
       text-decoration: none;
     }
   }
@@ -127,9 +129,10 @@ Style guide inpagenav
     display: block;
     margin: 5px 4px;
     font-size: 10px;
-    color: $white;
-    @include transition(all 0.3s ease 0s);
+    color: #fff;
     transform-origin: 50% 50%;
+
+    @include transition(all 0.3s ease 0s);
 
     &::before {
       margin-right: 0;
@@ -149,7 +152,7 @@ Style guide inpagenav
   .inpage-nav__container {
     width: auto;
     padding: 0;
-    background-color: $blue-dark;
+    background-color: $ec-blue;
 
     .navbar-collapse {
       max-height: none;
@@ -169,8 +172,8 @@ Style guide inpagenav
       .inpage_nav__list-item {
         padding: 0.8em 0 0.8em 1em;
         font-size: $font-size-little;
-        color: $white;
-        border-top: 1px solid $blue-darkest;
+        color: #fff;
+        border-top: 1px solid $ec-blue-120;
 
         &:hover,
         &:focus {
@@ -205,16 +208,17 @@ Style guide inpagenav
     }
 
     .inpage-nav__header{
-      background-color: $grey-lighter;
+      background-color: $ec-grey10;
       font-weight: normal;
     }
 
     .inpage-nav__toggle {
-      background-color: $grey;
-      border-color: $grey;
+      background-color: $ec-grey50;
+      border-color: $ec-grey50;
 
       .inpage-nav__icon-arrow {
-        color: $grey-dark;
+        color: $ec-grey75;
+
         @include rotate(180deg);
       }
     }
@@ -225,7 +229,7 @@ Style guide inpagenav
   display: inherit;
   font-size: $font-size-base;
   font-weight: normal;
-  color: $grey-dark;
+  color: $ec-grey75;
   text-transform: uppercase;
 }
 

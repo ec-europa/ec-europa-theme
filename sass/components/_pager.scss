@@ -10,7 +10,7 @@ Style guide pager
 
 .pager__wrapper {
   text-align: center;
-  border-top: 2px solid $black;
+  border-top: 2px solid #000;
 }
 
 .pager {
@@ -21,7 +21,7 @@ Style guide pager
   width: 100%;
 
   > li {
-    color: $black;
+    color: #000;
     font-size: $font-size-little;
     font-weight: $font-weight-bold;
     border: 2px solid transparent;
@@ -78,12 +78,12 @@ Style guide pager
     }
 
     > a {
-      color: $blue-dark;
+      color: $ec-blue;
       font-weight: $font-weight-normal;
       text-decoration: none;
 
       &:hover {
-        color: $black;
+        color: #000;
         text-decoration: underline;
       }
     }
@@ -105,7 +105,7 @@ Style guide pager
         float: left !important;
 
         &.pager__item--current {
-          border: 2px solid $black;
+          border: 2px solid #000;
           position: relative;
         }
       }

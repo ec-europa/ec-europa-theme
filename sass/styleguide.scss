@@ -12,7 +12,7 @@ $large-desktop-width: ($container-lg - $grid-gutter-width) !default;
   text-align: center;
   font-weight: bold;
   text-transform: uppercase;
-  color: $white;
+  color: #fff;
   z-index: 1;
   cursor: pointer;
 }
@@ -112,7 +112,7 @@ a.kss-nav__menu-link {
 
   .kss-modifier__name {
     background: $brand-primary;
-    color: $white;
+    color: #fff;
     width: 50%;
     margin-left: -0.6em;
 
@@ -139,7 +139,7 @@ a.kss-nav__menu-link {
   .styleguide-example {
     padding: 1em 0 0.5em;
     background: #575757;
-    color: $white;
+    color: #fff;
     clear: left;
     float: left;
     width: 100%;
@@ -160,7 +160,7 @@ a.kss-nav__menu-link {
 .section-styleguide-random {
   background: #666;
   text-align: center;
-  color: $white;
+  color: #fff;
 }
 
 .section-styleguide {

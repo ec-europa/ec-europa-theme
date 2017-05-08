@@ -9,12 +9,12 @@ Style guide: siteheader.langselect
 */
 
 .lang-select-site {
-  @extend .hidden-print;
-
   position: absolute;
   top: 0;
   right: $grid-gutter-width / 2;
   text-align: center;
+
+  @extend .hidden-print;
 
   .lang-select-site__link {
     display: inline-block;
@@ -27,7 +27,7 @@ Style guide: siteheader.langselect
     border: 3px solid transparent;
 
     &:focus {
-      border-color: $yellow-light;
+      border-color: $ec-yellow;
       outline: none;
     }
   }
@@ -53,7 +53,7 @@ Style guide: siteheader.langselect
     top: 0;
     left: -1px;
     font-size: $font-size-xsmall;
-    color: $white;
+    color: #fff;
   }
 
   .lang-select-site__icon {

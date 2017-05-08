@@ -15,7 +15,6 @@ Style guide: buttons
 */
 
 .btn {
-  @extend .hidden-print;
   min-height: 2.75em;
   margin-bottom: 1em;
   padding: 0.5em 1em;
@@ -27,7 +26,9 @@ Style guide: buttons
   border-width: 2px;
   border-radius: 0;
   text-decoration: none;
-  @include _focus_outline_border(3px, $yellow-light, -3px);
+
+  @include _focus_outline_border(3px, $ec-yellow, -3px);
+  @extend .hidden-print;
 
   &:link {
     text-decoration: none;
@@ -38,8 +39,9 @@ Style guide: buttons
   &:focus {
     position: relative;
     text-decoration: underline;
-    @include box-shadow(none);
     z-index: 999;
+
+    @include box-shadow(none);
   }
 
   &::after {
@@ -81,18 +83,18 @@ Style guide: buttons
   }
 
   &.btn-ctn {
-    background-color: $yellow-light;
+    background-color: $ec-yellow;
     color: #000;
 
     &:hover,
     &:active {
-      background-color: $yellow-light;
-      border-color: $grey-base;
+      background-color: $ec-yellow;
+      border-color: $ec-grey;
     }
 
     &:focus {
-      border-color: $grey-base;
-      outline-color: $grey-base;
+      border-color: $ec-grey;
+      outline-color: $ec-grey;
     }
 
     &::after {
@@ -114,7 +116,7 @@ Style guide: buttons
       color: #fff;
     }
 
-    @include _focus_outline_border(3px, $yellow-light, -3px);
+    @include _focus_outline_border(3px, $ec-yellow, -3px);
 
     &::after {
       @extend .icon--after;
@@ -191,12 +193,12 @@ Style guide: buttons.btn-search
 */
 
 .btn.btn-search {
-  background-color: $grey-light;
-  color: $blue-dark;
+  background-color: $ec-grey15;
+  color: $ec-blue;
   border-color: #fff;
 
   &:hover {
-    background-color: $grey-light;
+    background-color: $ec-grey15;
     color: $text-color;
   }
 }
