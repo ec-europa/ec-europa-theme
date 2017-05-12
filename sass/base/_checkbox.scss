@@ -42,13 +42,14 @@ Style guide form.checkbox
       position: absolute;
       left: 0;
       display: inline-block;
-      content: "";
+      content: '';
       width: $form-checkbox-icon-size;
       height: $form-checkbox-icon-size;
       margin-left: -20px;
-      background: $white url('../images/svg/checkbox-unchecked.svg') no-repeat;
+      background: #fff url('../images/svg/checkbox-unchecked.svg') no-repeat;
       border: 3px solid transparent;
       border-radius: 6px;
+
       @include transition(border 0.15s ease-in-out, color 0.15s ease-in-out);
     }
   }
@@ -67,7 +68,7 @@ Style guide form.checkbox
       & + label {
         & + a {
           position: relative;
-          color: $grey-base;
+          color: $ec-grey;
           text-decoration: none;
           top: .25em;
         }

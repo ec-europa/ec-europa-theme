@@ -6,19 +6,17 @@ Markup: html/breadcrumb.html
 Style guide breadcrumb
 */
 
-$breadcrumb-heigth: 2.778em;
-
 .breadcrumb {
-  @extend .hidden-print;
   position: relative;
   margin: 0;
   padding: 0;
   background: none;
   font-size: 0.833em;
   font-weight: 600;
-  border-bottom: 1px solid $white;
+  border-bottom: 1px solid #fff;
   border-radius: 0;
   line-height: normal;
+
   @extend .hidden-print;
 
   ol,
@@ -42,11 +40,12 @@ a.breadcrumb__link {
   max-width: 100%;
   margin-right: 8px;
   font-weight: bold;
-  color: $white;
+  color: #fff;
   text-decoration: none;
 
   &::after {
     @extend .breadcrumb__link-arrow;
+
     vertical-align: middle;
     position: relative;
     top: 1px;
@@ -55,7 +54,7 @@ a.breadcrumb__link {
   &:hover,
   &:active,
   &:focus {
-    color: $white;
+    color: #fff;
 
     .breadcrumb__text {
       text-decoration: underline;
@@ -66,6 +65,7 @@ a.breadcrumb__link {
 .breadcrumb__link-arrow {
   @extend .icon--after;
   @include icon('breadcrumb');
+
   line-height: inherit !important;
   margin-left: 8px !important;
   font-weight: normal;
@@ -73,7 +73,7 @@ a.breadcrumb__link {
   // Width has to be defined, otherwise javascript has issues with calculating
   // the breadcrumb segment width.
   width: 11px;
-  color: $white;
+  color: #fff;
 }
 
 .breadcrumb__segment--last,
@@ -107,6 +107,7 @@ a.breadcrumb__link {
 
     &::after {
       position: static;
+
       @include translate(0, 0);
     }
   }
@@ -144,15 +145,15 @@ Style guide breadcrumb.collapsible
   .breadcrumb__btn-separator {
     display: inline-block;
     padding: 0 10px;
-    line-height: $breadcrumb-heigth;
-    background-color: $blue-darkest;
-    color: $white;
+    line-height: 2.778em;
+    background-color: $ec-blue120;
+    color: #fff;
     cursor: pointer;
 
     &:hover,
     &:active,
     &:focus {
-      background-color: $white;
+      background-color: #fff;
       color: $brand-primary;
 
       &::after {
@@ -216,6 +217,7 @@ Style guide breadcrumb.collapsible
 
     .breadcrumb__segment--last {
       padding-left: 0;
+
       @include transition(all 0.3s ease 0s);
     }
   }
@@ -234,7 +236,7 @@ Style guide breadcrumb.collapsible
           display: inline-block !important;
           position: relative;
           top: -4px;
-          color: $white;
+          color: #fff;
         }
 
         &::before {
@@ -251,7 +253,7 @@ Style guide breadcrumb.collapsible
           font-style: normal;
           font-weight: normal;
           font-variant: normal;
-          color: $white;
+          color: #fff;
           text-transform: none;
           text-decoration: none;
           -webkit-font-smoothing: antialiased;

@@ -141,7 +141,7 @@ Style guide listing.5
     }
 
     .listing__title {
-      color: $grey-base;
+      color: $ec-grey;
     }
 
     .listing__author {
@@ -193,7 +193,7 @@ Style guide listing.3
   .listing__item {
     border-top: none !important;
     border-bottom: none !important;
-    border-left: 5px solid $blue-dark;
+    border-left: 5px solid $ec-blue;
     padding: $font-size-mid/2 0 $font-size-mid/2 $font-size-mid;
     margin: $font-size-mid/2 0;
   }
@@ -351,7 +351,7 @@ Style guide listing.6
     // Margin bottom 0.5em of the previous item.
     margin: 0.611em 0 0 0;
     padding-top: 1.111em;
-    border-top: 1px solid $grey-light;
+    border-top: 1px solid $ec-grey15;
   }
 }
 
@@ -401,7 +401,7 @@ Style guide listing.6
   float: left;
   width: 100%;
   padding: 1.111em 0;
-  border-bottom: 1px solid $grey-lighter;
+  border-bottom: 1px solid $ec-grey10;
 
   // .listing__item-link element
   .listing__item-link {
@@ -412,11 +412,11 @@ Style guide listing.6
     height: 100%;
     z-index: 1;
 
-    @include _focus_outline_border(3px, $yellow-light, 2px);
+    @include _focus_outline_border(3px, $ec-yellow, 2px);
   }
 
   &:first-child {
-    border-top: 1px solid $grey-lighter;
+    border-top: 1px solid $ec-grey10;
   }
 
   // @todo: Apply a solution where we don't need to apply anynmore the property
@@ -431,7 +431,7 @@ Style guide listing.6
   &:active {
     .listing__title a,
     a.listing__title {
-      color: $grey-base;
+      color: $ec-grey;
       text-decoration: underline;
     }
   }
@@ -451,6 +451,7 @@ Style guide listing.6
 
   .listing__title {
     @extend .h3;
+
     position: relative;
     margin-bottom: 0.5em;
     padding: 0;
@@ -486,7 +487,7 @@ Style guide listing.6
   padding-left: 0;
 
   &::after {
-    content: " ";
+    content: ' ';
     clear: left;
     height: 1px;
     display: block;
@@ -544,6 +545,7 @@ Style guide listing.6
 .listing__title--arrow::after {
   @extend .icon--after;
   @extend .icon--right;
+
   position: absolute;
   margin-top: 2px;
   margin-left: 10px;
@@ -564,6 +566,7 @@ Style guide listing.6
   &::after {
     @extend .icon--after;
     @extend .icon--right;
+
     font-size: $font-size-xsmall;
   }
 
@@ -705,6 +708,7 @@ Style guide listing.2.5
 
 .listing__wrapper--two-columns .listing {
   @extend .col-sm-6;
+
   margin-bottom: 2em;
 }
 

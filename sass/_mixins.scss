@@ -92,9 +92,9 @@
     right: 0;
     padding: 0.2em 1em;
     visibility: visible;
-    background-color: $grey-base;
+    background-color: $ec-grey;
     font-weight: $font-weight-bold;
-    color: $white;
+    color: #fff;
     cursor: pointer;
     clear: both;
   }
@@ -182,7 +182,6 @@ $modifiers: (
 }
 
 @mixin form-control() {
-  @extend .hidden-print;
   color: $form-control-text-color;
   background-color: $form-control-background-color;
   border: 1px solid $form-control-border-color;
@@ -190,7 +189,9 @@ $modifiers: (
   margin-bottom: 1.1em;
   min-height: $form-control-height;
   font-size: $font-size-little;
+
   @include box-shadow(none);
+  @extend .hidden-print;
 
   &.has-error {
     border-width: 2px;
@@ -202,10 +203,11 @@ $modifiers: (
   &.is-focused,
   .has-error &:focus {
     color: $form-control-text-color-focus;
+
     @include box-shadow(none);
   }
 
-  @include _focus_outline_border(3px, $yellow-light, 0px, none);
+  @include _focus_outline_border(3px, $ec-yellow, 0, none);
 
   // Disabled modifier.
   &.is-disabled {
@@ -241,6 +243,7 @@ $modifiers: (
   .listing__title,
   .highlighted-item h3 {
     @extend .is-external;
+
     padding-right: 1.2em;
 
     &::after {
@@ -251,7 +254,7 @@ $modifiers: (
 }
 
 // Focus outline border.
-@mixin _focus_outline_border($thicknes:3px, $color:$yellow-light, $offset:0, $text-decoration:underline) {
+@mixin _focus_outline_border($thicknes: 3px, $color: $ec-yellow, $offset :0, $text-decoration: underline) {
   &:focus {
     outline: $thicknes solid $color;
     outline-offset: $offset;
@@ -305,6 +308,6 @@ $modifiers: (
   display: block;
   padding: 0.715em 1em;
   line-height: 1.5715;
-  background-color: $grey-lighter;
+  background-color: $ec-grey10;
   font-size: $font-size-xsmall;
 }

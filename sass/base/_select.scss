@@ -27,18 +27,21 @@ Style guide form.select
   &.form-control {
     // To not make it overlap.
     padding-right: 50px;
+
     @include select-list-arrow($form-control-border-color);
   }
 
   // Hover state.
-  &:hover,&.hover {
-    @include select-list-arrow($form-control-border-select-color-hover);
+  &:hover,
+  &.hover {
     border-color: $form-control-border-select-color-hover;
+
+    @include select-list-arrow($form-control-border-select-color-hover);
   }
 
   // Down state.
   &.is-down {
-    @include select-list-arrow($white, true);
+    @include select-list-arrow(#fff, true);
   }
 }
 

@@ -41,12 +41,13 @@ Style guide featured-item.2
 .featured-item__extended {
   margin-bottom: 1.667em;
   padding: 15px 0;
-  background-color: $grey-lighter;
-  border-left: 0.556em solid $yellow-light;
+  background-color: $ec-grey10;
+  border-left: 0.556em solid $ec-yellow;
 }
 
 .featured-item__image {
   @extend .col-md-5;
+
   margin-bottom: 1em;
 
   picture {
@@ -65,7 +66,7 @@ Style guide featured-item.2
 
   h3 {
     a {
-      color: $grey-base;
+      color: $ec-grey;
     }
   }
 }

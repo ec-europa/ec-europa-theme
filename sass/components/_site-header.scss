@@ -33,7 +33,7 @@ Style guide: siteheader
   }
 
   a {
-    @include _focus_outline_border(3px, $yellow-light, 5px);
+    @include _focus_outline_border(3px, $ec-yellow, 5px);
   }
 }
 

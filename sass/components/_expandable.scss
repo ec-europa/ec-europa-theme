@@ -21,7 +21,7 @@ Style guide Expandable.1
 .expandable__content {
   float: left;
   width: 100%;
-  background-color: $grey-lightest;
+  background-color: $ec-grey5;
 
   @include breakpoint(screen-xs-min) {
     & > p {
@@ -34,7 +34,7 @@ Style guide Expandable.1
 .expandable__toggle {
   float: left;
   width: 100%;
-  background: $yellow-light;
+  background-color: $ec-yellow;
 
   &.collapsed {
     background: none;
@@ -60,7 +60,7 @@ Style guide Expandable.1
 
   &:hover,
   &:focus {
-    background: $yellow-light;
+    background-color: $ec-yellow;
     outline: none;
     text-decoration: underline;
   }

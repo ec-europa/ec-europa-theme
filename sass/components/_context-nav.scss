@@ -8,11 +8,12 @@ Style guide contextnav
 
 .context-nav {
   @extend .row;
+
   font-size: $font-size-xsmall;
 
   &__expander {
     display: inline-block;
-    color: $blue-dark;
+    color: $ec-blue;
     border: none;
     cursor: pointer;
 
@@ -39,6 +40,7 @@ Style guide contextnav
 .context-nav__label {
   @extend .col-xs-12;
   @extend .col-md-3;
+
   display: block;
   clear: both;
 }
@@ -46,6 +48,7 @@ Style guide contextnav
 .context-nav__items {
   @extend .col-xs-12;
   @extend .col-md-9;
+
   display: block;
   margin-bottom: 0.556em;
 
@@ -59,7 +62,7 @@ Style guide contextnav
 
   &::after {
     content: " |";
-    color: $grey;
+    color: $ec-grey50;
     margin-right: 4px;
   }
 
@@ -71,7 +74,7 @@ Style guide contextnav
   }
 
   a {
-    @include _focus_outline_border(3px, $yellow-light, 2px);
+    @include _focus_outline_border(3px, $ec-yellow, 2px);
 
     &:link {
       text-decoration: none;

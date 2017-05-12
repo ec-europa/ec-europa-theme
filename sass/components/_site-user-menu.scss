@@ -24,11 +24,12 @@ a.site-user-menu__list {
 
 .site-user-menu__list {
   @extend .reset-lists;
+
   font-weight: $font-weight-bold;
   padding: 0.5em;
 
   .site-user-menu--header & {
-    background: #ececec;
+    background-color: $ec-grey5;
     font-size: $font-size-little;
     padding: 0.3em;
   }
