@@ -46,7 +46,7 @@
   .listing__wrapper--row-two .listing:after {
     clear: both; }
 
-.col-xs-1, .col-sm-1, .file__icon, .col-md-1, .file__icon, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .context-nav__label, .col-lg-3, .col-xs-4, .col-sm-4, .file__btn, .col-md-4, .file__btn, .footer__column, .listing__wrapper--three-columns .listing, .listing__wrapper--row-three .listing__item, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .featured-item__image, .col-lg-5, .col-xs-6, .col-sm-6, .file__metadata, .file__translations .file__metadata, .hero-links__items .hero-links__item, .listing__wrapper--two-columns .listing, .col-md-6, .banner__left, .banner__paragraph, .comment__form-wrapper, .file__metadata, .file__translations .file__metadata, .listing__wrapper--row-two .listing__item, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .featured-item__content, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .listing__wrapper--maxwidth .listing, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .context-nav__items, .col-lg-9, .col-xs-10, .file__metadata, .file--link .file__metadata--link, .col-sm-10, .file--link .file__metadata--link, .col-md-10, .file--link .file__metadata--link, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .context-nav__label, .context-nav__items, .file__btn, .file__translations .file__metadata, .hero-links__items .hero-links__item, .col-sm-12, .col-md-12, .banner__content, .listing__wrapper--three-columns .featured-item__image,
+.col-xs-1, .col-sm-1, .file__icon, .col-md-1, .file__icon, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .context-nav__label, .col-lg-3, .col-xs-4, .col-sm-4, .file__btn, .col-md-4, .file__btn, .footer__column, .gallery-overlay__sidebar, .listing__wrapper--three-columns .listing, .listing__wrapper--row-three .listing__item, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .featured-item__image, .col-lg-5, .col-xs-6, .col-sm-6, .file__metadata, .file__translations .file__metadata, .hero-links__items .hero-links__item, .listing__wrapper--two-columns .listing, .col-md-6, .banner__left, .banner__paragraph, .comment__form-wrapper, .file__metadata, .file__translations .file__metadata, .listing__wrapper--row-two .listing__item, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .featured-item__content, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .gallery-overlay__main, .listing__wrapper--maxwidth .listing, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .context-nav__items, .col-lg-9, .col-xs-10, .file__metadata, .file--link .file__metadata--link, .col-sm-10, .file--link .file__metadata--link, .col-md-10, .file--link .file__metadata--link, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .context-nav__label, .context-nav__items, .file__btn, .file__translations .file__metadata, .hero-links__items .hero-links__item, .col-sm-12, .col-md-12, .banner__content, .listing__wrapper--three-columns .featured-item__image,
 .listing__wrapper--three-columns .featured-item__content,
 .section--row-three .featured-item__image,
 .section--row-three .featured-item__content, .col-lg-12 {
@@ -318,7 +318,7 @@
     margin-left: 100%; } }
 
 @media (min-width: 992px) {
-  .col-md-1, .file__icon, .col-md-2, .col-md-3, .context-nav__label, .col-md-4, .file__btn, .footer__column, .listing__wrapper--three-columns .listing, .listing__wrapper--row-three .listing__item, .col-md-5, .featured-item__image, .col-md-6, .banner__left, .banner__paragraph, .comment__form-wrapper, .file__metadata, .file__translations .file__metadata, .listing__wrapper--row-two .listing__item, .col-md-7, .featured-item__content, .col-md-8, .listing__wrapper--maxwidth .listing, .col-md-9, .context-nav__items, .col-md-10, .file--link .file__metadata--link, .col-md-11, .col-md-12, .banner__content, .listing__wrapper--three-columns .featured-item__image,
+  .col-md-1, .file__icon, .col-md-2, .col-md-3, .context-nav__label, .col-md-4, .file__btn, .footer__column, .gallery-overlay__sidebar, .listing__wrapper--three-columns .listing, .listing__wrapper--row-three .listing__item, .col-md-5, .featured-item__image, .col-md-6, .banner__left, .banner__paragraph, .comment__form-wrapper, .file__metadata, .file__translations .file__metadata, .listing__wrapper--row-two .listing__item, .col-md-7, .featured-item__content, .col-md-8, .gallery-overlay__main, .listing__wrapper--maxwidth .listing, .col-md-9, .context-nav__items, .col-md-10, .file--link .file__metadata--link, .col-md-11, .col-md-12, .banner__content, .listing__wrapper--three-columns .featured-item__image,
   .listing__wrapper--three-columns .featured-item__content,
   .section--row-three .featured-item__image,
   .section--row-three .featured-item__content {
@@ -329,7 +329,7 @@
     width: 16.6666666667%; }
   .col-md-3, .context-nav__label {
     width: 25%; }
-  .col-md-4, .file__btn, .footer__column, .listing__wrapper--three-columns .listing, .listing__wrapper--row-three .listing__item {
+  .col-md-4, .file__btn, .footer__column, .gallery-overlay__sidebar, .listing__wrapper--three-columns .listing, .listing__wrapper--row-three .listing__item {
     width: 33.3333333333%; }
   .col-md-5, .featured-item__image {
     width: 41.6666666667%; }
@@ -337,7 +337,7 @@
     width: 50%; }
   .col-md-7, .featured-item__content {
     width: 58.3333333333%; }
-  .col-md-8, .listing__wrapper--maxwidth .listing {
+  .col-md-8, .gallery-overlay__main, .listing__wrapper--maxwidth .listing {
     width: 66.6666666667%; }
   .col-md-9, .context-nav__items {
     width: 75%; }
@@ -3048,7 +3048,7 @@ Style guide: gallery.overlay
 
 .gallery-overlay__media {
   margin: 0 auto;
-  padding: 40px;
+  padding: 0 30px;
   position: relative; }
   .gallery-overlay__media .gallery-overlay__media-wrapper--center {
     height: 100%;
@@ -3068,7 +3068,7 @@ Style guide: gallery.overlay
       display: block; }
   @media (min-width: 992px) {
     .gallery-overlay__media {
-      padding: 60px; }
+      padding: 0 60px; }
       .gallery-overlay__media .gallery-overlay__media-item {
         display: none; }
         .gallery-overlay__media .gallery-overlay__media-item > * {
@@ -3078,32 +3078,29 @@ Style guide: gallery.overlay
   position: static;
   display: block;
   text-align: right;
-  padding: 6px 14px;
-  font-size: 0.833em;
-  background-color: #404040; }
+  padding: 10px 14px;
+  background-color: #404040;
+  font-size: 0.833em; }
   @media (min-width: 992px) {
     .gallery-overlay__close {
       position: absolute;
-      z-index: 1;
-      top: 20px;
+      top: 25px;
       right: 30px;
-      background: none;
-      padding: 0; } }
+      padding: 0;
+      background-color: transparent;
+      z-index: 1; } }
   .gallery-overlay__close a {
     text-decoration: none; }
 
 .gallery-overlay__sidebar {
-  padding: 3.575em 2.145em 2.145em 2.145em;
+  padding: 2.575em 2.145em 2.145em 2.145em;
   font-size: 0.778em;
   background-color: #404040; }
-  @media (min-width: 480px) {
-    .gallery-overlay__sidebar {
-      padding: 30px; } }
   @media (min-width: 992px) {
     .gallery-overlay__sidebar {
-      padding: 50px; } }
+      padding-top: 4.3em; } }
   .gallery-overlay__sidebar .gallery-overlay__meta {
-    margin-bottom: 3.575em;
+    margin-bottom: 2.575em;
     line-height: normal; }
     .gallery-overlay__sidebar .gallery-overlay__meta > span {
       margin-right: 15px; }
