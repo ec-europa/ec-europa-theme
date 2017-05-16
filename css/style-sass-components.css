@@ -3001,23 +3001,36 @@ Markup: html/gallery-overlay.html
 
 Style guide: gallery.overlay
 */
+@media (min-width: 1200px) {
+  #galleryOverlay {
+    text-align: center;
+    padding: 0 !important; }
+    #galleryOverlay::before {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+      margin-right: -4px; }
+  .gallery-wrapper {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+    width: auto; } }
+
 .gallery-overlay {
-  background-color: #000;
+  background-color: #404040;
   color: #fff;
   position: relative;
-  margin: 0 auto; }
+  margin: 0 auto;
+  max-width: 100%; }
   .gallery-overlay a {
     color: #fff; }
-  @media (min-width: 992px) {
+  @media (min-width: 1400px) {
     .gallery-overlay {
-      max-width: 1400px;
-      display: table; }
-      .gallery-overlay [class*="col-"] {
-        float: none;
-        display: table-cell;
-        vertical-align: top; } }
+      max-width: 1400px; } }
 
 .gallery-overlay__main {
+  background-color: #000;
   padding: 0; }
   .gallery-overlay__main .gallery-overlay__media-previous,
   .gallery-overlay__main .gallery-overlay__media-next {
@@ -3027,28 +3040,55 @@ Style guide: gallery.overlay
     margin: 0; }
     .gallery-overlay__main .gallery-overlay__media-previous a,
     .gallery-overlay__main .gallery-overlay__media-next a {
-      font-size: 1.4em; }
+      font-size: 1.4em;
+      display: inline-block;
+      visibility: hidden;
+      width: 1.2em; }
+      .gallery-overlay__main .gallery-overlay__media-previous a::before, .gallery-overlay__main .gallery-overlay__media-previous a::after,
+      .gallery-overlay__main .gallery-overlay__media-next a::before,
+      .gallery-overlay__main .gallery-overlay__media-next a::after {
+        visibility: visible; }
+      html.lte8 .gallery-overlay__main .gallery-overlay__media-previous a, html.lte8
+      .gallery-overlay__main .gallery-overlay__media-next a {
+        visibility: visible;
+        text-indent: -999em;
+        overflow: hidden;
+        float: left; }
+        html.lte8 .gallery-overlay__main .gallery-overlay__media-previous a::before, html.lte8 .gallery-overlay__main .gallery-overlay__media-previous a::after, html.lte8
+        .gallery-overlay__main .gallery-overlay__media-next a::before, html.lte8
+        .gallery-overlay__main .gallery-overlay__media-next a::after {
+          text-indent: 0;
+          position: absolute;
+          overflow: hidden;
+          margin-left: 999em; }
       .gallery-overlay__main .gallery-overlay__media-previous a::before,
       .gallery-overlay__main .gallery-overlay__media-next a::before {
         margin: 0; }
       .gallery-overlay__main .gallery-overlay__media-previous a:hover,
       .gallery-overlay__main .gallery-overlay__media-next a:hover {
         color: #9f9f9f; }
-    @media (min-width: 480px) {
+    @media (min-width: 992px) {
       .gallery-overlay__main .gallery-overlay__media-previous,
       .gallery-overlay__main .gallery-overlay__media-next {
-        max-width: 960px;
-        max-height: 800px;
         padding: 0; }
         .gallery-overlay__main .gallery-overlay__media-previous a,
         .gallery-overlay__main .gallery-overlay__media-next a {
           font-size: 2.2em; } }
+  .gallery-overlay__main .gallery-overlay__media-previous {
+    left: -10px;
+    z-index: 1; }
+    @media (min-width: 992px) {
+      .gallery-overlay__main .gallery-overlay__media-previous {
+        left: 0; } }
   .gallery-overlay__main .gallery-overlay__media-next {
     right: 0; }
+    @media (min-width: 992px) {
+      .gallery-overlay__main .gallery-overlay__media-next {
+        right: 10px; } }
 
 .gallery-overlay__media {
   margin: 0 auto;
-  padding: 0 30px;
+  padding: 30px;
   position: relative; }
   .gallery-overlay__media .gallery-overlay__media-wrapper--center {
     height: 100%;
@@ -3063,12 +3103,12 @@ Style guide: gallery.overlay
     .gallery-overlay__media .gallery-overlay__media-item > * {
       display: block;
       margin: 0 auto;
-      max-height: 325px; }
+      max-height: 800px; }
     .gallery-overlay__media .gallery-overlay__media-item.active {
       display: block; }
   @media (min-width: 992px) {
     .gallery-overlay__media {
-      padding: 0 60px; }
+      padding: 60px; }
       .gallery-overlay__media .gallery-overlay__media-item {
         display: none; }
         .gallery-overlay__media .gallery-overlay__media-item > * {
@@ -3095,7 +3135,7 @@ Style guide: gallery.overlay
 .gallery-overlay__sidebar {
   padding: 2.575em 2.145em 2.145em 2.145em;
   font-size: 0.778em;
-  background-color: #404040; }
+  line-height: 1.6; }
   @media (min-width: 992px) {
     .gallery-overlay__sidebar {
       padding-top: 4.3em; } }
