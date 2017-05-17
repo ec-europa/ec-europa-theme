@@ -169,8 +169,8 @@ Style guide: gallery.overlay
 */
 
 // Vertically center modal over screen-lg-min width.
-@include breakpoint(screen-lg-min) {
-  #galleryOverlay {
+@include breakpoint(screen-md-min) {
+  .modal {
     text-align: center;
     padding: 0!important;
     &::before {
@@ -181,7 +181,7 @@ Style guide: gallery.overlay
       margin-right: -4px;
     }
   }
-  .gallery-wrapper {
+  .gallery-overlay__wrapper {
     display: inline-block;
     text-align: left;
     vertical-align: middle;
@@ -195,12 +195,17 @@ Style guide: gallery.overlay
   color: #fff;
   position: relative;
   margin: 0 auto;
+  max-width: 100%;
+  height: 100vh;
 
   a {
     color: #fff;
   }
 
-  max-width: 100%;
+  @include breakpoint(screen-md-min) {
+    max-height: 800px;
+    height: auto;
+  }
 
   @media (min-width: 1400px) {
     max-width: 1400px;
@@ -273,7 +278,7 @@ Style guide: gallery.overlay
 // Media column.
 .gallery-overlay__media {
   margin: 0 auto;
-  padding: 30px;
+  padding: 0 30px;
   position: relative;
 
   .gallery-overlay__media-wrapper--center {
@@ -300,28 +305,11 @@ Style guide: gallery.overlay
     &.active {
       display: block;
     }
-  }
 
-  @include breakpoint(screen-md-max) {
-
-    .gallery-overlay__media-item {
-
-      & > * {
-        max-height: 325px;
-      }
-    }
   }
 
   @include breakpoint(screen-md-min) {
-    padding: 60px;
-
-    .gallery-overlay__media-item {
-      display: none;
-
-      & > * {
-        max-height: 800px;
-      }
-    }
+    padding: 0 60px;
   }
 }
 
@@ -358,6 +346,7 @@ Style guide: gallery.overlay
 
   padding: 2.575em 2.145em 2.145em 2.145em;
   font-size: $font-size-xsmall;
+  background-color: $ec-grey;
   line-height: 1.6;
 
   @include breakpoint(screen-md-min) {
