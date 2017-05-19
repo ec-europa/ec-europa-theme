@@ -4724,6 +4724,14 @@ Style guide listing.3
     .listing--cta .listing__item .node {
       padding: 1.111em;
       background-color: #004494; }
+      .listing--cta .listing__item .listing__item__wrapper:before, .listing--cta .listing__item .listing__item__wrapper:after,
+      .listing--cta .listing__item .node:before,
+      .listing--cta .listing__item .node:after {
+        content: " ";
+        display: table; }
+      .listing--cta .listing__item .listing__item__wrapper:after,
+      .listing--cta .listing__item .node:after {
+        clear: both; }
     .listing--cta .listing__item .listing__title,
     .listing--cta .listing__item .listing__title a,
     .listing--cta .listing__item a {
