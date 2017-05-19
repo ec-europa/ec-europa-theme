@@ -1,60 +1,66 @@
-<button class="btn btn-default" data-toggle="modal" data-target="#galleryOverlay" aria-expanded="false">Open the Gallery overlay <span class="icon icon--image"></span></button>
+<button class="btn btn-primary" data-toggle="modal" data-target="#gallery-overlay">
+  Gallery overlay <span class="icon icon--image"></span>
+</button>
 
 <!-- Modal -->
-<div class="modal" id="galleryOverlay" tabindex="-1" role="dialog" aria-labelledby="Gallery Overlay" aria-hidden="true">
-  <div class="gallery-overlay__wrapper">
-    <div class="gallery-overlay row">
-      <span class="gallery-overlay__close">
-        <a href="#" title="Close" data-dismiss="modal">Close</a>
-      </span>
+<div class="modal" id="gallery-overlay" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal__dialog">
+    <div class="modal__content">
 
-      <div class="gallery-overlay__main">
-        <div class="gallery-overlay__media-previous">
-          <a href="#" title="Previous">Previous</a>
-        </div>
+      <div class="gallery-overlay">
+        <span class="gallery-overlay__close">
+          <a href="#" title="Close" data-dismiss="modal">Close</a>
+        </span>
 
-        <div class="gallery-overlay__media">
-          <div class="gallery-overlay__media-wrapper--center">
-            <ul>
-              <li class="gallery-overlay__media-item active">
-                <img class="img-responsive" src="http://lorempixel.com/900/620/business" alt="">
-              </li>
-              <li class="gallery-overlay__media-item">
-                <iframe src="//ec.europa.eu/avservices/audio/play.cfm?sitelang=en&amp;ref=I136480&amp;starttime=0&amp;endtime=0&amp;videolang=EN" scrolling="no" id="videoplayerI136480" width="670" height="200" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
-              </li>
-              <li class="gallery-overlay__media-item">
-                <iframe src="//ec.europa.eu/avservices/play.cfm?sitelang=en&amp;ref=I131927&amp;starttime=0&amp;endtime=0&amp;autoStart=false&amp;videolang=INT" scrolling="no" id="videoplayerI131927" width="670" height="378" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
-              </li>
-              <li class="gallery-overlay__media-item">
-                <img class="img-responsive" src="http://lorempixel.com/960/1200/business" alt="">
-              </li>
-            </ul>
+        <div class="gallery-overlay__main">
+          <div class="gallery-overlay__media-previous">
+            <a href="#" title="Previous">Previous</a>
+          </div>
+
+          <div class="gallery-overlay__media">
+            <div class="gallery-overlay__media-wrapper--center">
+              <ul>
+                <li class="gallery-overlay__media-item active">
+                  <img class="img-responsive" src="http://lorempixel.com/900/620/business" alt="">
+                </li>
+                <li class="gallery-overlay__media-item">
+                  <iframe src="//ec.europa.eu/avservices/audio/play.cfm?sitelang=en&amp;ref=I136480&amp;starttime=0&amp;endtime=0&amp;videolang=EN" scrolling="no" id="videoplayerI136480" width="670" height="200" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+                </li>
+                <li class="gallery-overlay__media-item">
+                  <iframe src="//ec.europa.eu/avservices/play.cfm?sitelang=en&amp;ref=I131927&amp;starttime=0&amp;endtime=0&amp;autoStart=false&amp;videolang=INT" scrolling="no" id="videoplayerI131927" width="670" height="378" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+                </li>
+                <li class="gallery-overlay__media-item">
+                  <img class="img-responsive" src="http://lorempixel.com/960/1200/business" alt="">
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="gallery-overlay__media-next">
+            <a href="#" title="Next">Next</a>
           </div>
         </div>
 
-        <div class="gallery-overlay__media-next">
-          <a href="#" title="Next">Next</a>
+        <div class="gallery-overlay__sidebar">
+          <div class="gallery-overlay__meta">
+            <span class="gallery-overlay__count">2 / 15</span>
+            <span class="gallery-overlay__download">
+              <a href="#" title="Download">Download</a>
+            </span>
+            <span class="gallery-overlay__share">
+              <a href="#" title="Share">Share</a>
+            </span>
+          </div>
+
+          <div class="gallery-overlay__description">
+            <p>Nulla consequat massa quis enim. Donec pede justo.</p>
+            <p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.</p>
+          </div>
+
+          <span class="gallery-overlay__copyright">&copy; Copyright holder, Author name, License type</span>
         </div>
       </div>
 
-      <div class="gallery-overlay__sidebar">
-        <div class="gallery-overlay__meta">
-          <span class="gallery-overlay__count">2 / 15</span>
-          <span class="gallery-overlay__download">
-            <a href="#" title="Download">Download</a>
-          </span>
-          <span class="gallery-overlay__share">
-            <a href="#" title="Share">Share</a>
-          </span>
-        </div>
-
-        <div class="gallery-overlay__description">
-          <p>Nulla consequat massa quis enim. Donec pede justo.</p>
-          <p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.</p>
-        </div>
-
-        <span class="gallery-overlay__copyright">&copy; Copyright holder, Author name, License type</span>
-      </div>
     </div>
   </div>
 </div>

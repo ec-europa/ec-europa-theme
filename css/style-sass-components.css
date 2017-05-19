@@ -29,19 +29,19 @@
   .container-fluid:after {
     clear: both; }
 
-.row, .banner--video, .context-nav, .file, .hero-links__items, .listing__wrapper--maxwidth, .listing__wrapper--three-columns,
+.row, .banner--video, .context-nav, .file, .gallery-overlay, .hero-links__items, .listing__wrapper--maxwidth, .listing__wrapper--three-columns,
 .listing__wrapper--two-columns, .listing__wrapper--row-three .listing,
 .listing__wrapper--row-two .listing {
   margin-left: -15px;
   margin-right: -15px; }
-  .row:before, .banner--video:before, .context-nav:before, .file:before, .hero-links__items:before, .listing__wrapper--maxwidth:before, .listing__wrapper--three-columns:before,
+  .row:before, .banner--video:before, .context-nav:before, .file:before, .gallery-overlay:before, .hero-links__items:before, .listing__wrapper--maxwidth:before, .listing__wrapper--three-columns:before,
   .listing__wrapper--two-columns:before, .listing__wrapper--row-three .listing:before,
-  .listing__wrapper--row-two .listing:before, .row:after, .banner--video:after, .context-nav:after, .file:after, .hero-links__items:after, .listing__wrapper--maxwidth:after, .listing__wrapper--three-columns:after,
+  .listing__wrapper--row-two .listing:before, .row:after, .banner--video:after, .context-nav:after, .file:after, .gallery-overlay:after, .hero-links__items:after, .listing__wrapper--maxwidth:after, .listing__wrapper--three-columns:after,
   .listing__wrapper--two-columns:after, .listing__wrapper--row-three .listing:after,
   .listing__wrapper--row-two .listing:after {
     content: " ";
     display: table; }
-  .row:after, .banner--video:after, .context-nav:after, .file:after, .hero-links__items:after, .listing__wrapper--maxwidth:after, .listing__wrapper--three-columns:after,
+  .row:after, .banner--video:after, .context-nav:after, .file:after, .gallery-overlay:after, .hero-links__items:after, .listing__wrapper--maxwidth:after, .listing__wrapper--three-columns:after,
   .listing__wrapper--two-columns:after, .listing__wrapper--row-three .listing:after,
   .listing__wrapper--row-two .listing:after {
     clear: both; }
@@ -2885,18 +2885,18 @@ Style guide gallery
 .mediagallery {
   padding-left: 15px;
   padding-right: 15px; }
-  .mediagallery .row, .mediagallery .banner--video, .mediagallery .context-nav, .mediagallery .file, .mediagallery .hero-links__items, .mediagallery .listing__wrapper--maxwidth, .mediagallery .listing__wrapper--three-columns, .mediagallery
+  .mediagallery .row, .mediagallery .banner--video, .mediagallery .context-nav, .mediagallery .file, .mediagallery .gallery-overlay, .mediagallery .hero-links__items, .mediagallery .listing__wrapper--maxwidth, .mediagallery .listing__wrapper--three-columns, .mediagallery
   .listing__wrapper--two-columns, .mediagallery .listing__wrapper--row-three .listing, .listing__wrapper--row-three .mediagallery .listing, .mediagallery
   .listing__wrapper--row-two .listing,
   .listing__wrapper--row-two .mediagallery .listing {
     padding-left: 0;
     padding-right: 0; }
-    .mediagallery .row:first-child .mediagallery__item, .mediagallery .banner--video:first-child .mediagallery__item, .mediagallery .context-nav:first-child .mediagallery__item, .mediagallery .file:first-child .mediagallery__item, .mediagallery .hero-links__items:first-child .mediagallery__item, .mediagallery .listing__wrapper--maxwidth:first-child .mediagallery__item, .mediagallery .listing__wrapper--three-columns:first-child .mediagallery__item, .mediagallery
+    .mediagallery .row:first-child .mediagallery__item, .mediagallery .banner--video:first-child .mediagallery__item, .mediagallery .context-nav:first-child .mediagallery__item, .mediagallery .file:first-child .mediagallery__item, .mediagallery .gallery-overlay:first-child .mediagallery__item, .mediagallery .hero-links__items:first-child .mediagallery__item, .mediagallery .listing__wrapper--maxwidth:first-child .mediagallery__item, .mediagallery .listing__wrapper--three-columns:first-child .mediagallery__item, .mediagallery
     .listing__wrapper--two-columns:first-child .mediagallery__item, .mediagallery .listing__wrapper--row-three .listing:first-child .mediagallery__item, .listing__wrapper--row-three .mediagallery .listing:first-child .mediagallery__item, .mediagallery
     .listing__wrapper--row-two .listing:first-child .mediagallery__item,
     .listing__wrapper--row-two .mediagallery .listing:first-child .mediagallery__item {
       padding-top: 0 !important; }
-    .mediagallery .row:last-child .mediagallery__item, .mediagallery .banner--video:last-child .mediagallery__item, .mediagallery .context-nav:last-child .mediagallery__item, .mediagallery .file:last-child .mediagallery__item, .mediagallery .hero-links__items:last-child .mediagallery__item, .mediagallery .listing__wrapper--maxwidth:last-child .mediagallery__item, .mediagallery .listing__wrapper--three-columns:last-child .mediagallery__item, .mediagallery
+    .mediagallery .row:last-child .mediagallery__item, .mediagallery .banner--video:last-child .mediagallery__item, .mediagallery .context-nav:last-child .mediagallery__item, .mediagallery .file:last-child .mediagallery__item, .mediagallery .gallery-overlay:last-child .mediagallery__item, .mediagallery .hero-links__items:last-child .mediagallery__item, .mediagallery .listing__wrapper--maxwidth:last-child .mediagallery__item, .mediagallery .listing__wrapper--three-columns:last-child .mediagallery__item, .mediagallery
     .listing__wrapper--two-columns:last-child .mediagallery__item, .mediagallery .listing__wrapper--row-three .listing:last-child .mediagallery__item, .listing__wrapper--row-three .mediagallery .listing:last-child .mediagallery__item, .mediagallery
     .listing__wrapper--row-two .listing:last-child .mediagallery__item,
     .listing__wrapper--row-two .mediagallery .listing:last-child .mediagallery__item {
@@ -2984,7 +2984,7 @@ Style guide gallery
     margin-left: 0; } }
 
 @media (max-width: 991px) {
-  .mediagallery .row, .mediagallery .banner--video, .mediagallery .context-nav, .mediagallery .file, .mediagallery .hero-links__items, .mediagallery .listing__wrapper--maxwidth, .mediagallery .listing__wrapper--three-columns, .mediagallery
+  .mediagallery .row, .mediagallery .banner--video, .mediagallery .context-nav, .mediagallery .file, .mediagallery .gallery-overlay, .mediagallery .hero-links__items, .mediagallery .listing__wrapper--maxwidth, .mediagallery .listing__wrapper--three-columns, .mediagallery
   .listing__wrapper--two-columns, .mediagallery .listing__wrapper--row-three .listing, .listing__wrapper--row-three .mediagallery .listing, .mediagallery
   .listing__wrapper--row-two .listing,
   .listing__wrapper--row-two .mediagallery .listing {
@@ -3001,29 +3001,24 @@ Markup: html/gallery-overlay.html
 
 Style guide: gallery.overlay
 */
+.modal__dialog {
+  display: table;
+  height: 100%;
+  width: 100%; }
+
+.modal__content {
+  display: table-cell; }
+
 @media (min-width: 992px) {
-  .modal {
-    text-align: center;
-    padding: 0 !important; }
-    .modal::before {
-      content: '';
-      display: inline-block;
-      height: 100%;
-      vertical-align: middle;
-      margin-right: -4px; }
-  .gallery-overlay__wrapper {
-    display: inline-block;
-    text-align: left;
-    vertical-align: middle;
-    width: auto; } }
+  .modal__content {
+    vertical-align: middle; } }
 
 .gallery-overlay {
-  background-color: #404040;
-  color: #fff;
   position: relative;
+  height: 100%;
   margin: 0 auto;
-  max-width: 100%;
-  height: 100vh; }
+  background-color: #404040;
+  color: #fff; }
   .gallery-overlay a {
     color: #fff; }
   @media (min-width: 992px) {
@@ -3045,10 +3040,10 @@ Style guide: gallery.overlay
     margin: 0; }
     .gallery-overlay__main .gallery-overlay__media-previous a,
     .gallery-overlay__main .gallery-overlay__media-next a {
-      font-size: 1.4em;
       display: inline-block;
       visibility: hidden;
-      width: 1.2em; }
+      width: 1.2em;
+      font-size: 1.4em; }
       .gallery-overlay__main .gallery-overlay__media-previous a::before, .gallery-overlay__main .gallery-overlay__media-previous a::after,
       .gallery-overlay__main .gallery-overlay__media-next a::before,
       .gallery-overlay__main .gallery-overlay__media-next a::after {
