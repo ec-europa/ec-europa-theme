@@ -4708,6 +4708,8 @@ Style guide listing.3
 
 .listing--cta {
   color: #fff; }
+  .listing--cta .listing__title {
+    margin-right: 10%; }
   .listing--cta .listing__item {
     border: none;
     margin: 1.111em 0; }

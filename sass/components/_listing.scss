@@ -232,6 +232,10 @@ Style guide listing.3
 .listing--cta {
   color: #fff;
 
+  .listing__title {
+    margin-right: 10%;
+  }
+
   .listing__item {
     border: none;
     margin: 1.111em 0;
