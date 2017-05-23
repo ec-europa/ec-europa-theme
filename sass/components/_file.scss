@@ -225,9 +225,7 @@ Style guide: file.3
 */
 .file--link {
   background-color: transparent;
-  @extend .col-md-10;
-  @extend .col-sm-10;
-  @extend .col-xs-10;
+  max-width: 32em;
   border-top: 1px solid $ec-grey15;
   &:last-child {
     border-bottom: 1px solid $ec-grey15;
@@ -245,8 +243,8 @@ Style guide: file.3
     }
 
     &::after {
-      padding-left: .4em;
-      margin-left: .4em;
+      padding-left: 0.4em;
+      margin-left: 0.4em;
       border-left: 2px solid $ec-grey50;
       color: $ec-grey;
 
@@ -257,7 +255,8 @@ Style guide: file.3
     &::before {
       @extend .icon;
       color: $ec-grey50;
-      font-size: 1.4em;
+      @extend .icon--file;
+      font-size: 2.4em;
       display: table-cell;
       vertical-align: bottom;
       width: 40px;
