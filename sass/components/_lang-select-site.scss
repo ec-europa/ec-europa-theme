@@ -16,7 +16,8 @@ Style guide: siteheader.langselect
 
   @extend .hidden-print;
 
-  .lang-select-site__link {
+  .lang-select-site__link,
+  .lang-select-site__placeholder {
     display: inline-block;
     padding: 7.5px 15px;
     font-size: $font-size-little;
@@ -34,9 +35,13 @@ Style guide: siteheader.langselect
 
   .lang-select-site__label {
     margin-right: 0.556em;
+  }
 
-    &:hover {
-      text-decoration: underline;
+  .lang-select-site__link {
+    .lang-select-site__label {
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 
