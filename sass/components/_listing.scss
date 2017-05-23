@@ -249,6 +249,8 @@ Style guide listing.3
 
     .listing__item__wrapper,
     .node {
+      @include clearfix();
+
       padding: 1.111em;
       background-color: $brand-primary;
     }
