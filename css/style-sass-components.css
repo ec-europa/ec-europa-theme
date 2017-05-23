@@ -682,6 +682,8 @@ Markup: html/btn.html
 .btn-secondary   - Button secondary
 .btn-ctn         - Button call to action
 .btn-menu        - Button menu
+.btn--margin-top   - Button modifier, margin on top
+.btn--margin-right - Button modifier, margin on right
 
 Style guide: buttons
 */
@@ -757,6 +759,9 @@ Style guide: buttons
 
 .btn--margin-top {
   margin-top: 0.556em; }
+
+.btn--margin-right {
+  margin-right: 1.5em; }
 
 .btn--no-margin-bottom {
   margin-bottom: 0 !important; }
