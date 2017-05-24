@@ -227,11 +227,11 @@ Style guide: file.3
   background-color: transparent;
   max-width: 32em;
   border-top: 1px solid $ec-grey15;
+  padding: 1em 0;
+  margin-bottom: 0;
   &:last-child {
     border-bottom: 1px solid $ec-grey15;
   }
-  padding: 1em 0;
-  margin-bottom: 0;
   .file__title {
 
     &:link {
