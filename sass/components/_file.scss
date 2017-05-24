@@ -86,10 +86,8 @@ Style guide: file.1
 }
 
 .file__btn {
-  @extend .col-md-4;
-  @extend .col-sm-4;
-  @extend .col-xs-12;
-
+  width: 33.3%;
+  text-align: center;
   margin-top: 0.778em;
   margin-bottom: 0;
 
