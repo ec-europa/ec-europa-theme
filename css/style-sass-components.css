@@ -46,7 +46,7 @@
   .listing__wrapper--row-two .listing:after {
     clear: both; }
 
-.col-xs-1, .col-sm-1, .file__icon, .col-md-1, .file__icon, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .context-nav__label, .col-lg-3, .col-xs-4, .col-sm-4, .file__btn, .col-md-4, .file__btn, .footer__column, .listing__wrapper--three-columns .listing, .listing__wrapper--row-three .listing__item, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .featured-item__image, .col-lg-5, .col-xs-6, .col-sm-6, .file__metadata, .file__translations .file__metadata, .hero-links__items .hero-links__item, .listing__wrapper--two-columns .listing, .col-md-6, .banner__left, .banner__paragraph, .comment__form-wrapper, .file__metadata, .file__translations .file__metadata, .listing__wrapper--row-two .listing__item, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .featured-item__content, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .listing__wrapper--maxwidth .listing, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .context-nav__items, .col-lg-9, .col-xs-10, .file__metadata, .file--link .file__metadata--link, .col-sm-10, .file--link .file__metadata--link, .col-md-10, .file--link .file__metadata--link, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .context-nav__label, .context-nav__items, .file__btn, .file__translations .file__metadata, .hero-links__items .hero-links__item, .col-sm-12, .col-md-12, .banner__content, .listing__wrapper--three-columns .featured-item__image,
+.col-xs-1, .col-sm-1, .file__icon, .col-md-1, .file__icon, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .context-nav__label, .col-lg-3, .col-xs-4, .col-sm-4, .file__btn, .col-md-4, .file__btn, .footer__column, .listing__wrapper--three-columns .listing, .listing__wrapper--row-three .listing__item, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .featured-item__image, .col-lg-5, .col-xs-6, .col-sm-6, .file__metadata, .file__translations .file__metadata, .hero-links__items .hero-links__item, .listing__wrapper--two-columns .listing, .col-md-6, .banner__left, .banner__paragraph, .comment__form-wrapper, .file__metadata, .file__translations .file__metadata, .listing__wrapper--row-two .listing__item, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .featured-item__content, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .listing__wrapper--maxwidth .listing, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .context-nav__items, .col-lg-9, .col-xs-10, .file__metadata, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .context-nav__label, .context-nav__items, .file__btn, .file__translations .file__metadata, .hero-links__items .hero-links__item, .col-sm-12, .col-md-12, .banner__content, .listing__wrapper--three-columns .featured-item__image,
 .listing__wrapper--three-columns .featured-item__content,
 .section--row-three .featured-item__image,
 .section--row-three .featured-item__content, .col-lg-12 {
@@ -55,7 +55,7 @@
   padding-left: 15px;
   padding-right: 15px; }
 
-.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .file__metadata, .file--link .file__metadata--link, .col-xs-11, .col-xs-12, .context-nav__label, .context-nav__items, .file__btn, .file__translations .file__metadata, .hero-links__items .hero-links__item {
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .file__metadata, .col-xs-11, .col-xs-12, .context-nav__label, .context-nav__items, .file__btn, .file__translations .file__metadata, .hero-links__items .hero-links__item {
   float: left; }
 
 .col-xs-1 {
@@ -85,7 +85,7 @@
 .col-xs-9 {
   width: 75%; }
 
-.col-xs-10, .file__metadata, .file--link .file__metadata--link {
+.col-xs-10, .file__metadata {
   width: 83.3333333333%; }
 
 .col-xs-11 {
@@ -212,7 +212,7 @@
   margin-left: 100%; }
 
 @media (min-width: 768px) {
-  .col-sm-1, .file__icon, .col-sm-2, .col-sm-3, .col-sm-4, .file__btn, .col-sm-5, .col-sm-6, .file__metadata, .file__translations .file__metadata, .hero-links__items .hero-links__item, .listing__wrapper--two-columns .listing, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .file--link .file__metadata--link, .col-sm-11, .col-sm-12 {
+  .col-sm-1, .file__icon, .col-sm-2, .col-sm-3, .col-sm-4, .file__btn, .col-sm-5, .col-sm-6, .file__metadata, .file__translations .file__metadata, .hero-links__items .hero-links__item, .listing__wrapper--two-columns .listing, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
     float: left; }
   .col-sm-1, .file__icon {
     width: 8.3333333333%; }
@@ -232,7 +232,7 @@
     width: 66.6666666667%; }
   .col-sm-9 {
     width: 75%; }
-  .col-sm-10, .file--link .file__metadata--link {
+  .col-sm-10 {
     width: 83.3333333333%; }
   .col-sm-11 {
     width: 91.6666666667%; }
@@ -318,7 +318,7 @@
     margin-left: 100%; } }
 
 @media (min-width: 992px) {
-  .col-md-1, .file__icon, .col-md-2, .col-md-3, .context-nav__label, .col-md-4, .file__btn, .footer__column, .listing__wrapper--three-columns .listing, .listing__wrapper--row-three .listing__item, .col-md-5, .featured-item__image, .col-md-6, .banner__left, .banner__paragraph, .comment__form-wrapper, .file__metadata, .file__translations .file__metadata, .listing__wrapper--row-two .listing__item, .col-md-7, .featured-item__content, .col-md-8, .listing__wrapper--maxwidth .listing, .col-md-9, .context-nav__items, .col-md-10, .file--link .file__metadata--link, .col-md-11, .col-md-12, .banner__content, .listing__wrapper--three-columns .featured-item__image,
+  .col-md-1, .file__icon, .col-md-2, .col-md-3, .context-nav__label, .col-md-4, .file__btn, .footer__column, .listing__wrapper--three-columns .listing, .listing__wrapper--row-three .listing__item, .col-md-5, .featured-item__image, .col-md-6, .banner__left, .banner__paragraph, .comment__form-wrapper, .file__metadata, .file__translations .file__metadata, .listing__wrapper--row-two .listing__item, .col-md-7, .featured-item__content, .col-md-8, .listing__wrapper--maxwidth .listing, .col-md-9, .context-nav__items, .col-md-10, .col-md-11, .col-md-12, .banner__content, .listing__wrapper--three-columns .featured-item__image,
   .listing__wrapper--three-columns .featured-item__content,
   .section--row-three .featured-item__image,
   .section--row-three .featured-item__content {
@@ -341,7 +341,7 @@
     width: 66.6666666667%; }
   .col-md-9, .context-nav__items {
     width: 75%; }
-  .col-md-10, .file--link .file__metadata--link {
+  .col-md-10 {
     width: 83.3333333333%; }
   .col-md-11 {
     width: 91.6666666667%; }
@@ -660,7 +660,7 @@ tbody.collapse.in {
 @media print {
   .hidden-print, .btn, .inpage-nav__navbar .inpage-nav__toggle, .breadcrumb, .ui-datepicker .ui-datepicker-header .ui-datepicker-title select, .feedback-form__wrapper, .file, .footer__improved,
   .footer__top,
-  .footer__bottom, .help-block, .inpage-nav__wrapper, .lang-select-site, .lang-select-page, .icon.lang-select-page__icon, .date-picker .lang-select-page__icon.date-picker--icon, .lang-select-page__icon.search-form__btn, .search-form--improved .lang-select-page__icon.search-form__textfield-wrapper, select.lang-select-page__list, .feedback-message, .notification, .site-switcher, .search-form, .skip-link,
+  .footer__bottom, .help-block, .inpage-nav__wrapper, .lang-select-site, .lang-select-page, .icon.lang-select-page__icon, .date-picker .lang-select-page__icon.date-picker--icon, .file--link .lang-select-page__icon.file__title::before, .lang-select-page__icon.search-form__btn, .search-form--improved .lang-select-page__icon.search-form__textfield-wrapper, select.lang-select-page__list, .feedback-message, .notification, .site-switcher, .search-form, .skip-link,
   #skip-link, .social-media-links, .social-media-links--field {
     display: none !important; } }
 
@@ -825,19 +825,19 @@ Markup: html/btn-collapse.html
 
 Style guide: buttons.btn-collapse
 */
-.btn-collapse .icon, .btn-collapse .date-picker .date-picker--icon, .date-picker .btn-collapse .date-picker--icon, .btn-collapse .search-form__btn, .btn-collapse .search-form--improved .search-form__textfield-wrapper, .search-form--improved .btn-collapse .search-form__textfield-wrapper {
+.btn-collapse .icon, .btn-collapse .date-picker .date-picker--icon, .date-picker .btn-collapse .date-picker--icon, .btn-collapse .file--link .file__title::before, .file--link .btn-collapse .file__title::before, .btn-collapse .search-form__btn, .btn-collapse .search-form--improved .search-form__textfield-wrapper, .search-form--improved .btn-collapse .search-form__textfield-wrapper {
   margin-left: 0.3em; }
-  .btn-collapse .icon::before, .btn-collapse .date-picker .date-picker--icon::before, .date-picker .btn-collapse .date-picker--icon::before, .btn-collapse .search-form__btn::before, .btn-collapse .search-form--improved .search-form__textfield-wrapper::before, .search-form--improved .btn-collapse .search-form__textfield-wrapper::before {
+  .btn-collapse .icon::before, .btn-collapse .date-picker .date-picker--icon::before, .date-picker .btn-collapse .date-picker--icon::before, .btn-collapse .file--link .file__title::before, .file--link .btn-collapse .file__title::before, .btn-collapse .search-form__btn::before, .btn-collapse .search-form--improved .search-form__textfield-wrapper::before, .search-form--improved .btn-collapse .search-form__textfield-wrapper::before {
     text-decoration: none;
     -webkit-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s; }
 
-.btn-collapse:hover .icon::before, .btn-collapse:hover .date-picker .date-picker--icon::before, .date-picker .btn-collapse:hover .date-picker--icon::before, .btn-collapse:hover .search-form__btn::before, .btn-collapse:hover .search-form--improved .search-form__textfield-wrapper::before, .search-form--improved .btn-collapse:hover .search-form__textfield-wrapper::before, .btn-collapse:focus .icon::before, .btn-collapse:focus .date-picker .date-picker--icon::before, .date-picker .btn-collapse:focus .date-picker--icon::before, .btn-collapse:focus .search-form__btn::before, .btn-collapse:focus .search-form--improved .search-form__textfield-wrapper::before, .search-form--improved .btn-collapse:focus .search-form__textfield-wrapper::before {
+.btn-collapse:hover .icon::before, .btn-collapse:hover .date-picker .date-picker--icon::before, .date-picker .btn-collapse:hover .date-picker--icon::before, .btn-collapse:hover .file--link .file__title::before, .file--link .btn-collapse:hover .file__title::before, .btn-collapse:hover .search-form__btn::before, .btn-collapse:hover .search-form--improved .search-form__textfield-wrapper::before, .search-form--improved .btn-collapse:hover .search-form__textfield-wrapper::before, .btn-collapse:focus .icon::before, .btn-collapse:focus .date-picker .date-picker--icon::before, .date-picker .btn-collapse:focus .date-picker--icon::before, .btn-collapse:focus .file--link .file__title::before, .file--link .btn-collapse:focus .file__title::before, .btn-collapse:focus .search-form__btn::before, .btn-collapse:focus .search-form--improved .search-form__textfield-wrapper::before, .search-form--improved .btn-collapse:focus .search-form__textfield-wrapper::before {
   color: #fff;
   text-decoration: underline; }
 
-.btn-collapse:hover .icon::before, .btn-collapse:hover .date-picker .date-picker--icon::before, .date-picker .btn-collapse:hover .date-picker--icon::before, .btn-collapse:hover .search-form__btn::before, .btn-collapse:hover .search-form--improved .search-form__textfield-wrapper::before, .search-form--improved .btn-collapse:hover .search-form__textfield-wrapper::before, .btn-collapse:focus .icon::before, .btn-collapse:focus .date-picker .date-picker--icon::before, .date-picker .btn-collapse:focus .date-picker--icon::before, .btn-collapse:focus .search-form__btn::before, .btn-collapse:focus .search-form--improved .search-form__textfield-wrapper::before, .search-form--improved .btn-collapse:focus .search-form__textfield-wrapper::before {
+.btn-collapse:hover .icon::before, .btn-collapse:hover .date-picker .date-picker--icon::before, .date-picker .btn-collapse:hover .date-picker--icon::before, .btn-collapse:hover .file--link .file__title::before, .file--link .btn-collapse:hover .file__title::before, .btn-collapse:hover .search-form__btn::before, .btn-collapse:hover .search-form--improved .search-form__textfield-wrapper::before, .search-form--improved .btn-collapse:hover .search-form__textfield-wrapper::before, .btn-collapse:focus .icon::before, .btn-collapse:focus .date-picker .date-picker--icon::before, .date-picker .btn-collapse:focus .date-picker--icon::before, .btn-collapse:focus .file--link .file__title::before, .file--link .btn-collapse:focus .file__title::before, .btn-collapse:focus .search-form__btn::before, .btn-collapse:focus .search-form--improved .search-form__textfield-wrapper::before, .search-form--improved .btn-collapse:focus .search-form__textfield-wrapper::before {
   text-decoration: none; }
 
 .no-js .btn-collapse {
@@ -1082,7 +1082,7 @@ Style guide: icon
   src: url("../fonts/europa-icons/europa-icons.eot");
   src: url("../fonts/europa-icons/europa-icons.eot?#iefix") format("embedded-opentype"), url("../fonts/europa-icons/europa-icons.woff") format("woff"), url("../fonts/europa-icons/europa-icons.ttf") format("truetype"), url("../fonts/europa-icons/icomoon.svg#icomoon") format("svg"); }
 
-.icon::before, .date-picker .date-picker--icon::before, .search-form__btn::before, .search-form--improved .search-form__textfield-wrapper::before {
+.icon::before, .date-picker .date-picker--icon::before, .file--link .file__title::before, .search-form__btn::before, .search-form--improved .search-form__textfield-wrapper::before {
   text-decoration: none;
   display: inline-block;
   font-family: 'EuropaIcons';
@@ -1105,7 +1105,7 @@ Style guide: icon
 .icon--data, .icon--data::before {
   content: '\24'; }
 
-.icon--file, .icon--file::before {
+.icon--file, .icon--file::before, .file--link .file__title::before, .file--link .file__title[href$=".pdf"]::before {
   content: '\26'; }
 
 .icon--copy, .icon--copy::before {
@@ -1147,7 +1147,7 @@ Style guide: icon
 .icon--googleplus, .icon--googleplus::before {
   content: '\e80c'; }
 
-.icon--image, .icon--image::before {
+.icon--image, .icon--image::before, .file--link .file__title[href$=".jpg"]::before {
   content: '\e80d'; }
 
 .icon--package, .icon--package::before {
@@ -1162,7 +1162,7 @@ Style guide: icon
 .icon--organigram, .icon--organigram::before {
   content: '\e811'; }
 
-.icon--presentation, .icon--presentation::before {
+.icon--presentation, .icon--presentation::before, .file--link .file__title[href$=".ppt"]::before {
   content: '\e80e'; }
 
 .icon--rss, .icon--rss::before {
@@ -1747,7 +1747,7 @@ Style guide contextnav
       text-decoration: underline; }
   .context-nav__more-button {
     text-decoration: underline; }
-    .context-nav__more-button .icon, .context-nav__more-button .date-picker .date-picker--icon, .date-picker .context-nav__more-button .date-picker--icon, .context-nav__more-button .search-form__btn, .context-nav__more-button .search-form--improved .search-form__textfield-wrapper, .search-form--improved .context-nav__more-button .search-form__textfield-wrapper {
+    .context-nav__more-button .icon, .context-nav__more-button .date-picker .date-picker--icon, .date-picker .context-nav__more-button .date-picker--icon, .context-nav__more-button .file--link .file__title::before, .file--link .context-nav__more-button .file__title::before, .context-nav__more-button .search-form__btn, .context-nav__more-button .search-form--improved .search-form__textfield-wrapper, .search-form--improved .context-nav__more-button .search-form__textfield-wrapper {
       padding-left: 2px;
       top: 3px;
       position: relative; }
@@ -2095,7 +2095,7 @@ Style guide Expandable.1
   background-color: #ffd617; }
   .expandable__toggle.collapsed {
     background: none; }
-  .expandable__toggle .icon, .expandable__toggle .date-picker .date-picker--icon, .date-picker .expandable__toggle .date-picker--icon, .expandable__toggle .search-form__btn, .expandable__toggle .search-form--improved .search-form__textfield-wrapper, .search-form--improved .expandable__toggle .search-form__textfield-wrapper {
+  .expandable__toggle .icon, .expandable__toggle .date-picker .date-picker--icon, .date-picker .expandable__toggle .date-picker--icon, .expandable__toggle .file--link .file__title::before, .file--link .expandable__toggle .file__title::before, .expandable__toggle .search-form__btn, .expandable__toggle .search-form--improved .search-form__textfield-wrapper, .search-form--improved .expandable__toggle .search-form__textfield-wrapper {
     margin: 0 0.833em;
     position: absolute;
     left: 0;
@@ -2128,7 +2128,7 @@ Style guide Expandable.2
 
 .expandable--link .expandable__toggle {
   background: none; }
-  .expandable--link .expandable__toggle .icon, .expandable--link .expandable__toggle .date-picker .date-picker--icon, .date-picker .expandable--link .expandable__toggle .date-picker--icon, .expandable--link .expandable__toggle .search-form__btn, .expandable--link .expandable__toggle .search-form--improved .search-form__textfield-wrapper, .search-form--improved .expandable--link .expandable__toggle .search-form__textfield-wrapper {
+  .expandable--link .expandable__toggle .icon, .expandable--link .expandable__toggle .date-picker .date-picker--icon, .date-picker .expandable--link .expandable__toggle .date-picker--icon, .expandable--link .expandable__toggle .file--link .file__title::before, .file--link .expandable--link .expandable__toggle .file__title::before, .expandable--link .expandable__toggle .search-form__btn, .expandable--link .expandable__toggle .search-form--improved .search-form__textfield-wrapper, .search-form--improved .expandable--link .expandable__toggle .search-form__textfield-wrapper {
     position: static; }
   .expandable--link .expandable__toggle.collapsed .icon--up::before {
     -webkit-transform: rotate(180deg);
@@ -2236,7 +2236,7 @@ a.feedback-form__trigger {
 .feedback-form__btn {
   width: 12em;
   margin-left: 2.500em; }
-  .feedback-form__btn .icon, .feedback-form__btn .date-picker .date-picker--icon, .date-picker .feedback-form__btn .date-picker--icon, .feedback-form__btn .search-form__btn, .feedback-form__btn .search-form--improved .search-form__textfield-wrapper, .search-form--improved .feedback-form__btn .search-form__textfield-wrapper {
+  .feedback-form__btn .icon, .feedback-form__btn .date-picker .date-picker--icon, .date-picker .feedback-form__btn .date-picker--icon, .feedback-form__btn .file--link .file__title::before, .file--link .feedback-form__btn .file__title::before, .feedback-form__btn .search-form__btn, .feedback-form__btn .search-form--improved .search-form__textfield-wrapper, .search-form--improved .feedback-form__btn .search-form__textfield-wrapper {
     font-size: 0.778em; }
 
 #feedback-form__accordion {
@@ -2509,18 +2509,43 @@ Markup: html/file--link.html
 Style guide: file.3
 */
 .file--link {
-  background-color: transparent; }
-  .file--link .file__metadata--link {
-    margin-bottom: 0;
-    padding-left: 0;
-    padding-right: 0;
-    line-height: 1; }
-  .file--link .icon--file-link {
-    background: url("../images/svg/icons/link.svg") no-repeat center 10%;
-    width: 2.8em; }
-
-.no-svg .icon--file-link {
-  background-image: url("../images/png/icons/link.png"); }
+  background-color: transparent;
+  max-width: 32em;
+  border-top: 1px solid #e3e3e3;
+  padding: 1em 0;
+  margin-bottom: 0; }
+  .file--link:last-child {
+    border-bottom: 1px solid #e3e3e3; }
+  .file--link .file__title:link {
+    text-decoration: none; }
+  .file--link .file__title:hover, .file--link .file__title:active {
+    text-decoration: underline; }
+  .file--link .file__title::after {
+    padding-left: 0.4em;
+    margin-left: 0.4em;
+    border-left: 2px solid #9f9f9f;
+    color: #404040;
+    display: inline-block;
+    text-decoration: none; }
+  .file--link .file__title::before {
+    color: #9f9f9f;
+    font-size: 2.4em;
+    display: table-cell;
+    vertical-align: bottom;
+    width: 40px;
+    float: left; }
+  .file--link .file__title[href$=".pdf"]::before {
+    font-size: 2.4em; }
+  .file--link .file__title[href$=".pdf"]::after {
+    content: 'PDF'; }
+  .file--link .file__title[href$=".ppt"]::before {
+    font-size: 1.8em; }
+  .file--link .file__title[href$=".ppt"]::after {
+    content: 'PPT'; }
+  .file--link .file__title[href$=".jpg"]::before {
+    font-size: 1.5em; }
+  .file--link .file__title[href$=".jpg"]::after {
+    content: 'JPG'; }
 
 @media (min-width: 768px) {
   .file__icon {
@@ -2949,10 +2974,10 @@ Style guide gallery
   overflow: hidden;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical; }
-  .mediagallery__item.has-icon .mediagallery__icon .icon, .mediagallery__item.has-icon .mediagallery__icon .date-picker .date-picker--icon, .date-picker .mediagallery__item.has-icon .mediagallery__icon .date-picker--icon, .mediagallery__item.has-icon .mediagallery__icon .search-form__btn, .mediagallery__item.has-icon .mediagallery__icon .search-form--improved .search-form__textfield-wrapper, .search-form--improved .mediagallery__item.has-icon .mediagallery__icon .search-form__textfield-wrapper {
+  .mediagallery__item.has-icon .mediagallery__icon .icon, .mediagallery__item.has-icon .mediagallery__icon .date-picker .date-picker--icon, .date-picker .mediagallery__item.has-icon .mediagallery__icon .date-picker--icon, .mediagallery__item.has-icon .mediagallery__icon .file--link .file__title::before, .file--link .mediagallery__item.has-icon .mediagallery__icon .file__title::before, .mediagallery__item.has-icon .mediagallery__icon .search-form__btn, .mediagallery__item.has-icon .mediagallery__icon .search-form--improved .search-form__textfield-wrapper, .search-form--improved .mediagallery__item.has-icon .mediagallery__icon .search-form__textfield-wrapper {
     line-height: 2.667em;
     font-size: 1em; }
-    .mediagallery__item.has-icon .mediagallery__icon .icon::before, .mediagallery__item.has-icon .mediagallery__icon .date-picker .date-picker--icon::before, .date-picker .mediagallery__item.has-icon .mediagallery__icon .date-picker--icon::before, .mediagallery__item.has-icon .mediagallery__icon .search-form__btn::before, .mediagallery__item.has-icon .mediagallery__icon .search-form--improved .search-form__textfield-wrapper::before, .search-form--improved .mediagallery__item.has-icon .mediagallery__icon .search-form__textfield-wrapper::before {
+    .mediagallery__item.has-icon .mediagallery__icon .icon::before, .mediagallery__item.has-icon .mediagallery__icon .date-picker .date-picker--icon::before, .date-picker .mediagallery__item.has-icon .mediagallery__icon .date-picker--icon::before, .mediagallery__item.has-icon .mediagallery__icon .file--link .file__title::before, .file--link .mediagallery__item.has-icon .mediagallery__icon .file__title::before, .mediagallery__item.has-icon .mediagallery__icon .search-form__btn::before, .mediagallery__item.has-icon .mediagallery__icon .search-form--improved .search-form__textfield-wrapper::before, .search-form--improved .mediagallery__item.has-icon .mediagallery__icon .search-form__textfield-wrapper::before {
       margin-right: 0; }
   .mediagallery__item.has-icon .mediagallery__icon .icon--camera, .mediagallery__item.has-icon .mediagallery__icon .icon--camera::before {
     line-height: 4.000em;
@@ -4464,12 +4489,12 @@ Style guide: langselect.dropdown
   font-size: 0.778em;
   border-bottom: 1px solid #9f9f9f; }
 
-.icon.lang-select-page__icon, .date-picker .lang-select-page__icon.date-picker--icon, .lang-select-page__icon.search-form__btn, .search-form--improved .lang-select-page__icon.search-form__textfield-wrapper {
+.icon.lang-select-page__icon, .date-picker .lang-select-page__icon.date-picker--icon, .file--link .lang-select-page__icon.file__title::before, .lang-select-page__icon.search-form__btn, .search-form--improved .lang-select-page__icon.search-form__textfield-wrapper {
   float: left;
   margin: 0;
   padding: 0;
   font-size: 2em; }
-  .icon.lang-select-page__icon::before, .date-picker .lang-select-page__icon.date-picker--icon::before, .lang-select-page__icon.search-form__btn::before, .search-form--improved .lang-select-page__icon.search-form__textfield-wrapper::before {
+  .icon.lang-select-page__icon::before, .date-picker .lang-select-page__icon.date-picker--icon::before, .file--link .lang-select-page__icon.file__title::before, .lang-select-page__icon.search-form__btn::before, .search-form--improved .lang-select-page__icon.search-form__textfield-wrapper::before {
     float: left;
     padding-top: 30%; }
 
@@ -5956,7 +5981,7 @@ Style guide notification
 
 .notification__content__more {
   font-weight: 600; }
-  .notification__content__more .icon, .notification__content__more .date-picker .date-picker--icon, .date-picker .notification__content__more .date-picker--icon, .notification__content__more .search-form__btn, .notification__content__more .search-form--improved .search-form__textfield-wrapper, .search-form--improved .notification__content__more .search-form__textfield-wrapper {
+  .notification__content__more .icon, .notification__content__more .date-picker .date-picker--icon, .date-picker .notification__content__more .date-picker--icon, .notification__content__more .file--link .file__title::before, .file--link .notification__content__more .file__title::before, .notification__content__more .search-form__btn, .notification__content__more .search-form--improved .search-form__textfield-wrapper, .search-form--improved .notification__content__more .search-form__textfield-wrapper {
     position: relative;
     top: 2px; }
 
@@ -6103,9 +6128,9 @@ Style guide: page-header.5
   font-size: 0.778em; }
   .page-header__eventinfo .page-header__date--cancelled {
     text-decoration: line-through; }
-  .page-header__eventinfo .icon, .page-header__eventinfo .date-picker .date-picker--icon, .date-picker .page-header__eventinfo .date-picker--icon, .page-header__eventinfo .search-form__btn, .page-header__eventinfo .search-form--improved .search-form__textfield-wrapper, .search-form--improved .page-header__eventinfo .search-form__textfield-wrapper {
+  .page-header__eventinfo .icon, .page-header__eventinfo .date-picker .date-picker--icon, .date-picker .page-header__eventinfo .date-picker--icon, .page-header__eventinfo .file--link .file__title::before, .file--link .page-header__eventinfo .file__title::before, .page-header__eventinfo .search-form__btn, .page-header__eventinfo .search-form--improved .search-form__textfield-wrapper, .search-form--improved .page-header__eventinfo .search-form__textfield-wrapper {
     margin: 1em 2em 1em 0; }
-    .page-header__eventinfo .icon::before, .page-header__eventinfo .date-picker .date-picker--icon::before, .date-picker .page-header__eventinfo .date-picker--icon::before, .page-header__eventinfo .search-form__btn::before, .page-header__eventinfo .search-form--improved .search-form__textfield-wrapper::before, .search-form--improved .page-header__eventinfo .search-form__textfield-wrapper::before {
+    .page-header__eventinfo .icon::before, .page-header__eventinfo .date-picker .date-picker--icon::before, .date-picker .page-header__eventinfo .date-picker--icon::before, .page-header__eventinfo .file--link .file__title::before, .file--link .page-header__eventinfo .file__title::before, .page-header__eventinfo .search-form__btn::before, .page-header__eventinfo .search-form--improved .search-form__textfield-wrapper::before, .search-form--improved .page-header__eventinfo .search-form__textfield-wrapper::before {
       margin-right: 0.5em; }
 
 .page-header--xlarge-intro, .node-info-homepage.view-mode-homepage_political .page-header {
