@@ -48,10 +48,7 @@ Style guide: file.1
 }
 
 .file__metadata {
-  @extend .col-md-6;
-  @extend .col-sm-6;
-  @extend .col-xs-10;
-
+  width: 50%;
   margin-bottom: 0;
   padding-left: 0;
   padding-right: 0;
@@ -86,7 +83,7 @@ Style guide: file.1
 }
 
 .file__btn {
-  width: 33.3%;
+  width: 100%;
   text-align: center;
   margin-top: 0.778em;
   margin-bottom: 0;
@@ -115,6 +112,8 @@ Style guide: file.1
     display: none;
   }
 }
+
+
 
 /*
 File download with translations
@@ -195,10 +194,6 @@ Style guide: file.2
   }
 
   .file__metadata {
-    @extend .col-md-6;
-    @extend .col-sm-6;
-    @extend .col-xs-12;
-
     padding-left: 0;
     padding-right: 0;
   }
@@ -225,10 +220,7 @@ Style guide: file.3
   background-color: transparent;
 
   .file__metadata--link {
-    @extend .col-md-10;
-    @extend .col-sm-10;
-    @extend .col-xs-10;
-
+    width: 83.3333333333%;
     margin-bottom: 0;
     padding-left: 0;
     padding-right: 0;
@@ -267,6 +259,11 @@ Style guide: file.3
       float: right;
       margin-top: 0;
       overflow: hidden;
+      width: 33.33%;
+
+      .file__translations & {
+        width: auto;
+      }
     }
   }
 }
