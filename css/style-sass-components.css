@@ -4873,7 +4873,8 @@ Style guide listing.6
     font-family: Arial, sans-serif;
     font-size: 1em; }
     .listing__item .listing__title a {
-      color: #004494; }
+      color: #004494;
+      border: 1px solid red; }
       .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"])::after {
         display: none !important; }
       .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .listing__title,
