@@ -642,7 +642,7 @@ tbody.collapse.in {
   .embed-responsive.embed-responsive-4by3, .file--video .embed-responsive-4by3.file__container {
     padding-bottom: 75%; }
 
-.icon--after, .btn.btn-ctn::after, .inpage-nav__navbar .btn-ctn.inpage-nav__toggle::after, .btn.btn-time-line::after, .inpage-nav__navbar .btn-time-line.inpage-nav__toggle::after, .btn.btn-menu::after, .inpage-nav__navbar .btn-menu.inpage-nav__toggle::after, .is-external::after, a[href^="http"]:not([href*="ec.europa.eu"]):not(.is-internal)::after, .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .listing__title::after,
+.icon--after, .btn.btn-ctn::after, .inpage-nav__navbar .btn-ctn.inpage-nav__toggle::after, .btn.btn-time-line::after, .inpage-nav__navbar .btn-time-line.inpage-nav__toggle::after, .btn.btn-menu::after, .inpage-nav__navbar .btn-menu.inpage-nav__toggle::after, .is-external::after, a[href^="http"]:not([href*="ec.europa.eu"]):not(.is-internal):not(.listing__item-link)::after, .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .listing__title::after,
 .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .highlighted-item h3::after, .breadcrumb__link-arrow, a.breadcrumb__link::after, .no-js .breadcrumb__segment--first::before, .breadcrumb--collapsible .breadcrumb__btn-separator::after, .file__btn::after, .file__translations .file__translations-control::after, .lang-select-page--transparent select.lang-select-page__list::after, .listing__title--arrow::after, .listing--cta .listing__title::after, .listing__read-more::after, .notification__content .notification__btn::after, .facet-tag--close .facet-tag__value::after, .facet-tag--close .facet-tag__value:hover::after {
   display: inline-block;
   margin-left: 4px;
@@ -997,10 +997,10 @@ a[href^="mailto"] {
   a::after {
     content: none !important; } }
 
-.is-external, a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]), .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .listing__title,
+.is-external, a[href^="http"]:not(.is-internal):not(.listing__item-link):not([href*="ec.europa.eu"]), .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .listing__title,
 .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .highlighted-item h3 {
   position: relative; }
-  .is-external::after, a[href^="http"]:not([href*="ec.europa.eu"]):not(.is-internal)::after, .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .listing__title::after,
+  .is-external::after, a[href^="http"]:not([href*="ec.europa.eu"]):not(.is-internal):not(.listing__item-link)::after, .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .listing__title::after,
   .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .highlighted-item h3::after {
     content: '\e825';
     font-size: 75%;
@@ -4873,8 +4873,7 @@ Style guide listing.6
     font-family: Arial, sans-serif;
     font-size: 1em; }
     .listing__item .listing__title a {
-      color: #004494;
-      border: 1px solid red; }
+      color: #004494; }
       .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"])::after {
         display: none !important; }
       .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .listing__title,
@@ -6408,7 +6407,7 @@ li.site-switcher__option a {
   font-weight: bold; }
   li.site-switcher__option a:hover, li.site-switcher__option a:focus {
     text-decoration: underline; }
-  li.site-switcher__option a::after, li.site-switcher__option a.is-external::after, li.site-switcher__option a[href^="http"]:not([href*="ec.europa.eu"]):not(.is-internal)::after, li.site-switcher__option .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) a.listing__title::after, .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) li.site-switcher__option a.listing__title::after {
+  li.site-switcher__option a::after, li.site-switcher__option a.is-external::after, li.site-switcher__option a[href^="http"]:not([href*="ec.europa.eu"]):not(.is-internal):not(.listing__item-link)::after, li.site-switcher__option .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) a.listing__title::after, .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) li.site-switcher__option a.listing__title::after {
     content: none !important; }
 
 li.site-switcher__option.is-selected {
@@ -6426,7 +6425,7 @@ a.site-switcher__option {
   font-weight: bold; }
   a.site-switcher__option:hover, a.site-switcher__option:focus {
     text-decoration: underline; }
-  a.site-switcher__option::after, a.site-switcher__option.is-external::after, a.site-switcher__option[href^="http"]:not([href*="ec.europa.eu"]):not(.is-internal)::after, .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) a.site-switcher__option.listing__title::after {
+  a.site-switcher__option::after, a.site-switcher__option.is-external::after, a.site-switcher__option[href^="http"]:not([href*="ec.europa.eu"]):not(.is-internal):not(.listing__item-link)::after, .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) a.site-switcher__option.listing__title::after {
     content: none !important; }
   a.site-switcher__option.is-selected {
     background-color: #004494;
@@ -6699,7 +6698,7 @@ Style guide social
       text-decoration: underline; }
     .social-media-links__item > a::before, .social-media-links--webtool-vertical .wtShareList .wtShareLink > a::before {
       margin-bottom: 0; }
-    .social-media-links__item > a::after, .social-media-links--webtool-vertical .wtShareList .wtShareLink > a::after, .social-media-links__item > a.is-external::after, .social-media-links--webtool-vertical .wtShareList .wtShareLink > a.is-external::after, .social-media-links__item > a[href^="http"]:not([href*="ec.europa.eu"]):not(.is-internal)::after, .social-media-links--webtool-vertical .wtShareList .wtShareLink > a[href^="http"]:not([href*="ec.europa.eu"]):not(.is-internal)::after, .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .social-media-links__item > a.listing__title::after, .social-media-links--webtool-vertical .wtShareList .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .wtShareLink > a.listing__title::after, .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .social-media-links--webtool-vertical .wtShareList .wtShareLink > a.listing__title::after {
+    .social-media-links__item > a::after, .social-media-links--webtool-vertical .wtShareList .wtShareLink > a::after, .social-media-links__item > a.is-external::after, .social-media-links--webtool-vertical .wtShareList .wtShareLink > a.is-external::after, .social-media-links__item > a[href^="http"]:not([href*="ec.europa.eu"]):not(.is-internal):not(.listing__item-link)::after, .social-media-links--webtool-vertical .wtShareList .wtShareLink > a[href^="http"]:not([href*="ec.europa.eu"]):not(.is-internal):not(.listing__item-link)::after, .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .social-media-links__item > a.listing__title::after, .social-media-links--webtool-vertical .wtShareList .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .wtShareLink > a.listing__title::after, .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .social-media-links--webtool-vertical .wtShareList .wtShareLink > a.listing__title::after {
       display: none !important; }
 
 .social-media-links--webtool-horizontal .wtShareList {
