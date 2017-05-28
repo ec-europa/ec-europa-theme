@@ -1076,12 +1076,7 @@ function europa_preprocess_page(&$variables) {
   }
 
   // Set footer region column classes.
-  if (!empty($variables['page']['footer_right'])) {
-    $variables['footer_column_class'] = 'col-sm-8';
-  }
-  else {
-    $variables['footer_column_class'] = 'col-sm-12';
-  }
+  $variables['footer_column_class'] = (!empty($variables['page']['footer_right']) ? 'col-sm-8' : 'col-sm-12');
 
   $variables['page_logo_title'] = t('Home - @sitename', ['@sitename' => variable_get('site_name', 'European Commission')]);
 
@@ -1103,11 +1098,6 @@ function europa_preprocess_page(&$variables) {
           // Move the header_bottom to the node.
           $variables['node']->header_bottom = $variables['page']['header_bottom'];
           unset($variables['page']['header_bottom']);
-        }
-        if (isset($variables['page']['utility'])) {
-          // Move the utility to the node.
-          $variables['node']->utility = $variables['page']['utility'];
-          unset($variables['page']['utility']);
         }
         ctools_class_add($layout['layout']);
 
