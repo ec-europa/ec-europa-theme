@@ -48,10 +48,7 @@ Style guide: file.1
 }
 
 .file__metadata {
-  @extend .col-md-6;
-  @extend .col-sm-6;
-  @extend .col-xs-10;
-
+  width: 50%;
   margin-bottom: 0;
   padding-left: 0;
   padding-right: 0;
@@ -86,10 +83,8 @@ Style guide: file.1
 }
 
 .file__btn {
-  @extend .col-md-4;
-  @extend .col-sm-4;
-  @extend .col-xs-12;
-
+  width: 100%;
+  text-align: center;
   margin-top: 0.778em;
   margin-bottom: 0;
 
@@ -197,10 +192,6 @@ Style guide: file.2
   }
 
   .file__metadata {
-    @extend .col-md-6;
-    @extend .col-sm-6;
-    @extend .col-xs-12;
-
     padding-left: 0;
     padding-right: 0;
   }
@@ -234,13 +225,13 @@ Style guide: file.3
   }
   .file__title {
 
-    &:link {
-      text-decoration: none;
-    }
-    &:hover,
-    &:active {
-      text-decoration: underline;
-    }
+  .file__metadata--link {
+    width: 83.3333333333%;
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    line-height: 1;
+  }
 
     &::after {
       padding-left: 0.4em;
@@ -294,6 +285,11 @@ Style guide: file.3
   }
 }
 
+.no-svg {
+  .icon--file-link {
+    background-image: url("../images/png/icons/link.png");
+  }
+}
 
 @include breakpoint(screen-sm-min) {
   .file__icon {
@@ -315,6 +311,11 @@ Style guide: file.3
       float: right;
       margin-top: 0;
       overflow: hidden;
+      width: 33.33%;
+
+      .file__translations & {
+        width: auto;
+      }
     }
   }
 }
