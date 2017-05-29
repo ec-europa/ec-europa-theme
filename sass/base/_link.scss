@@ -73,7 +73,7 @@ a {
     }
   }
 
-  &#{"[" + $external_link_pattern + "]"}:not(.is-internal) {
+  &#{"[" + $external_link_pattern + "]"}:not(.is-internal, .listing__item-link) {
     &:not(#{$ec_url_patterns}) {
       @include _external_link_mixin();
     }

@@ -193,14 +193,6 @@
     </div>
   </div>
 
-  <?php if (!empty($page['utility'])): ?>
-    <div class="utility">
-      <div class="container-fluid">
-        <?php print render($page['utility']); ?>
-      </div>
-    </div>
-  <?php endif; ?>
-
   <!-- Generic sections -->
   <div class="container-fluid">
     <?php if (!empty($tabs)): ?>

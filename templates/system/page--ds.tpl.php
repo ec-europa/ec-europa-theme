@@ -159,14 +159,6 @@
   </section>
 <?php endif; ?>
 
-<?php if (!empty($page['utility'])): ?>
-  <div class="utility">
-    <div class="container-fluid">
-      <?php print render($page['utility']); ?>
-    </div>
-  </div>
-<?php endif; ?>
-
 <section class="main-content">
   <!-- Generic sections -->
   <div class="container-fluid">

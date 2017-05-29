@@ -46,7 +46,7 @@
   .listing__wrapper--row-two .listing:after {
     clear: both; }
 
-.col-xs-1, .col-sm-1, .file__icon, .col-md-1, .file__icon, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .context-nav__label, .col-lg-3, .col-xs-4, .col-sm-4, .file__btn, .col-md-4, .file__btn, .footer__column, .listing__wrapper--three-columns .listing, .listing__wrapper--row-three .listing__item, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .featured-item__image, .col-lg-5, .col-xs-6, .col-sm-6, .file__metadata, .file__translations .file__metadata, .hero-links__items .hero-links__item, .listing__wrapper--two-columns .listing, .col-md-6, .banner__left, .banner__paragraph, .comment__form-wrapper, .file__metadata, .file__translations .file__metadata, .listing__wrapper--row-two .listing__item, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .featured-item__content, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .listing__wrapper--maxwidth .listing, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .context-nav__items, .col-lg-9, .col-xs-10, .file__metadata, .file--link .file__metadata--link, .col-sm-10, .file--link .file__metadata--link, .col-md-10, .file--link .file__metadata--link, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .context-nav__label, .context-nav__items, .file__btn, .file__translations .file__metadata, .hero-links__items .hero-links__item, .col-sm-12, .col-md-12, .banner__content, .listing__wrapper--three-columns .featured-item__image,
+.col-xs-1, .col-sm-1, .file__icon, .col-md-1, .file__icon, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .context-nav__label, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .footer__column, .listing__wrapper--three-columns .listing, .listing__wrapper--row-three .listing__item, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .featured-item__image, .col-lg-5, .col-xs-6, .col-sm-6, .hero-links__items .hero-links__item, .listing__wrapper--two-columns .listing, .col-md-6, .banner__left, .banner__paragraph, .comment__form-wrapper, .listing__wrapper--row-two .listing__item, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .featured-item__content, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .listing__wrapper--maxwidth .listing, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .context-nav__items, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .context-nav__label, .context-nav__items, .hero-links__items .hero-links__item, .col-sm-12, .col-md-12, .banner__content, .listing__wrapper--three-columns .featured-item__image,
 .listing__wrapper--three-columns .featured-item__content,
 .section--row-three .featured-item__image,
 .section--row-three .featured-item__content, .col-lg-12 {
@@ -55,7 +55,7 @@
   padding-left: 15px;
   padding-right: 15px; }
 
-.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .file__metadata, .file--link .file__metadata--link, .col-xs-11, .col-xs-12, .context-nav__label, .context-nav__items, .file__btn, .file__translations .file__metadata, .hero-links__items .hero-links__item {
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12, .context-nav__label, .context-nav__items, .hero-links__items .hero-links__item {
   float: left; }
 
 .col-xs-1 {
@@ -85,13 +85,13 @@
 .col-xs-9 {
   width: 75%; }
 
-.col-xs-10, .file__metadata, .file--link .file__metadata--link {
+.col-xs-10 {
   width: 83.3333333333%; }
 
 .col-xs-11 {
   width: 91.6666666667%; }
 
-.col-xs-12, .context-nav__label, .context-nav__items, .file__btn, .file__translations .file__metadata, .hero-links__items .hero-links__item {
+.col-xs-12, .context-nav__label, .context-nav__items, .hero-links__items .hero-links__item {
   width: 100%; }
 
 .col-xs-pull-0 {
@@ -212,7 +212,7 @@
   margin-left: 100%; }
 
 @media (min-width: 768px) {
-  .col-sm-1, .file__icon, .col-sm-2, .col-sm-3, .col-sm-4, .file__btn, .col-sm-5, .col-sm-6, .file__metadata, .file__translations .file__metadata, .hero-links__items .hero-links__item, .listing__wrapper--two-columns .listing, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .file--link .file__metadata--link, .col-sm-11, .col-sm-12 {
+  .col-sm-1, .file__icon, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .hero-links__items .hero-links__item, .listing__wrapper--two-columns .listing, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
     float: left; }
   .col-sm-1, .file__icon {
     width: 8.3333333333%; }
@@ -220,11 +220,11 @@
     width: 16.6666666667%; }
   .col-sm-3 {
     width: 25%; }
-  .col-sm-4, .file__btn {
+  .col-sm-4 {
     width: 33.3333333333%; }
   .col-sm-5 {
     width: 41.6666666667%; }
-  .col-sm-6, .file__metadata, .file__translations .file__metadata, .hero-links__items .hero-links__item, .listing__wrapper--two-columns .listing {
+  .col-sm-6, .hero-links__items .hero-links__item, .listing__wrapper--two-columns .listing {
     width: 50%; }
   .col-sm-7 {
     width: 58.3333333333%; }
@@ -232,7 +232,7 @@
     width: 66.6666666667%; }
   .col-sm-9 {
     width: 75%; }
-  .col-sm-10, .file--link .file__metadata--link {
+  .col-sm-10 {
     width: 83.3333333333%; }
   .col-sm-11 {
     width: 91.6666666667%; }
@@ -318,7 +318,7 @@
     margin-left: 100%; } }
 
 @media (min-width: 992px) {
-  .col-md-1, .file__icon, .col-md-2, .col-md-3, .context-nav__label, .col-md-4, .file__btn, .footer__column, .listing__wrapper--three-columns .listing, .listing__wrapper--row-three .listing__item, .col-md-5, .featured-item__image, .col-md-6, .banner__left, .banner__paragraph, .comment__form-wrapper, .file__metadata, .file__translations .file__metadata, .listing__wrapper--row-two .listing__item, .col-md-7, .featured-item__content, .col-md-8, .listing__wrapper--maxwidth .listing, .col-md-9, .context-nav__items, .col-md-10, .file--link .file__metadata--link, .col-md-11, .col-md-12, .banner__content, .listing__wrapper--three-columns .featured-item__image,
+  .col-md-1, .file__icon, .col-md-2, .col-md-3, .context-nav__label, .col-md-4, .footer__column, .listing__wrapper--three-columns .listing, .listing__wrapper--row-three .listing__item, .col-md-5, .featured-item__image, .col-md-6, .banner__left, .banner__paragraph, .comment__form-wrapper, .listing__wrapper--row-two .listing__item, .col-md-7, .featured-item__content, .col-md-8, .listing__wrapper--maxwidth .listing, .col-md-9, .context-nav__items, .col-md-10, .col-md-11, .col-md-12, .banner__content, .listing__wrapper--three-columns .featured-item__image,
   .listing__wrapper--three-columns .featured-item__content,
   .section--row-three .featured-item__image,
   .section--row-three .featured-item__content {
@@ -329,11 +329,11 @@
     width: 16.6666666667%; }
   .col-md-3, .context-nav__label {
     width: 25%; }
-  .col-md-4, .file__btn, .footer__column, .listing__wrapper--three-columns .listing, .listing__wrapper--row-three .listing__item {
+  .col-md-4, .footer__column, .listing__wrapper--three-columns .listing, .listing__wrapper--row-three .listing__item {
     width: 33.3333333333%; }
   .col-md-5, .featured-item__image {
     width: 41.6666666667%; }
-  .col-md-6, .banner__left, .banner__paragraph, .comment__form-wrapper, .file__metadata, .file__translations .file__metadata, .listing__wrapper--row-two .listing__item {
+  .col-md-6, .banner__left, .banner__paragraph, .comment__form-wrapper, .listing__wrapper--row-two .listing__item {
     width: 50%; }
   .col-md-7, .featured-item__content {
     width: 58.3333333333%; }
@@ -341,7 +341,7 @@
     width: 66.6666666667%; }
   .col-md-9, .context-nav__items {
     width: 75%; }
-  .col-md-10, .file--link .file__metadata--link {
+  .col-md-10 {
     width: 83.3333333333%; }
   .col-md-11 {
     width: 91.6666666667%; }
@@ -642,7 +642,7 @@ tbody.collapse.in {
   .embed-responsive.embed-responsive-4by3, .file--video .embed-responsive-4by3.file__container {
     padding-bottom: 75%; }
 
-.icon--after, .btn.btn-ctn::after, .inpage-nav__navbar .btn-ctn.inpage-nav__toggle::after, .btn.btn-time-line::after, .inpage-nav__navbar .btn-time-line.inpage-nav__toggle::after, .btn.btn-menu::after, .inpage-nav__navbar .btn-menu.inpage-nav__toggle::after, .is-external::after, a[href^="http"]:not([href*="ec.europa.eu"]):not(.is-internal)::after, .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .listing__title::after,
+.icon--after, .btn.btn-ctn::after, .inpage-nav__navbar .btn-ctn.inpage-nav__toggle::after, .btn.btn-time-line::after, .inpage-nav__navbar .btn-time-line.inpage-nav__toggle::after, .btn.btn-menu::after, .inpage-nav__navbar .btn-menu.inpage-nav__toggle::after, .is-external::after, a[href^="http"]:not([href*="ec.europa.eu"]):not(.is-internal):not(.listing__item-link)::after, .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .listing__title::after,
 .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .highlighted-item h3::after, .breadcrumb__link-arrow, a.breadcrumb__link::after, .no-js .breadcrumb__segment--first::before, .breadcrumb--collapsible .breadcrumb__btn-separator::after, .file__btn::after, .file__translations .file__translations-control::after, .lang-select-page--transparent select.lang-select-page__list::after, .listing__title--arrow::after, .listing--cta .listing__title::after, .listing__read-more::after, .notification__content .notification__btn::after, .facet-tag--close .facet-tag__value::after, .facet-tag--close .facet-tag__value:hover::after {
   display: inline-block;
   margin-left: 4px;
@@ -682,6 +682,8 @@ Markup: html/btn.html
 .btn-secondary   - Button secondary
 .btn-ctn         - Button call to action
 .btn-menu        - Button menu
+.btn--margin-top   - Button modifier, margin on top
+.btn--margin-right - Button modifier, margin on right
 
 Style guide: buttons
 */
@@ -757,6 +759,9 @@ Style guide: buttons
 
 .btn--margin-top {
   margin-top: 0.556em; }
+
+.btn--margin-right {
+  margin-right: 1.5em; }
 
 .btn--no-margin-bottom {
   margin-bottom: 0 !important; }
@@ -992,10 +997,10 @@ a[href^="mailto"] {
   a::after {
     content: none !important; } }
 
-.is-external, a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]), .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .listing__title,
+.is-external, a[href^="http"]:not(.is-internal):not(.listing__item-link):not([href*="ec.europa.eu"]), .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .listing__title,
 .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .highlighted-item h3 {
   position: relative; }
-  .is-external::after, a[href^="http"]:not([href*="ec.europa.eu"]):not(.is-internal)::after, .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .listing__title::after,
+  .is-external::after, a[href^="http"]:not([href*="ec.europa.eu"]):not(.is-internal):not(.listing__item-link)::after, .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .listing__title::after,
   .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .highlighted-item h3::after {
     content: '\e825';
     font-size: 75%;
@@ -2394,6 +2399,7 @@ Style guide: file.1
     color: #9f9f9f; }
 
 .file__metadata {
+  width: 50%;
   margin-bottom: 0;
   padding-left: 0;
   padding-right: 0;
@@ -2426,6 +2432,8 @@ Style guide: file.1
   white-space: nowrap; }
 
 .file__btn {
+  width: 100%;
+  text-align: center;
   margin-top: 0.778em;
   margin-bottom: 0; }
 
@@ -2506,6 +2514,7 @@ Style guide: file.3
 .file--link {
   background-color: transparent; }
   .file--link .file__metadata--link {
+    width: 83.3333333333%;
     margin-bottom: 0;
     padding-left: 0;
     padding-right: 0;
@@ -2529,7 +2538,10 @@ Style guide: file.3
   .file .file__btn {
     float: right;
     margin-top: 0;
-    overflow: hidden; } }
+    overflow: hidden;
+    width: 33.33%; }
+    .file__translations .file .file__btn {
+      width: auto; } }
 
 /*
 File image
@@ -4618,17 +4630,18 @@ Markup: html/listing--title.html
 
 Style guide listing.4
 */
-.listing--title {
+.listing--title .listing__item {
   padding: 0.61em 0; }
-  .listing--title .listing__title {
-    display: block;
-    margin: 0;
-    padding-right: 2em;
-    text-decoration: none; }
-    .listing--title .listing__title::after {
-      line-height: 1.6; }
-    .listing--title-medium.listing--title .listing__title {
-      font-size: 1.222em; }
+
+.listing--title a.listing__title {
+  display: block;
+  margin: 0;
+  padding-right: 2em;
+  text-decoration: none; }
+  .listing--title a.listing__title::after {
+    line-height: 1.6; }
+  .listing--title-medium.listing--title a.listing__title {
+    font-size: 1.222em; }
 
 .listing--frontpage p {
   line-height: 1.375em; }
@@ -4724,6 +4737,14 @@ Style guide listing.3
     .listing--cta .listing__item .node {
       padding: 1.111em;
       background-color: #004494; }
+      .listing--cta .listing__item .listing__item__wrapper:before, .listing--cta .listing__item .listing__item__wrapper:after,
+      .listing--cta .listing__item .node:before,
+      .listing--cta .listing__item .node:after {
+        content: " ";
+        display: table; }
+      .listing--cta .listing__item .listing__item__wrapper:after,
+      .listing--cta .listing__item .node:after {
+        clear: both; }
     .listing--cta .listing__item .listing__title,
     .listing--cta .listing__item .listing__title a,
     .listing--cta .listing__item a {
@@ -6386,7 +6407,7 @@ li.site-switcher__option a {
   font-weight: bold; }
   li.site-switcher__option a:hover, li.site-switcher__option a:focus {
     text-decoration: underline; }
-  li.site-switcher__option a::after, li.site-switcher__option a.is-external::after, li.site-switcher__option a[href^="http"]:not([href*="ec.europa.eu"]):not(.is-internal)::after, li.site-switcher__option .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) a.listing__title::after, .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) li.site-switcher__option a.listing__title::after {
+  li.site-switcher__option a::after, li.site-switcher__option a.is-external::after, li.site-switcher__option a[href^="http"]:not([href*="ec.europa.eu"]):not(.is-internal):not(.listing__item-link)::after, li.site-switcher__option .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) a.listing__title::after, .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) li.site-switcher__option a.listing__title::after {
     content: none !important; }
 
 li.site-switcher__option.is-selected {
@@ -6404,7 +6425,7 @@ a.site-switcher__option {
   font-weight: bold; }
   a.site-switcher__option:hover, a.site-switcher__option:focus {
     text-decoration: underline; }
-  a.site-switcher__option::after, a.site-switcher__option.is-external::after, a.site-switcher__option[href^="http"]:not([href*="ec.europa.eu"]):not(.is-internal)::after, .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) a.site-switcher__option.listing__title::after {
+  a.site-switcher__option::after, a.site-switcher__option.is-external::after, a.site-switcher__option[href^="http"]:not([href*="ec.europa.eu"]):not(.is-internal):not(.listing__item-link)::after, .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) a.site-switcher__option.listing__title::after {
     content: none !important; }
   a.site-switcher__option.is-selected {
     background-color: #004494;
@@ -6677,7 +6698,7 @@ Style guide social
       text-decoration: underline; }
     .social-media-links__item > a::before, .social-media-links--webtool-vertical .wtShareList .wtShareLink > a::before {
       margin-bottom: 0; }
-    .social-media-links__item > a::after, .social-media-links--webtool-vertical .wtShareList .wtShareLink > a::after, .social-media-links__item > a.is-external::after, .social-media-links--webtool-vertical .wtShareList .wtShareLink > a.is-external::after, .social-media-links__item > a[href^="http"]:not([href*="ec.europa.eu"]):not(.is-internal)::after, .social-media-links--webtool-vertical .wtShareList .wtShareLink > a[href^="http"]:not([href*="ec.europa.eu"]):not(.is-internal)::after, .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .social-media-links__item > a.listing__title::after, .social-media-links--webtool-vertical .wtShareList .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .wtShareLink > a.listing__title::after, .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .social-media-links--webtool-vertical .wtShareList .wtShareLink > a.listing__title::after {
+    .social-media-links__item > a::after, .social-media-links--webtool-vertical .wtShareList .wtShareLink > a::after, .social-media-links__item > a.is-external::after, .social-media-links--webtool-vertical .wtShareList .wtShareLink > a.is-external::after, .social-media-links__item > a[href^="http"]:not([href*="ec.europa.eu"]):not(.is-internal):not(.listing__item-link)::after, .social-media-links--webtool-vertical .wtShareList .wtShareLink > a[href^="http"]:not([href*="ec.europa.eu"]):not(.is-internal):not(.listing__item-link)::after, .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .social-media-links__item > a.listing__title::after, .social-media-links--webtool-vertical .wtShareList .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .wtShareLink > a.listing__title::after, .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .social-media-links--webtool-vertical .wtShareList .wtShareLink > a.listing__title::after {
       display: none !important; }
 
 .social-media-links--webtool-horizontal .wtShareList {
