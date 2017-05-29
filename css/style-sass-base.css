@@ -4232,7 +4232,7 @@ button.close {
 
 @media print {
   .hidden-print, .btn-group, .form-control, .form-group, ul.nav-tabs,
-  .nav-tabs, .utility {
+  .nav-tabs {
     display: none !important; } }
 
 .icon--after {
@@ -4251,7 +4251,7 @@ button.close {
 
 @media print {
   .hidden-print, .btn-group, .form-control, .form-group, ul.nav-tabs,
-  .nav-tabs, .utility {
+  .nav-tabs {
     display: none !important; } }
 
 /**
@@ -5100,14 +5100,5 @@ Style guide sections.3
     vertical-align: bottom; }
     .field-group--inline-bottom .field:last-child {
       padding-right: 0; }
-
-/*
-Utility
-
-Placeholder for adding the user menu .site-user-menu
-*/
-.utility {
-  background-color: #f5f5f5;
-  font-size: 0.889em; }
 
 /*# sourceMappingURL=style-sass-base.css.map */
