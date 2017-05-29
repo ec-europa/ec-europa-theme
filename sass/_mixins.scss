@@ -280,35 +280,6 @@ $modifiers: (
   speak: none;
 }
 
-/**
- * Show icons only, hide copy.
- */
-@mixin icon-only {
-  display: inline-block;
-  visibility: hidden;
-  width: 1.2em;
-
-  &::before,
-  &::after {
-    visibility: visible;
-  }
-
-  html.lte8 & {
-    visibility: visible;
-    text-indent: -999em;
-    overflow: hidden;
-    float: left;
-
-    &::before,
-    &::after {
-      text-indent: 0;
-      position: absolute;
-      overflow: hidden;
-      margin-left: 999em;
-    }
-  }
-}
-
 // [converter] $parent hack.
 @mixin hidden-print($selector) {
   #{$selector} {

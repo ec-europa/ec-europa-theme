@@ -658,9 +658,6 @@ tbody.collapse.in {
   text-decoration: none;
   speak: none; }
 
-/**
- * Show icons only, hide copy.
- */
 @media print {
   .hidden-print, .btn, .inpage-nav__navbar .inpage-nav__toggle, .breadcrumb, .ui-datepicker .ui-datepicker-header .ui-datepicker-title select, .feedback-form__wrapper, .file, .footer__improved,
   .footer__top,
@@ -3040,27 +3037,7 @@ Style guide: gallery.overlay
     margin: 0; }
     .gallery-overlay__main .gallery-overlay__media-previous a,
     .gallery-overlay__main .gallery-overlay__media-next a {
-      display: inline-block;
-      visibility: hidden;
-      width: 1.2em;
       font-size: 1.4em; }
-      .gallery-overlay__main .gallery-overlay__media-previous a::before, .gallery-overlay__main .gallery-overlay__media-previous a::after,
-      .gallery-overlay__main .gallery-overlay__media-next a::before,
-      .gallery-overlay__main .gallery-overlay__media-next a::after {
-        visibility: visible; }
-      html.lte8 .gallery-overlay__main .gallery-overlay__media-previous a, html.lte8
-      .gallery-overlay__main .gallery-overlay__media-next a {
-        visibility: visible;
-        text-indent: -999em;
-        overflow: hidden;
-        float: left; }
-        html.lte8 .gallery-overlay__main .gallery-overlay__media-previous a::before, html.lte8 .gallery-overlay__main .gallery-overlay__media-previous a::after, html.lte8
-        .gallery-overlay__main .gallery-overlay__media-next a::before, html.lte8
-        .gallery-overlay__main .gallery-overlay__media-next a::after {
-          text-indent: 0;
-          position: absolute;
-          overflow: hidden;
-          margin-left: 999em; }
       .gallery-overlay__main .gallery-overlay__media-previous a::before,
       .gallery-overlay__main .gallery-overlay__media-next a::before {
         margin: 0; }

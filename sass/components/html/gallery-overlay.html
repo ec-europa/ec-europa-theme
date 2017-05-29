@@ -8,17 +8,17 @@
     <div class="modal__content">
 
       <div class="gallery-overlay">
-        <span class="gallery-overlay__close">
-          <a href="#" title="Close" data-dismiss="modal">Close</a>
-        </span>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
 
         <div class="gallery-overlay__main">
           <div class="gallery-overlay__media-previous">
-            <a href="#" title="Previous">Previous</a>
+            <a href="#" title="Previous"><span class="sr-only">Previous</span></a>
           </div>
 
           <div class="gallery-overlay__media">
-            <div class="gallery-overlay__media-wrapper--center">
+            <div class="gallery-overlay__media-wrapper">
               <ul>
                 <li class="gallery-overlay__media-item active">
                   <img class="img-responsive" src="http://lorempixel.com/900/620/business" alt="">
@@ -37,7 +37,7 @@
           </div>
 
           <div class="gallery-overlay__media-next">
-            <a href="#" title="Next">Next</a>
+            <a href="#" title="Next"><span class="sr-only">Next</span></a>
           </div>
         </div>
 
@@ -54,7 +54,7 @@
 
           <div class="gallery-overlay__description">
             <p>Nulla consequat massa quis enim. Donec pede justo.</p>
-            <p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.</p>
+            <p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Integer tincidunt. <a href="#" title="Cras dapibus">Cras dapibus</a>. Vivamus elementum semper nisi.</p>
           </div>
 
           <span class="gallery-overlay__copyright">&copy; Copyright holder, Author name, License type</span>

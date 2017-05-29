@@ -224,8 +224,6 @@ Style guide: gallery.overlay
     margin: 0;
 
     a {
-      @include icon-only;
-
       font-size: 1.4em;
 
       &::before {
