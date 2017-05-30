@@ -48,10 +48,7 @@ Style guide: file.1
 }
 
 .file__metadata {
-  @extend .col-md-6;
-  @extend .col-sm-6;
-  @extend .col-xs-10;
-
+  width: 50%;
   margin-bottom: 0;
   padding-left: 0;
   padding-right: 0;
@@ -86,10 +83,8 @@ Style guide: file.1
 }
 
 .file__btn {
-  @extend .col-md-4;
-  @extend .col-sm-4;
-  @extend .col-xs-12;
-
+  width: 100%;
+  text-align: center;
   margin-top: 0.778em;
   margin-bottom: 0;
 
@@ -197,10 +192,6 @@ Style guide: file.2
   }
 
   .file__metadata {
-    @extend .col-md-6;
-    @extend .col-sm-6;
-    @extend .col-xs-12;
-
     padding-left: 0;
     padding-right: 0;
   }
@@ -225,21 +216,72 @@ Style guide: file.3
 */
 .file--link {
   background-color: transparent;
+  max-width: 32em;
+  border-top: 1px solid $ec-grey15;
+  padding: 1em 0;
+  margin-bottom: 0;
+  &:last-child {
+    border-bottom: 1px solid $ec-grey15;
+  }
+  .file__title {
 
   .file__metadata--link {
-    @extend .col-md-10;
-    @extend .col-sm-10;
-    @extend .col-xs-10;
-
+    width: 83.3333333333%;
     margin-bottom: 0;
     padding-left: 0;
     padding-right: 0;
     line-height: 1;
   }
 
-  .icon--file-link {
-    background: url("../images/svg/icons/link.svg") no-repeat center 10%;
-    width: 2.8em;
+    &::after {
+      padding-left: 0.4em;
+      margin-left: 0.4em;
+      border-left: 2px solid $ec-grey50;
+      color: $ec-grey;
+
+      // This is needed to have the text-decoration working.
+      display: inline-block;
+      text-decoration: none;
+    }
+    &::before {
+      @extend .icon;
+      color: $ec-grey50;
+      @extend .icon--file;
+      font-size: 2.4em;
+      display: table-cell;
+      vertical-align: bottom;
+      width: 40px;
+      float: left;
+    }
+
+    // Change the icon based on the linked file extension.
+    &[href$=".pdf"]{
+      &::before {
+        @extend .icon--file;
+        font-size: 2.4em;
+      }
+      &::after {
+        content: 'PDF'
+      }
+    }
+    &[href$=".ppt"]{
+      &::before {
+        @extend .icon--presentation;
+        font-size: 1.8em;
+      }
+      &::after {
+        content: 'PPT'
+      }
+    }
+    &[href$=".jpg"]{
+      &::before {
+        @extend .icon--image;
+        font-size: 1.5em;
+      }
+      &::after {
+        content: 'JPG'
+      }
+    }
   }
 }
 
@@ -269,6 +311,11 @@ Style guide: file.3
       float: right;
       margin-top: 0;
       overflow: hidden;
+      width: 33.33%;
+
+      .file__translations & {
+        width: auto;
+      }
     }
   }
 }

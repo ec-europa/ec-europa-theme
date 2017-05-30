@@ -26,7 +26,6 @@
     "public/js/components/file.js",
     "public/js/components/breadcrumb.js",
     "public/js/components/collapse.js",
-    "public/js/components/modal.js",
     "public/js/components/transition.js",
     "public/js/components/inpage_nav.js",
     "public/js/europa.js"
