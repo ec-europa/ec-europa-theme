@@ -168,26 +168,9 @@ Markup: html/gallery-overlay.html
 Style guide: gallery.overlay
 */
 
-.modal__dialog {
-  display: table;
-  height: 100%;
-  width: 100%;
-}
-
-.modal__content {
-  display: table-cell;
-}
-
-// Vertically center modal over screen-lg-min width.
-@include breakpoint(screen-md-min) {
-  .modal__content {
-    vertical-align: middle;
-  }
-}
-
 // Outside container
 .gallery-overlay {
-  @extend .row;
+  @include clearfix();
 
   position: relative;
   height: 100%;
@@ -210,20 +193,21 @@ Style guide: gallery.overlay
 }
 
 // Main container.
-.gallery-overlay__main {
-  @extend .col-md-8;
-
-  background-color: #000;
+.gallery-overlay__media {
+  display: table;
   padding: 0;
+  background-color: #000;
 
   .gallery-overlay__media-previous,
   .gallery-overlay__media-next {
-    position: absolute;
-    top: calc(50% - 1.8em);
-    padding: 0 6px;
-    margin: 0;
+    display: table-cell;
+    position: relative;
+    width: 2.5em;
 
     a {
+      position: absolute;
+      top: calc(50% - 0.7em);
+      left: calc(50% - 20px);
       font-size: 1.4em;
 
       &::before {
@@ -238,53 +222,38 @@ Style guide: gallery.overlay
     }
 
     @include breakpoint(screen-md-min) {
-      padding: 0;
+      width: 3.35em;
 
       a {
+        top: calc(50% - 1.1em);
         font-size: 2.2em;
+
+        &::before {
+          margin-left: 0 !important;
+        }
       }
     }
   }
 
   // Previous button.
   .gallery-overlay__media-previous {
-    left: -10px;
-    z-index: 1;
-
     a {
       &::before {
         @extend .icon--left;
       }
     }
-
-    @include breakpoint(screen-md-min) {
-      left: 0;
-    }
   }
 
   // Next button.
   .gallery-overlay__media-next {
-    right: 0;
-
     a {
       &::before {
         @extend .icon--right;
       }
     }
-
-    @include breakpoint(screen-md-min) {
-      right: 10px;
-    }
   }
-}
 
-// Media column.
-.gallery-overlay__media {
-  margin: 0 auto;
-  padding: 0 30px;
-  position: relative;
-
-  .gallery-overlay__media-wrapper--center {
+  .gallery-overlay__media-item-list__wrapper {
     height: 100%;
     overflow: hidden;
   }
@@ -308,45 +277,88 @@ Style guide: gallery.overlay
     &.active {
       display: block;
     }
-
   }
 
   @include breakpoint(screen-md-min) {
-    padding: 0 60px;
+    float: left;
+    width: 66.6666666667%;
   }
 }
 
-.gallery-overlay__close {
-  position: static;
-  display: block;
-  text-align: right;
+/*
++  position: static;
+ +  display: block;
+ +  text-align: right;
+ +  padding: 10px 14px;
+ +  background-color: $ec-grey;
+ +  font-size: $font-size-tiny;
+ +
+ +  @include breakpoint(screen-md-min) {
+ +    position: absolute;
+ +    top: 25px;
+ +    right: 30px;
+ +    padding: 0;
+ +    background-color: transparent;
+ +    z-index: 1;
+ +  }
+ */
+
+.gallery-overlay__close-wrapper {
   padding: 10px 14px;
   background-color: $ec-grey;
-  font-size: $font-size-tiny;
+  text-align: right;
 
   @include breakpoint(screen-md-min) {
-    position: absolute;
-    top: 25px;
-    right: 30px;
-    padding: 0;
+    padding: 0 !important;
     background-color: transparent;
-    z-index: 1;
   }
+}
 
-  a {
-    text-decoration: none;
+// Close button.
+.gallery-overlay__close {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 4px !important;
+  line-height: 0.8 !important;
+  background-color: transparent;
+  border-width: 0;
+  color: #fff;
+  z-index: 1;
+
+  @include _focus_outline_border(3px, $ec-yellow, -3px);
+
+  .ui-button-icon-primary {
+    display: inline-block !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    margin: 0 !important;
+    text-indent: 0 !important;
 
     &::after {
       @extend .icon--after;
       @extend .icon--close;
     }
   }
+
+  .ui-button-text {
+    float: left;
+    padding: 0 !important;
+    text-indent: 0 !important;
+    font-size: $font-size-tiny;
+  }
+
+  @include breakpoint(screen-md-min) {
+    position: absolute !important;
+    top: 25px !important;
+    right: 25px !important;
+  }
 }
 
 // Side bar column.
 .gallery-overlay__sidebar {
-  @extend .col-md-4;
-
   padding: 2.575em 2.145em 2.145em 2.145em;
   font-size: $font-size-xsmall;
   background-color: $ec-grey;
@@ -354,6 +366,8 @@ Style guide: gallery.overlay
 
   @include breakpoint(screen-md-min) {
     padding-top: 4.3em;
+    float: left;
+    width: 33.3333333333%;
   }
 
   // Meta info.
@@ -370,7 +384,7 @@ Style guide: gallery.overlay
     }
   }
 
-  // Count.
+  // Number of elements.
   .gallery-overlay__count {
     font-weight: $font-weight-bold;
   }
