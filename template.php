@@ -755,7 +755,6 @@ function europa_preprocess_block(&$variables) {
   // of classes.
   if (!empty($variables['title_attributes_array']['class'])) {
     $block_title_class = array_search('block-title', $variables['title_attributes_array']['class']);
-
     if ($block_title_class !== FALSE) {
       unset($variables['title_attributes_array']['class'][$block_title_class]);
     }
