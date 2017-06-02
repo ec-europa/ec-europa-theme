@@ -753,10 +753,13 @@ function europa_preprocess_block(&$variables) {
 
   // Replace block-title class with block__title in order to keep BEM structure
   // of classes.
-  $block_title_class = array_search('block-title', $variables['title_attributes_array']['class']);
-  if ($block_title_class !== FALSE) {
-    unset($variables['title_attributes_array']['class'][$block_title_class]);
+  if (!empty($variables['title_attributes_array']['class'])) {
+    $block_title_class = array_search('block-title', $variables['title_attributes_array']['class']);
+    if ($block_title_class !== FALSE) {
+      unset($variables['title_attributes_array']['class'][$block_title_class]);
+    }
   }
+
   $variables['title_attributes_array']['class'][] = 'block__title';
 
   if (isset($block->bid)) {
