@@ -4235,6 +4235,11 @@ button.close {
   .nav-tabs {
     display: none !important; } }
 
+@media print {
+  .hidden-print, .btn-group, .form-control, .form-group, ul.nav-tabs,
+  .nav-tabs {
+    display: none !important; } }
+
 /**
 * Single responsibility helper/utility classes.
 * Logic: equal to inline styling.
@@ -4243,47 +4248,6 @@ button.close {
 .clear-bottom-spacing, .clear-page-content-bottom-spacing .page-content {
   margin-bottom: 0 !important;
   padding-bottom: 0 !important; }
-
-body {
-  min-width: 320px;
-  font-family: Arial, sans-serif;
-  font-weight: 400;
-  line-height: 1.667;
-  overflow-x: hidden;
-  text-rendering: optimizelegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-  @media (min-width: 480px) {
-    body {
-      font-size: 18px; } }
-
-@media print {
-  .hidden-print, .btn-group, .form-control, .form-group, ul.nav-tabs,
-  .nav-tabs {
-    display: none !important; } }
-
-.no-js .collapse {
-  display: block;
-  visibility: visible; }
-
-.region-sidebar-first {
-  padding: 1.667em 0; }
-
-.navbar-toggle {
-  border-radius: 0;
-  border: none; }
-
-.navbar-collapse,
-.navbar-fixed-top,
-.navbar {
-  border: none; }
-
-.facetapi-facetapi-checkbox-links {
-  list-style: none; }
-  .facetapi-facetapi-checkbox-links input.facetapi-checkbox {
-    margin-right: .5em; }
-  .facetapi-facetapi-checkbox-links a.facetapi-checkbox {
-    text-decoration: none; }
 
 .padding-reset {
   padding: 0 !important; }
@@ -4504,6 +4468,42 @@ Style guide form.form-group
 */
 .form-group {
   margin-bottom: 1.7em; }
+
+body {
+  min-width: 320px;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.667;
+  overflow-x: hidden;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+  @media (min-width: 480px) {
+    body {
+      font-size: 18px; } }
+
+.no-js .collapse {
+  display: block;
+  visibility: visible; }
+
+.region-sidebar-first {
+  padding: 1.667em 0; }
+
+.navbar-toggle {
+  border-radius: 0;
+  border: none; }
+
+.navbar-collapse,
+.navbar-fixed-top,
+.navbar {
+  border: none; }
+
+.facetapi-facetapi-checkbox-links {
+  list-style: none; }
+  .facetapi-facetapi-checkbox-links input.facetapi-checkbox {
+    margin-right: .5em; }
+  .facetapi-facetapi-checkbox-links a.facetapi-checkbox {
+    text-decoration: none; }
 
 /*
 Label

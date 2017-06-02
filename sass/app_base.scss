@@ -8,7 +8,6 @@
 @import "helpers_base";
 
 // Base.
-@import "global";
 @import "base/helpers";
 @import "base/img";
 @import "base/blockquote";
@@ -17,6 +16,7 @@
 @import "base/checkbox";
 @import "base/form-control";
 @import "base/form-group";
+@import "global";
 @import "base/label";
 @import "base/legend";
 @import "base/lists";

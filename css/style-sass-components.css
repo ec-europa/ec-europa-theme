@@ -642,6 +642,13 @@ tbody.collapse.in {
   .embed-responsive.embed-responsive-4by3, .file--video .embed-responsive-4by3.file__container {
     padding-bottom: 75%; }
 
+@media print {
+  .hidden-print, .btn, .inpage-nav__navbar .inpage-nav__toggle, .breadcrumb, .ui-datepicker .ui-datepicker-header .ui-datepicker-title select, .feedback-form__wrapper, .file, .footer__improved,
+  .footer__top,
+  .footer__bottom, .help-block, .inpage-nav__wrapper, .lang-select-site, .lang-select-page, .icon.lang-select-page__icon, .date-picker .lang-select-page__icon.date-picker--icon, .file--link .lang-select-page__icon.file__title::before, .lang-select-page__icon.search-form__btn, .search-form--improved .lang-select-page__icon.search-form__textfield-wrapper, select.lang-select-page__list, .feedback-message, .notification, .site-switcher, .search-form, .skip-link,
+  #skip-link, .social-media-links, .social-media-links--field {
+    display: none !important; } }
+
 .reset-lists, .file__translations .file__translations-list, .listing, .site-switcher__list, .site-user-menu__list, .social-media-links__list {
   max-width: none;
   margin-bottom: 0;
@@ -660,13 +667,6 @@ body {
   @media (min-width: 480px) {
     body {
       font-size: 18px; } }
-
-@media print {
-  .hidden-print, .btn, .inpage-nav__navbar .inpage-nav__toggle, .breadcrumb, .ui-datepicker .ui-datepicker-header .ui-datepicker-title select, .feedback-form__wrapper, .file, .footer__improved,
-  .footer__top,
-  .footer__bottom, .help-block, .inpage-nav__wrapper, .lang-select-site, .lang-select-page, .icon.lang-select-page__icon, .date-picker .lang-select-page__icon.date-picker--icon, .file--link .lang-select-page__icon.file__title::before, .lang-select-page__icon.search-form__btn, .search-form--improved .lang-select-page__icon.search-form__textfield-wrapper, select.lang-select-page__list, .feedback-message, .notification, .site-switcher, .search-form, .skip-link,
-  #skip-link, .social-media-links, .social-media-links--field {
-    display: none !important; } }
 
 .no-js .collapse {
   display: block;

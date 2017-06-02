@@ -1,3 +1,7 @@
+@media print {
+  .hidden-print {
+    display: none !important; } }
+
 .hide-menu {
   position: fixed;
   top: 0;

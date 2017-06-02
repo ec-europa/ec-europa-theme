@@ -14,10 +14,6 @@ body {
   }
 }
 
-@media print {
-  @include hidden-print('.hidden-print');
-}
-
 .no-js .collapse {
   display: block;
   visibility: visible;
