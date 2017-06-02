@@ -12,6 +12,8 @@
 // Importing simple helpers.
 @import "helpers_components";
 
+@import "global";
+
 // Needed Base Components
 @import "base/btn";
 @import "base/headings";
@@ -27,7 +29,6 @@
 @import "components/date-block";
 @import "components/datepicker";
 @import "components/expandable";
-@import "components/facet";
 @import "components/featured-item";
 @import "components/feedback-form";
 @import "components/field";

@@ -14,6 +14,10 @@ body {
   }
 }
 
+@media print {
+  @include hidden-print('.hidden-print');
+}
+
 .no-js .collapse {
   display: block;
   visibility: visible;
@@ -21,4 +25,27 @@ body {
 
 .region-sidebar-first {
   padding: 1.667em 0;
+}
+
+.navbar-toggle {
+  border-radius: 0;
+  border: none;
+}
+
+.navbar-collapse,
+.navbar-fixed-top,
+.navbar {
+  border: none;
+}
+
+.facetapi-facetapi-checkbox-links {
+  list-style: none;
+
+  input.facetapi-checkbox {
+    margin-right: .5em;
+  }
+
+  a.facetapi-checkbox {
+    text-decoration: none;
+  }
 }
