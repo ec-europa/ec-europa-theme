@@ -1215,7 +1215,8 @@ Style guide: icon
 .icon--language, .icon--language::before {
   content: '\e824'; }
 
-.icon--left, .icon--left::before, .gallery-overlay__media .gallery-overlay__media-previous a::before {
+.icon--left, .icon--left::before, .gallery-overlay__media .gallery-overlay__media-previous a::before,
+.gallery-overlay__media .gallery-overlay__media-next a::before {
   content: '\e826'; }
 
 .icon--up, .icon--up::before {
@@ -3039,97 +3040,99 @@ Markup: html/gallery-overlay.html
 
 Style guide: gallery.overlay
 */
+#gallery-overlay {
+  background-color: #404040; }
+  #gallery-overlay:focus {
+    outline: none; }
+
 .gallery-overlay {
+  width: 100vw;
   position: relative;
-  height: 100%;
-  margin: 0 auto;
-  background-color: #404040;
   color: #fff; }
-  .gallery-overlay:before, .gallery-overlay:after {
-    content: " ";
-    display: table; }
-  .gallery-overlay:after {
-    clear: both; }
   .gallery-overlay a {
     color: #fff; }
   @media (min-width: 992px) {
     .gallery-overlay {
-      max-height: 800px;
-      height: auto; } }
-  @media (min-width: 1400px) {
-    .gallery-overlay {
-      max-width: 1400px; } }
+      display: flex;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      width: 90vw;
+      max-width: 1440px;
+      height: 800px;
+      max-height: 80vh; } }
 
 .gallery-overlay__media {
-  display: table;
+  display: flex;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  height: 325px;
+  width: 100%;
   padding: 0;
   background-color: #000; }
+  @media (min-width: 992px) {
+    .gallery-overlay__media {
+      width: 70%;
+      height: 100%; } }
   .gallery-overlay__media .gallery-overlay__media-previous,
   .gallery-overlay__media .gallery-overlay__media-next {
-    display: table-cell;
-    position: relative;
-    width: 2.5em; }
+    display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    align-items: center;
+    -ms-flex-align: center;
+    -webkit-align-content: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    height: 100%;
+    width: 10%; }
     .gallery-overlay__media .gallery-overlay__media-previous a,
     .gallery-overlay__media .gallery-overlay__media-next a {
-      position: absolute;
-      top: calc(50% - 0.7em);
-      left: calc(50% - 20px);
-      font-size: 1.4em; }
+      cursor: pointer;
+      font-size: 1.4em;
+      display: inline-block; }
       .gallery-overlay__media .gallery-overlay__media-previous a::before,
       .gallery-overlay__media .gallery-overlay__media-next a::before {
         margin: 0; }
       .gallery-overlay__media .gallery-overlay__media-previous a:hover,
       .gallery-overlay__media .gallery-overlay__media-next a:hover {
-        color: #9f9f9f; }
+        color: #9f9f9f;
+        text-decoration: none; }
     @media (min-width: 992px) {
-      .gallery-overlay__media .gallery-overlay__media-previous,
-      .gallery-overlay__media .gallery-overlay__media-next {
-        width: 3.35em; }
-        .gallery-overlay__media .gallery-overlay__media-previous a,
-        .gallery-overlay__media .gallery-overlay__media-next a {
-          top: calc(50% - 1.1em);
-          font-size: 2.2em; }
-          .gallery-overlay__media .gallery-overlay__media-previous a::before,
-          .gallery-overlay__media .gallery-overlay__media-next a::before {
-            margin-left: 0 !important; } }
+      .gallery-overlay__media .gallery-overlay__media-previous a,
+      .gallery-overlay__media .gallery-overlay__media-next a {
+        font-size: 2.2em; } }
   .gallery-overlay__media .gallery-overlay__media-item-list__wrapper {
-    height: 100%;
-    overflow: hidden; }
+    display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    align-items: center;
+    -ms-flex-align: center;
+    -webkit-align-content: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    width: 80%;
+    max-width: 840px;
+    max-height: 100%; }
   .gallery-overlay__media ul {
+    width: 100%;
+    max-width: none;
     list-style: none;
     padding: 0;
-    margin-bottom: 0;
-    max-width: none; }
+    margin-bottom: 0; }
   .gallery-overlay__media .gallery-overlay__media-item {
     display: none; }
     .gallery-overlay__media .gallery-overlay__media-item > * {
-      display: block;
-      margin: 0 auto;
-      max-height: 800px; }
+      margin: 0 auto; }
     .gallery-overlay__media .gallery-overlay__media-item.active {
       display: block; }
-  @media (min-width: 992px) {
-    .gallery-overlay__media {
-      float: left;
-      width: 66.6666666667%; } }
+      .gallery-overlay__media .gallery-overlay__media-item.active img {
+        max-height: 325px; }
+        @media (min-width: 992px) {
+          .gallery-overlay__media .gallery-overlay__media-item.active img {
+            max-height: 80vh; } }
 
-/*
-+  position: static;
- +  display: block;
- +  text-align: right;
- +  padding: 10px 14px;
- +  background-color: $ec-grey;
- +  font-size: $font-size-tiny;
- +
- +  @include breakpoint(screen-md-min) {
- +    position: absolute;
- +    top: 25px;
- +    right: 30px;
- +    padding: 0;
- +    background-color: transparent;
- +    z-index: 1;
- +  }
- */
 .gallery-overlay__close-wrapper {
   padding: 10px 14px;
   background-color: #404040;
@@ -3142,10 +3145,6 @@ Style guide: gallery.overlay
 .gallery-overlay__close {
   position: static !important;
   width: auto !important;
-  height: auto !important;
-  margin: 0 !important;
-  padding: 4px !important;
-  line-height: 0.8 !important;
   background-color: transparent;
   border-width: 0;
   color: #fff;
@@ -3173,7 +3172,6 @@ Style guide: gallery.overlay
       right: 25px !important; } }
 
 .gallery-overlay__sidebar {
-  padding: 2.575em 2.145em 2.145em 2.145em;
   font-size: 0.778em;
   background-color: #404040;
   line-height: 1.6; }
@@ -3181,7 +3179,9 @@ Style guide: gallery.overlay
     .gallery-overlay__sidebar {
       padding-top: 4.3em;
       float: left;
-      width: 33.3333333333%; } }
+      width: 30%; } }
+  .gallery-overlay__sidebar .gallery-overlay__sidebar__content {
+    padding: 2.575em 2.145em 2.145em 2.145em; }
   .gallery-overlay__sidebar .gallery-overlay__meta {
     margin-bottom: 2.575em;
     line-height: normal; }
