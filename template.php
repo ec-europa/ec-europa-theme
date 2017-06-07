@@ -112,7 +112,7 @@ function europa_menu_tree__secondary(&$variables) {
  * Implements hook_bootstrap_colorize_text_alter().
  */
 function europa_bootstrap_colorize_text_alter(&$texts) {
-  $texts['contains'][t('Save')] = 'primary';
+  $texts['contains'][t('Save', [], ['langcode' => $GLOBALS['language_content']->language])] = 'primary';
 }
 
 /**
