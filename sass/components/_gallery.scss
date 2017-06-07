@@ -157,3 +157,258 @@ Style guide gallery
     height: auto;
   }
 }
+
+/*
+Gallery Overlay
+
+Gallery overlay component.
+
+Markup: html/gallery-overlay.html
+
+Style guide: gallery.overlay
+*/
+
+#gallery-overlay {
+  background-color: $ec-grey;
+  
+  &:focus {
+    outline: none;
+  } 
+}
+
+// Outside container
+.gallery-overlay {
+  width: 100vw;
+  position: relative;
+  color: #fff;
+
+  a {
+    color: #fff;
+  }
+
+  @include breakpoint(screen-md-min) {
+    display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    width: 90vw;
+    max-width: 1440px;
+    height: 800px;
+    max-height: 80vh;
+  }
+}
+
+// Main container.
+.gallery-overlay__media {
+  display: flex;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  height: 325px;
+  width: 100%;
+  padding: 0;
+  background-color: #000;
+
+  @include breakpoint(screen-md-min) {
+    width: 70%;
+    height: 100%;
+  }
+
+  .gallery-overlay__media-previous,
+  .gallery-overlay__media-next {
+    display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    align-items: center;
+    -ms-flex-align: center;
+    -webkit-align-content: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    height: 100%;
+    width: 10%;
+
+    a {
+      cursor: pointer;
+      font-size: 1.4em;
+      display: inline-block;
+
+      &::before {
+        @extend .icon--after;
+        @extend .icon--left;
+
+        margin: 0;
+      }
+
+      &:hover {
+        color: $ec-grey50;
+        text-decoration: none;
+      }
+    }
+
+    @include breakpoint(screen-md-min) {
+      a {
+        font-size: 2.2em;
+      }
+    }
+  }
+
+
+  // Next button.
+  .gallery-overlay__media-next a::before {
+    @extend .icon--right;
+  }
+
+  .gallery-overlay__media-item-list__wrapper {
+    display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    align-items: center;
+    -ms-flex-align: center;
+    -webkit-align-content: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    width: 80%;
+    max-width: 840px;
+    max-height: 100%;
+  }
+
+  ul {
+    width: 100%;
+    max-width: none;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  .gallery-overlay__media-item {
+    display: none;
+    
+    & > * {
+      margin: 0 auto;
+    }
+
+    &.active {
+      display: block;
+
+      img {
+        max-height: 325px;
+
+        @include breakpoint(screen-md-min) {
+          max-height: 80vh;
+        }
+      }
+    }
+  }
+}
+
+.gallery-overlay__close-wrapper {
+  padding: 10px 14px;
+  background-color: $ec-grey;
+  text-align: right;
+
+  @include breakpoint(screen-md-min) {
+    padding: 0 !important;
+    background-color: transparent;
+  }
+}
+
+// Close button.
+.gallery-overlay__close {
+  position: static !important;
+  width: auto !important;
+  background-color: transparent;
+  border-width: 0;
+  color: #fff;
+  z-index: 1;
+
+  @include _focus_outline_border(3px, $ec-yellow, -3px);
+
+  .ui-button-icon-primary {
+    display: inline-block !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    margin: 0 !important;
+    text-indent: 0 !important;
+
+    &::after {
+      @extend .icon--after;
+      @extend .icon--close;
+    }
+  }
+
+  .ui-button-text {
+    float: left;
+    padding: 0 !important;
+    text-indent: 0 !important;
+    font-size: $font-size-tiny;
+  }
+
+  @include breakpoint(screen-md-min) {
+    position: absolute !important;
+    top: 25px !important;
+    right: 25px !important;
+  }
+}
+
+// Side bar column.
+.gallery-overlay__sidebar {
+  font-size: $font-size-xsmall;
+  background-color: $ec-grey;
+  line-height: 1.6;
+
+  @include breakpoint(screen-md-min) {
+    padding-top: 4.3em;
+    float: left;
+    width: 30%;
+  }
+
+  .gallery-overlay__sidebar__content {
+    padding: 2.575em 2.145em 2.145em 2.145em;
+  }
+
+  // Meta info.
+  .gallery-overlay__meta {
+    margin-bottom: 2.575em;
+    line-height: normal;
+
+    > span {
+      margin-right: 15px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  // Number of elements.
+  .gallery-overlay__count {
+    font-weight: $font-weight-bold;
+  }
+
+  // Download button.
+  .gallery-overlay__download a::after {
+    @extend .icon--after;
+    @extend .icon--download;
+  }
+
+  // Share button.
+  .gallery-overlay__share a::after {
+    @extend .icon--after;
+    @extend .icon--share;
+  }
+
+  // Description.
+  .gallery-overlay__description {
+    font-weight: $font-weight-bold;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  // Copyright info.
+  .gallery-overlay__copyright {
+    font-size: $font-size-tiny;
+  }
+}
