@@ -7,7 +7,7 @@
   <div class="gallery-overlay">
     <div class="gallery-overlay__media">
       <div class="gallery-overlay__media-previous">
-        <a title="Previous"><span class="sr-only">Previous</span></a>
+        <a href="#" title="Previous"><span class="sr-only">Previous</span></a>
       </div>
 
       <div class="gallery-overlay__media-item-list__wrapper">
@@ -28,7 +28,7 @@
       </div>
 
       <div class="gallery-overlay__media-next">
-        <a title="Next"><span class="sr-only">Next</span></a>
+        <a href="#" title="Next"><span class="sr-only">Next</span></a>
       </div>
     </div>
 
@@ -77,10 +77,10 @@
         var $top_bar = jQuery(event.target).parent().find('.ui-dialog-titlebar');
         $top_bar.addClass('gallery-overlay__close-wrapper');
         $top_bar.find('button').addClass('gallery-overlay__close');
-        jQuery("body").css({ overflow: 'hidden' });
+        jQuery('body').css({overflow: 'hidden'});
       },
-      beforeClose: function(event, ui) {
-        jQuery("body").css({ overflow: 'inherit' })
+      beforeClose: function (event, ui) {
+        jQuery('body').css({overflow: 'inherit'})
       }
     });
   });
@@ -94,23 +94,23 @@
     jQuery('#gallery-overlay').dialog('option', 'position', {my: 'center', at: 'center', of: window});
   });
 
-
-  jQuery('.gallery-overlay__media-next a').click(function(e) {
-    var $this = jQuery(this).parent().prev().find('.active').index();
-    e.preventDefault;
-    if (jQuery('.gallery-overlay__media-item').size() > $this + 1) {
-      jQuery('.gallery-overlay__media-item').eq($this).removeClass('active');
-      jQuery('.gallery-overlay__media-item').eq($this+1).addClass('active');
+  jQuery('.gallery-overlay__media-next a').click(function (event) {
+    event.preventDefault();
+    var index = jQuery(this).parent().prev().find('.active').index(),
+        $element = jQuery('.gallery-overlay__media-item');
+    if ($element.size() > index + 1) {
+      $element.eq(index).removeClass('active');
+      $element.eq(index + 1).addClass('active');
     }
   });
 
-  jQuery('.gallery-overlay__media-previous a').click(function(e) {
-    e.preventDefault();
-    var $this = jQuery(this).parent().next().find('.active').index();
-    
-    if ($this > 0) {
-      jQuery('.gallery-overlay__media-item').eq($this).removeClass('active');
-      jQuery('.gallery-overlay__media-item').eq($this-1).addClass('active');
+  jQuery('.gallery-overlay__media-previous a').click(function (event) {
+    event.preventDefault();
+    var index = jQuery(this).parent().next().find('.active').index();
+    if (index > 0) {
+      var $element = jQuery('.gallery-overlay__media-item');
+      $element.eq(index).removeClass('active');
+      $element.eq(index - 1).addClass('active');
     }
   });
 </script>
