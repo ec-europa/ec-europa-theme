@@ -3039,10 +3039,8 @@ Markup: html/gallery-overlay.html
 
 Style guide: gallery.overlay
 */
-#gallery-overlay {
-  background-color: #404040; }
-  #gallery-overlay:focus {
-    outline: none; }
+#gallery-overlay:focus {
+  outline: none; }
 
 .gallery-overlay {
   width: 100vw;
@@ -3058,7 +3056,8 @@ Style guide: gallery.overlay
       width: 90vw;
       max-width: 1440px;
       height: 800px;
-      max-height: 80vh; } }
+      max-height: 80vh;
+      overflow: hidden; } }
 
 .gallery-overlay__media {
   display: flex;
@@ -3188,6 +3187,7 @@ Style guide: gallery.overlay
   .gallery-overlay__sidebar .gallery-overlay__meta {
     margin-bottom: 2.575em;
     line-height: normal;
+    text-align: left;
     white-space: nowrap; }
     .gallery-overlay__sidebar .gallery-overlay__meta > span {
       margin-right: 15px; }
@@ -7378,5 +7378,18 @@ body.admin-menu {
 @media (min-width: 992px) {
   .field--publication-listing-exposed {
     margin-top: 43px; } }
+
+.wtShareButton {
+  line-height: inherit !important;
+  border: 0 !important;
+  text-decoration: underline !important;
+  font-size: inherit !important;
+  color: inherit !important;
+  padding: 0 !important;
+  margin-bottom: 0 !important;
+  background: none !important;
+  min-width: inherit !important; }
+  .wtShareButton:hover {
+    color: #fff !important; }
 
 /*# sourceMappingURL=style-sass-components.css.map */
