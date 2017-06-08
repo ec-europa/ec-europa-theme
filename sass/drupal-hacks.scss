@@ -67,7 +67,7 @@ body.admin-menu {
   }
 }
 
-//VBO hacks
+// VBO hacks
 .page-admin {
   input[type='checkbox'] {
     zoom: 1.6;
@@ -95,5 +95,22 @@ body.admin-menu {
 @include breakpoint(screen-md-min) {
   .field--publication-listing-exposed {
     margin-top: 43px;
+  }
+}
+
+// Gallery overlay share button hack.
+.wtShareButton {
+  line-height: inherit !important;
+  border: 0 !important;
+  text-decoration: underline !important;
+  font-size: inherit !important;
+  color: inherit !important;
+  padding: 0 !important;
+  margin-bottom: 0 !important;
+  background: none !important;
+  min-width: inherit !important;
+
+  &:hover {
+    color: #fff !important;
   }
 }

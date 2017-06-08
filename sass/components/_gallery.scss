@@ -168,12 +168,8 @@ Markup: html/gallery-overlay.html
 Style guide: gallery.overlay
 */
 
-#gallery-overlay {
-  background-color: $ec-grey;
-  
-  &:focus {
-    outline: none;
-  } 
+#gallery-overlay:focus {
+  outline: none;
 }
 
 // Outside container
@@ -194,6 +190,7 @@ Style guide: gallery.overlay
     max-width: 1440px;
     height: 800px;
     max-height: 80vh;
+    overflow: hidden;
   }
 }
 
@@ -378,6 +375,7 @@ Style guide: gallery.overlay
   .gallery-overlay__meta {
     margin-bottom: 2.575em;
     line-height: normal;
+    text-align: left;
     white-space: nowrap;
 
     > span {
