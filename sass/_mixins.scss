@@ -168,8 +168,9 @@ $modifiers: (
   download: \e806,
   tag-close: \e82c,
   feedback: \e82e,
-  camera: \e900,
+  camera: \e800,
   slides: \e80e,
+  share: \e808,
   faq: \21,
 );
 
@@ -265,7 +266,7 @@ $modifiers: (
 // Should be used only with @extend.
 .icon--after {
   display: inline-block;
-  margin-left: 4px;
+  margin-left: 8px;
   line-height: 1;
   font-family: 'EuropaIcons';
   font-style: normal;

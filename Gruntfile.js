@@ -50,7 +50,7 @@ module.exports = function (grunt) {
           {expand: true, cwd: 'bootstrap-sass/js/bootstrap/', src: 'transition.js', dest: 'styleguide/assets/public/js/components/'},
           {expand: true, cwd: 'bootstrap-sass/js/bootstrap/', src: 'scrollspy.js', dest: 'styleguide/assets/public/js/'},
           {expand: true, cwd: 'styleguide/public/css/', src: 'jquery.ui.core.min.css', dest: 'styleguide/assets/public/css/'},
-          {expand: true, cwd: 'styleguide/public/css/', src: 'jquery.ui.datepicker.min.css', dest: 'styleguide/assets/public/css/'},
+          {expand: true, cwd: 'styleguide/public/css/components/', src: '**', dest: 'styleguide/assets/public/css/components/'},
           {expand: true, cwd: '../../modules/ec-europa-theme-tools/nexteuropa_inpage_nav/js/', src: 'inpage_nav.js', dest: 'styleguide/assets/public/js/components/'}
         ]
       },
