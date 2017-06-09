@@ -30,35 +30,37 @@ function europa_preprocess_pager(&$variables, $hook) {
   if (empty($variables[$hook])) {
     return;
   }
+  $variables['pager']['pager']['#attributes']['class'] = 'ecl-pager';
+
   foreach ($variables['pager']['pager']['#items'] as $key => &$item) {
-    $item['#attributes']['class'][] = 'pager__item';
+    $item['#attributes']['class'][] = 'ecl-pager__item';
 
     if ('pager_previous' == $key) {
-      $item['#attributes']['class'][] = 'pager__item--previous';
+      $item['#attributes']['class'][] = 'ecl-pager__item--previous';
     }
     if ('pager_first' == $key) {
-      $item['#attributes']['class'][] = 'pager__item--first';
+      $item['#attributes']['class'][] = 'ecl-pager__item--first';
       $item['link']['#text'] = 1;
     }
     if (strpos($key, 'pager_ellipsis') !== FALSE) {
-      $item['#attributes']['class'][] = 'pager__item--ellipsis';
+      $item['#attributes']['class'][] = 'ecl-pager__item--ellipsis';
     }
     if ('pager_last' == $key) {
-      $item['#attributes']['class'][] = 'pager__item--last';
+      $item['#attributes']['class'][] = 'ecl-pager__item--last';
       $item['link']['#text'] = $variables['pager_total'][0];
     }
     if ('pager_next' == $key) {
-      $item['#attributes']['class'][] = 'pager__item--next';
+      $item['#attributes']['class'][] = 'ecl-pager__item--next';
     }
     if ('pager_current' == $key) {
-      $item['#attributes']['class'][] = 'pager__item--current';
+      $item['#attributes']['class'][] = 'ecl-pager__item--current';
       $item['#markup'] = array(
         'prefix' => array(
           '#theme' => 'html_tag',
           '#tag' => 'span',
           '#attributes' => array(
             'class' => array(
-              'pager__item__text',
+              'ecl-pager__item-text',
             ),
           ),
           '#value' => t('Page'),

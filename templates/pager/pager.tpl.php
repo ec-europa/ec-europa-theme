@@ -5,7 +5,6 @@
  * Contains template file.
  */
 ?>
-<div class="pager__wrapper">
-  <h2 class="sr-only"><?php print t('Pages'); ?></h2>
+<div class="ecl-pager__wrapper">
   <?php print render($pager); ?>
 </div>
