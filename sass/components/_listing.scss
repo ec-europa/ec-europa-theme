@@ -236,7 +236,6 @@ Style guide listing.3
 
   .listing__item {
     border: none;
-    margin: 1.111em 0;
 
     &:hover,
     &:active,
@@ -249,18 +248,19 @@ Style guide listing.3
       }
     }
 
-    .listing__item__wrapper,
-    .node {
+    .listing__item__wrapper {
       @include clearfix();
 
       padding: 1.111em;
       background-color: $brand-primary;
     }
 
-    .listing__title,
-    .listing__title a,
-    a {
+    .listing__title {
       color: #fff;
+     
+      a {
+        color: #fff;
+      }
     }
 
     &:first-child {
@@ -270,14 +270,14 @@ Style guide listing.3
     &:last-child {
       padding-bottom: $font-size-mid;
     }
-  }
 
-  .listing__title {
-    position: relative;
-    padding-right: 1.3em;
+    .listing__title {
+      position: relative;
+      padding-right: 1.3em;
 
-    &::after {
-      @extend .listing__title--arrow;
+      &::after {
+        @extend .listing__title--arrow;
+      }
     }
   }
 }

@@ -1083,7 +1083,7 @@ Style guide: icon
 
 .icon--after, .btn.btn-ctn::after, .inpage-nav__navbar .btn-ctn.inpage-nav__toggle::after, .btn.btn-time-line::after, .inpage-nav__navbar .btn-time-line.inpage-nav__toggle::after, .btn.btn-menu::after, .inpage-nav__navbar .btn-menu.inpage-nav__toggle::after, .is-external::after, a[href^="http"]:not([href*="ec.europa.eu"]):not(.is-internal):not(.listing__item-link)::after, .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .listing__title::after,
 .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .highlighted-item h3::after, .breadcrumb__link-arrow, a.breadcrumb__link::after, .no-js .breadcrumb__segment--first::before, .breadcrumb--collapsible .breadcrumb__btn-separator::after, .file__btn::after, .file__translations .file__translations-control::after, .gallery-overlay__media .gallery-overlay__media-previous a::before,
-.gallery-overlay__media .gallery-overlay__media-next a::before, .gallery-overlay__close .ui-button-icon-primary::after, .gallery-overlay__sidebar .gallery-overlay__download a::after, .gallery-overlay__sidebar .gallery-overlay__share a::after, .lang-select-page--transparent select.lang-select-page__list::after, .listing__title--arrow::after, .listing--cta .listing__title::after, .listing__read-more::after, .notification__content .notification__btn::after, .facet-tag--close .facet-tag__value::after, .facet-tag--close .facet-tag__value:hover::after {
+.gallery-overlay__media .gallery-overlay__media-next a::before, .gallery-overlay__close .ui-button-icon-primary::after, .gallery-overlay__sidebar .gallery-overlay__download a::after, .gallery-overlay__sidebar .gallery-overlay__share a::after, .lang-select-page--transparent select.lang-select-page__list::after, .listing__title--arrow::after, .listing--cta .listing__item .listing__title::after, .listing__read-more::after, .notification__content .notification__btn::after, .facet-tag--close .facet-tag__value::after, .facet-tag--close .facet-tag__value:hover::after {
   display: inline-block;
   margin-left: 4px;
   line-height: 1;
@@ -1099,7 +1099,7 @@ Style guide: icon
 
 .icon--after, .btn.btn-ctn::after, .inpage-nav__navbar .btn-ctn.inpage-nav__toggle::after, .btn.btn-time-line::after, .inpage-nav__navbar .btn-time-line.inpage-nav__toggle::after, .btn.btn-menu::after, .inpage-nav__navbar .btn-menu.inpage-nav__toggle::after, .is-external::after, a[href^="http"]:not([href*="ec.europa.eu"]):not(.is-internal):not(.listing__item-link)::after, .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .listing__title::after,
 .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .highlighted-item h3::after, .breadcrumb__link-arrow, a.breadcrumb__link::after, .no-js .breadcrumb__segment--first::before, .breadcrumb--collapsible .breadcrumb__btn-separator::after, .file__btn::after, .file__translations .file__translations-control::after, .gallery-overlay__media .gallery-overlay__media-previous a::before,
-.gallery-overlay__media .gallery-overlay__media-next a::before, .gallery-overlay__close .ui-button-icon-primary::after, .gallery-overlay__sidebar .gallery-overlay__download a::after, .gallery-overlay__sidebar .gallery-overlay__share a::after, .lang-select-page--transparent select.lang-select-page__list::after, .listing__title--arrow::after, .listing--cta .listing__title::after, .listing__read-more::after, .notification__content .notification__btn::after, .facet-tag--close .facet-tag__value::after, .facet-tag--close .facet-tag__value:hover::after {
+.gallery-overlay__media .gallery-overlay__media-next a::before, .gallery-overlay__close .ui-button-icon-primary::after, .gallery-overlay__sidebar .gallery-overlay__download a::after, .gallery-overlay__sidebar .gallery-overlay__share a::after, .lang-select-page--transparent select.lang-select-page__list::after, .listing__title--arrow::after, .listing--cta .listing__item .listing__title::after, .listing__read-more::after, .notification__content .notification__btn::after, .facet-tag--close .facet-tag__value::after, .facet-tag--close .facet-tag__value:hover::after {
   text-decoration: none; }
 
 .icon--external, .icon--external::before {
@@ -1225,7 +1225,7 @@ Style guide: icon
 .icon--up, .icon--up::before {
   content: '\e827'; }
 
-.icon--right, .btn.btn-ctn::after, .inpage-nav__navbar .btn-ctn.inpage-nav__toggle::after, .btn.btn-time-line::after, .inpage-nav__navbar .btn-time-line.inpage-nav__toggle::after, .btn.btn-menu::after, .inpage-nav__navbar .btn-menu.inpage-nav__toggle::after, .icon--right::before, .gallery-overlay__media .gallery-overlay__media-next a::before, .listing__title--arrow::after, .listing--cta .listing__title::after, .listing__read-more::after, .notification__content .notification__btn::after {
+.icon--right, .btn.btn-ctn::after, .inpage-nav__navbar .btn-ctn.inpage-nav__toggle::after, .btn.btn-time-line::after, .inpage-nav__navbar .btn-time-line.inpage-nav__toggle::after, .btn.btn-menu::after, .inpage-nav__navbar .btn-menu.inpage-nav__toggle::after, .icon--right::before, .gallery-overlay__media .gallery-overlay__media-next a::before, .listing__title--arrow::after, .listing--cta .listing__item .listing__title::after, .listing__read-more::after, .notification__content .notification__btn::after {
   content: '\e828'; }
 
 .icon--global, .icon--global::before {
@@ -4925,8 +4925,7 @@ Style guide listing.3
 .listing--cta {
   color: #fff; }
   .listing--cta .listing__item {
-    border: none;
-    margin: 1.111em 0; }
+    border: none; }
     .listing--cta .listing__item:hover .listing__title,
     .listing--cta .listing__item:hover .listing__title a,
     .listing--cta .listing__item:hover a, .listing--cta .listing__item:active .listing__title,
@@ -4936,29 +4935,25 @@ Style guide listing.3
     .listing--cta .listing__item:focus a {
       color: #fff;
       text-decoration: underline; }
-    .listing--cta .listing__item .listing__item__wrapper,
-    .listing--cta .listing__item .node {
+    .listing--cta .listing__item .listing__item__wrapper {
       padding: 1.111em;
       background-color: #004494; }
-      .listing--cta .listing__item .listing__item__wrapper:before, .listing--cta .listing__item .listing__item__wrapper:after,
-      .listing--cta .listing__item .node:before,
-      .listing--cta .listing__item .node:after {
+      .listing--cta .listing__item .listing__item__wrapper:before, .listing--cta .listing__item .listing__item__wrapper:after {
         content: " ";
         display: table; }
-      .listing--cta .listing__item .listing__item__wrapper:after,
-      .listing--cta .listing__item .node:after {
+      .listing--cta .listing__item .listing__item__wrapper:after {
         clear: both; }
-    .listing--cta .listing__item .listing__title,
-    .listing--cta .listing__item .listing__title a,
-    .listing--cta .listing__item a {
+    .listing--cta .listing__item .listing__title {
       color: #fff; }
+      .listing--cta .listing__item .listing__title a {
+        color: #fff; }
     .listing--cta .listing__item:first-child {
       border-top: none; }
     .listing--cta .listing__item:last-child {
       padding-bottom: 1.222em; }
-  .listing--cta .listing__title {
-    position: relative;
-    padding-right: 1.3em; }
+    .listing--cta .listing__item .listing__title {
+      position: relative;
+      padding-right: 1.3em; }
 
 .listing--no-border .listing__item {
   border: none !important; }
@@ -5132,7 +5127,7 @@ Style guide listing.6
     .listing__column-second--no-link .btn, .listing__column-second--no-link .inpage-nav__navbar .inpage-nav__toggle, .inpage-nav__navbar .listing__column-second--no-link .inpage-nav__toggle {
       margin-top: 1.667em; } }
 
-.listing__title--arrow::after, .listing--cta .listing__title::after {
+.listing__title--arrow::after, .listing--cta .listing__item .listing__title::after {
   position: absolute;
   margin-top: 2px;
   margin-left: 10px;
