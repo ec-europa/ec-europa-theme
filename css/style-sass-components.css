@@ -642,22 +642,6 @@ tbody.collapse.in {
   .embed-responsive.embed-responsive-4by3, .file--video .embed-responsive-4by3.file__container {
     padding-bottom: 75%; }
 
-.icon--after, .btn.btn-ctn::after, .inpage-nav__navbar .btn-ctn.inpage-nav__toggle::after, .btn.btn-time-line::after, .inpage-nav__navbar .btn-time-line.inpage-nav__toggle::after, .btn.btn-menu::after, .inpage-nav__navbar .btn-menu.inpage-nav__toggle::after, .is-external::after, a[href^="http"]:not([href*="ec.europa.eu"]):not(.is-internal):not(.listing__item-link)::after, .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .listing__title::after,
-.listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .highlighted-item h3::after, .breadcrumb__link-arrow, a.breadcrumb__link::after, .no-js .breadcrumb__segment--first::before, .breadcrumb--collapsible .breadcrumb__btn-separator::after, .file__btn::after, .file__translations .file__translations-control::after, .gallery-overlay__media .gallery-overlay__media-previous a::before,
-.gallery-overlay__media .gallery-overlay__media-next a::before, .gallery-overlay__close .ui-button-icon-primary::after, .gallery-overlay__sidebar .gallery-overlay__download a::after, .gallery-overlay__sidebar .gallery-overlay__share a::after, .lang-select-page--transparent select.lang-select-page__list::after, .listing__title--arrow::after, .listing--cta .listing__item .listing__title::after, .listing__read-more::after, .notification__content .notification__btn::after, .facet-tag--close .facet-tag__value::after, .facet-tag--close .facet-tag__value:hover::after {
-  display: inline-block;
-  margin-left: 8px;
-  line-height: 1;
-  font-family: 'EuropaIcons';
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-transform: none;
-  text-decoration: none;
-  speak: none; }
-
 @media print {
   .hidden-print, .btn, .inpage-nav__navbar .inpage-nav__toggle, .breadcrumb, .ui-datepicker .ui-datepicker-header .ui-datepicker-title select, .feedback-form__wrapper, .file, .footer__improved,
   .footer__top,
@@ -1006,8 +990,7 @@ a[href^="mailto"] {
     content: '\e825';
     font-size: 75%;
     margin-left: 0.4em;
-    margin-right: 0.2em;
-    text-decoration: underline; }
+    margin-right: 0.2em; }
 
 .page-content ul a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]).btn, .page-content ul .inpage-nav__navbar a[href^="http"].inpage-nav__toggle:not(.is-internal):not([href*="ec.europa.eu"]), .inpage-nav__navbar .page-content ul a[href^="http"].inpage-nav__toggle:not(.is-internal):not([href*="ec.europa.eu"]),
 .page-content p a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]).btn,
@@ -1097,6 +1080,27 @@ Style guide: icon
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
+
+.icon--after, .btn.btn-ctn::after, .inpage-nav__navbar .btn-ctn.inpage-nav__toggle::after, .btn.btn-time-line::after, .inpage-nav__navbar .btn-time-line.inpage-nav__toggle::after, .btn.btn-menu::after, .inpage-nav__navbar .btn-menu.inpage-nav__toggle::after, .is-external::after, a[href^="http"]:not([href*="ec.europa.eu"]):not(.is-internal):not(.listing__item-link)::after, .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .listing__title::after,
+.listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .highlighted-item h3::after, .breadcrumb__link-arrow, a.breadcrumb__link::after, .no-js .breadcrumb__segment--first::before, .breadcrumb--collapsible .breadcrumb__btn-separator::after, .file__btn::after, .file__translations .file__translations-control::after, .gallery-overlay__media .gallery-overlay__media-previous a::before,
+.gallery-overlay__media .gallery-overlay__media-next a::before, .gallery-overlay__close .ui-button-icon-primary::after, .gallery-overlay__sidebar .gallery-overlay__download a::after, .gallery-overlay__sidebar .gallery-overlay__share a::after, .lang-select-page--transparent select.lang-select-page__list::after, .listing__title--arrow::after, .listing--cta .listing__item .listing__title::after, .listing__read-more::after, .notification__content .notification__btn::after, .facet-tag--close .facet-tag__value::after, .facet-tag--close .facet-tag__value:hover::after {
+  display: inline-block;
+  margin-left: 4px;
+  line-height: 1;
+  font-family: 'EuropaIcons';
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-transform: none;
+  text-decoration: underline;
+  speak: none; }
+
+.icon--after, .btn.btn-ctn::after, .inpage-nav__navbar .btn-ctn.inpage-nav__toggle::after, .btn.btn-time-line::after, .inpage-nav__navbar .btn-time-line.inpage-nav__toggle::after, .btn.btn-menu::after, .inpage-nav__navbar .btn-menu.inpage-nav__toggle::after, .is-external::after, a[href^="http"]:not([href*="ec.europa.eu"]):not(.is-internal):not(.listing__item-link)::after, .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .listing__title::after,
+.listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .highlighted-item h3::after, .breadcrumb__link-arrow, a.breadcrumb__link::after, .no-js .breadcrumb__segment--first::before, .breadcrumb--collapsible .breadcrumb__btn-separator::after, .file__btn::after, .file__translations .file__translations-control::after, .gallery-overlay__media .gallery-overlay__media-previous a::before,
+.gallery-overlay__media .gallery-overlay__media-next a::before, .gallery-overlay__close .ui-button-icon-primary::after, .gallery-overlay__sidebar .gallery-overlay__download a::after, .gallery-overlay__sidebar .gallery-overlay__share a::after, .lang-select-page--transparent select.lang-select-page__list::after, .listing__title--arrow::after, .listing--cta .listing__item .listing__title::after, .listing__read-more::after, .notification__content .notification__btn::after, .facet-tag--close .facet-tag__value::after, .facet-tag--close .facet-tag__value:hover::after {
+  text-decoration: none; }
 
 .icon--external, .icon--external::before {
   content: '\e825'; }
@@ -2142,13 +2146,6 @@ Style guide Expandable.2
     transform: rotate(180deg); }
   .expandable--link .expandable__toggle:hover {
     background: none; }
-
-.facetapi-facetapi-checkbox-links {
-  list-style: none; }
-  .facetapi-facetapi-checkbox-links input.facetapi-checkbox {
-    margin-right: .5em; }
-  .facetapi-facetapi-checkbox-links a.facetapi-checkbox {
-    text-decoration: none; }
 
 /*
 Featured item
@@ -6020,7 +6017,21 @@ Style guide meta
 /*
 Messages
 
+Messages is a component that is used for displaying different types of messages
+like:
+* info (by default)
+* status
+* warning
+* error
+* live
+
+The component messages is defined "info" by default, the "info" type doesn't
+exist as class. The "live" type is meant to be used in cases like live streaming
+for events.
+
 Markup: html/messages.html
+
+messages--icon-center - Centralized icon
 
 Style guide: messages
 */
@@ -6035,6 +6046,8 @@ Style guide: messages
   font-size: 0.889em;
   color: #404040;
   border: 2px solid transparent; }
+  .messages.messages--icon-center, .messages--icon-center.feedback-message {
+    background-position: 1.315em center; }
   .messages.info, .info.feedback-message {
     background-image: url("../images/svg/messages-info.svg");
     border-color: #006fb4; }
@@ -7319,6 +7332,46 @@ Style guide table responsive
     table.table-responsive tr:nth-of-type(even) {
       background-color: #f5f5f5; } }
 
+.views-exposed-form .views-exposed-widget {
+  padding: 0; }
+
+.facetapi-facetapi-checkbox-links {
+  list-style: none; }
+  .facetapi-facetapi-checkbox-links input.facetapi-checkbox {
+    margin-right: .5em; }
+  .facetapi-facetapi-checkbox-links a.facetapi-checkbox {
+    text-decoration: none; }
+
+.node-type-event .field--field-event-website .field__items {
+  font-weight: bold; }
+
+.node-type-event #practicalinformation .field--attend .field__items span {
+  clear: left;
+  padding: 0; }
+
+@media (min-width: 992px) {
+  .field--publication-listing-exposed {
+    margin-top: 43px; } }
+
+.region-sidebar-first {
+  padding: 1.667em 0; }
+
+.wtShareNetworks {
+  margin-bottom: 0; }
+
+.wtShareButton {
+  line-height: inherit !important;
+  border: 0 !important;
+  text-decoration: underline !important;
+  font-size: inherit !important;
+  color: inherit !important;
+  padding: 0 !important;
+  margin-bottom: 0 !important;
+  background: none !important;
+  min-width: inherit !important; }
+  .wtShareButton:hover {
+    color: #fff !important; }
+
 #admin-menu-wrapper ul,
 ul.krumo-node,
 .wtShareNetworks {
@@ -7330,11 +7383,11 @@ body.admin-menu {
 #admin-menu-wrapper {
   display: none; }
 
-.wtShareNetworks {
-  margin-bottom: 0; }
-
-.views-exposed-form .views-exposed-widget {
-  padding: 0; }
+.page-admin input[type='checkbox'] {
+  zoom: 1.6;
+  margin-left: 0; }
+  .page-admin input[type='checkbox'].vbo-table-select-all {
+    position: static; }
 
 @media (min-width: 992px) {
   html.js .filters__btn-submit.ctools-use-ajax {
@@ -7356,35 +7409,5 @@ body.admin-menu {
     width: auto;
     float: left;
     clear: left; } }
-
-.page-admin input[type='checkbox'] {
-  zoom: 1.6;
-  margin-left: 0; }
-  .page-admin input[type='checkbox'].vbo-table-select-all {
-    position: static; }
-
-.node-type-event .field--field-event-website .field__items {
-  font-weight: bold; }
-
-.node-type-event #practicalinformation .field--attend .field__items span {
-  clear: left;
-  padding: 0; }
-
-@media (min-width: 992px) {
-  .field--publication-listing-exposed {
-    margin-top: 43px; } }
-
-.wtShareButton {
-  line-height: inherit !important;
-  border: 0 !important;
-  text-decoration: underline !important;
-  font-size: inherit !important;
-  color: inherit !important;
-  padding: 0 !important;
-  margin-bottom: 0 !important;
-  background: none !important;
-  min-width: inherit !important; }
-  .wtShareButton:hover {
-    color: #fff !important; }
 
 /*# sourceMappingURL=style-sass-components.css.map */

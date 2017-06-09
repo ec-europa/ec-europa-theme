@@ -1,7 +1,21 @@
 /*
 Messages
 
+Messages is a component that is used for displaying different types of messages
+like:
+* info (by default)
+* status
+* warning
+* error
+* live
+
+The component messages is defined "info" by default, the "info" type doesn't
+exist as class. The "live" type is meant to be used in cases like live streaming
+for events.
+
 Markup: html/messages.html
+
+messages--icon-center - Centralized icon
 
 Style guide: messages
 */
@@ -17,6 +31,10 @@ Style guide: messages
   font-size: $font-size-little;
   color: $ec-grey;
   border: 2px solid transparent;
+
+  &.messages--icon-center {
+    background-position: 1.315em center;
+  }
 
   &.info {
     background-image: url('../images/svg/messages-info.svg');
