@@ -30,9 +30,9 @@ function europa_preprocess_pager(&$variables, $hook) {
   if (empty($variables[$hook])) {
     return;
   }
-  $variables['pager']['pager']['#attributes']['class'] = 'ecl-pager';
+  $variables[$hook][$hook]['#attributes']['class'] = 'ecl-pager';
 
-  foreach ($variables['pager']['pager']['#items'] as $key => &$item) {
+  foreach ($variables[$hook][$hook]['#items'] as $key => &$item) {
     $item['#attributes']['class'][] = 'ecl-pager__item';
 
     if ('pager_previous' == $key) {
@@ -76,7 +76,7 @@ function europa_preprocess_pager(&$variables, $hook) {
   }
 
   // Avoid duplicated link for the first item.
-  $items = $variables['pager']['pager']['#items'];
+  $items = $variables[$hook][$hook]['#items'];
   if (isset($items['pager_first'])) {
     // In Europa, the order of "first" and "last" elements are swapped.
     $items = array_swap_assoc('pager_previous', 'pager_first', $items);
@@ -89,10 +89,10 @@ function europa_preprocess_pager(&$variables, $hook) {
       }
     }
   }
-  $variables['pager']['pager']['#items'] = $items;
+  $variables[$hook][$hook]['#items'] = $items;
 
   // Avoid duplicated link for the last item.
-  $items = $variables['pager']['pager']['#items'];
+  $items = $variables[$hook][$hook]['#items'];
   if (isset($items['pager_last'])) {
     // In Europa, the order of "first" and "last" elements are swapped.
     $items = array_swap_assoc('pager_next', 'pager_last', $items);
@@ -105,10 +105,10 @@ function europa_preprocess_pager(&$variables, $hook) {
       }
     }
   }
-  $variables['pager']['pager']['#items'] = $items;
+  $variables[$hook][$hook]['#items'] = $items;
 
   // Remove empty links.
-  $items = $variables['pager']['pager']['#items'];
+  $items = $variables[$hook][$hook]['#items'];
   foreach ($items as $key => $item) {
     if ('pager_current' == $key) {
       continue;
@@ -120,7 +120,7 @@ function europa_preprocess_pager(&$variables, $hook) {
       unset($items[$key]);
     }
   }
-  $variables['pager']['pager']['#items'] = $items;
+  $variables[$hook][$hook]['#items'] = $items;
 }
 
 /**
