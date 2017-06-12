@@ -223,8 +223,8 @@ Style guide: gallery.overlay
     height: 100%;
     width: 10%;
 
-    .gallery-overlay__media-previous__arrow,
-    .gallery-overlay__media-next__arrow {
+    a,
+    i {
       display: inline-block;
       font-size: 1.4em;
 
@@ -256,13 +256,23 @@ Style guide: gallery.overlay
   }
 
   // Previous button.
-  .gallery-overlay__media-previous__arrow::before {
-    @extend .icon--left;
+  .gallery-overlay__media-previous {
+    a,
+    i {
+      &::before {
+        @extend .icon--left;
+      }
+    }
   }
 
   // Next button.
-  .gallery-overlay__media-next__arrow::before {
-    @extend .icon--right;
+  .gallery-overlay__media-next {
+    a,
+    i {
+      &::before {
+        @extend .icon--right;
+      }
+    }
   }
 
   .gallery-overlay__media-item-list__wrapper {
