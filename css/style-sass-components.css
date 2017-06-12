@@ -5008,7 +5008,8 @@ Style guide listing.6
 
 @media (min-width: 480px) {
   .listing--navigation {
-    margin-bottom: 5em; }
+    margin-bottom: 5em;
+    position: relative; }
     .listing--navigation .listing__section-title {
       font-size: 1.222em; }
     .listing--navigation .listing__description {
@@ -5028,6 +5029,18 @@ Style guide listing.6
   .listing__wrapper .listing {
     max-width: inherit; }
 
+.listing__item-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; }
+  .listing__item-link:focus {
+    outline: 3px solid #ffd617;
+    outline-offset: 2px;
+    text-decoration: underline; }
+
 .listing__item {
   list-style: none;
   position: relative;
@@ -5035,17 +5048,6 @@ Style guide listing.6
   width: 100%;
   padding: 1.111em 0;
   border-bottom: 1px solid #ebebeb; }
-  .listing__item .listing__item-link {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1; }
-    .listing__item .listing__item-link:focus {
-      outline: 3px solid #ffd617;
-      outline-offset: 2px;
-      text-decoration: underline; }
   .listing__item:first-child {
     border-top: 1px solid #ebebeb; }
   .listing__item .contextual-links-region {
@@ -5059,7 +5061,7 @@ Style guide listing.6
   .listing__item p {
     margin-bottom: 0;
     font-size: 0.889em; }
-  .listing__item a:not(.listing__item-link):not(.listing__title) {
+  .listing__item a:not(.listing__item-link) {
     z-index: 2; }
   .listing__item a.listing__title {
     color: #004494; }
