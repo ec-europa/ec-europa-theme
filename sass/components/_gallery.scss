@@ -223,21 +223,29 @@ Style guide: gallery.overlay
     height: 100%;
     width: 10%;
 
-    a {
-      cursor: pointer;
-      font-size: 1.4em;
+    .gallery-overlay__media-previous__arrow,
+    .gallery-overlay__media-next__arrow {
       display: inline-block;
+      font-size: 1.4em;
 
       &::before {
         @extend .icon--after;
 
         margin: 0 !important;
       }
+    }
+
+    a {
+      cursor: pointer;
 
       &:hover {
         color: $ec-grey50;
         text-decoration: none;
       }
+    }
+
+    i {
+      color: $ec-grey50;
     }
 
     @include breakpoint(screen-md-min) {
@@ -248,12 +256,12 @@ Style guide: gallery.overlay
   }
 
   // Previous button.
-  .gallery-overlay__media-previous a::before {
+  .gallery-overlay__media-previous__arrow::before {
     @extend .icon--left;
   }
 
   // Next button.
-  .gallery-overlay__media-next a::before {
+  .gallery-overlay__media-next__arrow::before {
     @extend .icon--right;
   }
 
@@ -407,6 +415,7 @@ Style guide: gallery.overlay
   // Description.
   .gallery-overlay__description {
     font-weight: $font-weight-bold;
+    text-align: left;
 
     p:last-child {
       margin-bottom: 0;

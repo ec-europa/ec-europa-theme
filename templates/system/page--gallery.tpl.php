@@ -86,6 +86,4 @@
  * @ingroup themeable
  */
 ?>
-
-<h1><?php print $title; ?></h1>
 <?php print render($page['content']); ?>
