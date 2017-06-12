@@ -86,21 +86,19 @@ function _europa_term_heading($element) {
  *   The form element.
  * @param array $classes
  *   The basic classes that are specific to the form element.
- *
- * @return array
- *   The list of CSS classes set for the element.
  */
-function _europa_form_set_css_class(array $element, array $classes) {
-  $css_classes = array();
+function _europa_form_set_css_class(array &$element, array $classes) {
   if (!empty($classes)) {
-    $css_classes = $classes;
+    if (!isset($element['#attributes']['class'])) {
+      $element['#attributes']['class'] = array();
+    }
+    $element['#attributes']['class'] = array_merge($element['#attributes']['class'], $classes);
   }
 
   // Determines if the error class must added.
   // The logic comes from the Drupal function: "_form_set_class".
   if (isset($element['#parents']) && form_get_error($element) !== NULL && !empty($element['#validated'])) {
-    $css_classes[] = 'ecl-text-input--has-error';
+    $element['#attributes']['class'][] = 'ecl-text-input--has-error';
   }
 
-  return $css_classes;
 }
