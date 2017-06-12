@@ -3159,7 +3159,7 @@ Style guide: gallery.overlay
   height: auto !important;
   margin: 0 !important;
   padding: 4px !important;
-  line-height: 0.8 !important;
+  line-height: normal;
   background-color: transparent;
   border-width: 0;
   color: #fff;
@@ -3187,16 +3187,16 @@ Style guide: gallery.overlay
       right: 25px !important; } }
 
 .gallery-overlay__sidebar {
-  font-size: 0.778em;
-  background-color: #404040;
-  line-height: 1.6; }
+  background-color: #404040; }
   @media (min-width: 992px) {
     .gallery-overlay__sidebar {
       float: left;
       width: 30%;
       padding-top: 2em; } }
   .gallery-overlay__sidebar .gallery-overlay__sidebar__content {
-    padding: 2.575em 2.145em 2.145em 2.145em; }
+    padding: 2.575em 2.145em 2.145em 2.145em;
+    line-height: 1.6;
+    font-size: 0.778em; }
   .gallery-overlay__sidebar .gallery-overlay__meta {
     margin-bottom: 2.575em;
     line-height: normal;
