@@ -4935,13 +4935,17 @@ Style guide listing.3
     .listing--cta .listing__item:focus a {
       color: #fff;
       text-decoration: underline; }
-    .listing--cta .listing__item .listing__item__wrapper {
+    .listing--cta .listing__item .listing__item__wrapper,
+    .listing--cta .listing__item > div {
       padding: 1.111em;
       background-color: #004494; }
-      .listing--cta .listing__item .listing__item__wrapper:before, .listing--cta .listing__item .listing__item__wrapper:after {
+      .listing--cta .listing__item .listing__item__wrapper:before, .listing--cta .listing__item .listing__item__wrapper:after,
+      .listing--cta .listing__item > div:before,
+      .listing--cta .listing__item > div:after {
         content: " ";
         display: table; }
-      .listing--cta .listing__item .listing__item__wrapper:after {
+      .listing--cta .listing__item .listing__item__wrapper:after,
+      .listing--cta .listing__item > div:after {
         clear: both; }
     .listing--cta .listing__item .listing__title {
       color: #fff; }
