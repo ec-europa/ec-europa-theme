@@ -329,7 +329,7 @@ Style guide: gallery.overlay
   height: auto !important;
   margin: 0 !important;
   padding: 4px !important;
-  line-height: 0.8 !important;
+  line-height: normal;
   background-color: transparent;
   border-width: 0;
   color: #fff;
@@ -367,9 +367,7 @@ Style guide: gallery.overlay
 
 // Side bar column.
 .gallery-overlay__sidebar {
-  font-size: $font-size-xsmall;
   background-color: $ec-grey;
-  line-height: 1.6;
 
   @include breakpoint(screen-md-min) {
     float: left;
@@ -379,6 +377,8 @@ Style guide: gallery.overlay
 
   .gallery-overlay__sidebar__content {
     padding: 2.575em 2.145em 2.145em 2.145em;
+    line-height: 1.6;
+    font-size: $font-size-xsmall;
   }
 
   // Meta info.
