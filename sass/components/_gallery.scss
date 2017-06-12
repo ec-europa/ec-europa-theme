@@ -256,23 +256,15 @@ Style guide: gallery.overlay
   }
 
   // Previous button.
-  .gallery-overlay__media-previous {
-    a,
-    i {
-      &::before {
-        @extend .icon--left;
-      }
-    }
+  .gallery-overlay__media-previous a::before,
+  .gallery-overlay__media-previous i::before {
+    @extend .icon--left;
   }
 
   // Next button.
-  .gallery-overlay__media-next {
-    a,
-    i {
-      &::before {
-        @extend .icon--right;
-      }
-    }
+  .gallery-overlay__media-next a::before,
+  .gallery-overlay__media-next i::before {
+    @extend .icon--right;
   }
 
   .gallery-overlay__media-item-list__wrapper {
