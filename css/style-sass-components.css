@@ -1083,7 +1083,9 @@ Style guide: icon
 
 .icon--after, .btn.btn-ctn::after, .inpage-nav__navbar .btn-ctn.inpage-nav__toggle::after, .btn.btn-time-line::after, .inpage-nav__navbar .btn-time-line.inpage-nav__toggle::after, .btn.btn-menu::after, .inpage-nav__navbar .btn-menu.inpage-nav__toggle::after, .is-external::after, a[href^="http"]:not([href*="ec.europa.eu"]):not(.is-internal):not(.listing__item-link)::after, .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .listing__title::after,
 .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .highlighted-item h3::after, .breadcrumb__link-arrow, a.breadcrumb__link::after, .no-js .breadcrumb__segment--first::before, .breadcrumb--collapsible .breadcrumb__btn-separator::after, .file__btn::after, .file__translations .file__translations-control::after, .gallery-overlay__media .gallery-overlay__media-previous a::before,
-.gallery-overlay__media .gallery-overlay__media-next a::before, .gallery-overlay__close .ui-button-icon-primary::after, .gallery-overlay__sidebar .gallery-overlay__download a::after, .gallery-overlay__sidebar .gallery-overlay__share a::after, .lang-select-page--transparent select.lang-select-page__list::after, .listing__title--arrow::after, .listing--cta .listing__item .listing__title::after, .listing__read-more::after, .notification__content .notification__btn::after, .facet-tag--close .facet-tag__value::after, .facet-tag--close .facet-tag__value:hover::after {
+.gallery-overlay__media .gallery-overlay__media-previous i::before,
+.gallery-overlay__media .gallery-overlay__media-next a::before,
+.gallery-overlay__media .gallery-overlay__media-next i::before, .gallery-overlay__close .ui-button-icon-primary::after, .gallery-overlay__sidebar .gallery-overlay__download a::after, .gallery-overlay__sidebar .gallery-overlay__share a::after, .lang-select-page--transparent select.lang-select-page__list::after, .listing__title--arrow::after, .listing--cta .listing__item .listing__title::after, .listing__read-more::after, .notification__content .notification__btn::after, .facet-tag--close .facet-tag__value::after, .facet-tag--close .facet-tag__value:hover::after {
   display: inline-block;
   margin-left: 4px;
   line-height: 1;
@@ -1099,7 +1101,9 @@ Style guide: icon
 
 .icon--after, .btn.btn-ctn::after, .inpage-nav__navbar .btn-ctn.inpage-nav__toggle::after, .btn.btn-time-line::after, .inpage-nav__navbar .btn-time-line.inpage-nav__toggle::after, .btn.btn-menu::after, .inpage-nav__navbar .btn-menu.inpage-nav__toggle::after, .is-external::after, a[href^="http"]:not([href*="ec.europa.eu"]):not(.is-internal):not(.listing__item-link)::after, .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .listing__title::after,
 .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .highlighted-item h3::after, .breadcrumb__link-arrow, a.breadcrumb__link::after, .no-js .breadcrumb__segment--first::before, .breadcrumb--collapsible .breadcrumb__btn-separator::after, .file__btn::after, .file__translations .file__translations-control::after, .gallery-overlay__media .gallery-overlay__media-previous a::before,
-.gallery-overlay__media .gallery-overlay__media-next a::before, .gallery-overlay__close .ui-button-icon-primary::after, .gallery-overlay__sidebar .gallery-overlay__download a::after, .gallery-overlay__sidebar .gallery-overlay__share a::after, .lang-select-page--transparent select.lang-select-page__list::after, .listing__title--arrow::after, .listing--cta .listing__item .listing__title::after, .listing__read-more::after, .notification__content .notification__btn::after, .facet-tag--close .facet-tag__value::after, .facet-tag--close .facet-tag__value:hover::after {
+.gallery-overlay__media .gallery-overlay__media-previous i::before,
+.gallery-overlay__media .gallery-overlay__media-next a::before,
+.gallery-overlay__media .gallery-overlay__media-next i::before, .gallery-overlay__close .ui-button-icon-primary::after, .gallery-overlay__sidebar .gallery-overlay__download a::after, .gallery-overlay__sidebar .gallery-overlay__share a::after, .lang-select-page--transparent select.lang-select-page__list::after, .listing__title--arrow::after, .listing--cta .listing__item .listing__title::after, .listing__read-more::after, .notification__content .notification__btn::after, .facet-tag--close .facet-tag__value::after, .facet-tag--close .facet-tag__value:hover::after {
   text-decoration: none; }
 
 .icon--external, .icon--external::before {
@@ -1219,13 +1223,15 @@ Style guide: icon
 .icon--language, .icon--language::before {
   content: '\e824'; }
 
-.icon--left, .icon--left::before, .gallery-overlay__media .gallery-overlay__media-previous a::before {
+.icon--left, .icon--left::before, .gallery-overlay__media .gallery-overlay__media-previous a::before,
+.gallery-overlay__media .gallery-overlay__media-previous i::before {
   content: '\e826'; }
 
 .icon--up, .icon--up::before {
   content: '\e827'; }
 
-.icon--right, .btn.btn-ctn::after, .inpage-nav__navbar .btn-ctn.inpage-nav__toggle::after, .btn.btn-time-line::after, .inpage-nav__navbar .btn-time-line.inpage-nav__toggle::after, .btn.btn-menu::after, .inpage-nav__navbar .btn-menu.inpage-nav__toggle::after, .icon--right::before, .gallery-overlay__media .gallery-overlay__media-next a::before, .listing__title--arrow::after, .listing--cta .listing__item .listing__title::after, .listing__read-more::after, .notification__content .notification__btn::after {
+.icon--right, .btn.btn-ctn::after, .inpage-nav__navbar .btn-ctn.inpage-nav__toggle::after, .btn.btn-time-line::after, .inpage-nav__navbar .btn-time-line.inpage-nav__toggle::after, .btn.btn-menu::after, .inpage-nav__navbar .btn-menu.inpage-nav__toggle::after, .icon--right::before, .gallery-overlay__media .gallery-overlay__media-next a::before,
+.gallery-overlay__media .gallery-overlay__media-next i::before, .listing__title--arrow::after, .listing--cta .listing__item .listing__title::after, .listing__read-more::after, .notification__content .notification__btn::after {
   content: '\e828'; }
 
 .icon--global, .icon--global::before {
@@ -3083,17 +3089,26 @@ Style guide: gallery.overlay
     height: 100%;
     width: 10%; }
     .gallery-overlay__media .gallery-overlay__media-previous a,
-    .gallery-overlay__media .gallery-overlay__media-next a {
-      cursor: pointer;
-      font-size: 1.4em;
-      display: inline-block; }
+    .gallery-overlay__media .gallery-overlay__media-previous i,
+    .gallery-overlay__media .gallery-overlay__media-next a,
+    .gallery-overlay__media .gallery-overlay__media-next i {
+      display: inline-block;
+      font-size: 1.4em; }
       .gallery-overlay__media .gallery-overlay__media-previous a::before,
-      .gallery-overlay__media .gallery-overlay__media-next a::before {
+      .gallery-overlay__media .gallery-overlay__media-previous i::before,
+      .gallery-overlay__media .gallery-overlay__media-next a::before,
+      .gallery-overlay__media .gallery-overlay__media-next i::before {
         margin: 0 !important; }
+    .gallery-overlay__media .gallery-overlay__media-previous a,
+    .gallery-overlay__media .gallery-overlay__media-next a {
+      cursor: pointer; }
       .gallery-overlay__media .gallery-overlay__media-previous a:hover,
       .gallery-overlay__media .gallery-overlay__media-next a:hover {
         color: #9f9f9f;
         text-decoration: none; }
+    .gallery-overlay__media .gallery-overlay__media-previous i,
+    .gallery-overlay__media .gallery-overlay__media-next i {
+      color: #9f9f9f; }
     @media (min-width: 992px) {
       .gallery-overlay__media .gallery-overlay__media-previous a,
       .gallery-overlay__media .gallery-overlay__media-next a {
@@ -3194,7 +3209,8 @@ Style guide: gallery.overlay
   .gallery-overlay__sidebar .gallery-overlay__count {
     font-weight: 600; }
   .gallery-overlay__sidebar .gallery-overlay__description {
-    font-weight: 600; }
+    font-weight: 600;
+    text-align: left; }
     .gallery-overlay__sidebar .gallery-overlay__description p:last-child {
       margin-bottom: 0; }
   .gallery-overlay__sidebar .gallery-overlay__copyright {
