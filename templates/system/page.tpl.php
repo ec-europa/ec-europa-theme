@@ -98,7 +98,7 @@
 <header class="site-header" role="banner">
   <div class="container-fluid">
 
-  <?php if (!($is_front) || $settings['ec_europa_site_header_home']): ?>
+  <?php if (!($is_front) || $settings['header_home']): ?>
     <a href="<?php print $front_page; ?>" class="<?php print $logo_classes; ?>" title="<?php print $page_logo_title; ?>">
       <span class="sr-only"><?php print $page_logo_title; ?></span>
     </a>
