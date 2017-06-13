@@ -104,7 +104,7 @@
     </a>
   <?php endif; ?>
 
-  <?php if ($is_front && !empty($site_slogan) && $settings['ec_europa_site_header_home']): ?>
+  <?php if ($is_front && !empty($site_slogan) && $settings['header_home']): ?>
     <p class="site-slogan"><?php print $site_slogan; ?></p>
   <?php endif; ?>
 
