@@ -7382,7 +7382,7 @@ Style guide table responsive
 .wtShareNetworks {
   margin-bottom: 0; }
 
-.wtShareButton {
+body .gallery-overlay__share .wtShareButton:link {
   line-height: inherit !important;
   border: 0 !important;
   text-decoration: underline !important;
@@ -7392,7 +7392,11 @@ Style guide table responsive
   margin-bottom: 0 !important;
   background: none !important;
   min-width: inherit !important; }
-  .wtShareButton:hover {
+  body .gallery-overlay__share .wtShareButton:link:focus {
+    outline: 3px solid #ffd617;
+    outline-offset: 2px;
+    text-decoration: underline; }
+  body .gallery-overlay__share .wtShareButton:link:hover {
     color: #fff !important; }
 
 #admin-menu-wrapper ul,
