@@ -31,6 +31,13 @@ function europa_form_system_theme_settings_alter(&$form, &$form_state) {
     '#description' => t('You can find a demo of the site identification <a href="@here">here</a>', ['@here' => 'https://ec-europa.github.io/ec-europa-theme/section-page-header.html#kssref-page-header-4']),
     '#default_value' => theme_get_setting('ec_europa_improved_identification', 'europa'),
     '#weight' => 0,
+    '#states' => [
+      'visible' => [
+        ':input[name="ec_europa_improved_website"]' => [
+          'checked' => TRUE,
+        ],
+      ],
+    ],
   ];
 
   $form['europa']['ec_europa_improved_website_home'] = [
@@ -41,7 +48,7 @@ function europa_form_system_theme_settings_alter(&$form, &$form_state) {
     '#weight' => 0,
     '#states' => [
       'visible' => [
-        ':input[name="ec_europa_improved_website"]' => [
+        ':input[name="ec_europa_improved_identification"]' => [
           'checked' => TRUE,
         ],
       ],
