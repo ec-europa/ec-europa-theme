@@ -87,7 +87,7 @@ function _europa_term_heading($element) {
  * @param array $classes
  *   The basic classes that are specific to the form element.
  */
-function _europa_form_set_css_class(array &$element, array $classes) {
+function _europa_form_set_css_class(array &$element, array $classes = array()) {
   if (!empty($classes)) {
     if (!isset($element['#attributes']['class'])) {
       $element['#attributes']['class'] = array();
