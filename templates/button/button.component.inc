@@ -134,8 +134,12 @@ function europa_atomium_definition_button() {
  * Implements hook_preprocess_HOOK().
  */
 function europa_preprocess_button(&$variables) {
-  $variables['attributes_array']['class'][] = 'ecl-button';
-  if (empty(array_search('ecl-button--', $variables['attributes_array']['class']))) {
+  if (empty($variables['attributes_array']['class'])) {
+    $variables['attributes_array']['class'] = array();
+  }
+  array_unshift($variables['attributes_array']['class'], 'ecl-button');
+
+  if (_europa_array_find('ecl-button--', $variables['attributes_array']['class']) === FALSE) {
     $variables['attributes_array']['class'][] = 'ecl-button--default';
   }
 }
