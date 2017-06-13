@@ -45,7 +45,7 @@
 }
 
 // Gallery overlay share button hack.
-.wtShareButton {
+body .gallery-overlay__share .wtShareButton:link {
   line-height: inherit !important;
   border: 0 !important;
   text-decoration: underline !important;
@@ -55,6 +55,8 @@
   margin-bottom: 0 !important;
   background: none !important;
   min-width: inherit !important;
+
+  @include _focus_outline_border(3px, $ec-yellow, 2px);
 
   &:hover {
     color: #fff !important;
