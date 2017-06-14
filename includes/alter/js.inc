@@ -15,6 +15,6 @@ function europa_js_alter(&$js) {
     $js[$path_fancybox . '/jquery.fancybox.pack.js'],
     $js[$path_fancybox . '/helpers/jquery.fancybox-thumbs.js'],
     $js[$path_fancybox . '/helpers/jquery.fancybox-buttons.js'],
-    $js[$path_fancybox . '/helpers/jquery.fancybox-media.js'],
+    $js[$path_fancybox . '/helpers/jquery.fancybox-media.js']
   );
 }
