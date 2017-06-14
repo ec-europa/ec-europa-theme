@@ -32,7 +32,7 @@ function europa_form_system_theme_settings_alter(&$form, &$form_state) {
 
   $form['europa']['improved']['ec_europa_improved_website_header'] = [
     '#type' => 'radios',
-    '#title' => t('Will you use the "basic" page header or the "complete" one?'),
+    '#title' => t('Select the type of page header for your website'),
     '#description' => t('You can choose between two different layouts for your page header, see <a href="@here">here</a>', ['@here' => 'https://ec-europa.github.io/ec-europa-theme/section-page-header.html']),
     '#default_value' => theme_get_setting('ec_europa_improved_website_header', 'europa'),
     '#options' => [

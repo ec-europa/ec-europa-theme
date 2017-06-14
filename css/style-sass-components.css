@@ -1554,8 +1554,7 @@ a.breadcrumb__link {
 
 @media (min-width: 992px) {
   .breadcrumb {
-    margin: 0;
-    margin-bottom: -1px; } }
+    margin: 0 0 -1px; } }
 
 /*
 Breadcrumb collapsible

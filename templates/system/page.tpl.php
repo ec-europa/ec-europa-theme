@@ -98,13 +98,13 @@
 <header class="site-header" role="banner">
   <div class="container-fluid">
 
-  <?php if (!($is_front) || $settings['header_home']): ?>
+  <?php if (!($is_front) || $theme_settings['header_home']): ?>
     <a href="<?php print $front_page; ?>" class="<?php print $logo_classes; ?>" title="<?php print $page_logo_title; ?>">
       <span class="sr-only"><?php print $page_logo_title; ?></span>
     </a>
   <?php endif; ?>
 
-  <?php if ($is_front && !empty($site_slogan) && $settings['header_home']): ?>
+  <?php if ($is_front && !empty($site_slogan) && $theme_settings['header_home']): ?>
     <p class="site-slogan"><?php print $site_slogan; ?></p>
   <?php endif; ?>
 
@@ -166,13 +166,13 @@
     </nav>
   <?php endif; ?>
     
-  <?php if ($settings['improved'] && (!$is_front || $is_front && $settings['identification_home'])): ?>
+  <?php if ($theme_settings['improved'] && (!$is_front || $is_front && $theme_settings['identification_home'])): ?>
     <div class="container-fluid page-header__site-identification">
       <h3><?php print $site_name; ?></h3>
     </div>
   <?php endif; ?>
 
-  <?php if (!$settings['improved'] || ($settings['improved'] && $settings['improved_header'] == 'complete') && (!empty($page['custom_title']) || !empty($title))): ?>
+  <?php if (!$theme_settings['improved'] || ($theme_settings['improved'] && $theme_settings['improved_header'] == 'complete') && (!empty($page['custom_title']) || !empty($title))): ?>
     <div class="container-fluid page-header__hero-title">
       <div class="row padding-reset">
         <div class="col-lg-9">
@@ -212,7 +212,7 @@
   <div class="page-content">
     <div class="container-fluid">
 
-    <?php if ($settings['improved'] && $settings['improved_header'] == 'basic' && (!empty($page['custom_title']) || !empty($title))): ?>
+    <?php if ($theme_settings['improved'] && $theme_settings['improved_header'] == 'basic' && (!empty($page['custom_title']) || !empty($title))): ?>
       <div class="page-title-improved section">
         <?php print render($title_prefix); ?>
         <?php if (!empty($page['custom_title'])): ?>
