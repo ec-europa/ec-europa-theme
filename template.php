@@ -981,28 +981,28 @@ function europa_preprocess_html(&$variables) {
  */
 function europa_preprocess_node(&$variables) {
   // Add default section component to the entity regions.
-  $variables['left_classes'] = 'section';
-  $variables['right_classes'] = 'section';
-  $variables['central_classes'] = 'section';
+  $variables['left_classes'] = 'col-md-3 col-sm-12 section region-sidebar-first';
+  $variables['right_classes'] = 'col-md-3 col-sm-12 section region-sidebar-last';
+  $variables['central_classes'] = 'col-sm-12 section';
 
   // Add information about the number of sidebars.
   if (!empty($variables['left']) && !empty($variables['right'])) {
-    $variables['content_column_class'] = 'col-md-6 col-md-pull-3';
-    $variables['left_column_class'] = 'col-md-pull-3';
-    $variables['right_column_class'] = 'col-md-push-9';
+    $variables['central_classes'] .= ' col-md-6 col-md-pull-3';
+    $variables['left_classes'] .= ' col-md-pull-3';
+    $variables['right_classes'] .= ' col-md-push-9';
   }
 
   elseif (!empty($variables['left']) && empty($variables['right'])) {
-    $variables['content_column_class'] = 'col-md-9';
+    $variables['central_classes'] .= ' col-md-9';
   }
 
   elseif (empty($variables['left']) && !empty($variables['right'])) {
-    $variables['content_column_class'] = 'col-md-9 col-md-pull-3';
-    $variables['right_column_class'] = 'col-md-push-9';
+    $variables['central_classes'] .= ' col-md-9 col-md-pull-3';
+    $variables['right_classes'] .= ' col-md-push-9';
   }
 
   elseif (empty($variables['left']) && empty($variables['right'])) {
-    $variables['content_column_class'] = 'col-md-12';
+    $variables['central_classes'] .= ' col-md-12';
   }
 
   $variables['site_name'] = variable_get('site_name');
