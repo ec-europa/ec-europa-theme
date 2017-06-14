@@ -129,7 +129,7 @@ a.breadcrumb__link {
 
 @include breakpoint(screen-md-min) {
   .breadcrumb {
-    margin: 0;
+    margin: 0 0 -1px;
   }
 }
 

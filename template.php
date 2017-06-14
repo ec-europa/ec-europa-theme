@@ -1060,6 +1060,13 @@ function europa_preprocess_page(&$variables) {
   // Small fix to maxe the link to the start page use the alias with language.
   $variables['front_page'] = url('<front>');
 
+  $variables['theme_settings'] = [
+    'header_home' => theme_get_setting('ec_europa_site_header_home', 'europa'),
+    'improved' => theme_get_setting('ec_europa_improved_website', 'europa'),
+    'improved_header' => theme_get_setting('ec_europa_improved_website_header', 'europa'),
+    'identification_home' => theme_get_setting('ec_europa_improved_website_home', 'europa'),
+  ];
+
   // Add information about the number of sidebars.
   if (!empty($variables['page']['sidebar_first'])
     && !empty($variables['page']['sidebar_second'])

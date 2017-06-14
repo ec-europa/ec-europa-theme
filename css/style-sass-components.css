@@ -1562,7 +1562,7 @@ a.breadcrumb__link {
 
 @media (min-width: 992px) {
   .breadcrumb {
-    margin: 0; } }
+    margin: 0 0 -1px; } }
 
 /*
 Breadcrumb collapsible
@@ -6275,7 +6275,7 @@ Style guide: page-header.5
 */
 .page-header {
   margin: 0;
-  padding: 0 0 1.25em;
+  padding: 0;
   background-color: #004494;
   color: #fff;
   border-bottom: none; }
@@ -6295,9 +6295,11 @@ Style guide: page-header.5
     .page-header .page-header__site-identification h3 {
       font-size: 1.222em;
       color: #bfd0e4;
-      font-weight: normal; }
+      font-weight: normal;
+      margin-bottom: 1.25em; }
     .page-header .page-header__site-identification + .page-header__hero-title {
-      padding-top: 1em; }
+      padding-top: 1em;
+      margin-top: -1.25em; }
       .page-header .page-header__site-identification + .page-header__hero-title .col-lg-9 h1 {
         padding-top: 0; }
       .page-header .page-header__site-identification + .page-header__hero-title .col-lg-9 > .meta + h1,
@@ -6337,7 +6339,8 @@ Style guide: page-header.5
   .page-header .page-header__bottom {
     font-size: 26px; }
   .page-header .page-header__hero-title {
-    padding-top: 2.39em; }
+    padding-top: 2.39em;
+    padding-bottom: 1.25em; }
 
 .page-header--large-intro, .node-type-info-homepage .page-header {
   padding-bottom: 2.39em; }
