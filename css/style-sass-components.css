@@ -4853,14 +4853,14 @@ Style guide listing.4
 .listing--title .listing__item {
   padding: 0.61em 0; }
 
-.listing--title a.listing__title {
+.listing--title .listing__title {
   display: block;
   margin: 0;
   padding-right: 2em;
   text-decoration: none; }
-  .listing--title a.listing__title::after {
+  .listing--title .listing__title::after {
     line-height: 1.6; }
-  .listing--title-medium.listing--title a.listing__title {
+  .listing--title-medium.listing--title .listing__title {
     font-size: 1.222em; }
 
 .listing--frontpage p {
