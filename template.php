@@ -991,16 +991,13 @@ function europa_preprocess_node(&$variables) {
     $variables['left_classes'] .= ' col-md-pull-3';
     $variables['right_classes'] .= ' col-md-push-9';
   }
-
   elseif (!empty($variables['left']) && empty($variables['right'])) {
     $variables['central_classes'] .= ' col-md-9';
   }
-
   elseif (empty($variables['left']) && !empty($variables['right'])) {
     $variables['central_classes'] .= ' col-md-9 col-md-pull-3';
     $variables['right_classes'] .= ' col-md-push-9';
   }
-
   elseif (empty($variables['left']) && empty($variables['right'])) {
     $variables['central_classes'] .= ' col-md-12';
   }
