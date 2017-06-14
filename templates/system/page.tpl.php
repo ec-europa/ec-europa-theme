@@ -172,7 +172,7 @@
     </div>
   <?php endif; ?>
 
-  <?php if (!$theme_settings['improved'] || ($theme_settings['improved'] && $theme_settings['improved_header'] == 'complete') && (!empty($page['custom_title']) || !empty($title))): ?>
+  <?php if ((!$theme_settings['improved'] || ($theme_settings['improved'] && $theme_settings['improved_header'] == 'complete')) && (!empty($page['custom_title']) || !empty($title))): ?>
     <div class="container-fluid page-header__hero-title">
       <div class="row padding-reset">
         <div class="col-lg-9">
@@ -212,7 +212,7 @@
   <div class="page-content">
     <div class="container-fluid">
 
-    <?php if ($theme_settings['improved'] && $theme_settings['improved_header'] == 'basic' && (!empty($page['custom_title']) || !empty($title))): ?>
+    <?php if (($theme_settings['improved'] && $theme_settings['improved_header'] == 'basic') && (!empty($page['custom_title']) || !empty($title))): ?>
       <div class="page-title-improved section">
         <?php print render($title_prefix); ?>
         <?php if (!empty($page['custom_title'])): ?>
