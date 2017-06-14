@@ -22,14 +22,6 @@ function europa_preprocess_page(&$variables, $hook) {
     $variables['content_column_class'] = 'ecl-col-12';
   }
 
-  // Set footer region column classes.
-  if (!empty($variables['page']['footer_right'])) {
-    $variables['footer_column_class'] = 'ecl-col-8';
-  }
-  else {
-    $variables['footer_column_class'] = 'ecl-col-12';
-  }
-
   $variables['page_logo_title'] = t('Home - @sitename', ['@sitename' => variable_get('site_name', 'European Commission')]);
 
   $node = &$variables['node'];
@@ -79,5 +71,6 @@ function europa_preprocess_page(&$variables, $hook) {
     }
   }
   $variables['site_header'] = array('#theme' => array('site_header'));
+  $variables['footer'] = array('#theme' => array('footer'));
   $variables['messages'] = $variables['show_messages'] ? array('#theme' => array('status_messages')) : '';
 }
