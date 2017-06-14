@@ -4840,33 +4840,6 @@ Style guide listing.1
   display: none; }
 
 /*
-Listing title
-
-Listing title is the component modifier used to style a list of titles.
-
-Markup: html/listing--title.html
-
-.listing--title-medium - Listing title medium
-
-Style guide listing.4
-*/
-.listing--title .listing__item {
-  padding: 0.61em 0; }
-
-.listing--title .listing__title {
-  display: block;
-  margin: 0;
-  padding-right: 2em;
-  text-decoration: none; }
-  .listing--title .listing__title::after {
-    line-height: 1.6; }
-  .listing--title-medium.listing--title .listing__title {
-    font-size: 1.222em; }
-
-.listing--frontpage p {
-  line-height: 1.375em; }
-
-/*
 Listing agenda
 
 Listing for event like entities.
@@ -5202,6 +5175,36 @@ Style guide listing.1.2
   width: auto;
   padding-left: 0;
   padding-right: 15px; }
+
+/*
+Listing title
+
+Listing title is the component modifier used to style a list of titles.
+
+Markup: html/listing--title.html
+
+.listing--title-medium - Listing title medium
+
+Style guide listing.4
+*/
+.listing--title .listing__item {
+  padding: 0.61em 0; }
+  .listing--title .listing__item p {
+    margin-top: 0.5em; }
+
+.listing--title .listing__title {
+  display: block;
+  margin: 0;
+  padding-right: 2em;
+  text-decoration: none; }
+  .listing--title .listing__title::after {
+    line-height: 1.6; }
+
+.listing--title-medium .listing__title {
+  font-size: 1.222em; }
+
+.listing--frontpage p {
+  line-height: 1.375em; }
 
 /*
 Listing layouts
