@@ -987,12 +987,21 @@ function europa_preprocess_node(&$variables) {
 
   // Add information about the number of sidebars.
   if (!empty($variables['left']) && !empty($variables['right'])) {
-    $variables['content_column_class'] = 'col-md-6';
+    $variables['content_column_class'] = 'col-md-6 col-md-pull-3';
+    $variables['left_column_class'] = 'col-md-pull-3';
+    $variables['right_column_class'] = 'col-md-push-9';
   }
-  elseif (!empty($variables['left']) || !empty($variables['right'])) {
+
+  elseif (!empty($variables['left']) && empty($variables['right'])) {
     $variables['content_column_class'] = 'col-md-9';
   }
-  else {
+
+  elseif (empty($variables['left']) && !empty($variables['right'])) {
+    $variables['content_column_class'] = 'col-md-9 col-md-pull-3';
+    $variables['right_column_class'] = 'col-md-push-9';
+  }
+
+  elseif (empty($variables['left']) && empty($variables['right'])) {
     $variables['content_column_class'] = 'col-md-12';
   }
 
