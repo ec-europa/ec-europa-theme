@@ -625,7 +625,9 @@ tbody.collapse.in {
   height: 0;
   padding: 0;
   overflow: hidden; }
-  .embed-responsive .embed-responsive-item, .file--video .file__container .embed-responsive-item, .embed-responsive .file--video iframe, .file--video .embed-responsive iframe, .file--video .file__container iframe,
+  .embed-responsive .embed-responsive-item, .file--video .file__container .embed-responsive-item, .embed-responsive .file--video iframe, .file--video .embed-responsive iframe, .file--video .file__container iframe, .embed-responsive
+  .file--video video,
+  .file--video .embed-responsive video, .file--video .file__container video,
   .embed-responsive iframe, .file--video .file__container iframe,
   .embed-responsive embed, .file--video .file__container embed,
   .embed-responsive object, .file--video .file__container object,
