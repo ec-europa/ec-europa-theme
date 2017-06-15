@@ -3218,6 +3218,9 @@ Style guide: gallery.overlay
   .gallery-overlay__sidebar .gallery-overlay__copyright {
     font-size: 0.833em; }
 
+#btn-gallery-overlay:hover {
+  z-index: 2; }
+
 /*
 Site header search bar
 

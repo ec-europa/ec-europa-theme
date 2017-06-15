@@ -429,3 +429,7 @@ Style guide: gallery.overlay
     font-size: $font-size-tiny;
   }
 }
+
+#btn-gallery-overlay:hover {
+  z-index: 2;
+}
