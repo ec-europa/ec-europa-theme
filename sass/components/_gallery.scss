@@ -221,7 +221,7 @@ Style guide: gallery.overlay
     -ms-flex-pack: center;
     -webkit-justify-content: center;
     height: 100%;
-    width: 10%;
+    width: 8.3%;
 
     a,
     i {
@@ -249,7 +249,8 @@ Style guide: gallery.overlay
     }
 
     @include breakpoint(screen-md-min) {
-      a {
+      a,
+      i {
         font-size: 2.2em;
       }
     }
@@ -277,7 +278,7 @@ Style guide: gallery.overlay
     justify-content: center;
     -ms-flex-pack: center;
     -webkit-justify-content: center;
-    width: 80%;
+    width: 83.7%;
     max-width: 840px;
     max-height: 100%;
   }
@@ -324,6 +325,7 @@ Style guide: gallery.overlay
 
 // Close button.
 .gallery-overlay__close {
+  display: inline-block;
   position: static !important;
   width: auto !important;
   height: auto !important;
