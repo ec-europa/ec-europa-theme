@@ -4235,19 +4235,14 @@ button.close {
   .nav-tabs {
     display: none !important; } }
 
-.icon--after {
-  display: inline-block;
-  margin-left: 4px;
-  line-height: 1;
-  font-family: 'EuropaIcons';
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-transform: none;
-  text-decoration: none;
-  speak: none; }
+.navbar-toggle {
+  border-radius: 0;
+  border: none; }
+
+.navbar-collapse,
+.navbar-fixed-top,
+.navbar {
+  border: none; }
 
 @media print {
   .hidden-print, .btn-group, .form-control, .form-group, ul.nav-tabs,
@@ -4500,9 +4495,6 @@ body {
   display: block;
   visibility: visible; }
 
-.region-sidebar-first {
-  padding: 1.667em 0; }
-
 /*
 Label
 
@@ -4565,13 +4557,6 @@ li > ol {
   margin-bottom: 5px;
   line-height: 1.625;
   font-size: 0.889em; }
-
-.navbar-toggle {
-  border-radius: 0;
-  border: none; }
-
-.navbar-collapse, .navbar-fixed-top, .navbar {
-  border: none; }
 
 /*
 Bootstrap: Nav tabs

@@ -81,46 +81,6 @@ Style guide listing.1
 }
 
 /*
-Listing title
-
-Listing title is the component modifier used to style a list of titles.
-
-Markup: html/listing--title.html
-
-.listing--title-medium - Listing title medium
-
-Style guide listing.4
-*/
-
-// listing--title modifier.
-.listing--title {
-  // Half of the normal padding for the element.
-  .listing__item {
-    padding: 0.61em 0;
-  }
-
-  a.listing__title {
-    display: block;
-    margin: 0;
-    padding-right: 2em;
-    text-decoration: none;
-
-    // @todo What is this here for?
-    &::after {
-      line-height: 1.6;
-    }
-
-    @at-root .listing--title-medium#{&} {
-      font-size: $font-size-h3;
-    }
-  }
-}
-
-.listing--frontpage p {
-  line-height: 1.375em;
-}
-
-/*
 Listing agenda
 
 Listing for event like entities.
@@ -236,7 +196,6 @@ Style guide listing.3
 
   .listing__item {
     border: none;
-    margin: 1.111em 0;
 
     &:hover,
     &:active,
@@ -250,17 +209,19 @@ Style guide listing.3
     }
 
     .listing__item__wrapper,
-    .node {
+    > div {
       @include clearfix();
 
       padding: 1.111em;
       background-color: $brand-primary;
     }
 
-    .listing__title,
-    .listing__title a,
-    a {
+    .listing__title {
       color: #fff;
+     
+      a {
+        color: #fff;
+      }
     }
 
     &:first-child {
@@ -270,14 +231,14 @@ Style guide listing.3
     &:last-child {
       padding-bottom: $font-size-mid;
     }
-  }
 
-  .listing__title {
-    position: relative;
-    padding-right: 1.3em;
+    .listing__title {
+      position: relative;
+      padding-right: 1.3em;
 
-    &::after {
-      @extend .listing__title--arrow;
+      &::after {
+        @extend .listing__title--arrow;
+      }
     }
   }
 }
@@ -362,6 +323,7 @@ Style guide listing.6
 @include breakpoint(screen-xs-min) {
   .listing--navigation {
     margin-bottom: 5em;
+    position: relative;
 
     // Only listing__section-title.
     .listing__section-title {
@@ -398,6 +360,18 @@ Style guide listing.6
   }
 }
 
+// .listing__item-link element
+.listing__item-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+
+  @include _focus_outline_border(3px, $ec-yellow, 2px);
+}
+
 // .listing__item element.
 .listing__item {
   list-style: none;
@@ -406,18 +380,6 @@ Style guide listing.6
   width: 100%;
   padding: 1.111em 0;
   border-bottom: 1px solid $ec-grey10;
-
-  // .listing__item-link element
-  .listing__item-link {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-
-    @include _focus_outline_border(3px, $ec-yellow, 2px);
-  }
 
   &:first-child {
     border-top: 1px solid $ec-grey10;
@@ -445,7 +407,7 @@ Style guide listing.6
     font-size: $font-size-little;
   }
 
-  a:not(.listing__item-link, .listing__title) {
+  a:not(.listing__item-link) {
     z-index: 2;
   }
 
@@ -618,6 +580,50 @@ Style guide listing.1.2
     padding-left: 0;
     padding-right: 15px;
   }
+}
+
+/*
+Listing title
+
+Listing title is the component modifier used to style a list of titles.
+
+Markup: html/listing--title.html
+
+.listing--title-medium - Listing title medium
+
+Style guide listing.4
+*/
+
+// listing--title modifier.
+.listing--title {
+  // Half of the normal padding for the element.
+  .listing__item {
+    padding: 0.61em 0;
+
+    p {
+      margin-top: 0.5em;
+    }
+  }
+
+  .listing__title {
+    display: block;
+    margin: 0;
+    padding-right: 2em;
+    text-decoration: none;
+
+    // @todo What is this here for?
+    &::after {
+      line-height: 1.6;
+    }
+  }
+}
+
+.listing--title-medium .listing__title {
+  font-size: $font-size-h3;
+}
+
+.listing--frontpage p {
+  line-height: 1.375em;
 }
 
 /*

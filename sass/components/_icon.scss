@@ -57,6 +57,7 @@ Markup: html/icon.html
 .icon--in - In icon
 .icon--presentation - Presentation icon
 .icon--info - Info icon
+.icon--share - Share icon
 .icon--faq - Faq icon
 
 Style guide: icon
@@ -87,6 +88,32 @@ Style guide: icon
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+}
+
+// Should be used only with @extend.
+.icon--after {
+  display: inline-block;
+  margin-left: 4px;
+  line-height: 1;
+  font-family: 'EuropaIcons';
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  // Better Font Rendering
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-transform: none;
+  text-decoration: underline;
+  speak: none;
+}
+
+// Remove the underline from a::after
+// There is a bug in IE8-11, so using display:inline-block; alone won't
+// work. The solution is by explicitly setting text-decoration:underline;
+// for the ::after-content and then overwrite this rule again with
+// text-decoration:none;
+.icon--after {
+  text-decoration: none;
 }
 
 // Icon component and modifiers.

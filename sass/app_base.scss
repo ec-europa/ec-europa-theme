@@ -1,11 +1,12 @@
 // Bootstrap.
-@import "bootstrap";
+@import "global/bootstrap";
+@import "helpers/bootstrap-overrides";
 
 // Importing mixins and variables.
-@import "mixins";
+@import "global/mixins";
 
 // Importing simple helpers.
-@import "helpers_base";
+@import "helpers/helpers-base";
 
 // Base.
 @import "base/helpers";
@@ -16,11 +17,10 @@
 @import "base/checkbox";
 @import "base/form-control";
 @import "base/form-group";
-@import "global";
+@import "global/global";
 @import "base/label";
 @import "base/legend";
 @import "base/lists";
-@import "base/navbar";
 @import "base/nav-tabs";
 @import "base/paragraphs";
 @import "base/radio";

@@ -168,8 +168,9 @@ $modifiers: (
   download: \e806,
   tag-close: \e82c,
   feedback: \e82e,
-  camera: \e900,
+  camera: \e800,
   slides: \e80e,
+  share: \e808,
   faq: \21,
 );
 
@@ -260,23 +261,6 @@ $modifiers: (
     outline-offset: $offset;
     text-decoration: $text-decoration;
   }
-}
-
-// Should be used only with @extend.
-.icon--after {
-  display: inline-block;
-  margin-left: 4px;
-  line-height: 1;
-  font-family: 'EuropaIcons';
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  // Better Font Rendering
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-transform: none;
-  text-decoration: none;
-  speak: none;
 }
 
 // [converter] $parent hack.
