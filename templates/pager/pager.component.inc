@@ -121,6 +121,11 @@ function europa_preprocess_pager(&$variables, $hook) {
     }
   }
   $variables[$hook][$hook]['#items'] = $items;
+
+  // Adds specific class to pager links.
+  foreach ($variables[$hook][$hook]['#items'] as &$item) {
+    $item['link']['#options']['attributes']['class'][] = 'ecl-pager__link';
+  }
 }
 
 /**
