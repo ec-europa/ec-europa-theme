@@ -17,21 +17,21 @@ function europa_preprocess_textfield(&$variables, $hook) {
   // We proceed as it instead of implement a hook mechanism to weighing the
   // script execution and because in the Drupal theming system, it is not
   // possible to declare a "pre-process" function on a theme suggestion.
-  _europa_preprocess_textfield__search_block_form($variables);
+  _europa_preprocess_textfield__query_text($variables);
 
   $variables['attributes_array'] = drupal_array_merge_deep($variables['attributes_array'], $element['#attributes']);
 }
 
 /**
- * Prepares the Search box textfield for its specific display.
+ * Prepares the Search box textfield (QueryText) for its specific display.
  *
  * It is related to the "search_bar" component.
  *
  * @see europa_preprocess_textfield()
  */
-function _europa_preprocess_textfield__search_block_form(&$variables) {
+function _europa_preprocess_textfield__query_text(&$variables) {
   $element = &$variables['element'];
-  if (empty($element['#name']) || $element['#name'] != 'search_block_form') {
+  if (empty($element['#name']) || $element['#name'] != 'QueryText') {
     return;
   }
 

@@ -21,19 +21,19 @@ function europa_preprocess_form_element(&$variables, $hook) {
   // We proceed as it instead of implement a hook mechanism to weighing the
   // script execution and because in the Drupal theming system, it is not
   // possible to declare a "pre-process" function on a theme suggestion.
-  _europa_preprocess_form_element__search_block_form($variables);
+  _europa_preprocess_form_element__query_text($variables);
 }
 
 /**
- * Prepares the Search box form element for its specific display.
+ * Prepares the Search box form element (QueryText) for its specific display.
  *
  * It is related to the "search_bar" component.
  *
  * @see europa_preprocess_form_element()
  */
-function _europa_preprocess_form_element__search_block_form(&$variables) {
-  $element = &$variables['element'];
-  if (empty($element['#name']) || $element['#name'] != 'search_block_form') {
+function _europa_preprocess_form_element__query_text(&$variables) {
+  $element = $variables['element'];
+  if (empty($element['#name']) || $element['#name'] != 'QueryText') {
     return;
   }
 
