@@ -8,7 +8,7 @@
  * Implements hook_preprocess_views_view_grid().
  */
 function europa_preprocess_views_view_grid(&$variables) {
-  $view = $vars['view'];
+  $view = $variables['view'];
   $result = $view->result;
   $options = $view->style_plugin->options;
   $handler = $view->style_plugin;
@@ -25,7 +25,7 @@ function europa_preprocess_views_view_grid(&$variables) {
     $col_count = 0;
     $row_count = 0;
     $count = 0;
-    foreach ($vars['rows'] as $row_index => $item) {
+    foreach ($variables['rows'] as $row_index => $item) {
       $count++;
       $row[] = $item;
       $row_indexes[$row_count][$col_count] = $row_index;
@@ -48,12 +48,12 @@ function europa_preprocess_views_view_grid(&$variables) {
     }
   }
   else {
-    $num_rows = floor(count($vars['rows']) / $columns);
+    $num_rows = floor(count($variables['rows']) / $columns);
     // The remainders are the 'odd' columns that are slightly longer.
-    $remainders = count($vars['rows']) % $columns;
+    $remainders = count($variables['rows']) % $columns;
     $row = 0;
     $col = 0;
-    foreach ($vars['rows'] as $count => $item) {
+    foreach ($variables['rows'] as $count => $item) {
       $rows[$row][$col] = $item;
       $row_indexes[$row][$col] = $count;
       $row++;
@@ -90,7 +90,7 @@ function europa_preprocess_views_view_grid(&$variables) {
         $row_classes[] = 'row-last';
       }
     }
-    $vars['row_classes'][$row_number] = implode(' ', $row_classes);
+    $variables['row_classes'][$row_number] = implode(' ', $row_classes);
     foreach ($rows[$row_number] as $column_number => $item) {
       $column_classes = array('');
       if ($default_row_class) {
@@ -107,23 +107,23 @@ function europa_preprocess_views_view_grid(&$variables) {
       if (isset($row_indexes[$row_number][$column_number]) && $column_class = $view->style_plugin->get_row_class($row_indexes[$row_number][$column_number])) {
         $column_classes[] = $column_class;
       }
-      $vars['column_classes'][$row_number][$column_number] = implode(' ', $column_classes);
+      $variables['column_classes'][$row_number][$column_number] = implode(' ', $column_classes);
     }
   }
-  $vars['rows'] = $rows;
-  $vars['class'] = 'views-view-grid cols-' . $columns;
+  $variables['rows'] = $rows;
+  $variables['class'] = 'views-view-grid cols-' . $columns;
 
   // Add the summary to the list if set.
   if (!empty($handler->options['summary'])) {
-    $vars['attributes_array'] = array('summary' => filter_xss_admin($handler->options['summary']));
+    $variables['attributes_array'] = array('summary' => filter_xss_admin($handler->options['summary']));
   }
 
   // Add the caption to the list if set.
   if (!empty($handler->options['caption'])) {
-    $vars['caption'] = filter_xss_admin($handler->options['caption']);
+    $variables['caption'] = filter_xss_admin($handler->options['caption']);
   }
   else {
-    $vars['caption'] = '';
+    $variables['caption'] = '';
   }
 }
 
