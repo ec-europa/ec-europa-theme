@@ -625,7 +625,9 @@ tbody.collapse.in {
   height: 0;
   padding: 0;
   overflow: hidden; }
-  .embed-responsive .embed-responsive-item, .file--video .file__container .embed-responsive-item, .embed-responsive .file--video iframe, .file--video .embed-responsive iframe, .file--video .file__container iframe,
+  .embed-responsive .embed-responsive-item, .file--video .file__container .embed-responsive-item, .embed-responsive .file--video iframe, .file--video .embed-responsive iframe, .file--video .file__container iframe, .embed-responsive
+  .file--video video,
+  .file--video .embed-responsive video, .file--video .file__container video,
   .embed-responsive iframe, .file--video .file__container iframe,
   .embed-responsive embed, .file--video .file__container embed,
   .embed-responsive object, .file--video .file__container object,
@@ -1560,7 +1562,7 @@ a.breadcrumb__link {
 
 @media (min-width: 992px) {
   .breadcrumb {
-    margin: 0; } }
+    margin: 0 0 -1px; } }
 
 /*
 Breadcrumb collapsible
@@ -3087,7 +3089,7 @@ Style guide: gallery.overlay
     -ms-flex-pack: center;
     -webkit-justify-content: center;
     height: 100%;
-    width: 10%; }
+    width: 8.333333333%; }
     .gallery-overlay__media .gallery-overlay__media-previous a,
     .gallery-overlay__media .gallery-overlay__media-previous i,
     .gallery-overlay__media .gallery-overlay__media-next a,
@@ -3111,7 +3113,9 @@ Style guide: gallery.overlay
       color: #9f9f9f; }
     @media (min-width: 992px) {
       .gallery-overlay__media .gallery-overlay__media-previous a,
-      .gallery-overlay__media .gallery-overlay__media-next a {
+      .gallery-overlay__media .gallery-overlay__media-previous i,
+      .gallery-overlay__media .gallery-overlay__media-next a,
+      .gallery-overlay__media .gallery-overlay__media-next i {
         font-size: 2.2em; } }
   .gallery-overlay__media .gallery-overlay__media-item-list__wrapper {
     display: flex;
@@ -3123,7 +3127,7 @@ Style guide: gallery.overlay
     justify-content: center;
     -ms-flex-pack: center;
     -webkit-justify-content: center;
-    width: 80%;
+    width: 83.33333333%;
     max-width: 840px;
     max-height: 100%; }
   .gallery-overlay__media ul {
@@ -3154,6 +3158,7 @@ Style guide: gallery.overlay
       background-color: transparent; } }
 
 .gallery-overlay__close {
+  display: inline-block;
   position: static !important;
   width: auto !important;
   height: auto !important;
@@ -3215,6 +3220,9 @@ Style guide: gallery.overlay
       margin-bottom: 0; }
   .gallery-overlay__sidebar .gallery-overlay__copyright {
     font-size: 0.833em; }
+
+#btn-gallery-overlay:hover {
+  z-index: 2; }
 
 /*
 Site header search bar
@@ -4840,33 +4848,6 @@ Style guide listing.1
   display: none; }
 
 /*
-Listing title
-
-Listing title is the component modifier used to style a list of titles.
-
-Markup: html/listing--title.html
-
-.listing--title-medium - Listing title medium
-
-Style guide listing.4
-*/
-.listing--title .listing__item {
-  padding: 0.61em 0; }
-
-.listing--title a.listing__title {
-  display: block;
-  margin: 0;
-  padding-right: 2em;
-  text-decoration: none; }
-  .listing--title a.listing__title::after {
-    line-height: 1.6; }
-  .listing--title-medium.listing--title a.listing__title {
-    font-size: 1.222em; }
-
-.listing--frontpage p {
-  line-height: 1.375em; }
-
-/*
 Listing agenda
 
 Listing for event like entities.
@@ -5202,6 +5183,36 @@ Style guide listing.1.2
   width: auto;
   padding-left: 0;
   padding-right: 15px; }
+
+/*
+Listing title
+
+Listing title is the component modifier used to style a list of titles.
+
+Markup: html/listing--title.html
+
+.listing--title-medium - Listing title medium
+
+Style guide listing.4
+*/
+.listing--title .listing__item {
+  padding: 0.61em 0; }
+  .listing--title .listing__item p {
+    margin-top: 0.5em; }
+
+.listing--title .listing__title {
+  display: block;
+  margin: 0;
+  padding-right: 2em;
+  text-decoration: none; }
+  .listing--title .listing__title::after {
+    line-height: 1.6; }
+
+.listing--title-medium .listing__title {
+  font-size: 1.222em; }
+
+.listing--frontpage p {
+  line-height: 1.375em; }
 
 /*
 Listing layouts
@@ -6270,7 +6281,7 @@ Style guide: page-header.5
 */
 .page-header {
   margin: 0;
-  padding: 0 0 1.25em;
+  padding: 0;
   background-color: #004494;
   color: #fff;
   border-bottom: none; }
@@ -6290,9 +6301,11 @@ Style guide: page-header.5
     .page-header .page-header__site-identification h3 {
       font-size: 1.222em;
       color: #bfd0e4;
-      font-weight: normal; }
+      font-weight: normal;
+      margin-bottom: 1.25em; }
     .page-header .page-header__site-identification + .page-header__hero-title {
-      padding-top: 1em; }
+      padding-top: 1em;
+      margin-top: -1.25em; }
       .page-header .page-header__site-identification + .page-header__hero-title .col-lg-9 h1 {
         padding-top: 0; }
       .page-header .page-header__site-identification + .page-header__hero-title .col-lg-9 > .meta + h1,
@@ -6332,7 +6345,8 @@ Style guide: page-header.5
   .page-header .page-header__bottom {
     font-size: 26px; }
   .page-header .page-header__hero-title {
-    padding-top: 2.39em; }
+    padding-top: 2.39em;
+    padding-bottom: 1.25em; }
 
 .page-header--large-intro, .node-type-info-homepage .page-header {
   padding-bottom: 2.39em; }
@@ -7382,7 +7396,7 @@ Style guide table responsive
 .wtShareNetworks {
   margin-bottom: 0; }
 
-.wtShareButton {
+body .gallery-overlay__share .wtShareButton:link {
   line-height: inherit !important;
   border: 0 !important;
   text-decoration: underline !important;
@@ -7392,7 +7406,11 @@ Style guide table responsive
   margin-bottom: 0 !important;
   background: none !important;
   min-width: inherit !important; }
-  .wtShareButton:hover {
+  body .gallery-overlay__share .wtShareButton:link:focus {
+    outline: 3px solid #ffd617;
+    outline-offset: 2px;
+    text-decoration: underline; }
+  body .gallery-overlay__share .wtShareButton:link:hover {
     color: #fff !important; }
 
 #admin-menu-wrapper ul,

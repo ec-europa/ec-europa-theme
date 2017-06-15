@@ -365,7 +365,8 @@ Style guide: file.5
     @extend .embed-responsive-16by9;
   }
 
-  iframe {
+  iframe,
+  video {
     @extend .embed-responsive-item;
   }
 }
