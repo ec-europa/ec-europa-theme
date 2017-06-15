@@ -18,7 +18,7 @@ function europa_atomium_definition_button() {
         'value' => 'Default',
         'attributes' => array(
           'class' => array(
-            'btn-default',
+            'ecl-button--default',
           ),
         ),
       ),
@@ -27,7 +27,7 @@ function europa_atomium_definition_button() {
         'value' => 'Primary',
         'attributes' => array(
           'class' => array(
-            'btn-primary',
+            'ecl-button--primary',
           ),
         ),
       ),
@@ -36,34 +36,93 @@ function europa_atomium_definition_button() {
         'value' => 'Secondary',
         'attributes' => array(
           'class' => array(
-            'btn-secondary',
+            'ecl-button--secondary',
           ),
         ),
       ),
       array(
         'type' => 'submit',
-        'value' => 'Button with contour',
+        'value' => 'Call to action',
         'attributes' => array(
           'class' => array(
-            'btn-ctn',
+            'ecl-button--call',
           ),
         ),
       ),
       array(
         'type' => 'submit',
-        'value' => 'Button with border',
+        'value' => 'Form',
         'attributes' => array(
           'class' => array(
-            'btn-ctn--border',
+            'ecl-button--form',
           ),
         ),
       ),
       array(
         'type' => 'submit',
-        'value' => 'Button for menus',
+        'value' => 'Form primary',
         'attributes' => array(
           'class' => array(
-            'btn-menu',
+            'ecl-button--form-primary',
+          ),
+        ),
+      ),
+      array(
+        'type' => 'submit',
+        'value' => 'Light',
+        'attributes' => array(
+          'class' => array(
+            'ecl-button--light',
+          ),
+        ),
+      ),
+      array(
+        'type' => 'submit',
+        'value' => 'Icon: Arrow up',
+        'attributes' => array(
+          'class' => array(
+            'ecl-button--default',
+            'ecl-button--arrow-up',
+          ),
+        ),
+      ),
+      array(
+        'type' => 'submit',
+        'value' => 'Icon: Caret up',
+        'attributes' => array(
+          'class' => array(
+            'ecl-button--default',
+            'ecl-button--caret-up',
+          ),
+        ),
+      ),
+      array(
+        'type' => 'submit',
+        'value' => 'Icon: Caret right',
+        'attributes' => array(
+          'class' => array(
+            'ecl-button--default',
+            'ecl-button--caret-right',
+          ),
+        ),
+      ),
+      array(
+        'type' => 'submit',
+        'value' => 'Icon: Caret down',
+        'attributes' => array(
+          'class' => array(
+            'ecl-button--default',
+            'ecl-button--caret-down',
+          ),
+        ),
+      ),
+      array(
+        'type' => 'submit',
+        'value' => 'Icon: Caret left',
+        'attributes' => array(
+          'class' => array(
+            'ecl-button--default',
+            'ecl-button--caret-left',
           ),
         ),
       ),
@@ -75,5 +134,8 @@ function europa_atomium_definition_button() {
  * Implements hook_preprocess_HOOK().
  */
 function europa_preprocess_button(&$variables) {
-  $variables['attributes_array']['class'][] = 'btn';
+  $variables['attributes_array']['class'][] = 'ecl-button';
+  if (empty(array_search('ecl-button--', $variables['attributes_array']['class']))) {
+    $variables['attributes_array']['class'][] = 'ecl-button--default';
+  }
 }

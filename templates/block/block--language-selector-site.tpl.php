@@ -47,12 +47,20 @@
  */
 ?>
 <section class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+<?php if (theme_get_setting('ec_europa_multilingual', 'europa')): ?> 
   <a href="<?php print $link; ?>" class="lang-select-site__link">
+<?php else: ?>
+  <span class="lang-select-site__placeholder">
+<?php endif; ?>
     <span class="lang-select-site__label"><?php print $lang_name; ?></span>
     <span class="lang-select-site__code">
       <span class="icon icon--language lang-select-site__icon"></span>
       <span class="lang-select-site__code-text"><?php print $lang_code; ?></span>
     </span>
+<?php if (theme_get_setting('ec_europa_multilingual', 'europa')): ?> 
   </a>
+<?php else: ?>
+  </span>
+<?php endif; ?>
   <div class="splash-page splash-page--overlay"></div>
 </section>

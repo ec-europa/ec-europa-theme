@@ -42,7 +42,7 @@ function europa_file_widget($variables) {
       }
       elseif ($element[$child]['#type'] === 'submit') {
         $upload_button[$child] = $element[$child];
-        $upload_button[$child]['#attributes']['class'][] = 'btn-primary';
+        $upload_button[$child]['#attributes']['class'][] = 'ecl-button--primary';
         unset($element[$child]);
       }
     }

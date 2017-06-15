@@ -76,3 +76,29 @@ function _europa_term_heading($element) {
   $element['#suffix'] = '</div></div>';
   return $element;
 }
+
+/**
+ * Sets a form element's class attribute.
+ *
+ * Adds the 'ecl-text-input--has-error' class as needed.
+ *
+ * @param array $element
+ *   The form element.
+ * @param array $classes
+ *   The basic classes that are specific to the form element.
+ */
+function _europa_form_set_css_class(array &$element, array $classes = array()) {
+  if (!empty($classes)) {
+    if (!isset($element['#attributes']['class'])) {
+      $element['#attributes']['class'] = array();
+    }
+    $element['#attributes']['class'] = array_merge($element['#attributes']['class'], $classes);
+  }
+
+  // Determines if the error class must added.
+  // The logic comes from the Drupal function: "_form_set_class".
+  if (isset($element['#parents']) && form_get_error($element) !== NULL && !empty($element['#validated'])) {
+    $element['#attributes']['class'][] = 'ecl-text-input--has-error';
+  }
+
+}

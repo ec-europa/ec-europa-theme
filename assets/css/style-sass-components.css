@@ -4410,7 +4410,8 @@ Style guide: siteheader.langselect
   top: 0;
   right: 15px;
   text-align: center; }
-  .lang-select-site .lang-select-site__link {
+  .lang-select-site .lang-select-site__link,
+  .lang-select-site .lang-select-site__placeholder {
     display: inline-block;
     padding: 7.5px 15px;
     font-size: 0.889em;
@@ -4419,13 +4420,14 @@ Style guide: siteheader.langselect
     text-align: center;
     text-decoration: none;
     border: 3px solid transparent; }
-    .lang-select-site .lang-select-site__link:focus {
+    .lang-select-site .lang-select-site__link:focus,
+    .lang-select-site .lang-select-site__placeholder:focus {
       border-color: #ffd617;
       outline: none; }
   .lang-select-site .lang-select-site__label {
     margin-right: 0.556em; }
-    .lang-select-site .lang-select-site__label:hover {
-      text-decoration: underline; }
+  .lang-select-site .lang-select-site__link .lang-select-site__label:hover {
+    text-decoration: underline; }
   .lang-select-site .lang-select-site__code {
     display: inline-block;
     position: relative;

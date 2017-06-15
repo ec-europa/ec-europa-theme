@@ -9,6 +9,7 @@
  * Implements hook_preprocess_HOOK().
  */
 function europa_preprocess_html(&$variables, $hook) {
+
   $this_theme_path = drupal_get_path('theme', 'europa');
   $variables['theme_path'] = $this_theme_path;
   $language = $variables['language'];
