@@ -6,14 +6,43 @@
  */
 
 /**
+ * Implements hook_atomium_definition_HOOK().
+ */
+function europa_atomium_definition_breadcrumb() {
+  return array(
+    'label' => 'Breadcrumb',
+    'description' => 'Site breadcrumb.',
+    'preview' => array(
+      'breadcrumb' => array(
+        array(
+          '#theme' => array('link'),
+          '#text' => 'Home',
+          '#href' => '/',
+        ),
+        array(
+          '#theme' => array('link'),
+          '#text' => 'News',
+          '#href' => '/',
+        ),
+        array(
+          '#theme' => array('link'),
+          '#text' => t('My news title'),
+          '#href' => '/',
+        ),
+      ),
+    ),
+  );
+}
+
+/**
  * Implements hook_preprocess_HOOK().
  */
 function europa_preprocess_breadcrumb(&$variables, $hook) {
   if (empty($variables[$hook])) {
     return;
   }
-
-  $variables['attributes_array']['class'][] = 'breadcrumb__segments-wrapper';
+  $variables['here'] = t('You are here');
+  $variables['attributes_array']['class'][] = 'ecl-breadcrumbs__segments-wrapper';
   $breadcrumb_items = array();
   foreach ($variables[$hook][$hook]['#items'] as $key => $item) {
     if (isset($item['#text'])) {
@@ -23,28 +52,18 @@ function europa_preprocess_breadcrumb(&$variables, $hook) {
         '#tag' => 'span',
         '#attributes' => array(
           'class' => array(
-            'breadcrumb__text',
+            'ecl-breadcrumbs__text',
           ),
         ),
       );
     }
-    $item['link']['#options']['attributes_array']['class'][] = 'breadcrumb__link';
-    $item['#attributes']['class'][] = 'breadcrumb__segment';
+    $item['link']['#options']['attributes_array']['class'][] = 'ecl-breadcrumbs__link';
+    $item['#attributes']['class'][] = 'ecl-breadcrumbs__segment';
 
     $breadcrumb_items[] = $item;
 
   }
   $variables[$hook] = array(
-    'title' => array(
-      '#markup' => t('You are here:'),
-      '#theme_wrappers' => array('html_tag'),
-      '#tag' => 'span',
-      '#attributes' => array(
-        'class' => array(
-          'sr-only',
-        ),
-      ),
-    ),
     $hook => array(
       '#theme' => array('item_list'),
       '#items' => $breadcrumb_items,
@@ -58,19 +77,10 @@ function europa_preprocess_breadcrumb(&$variables, $hook) {
       '#tag' => 'span',
       '#attributes' => array(
         'class' => array(
-          'breadcrumb__btn-separator',
+          'ecl-breadcrumbs__btn-separator',
         ),
         'style' => 'display: none;',
       ),
-    ),
-    '#theme_wrappers' => array('html_tag'),
-    '#tag' => 'nav',
-    '#attributes' => array(
-      'class' => array(
-        'breadcrumb',
-      ),
-      'role' => 'navigation',
-      'aria-label' => 'breadcrumbs',
     ),
   );
 }
