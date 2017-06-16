@@ -4536,8 +4536,10 @@ Markup: html/labels.html
 .label--highlight - Status open
 .label--status-closed - Status closed
 .label--status-upcoming - Status upcoming
-.label--meta - Meta
 .label--danger - Danger
+.label--meta - Meta
+.label--meta-medium - Meta medium
+.label--high  - Meta high
 
 Styleguide labels
 */
@@ -4572,10 +4574,6 @@ Styleguide labels
   background-color: #fff4bb;
   color: #404040; }
 
-.label--block {
-  display: inline-block;
-  margin-bottom: 0.833em; }
-
 .label--high {
   min-height: 2.75em;
   padding: 0.3em 1em;
@@ -4590,7 +4588,7 @@ Styleguide labels
 
 .label--meta-medium {
   margin: 0.35em 0.5em 0.45em 0;
-  font-size: 75%; }
+  font-size: 0.75em; }
 
 /*
 Language select (Site)
