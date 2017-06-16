@@ -52,6 +52,7 @@ function europa_atomium_definition_easy_breadcrumb() {
  */
 function europa_preprocess_easy_breadcrumb(&$variables, $hook) {
   _europa_breadcrumb_menu($variables);
+  $variables['here'] = t('You are here');
   $breadcrumb = $variables['breadcrumb'];
   $segments_quantity = $variables['segments_quantity'];
   $html = '';
@@ -67,22 +68,22 @@ function europa_preprocess_easy_breadcrumb(&$variables, $hook) {
       if (isset($item['class'])) {
         $classes = $item['class'];
       }
-      $classes[] = 'breadcrumb__segment';
+      $classes[] = 'ecl-breadcrumbs__segment';
 
       $attributes = [
-        'class' => ['breadcrumb__link', 'plop'],
+        'class' => ['ecl-breadcrumbs__link', 'plop'],
       ];
 
       if ($i == 0) {
-        $classes[] = 'breadcrumb__segment--first';
+        $classes[] = 'ecl-breadcrumbs__segment--first';
         $attributes['class'][] = 'is-internal';
         $attributes += ['rel' => 'home'];
       }
       elseif ($i == ($s - 1)) {
-        $classes[] = 'breadcrumb__segment--last';
+        $classes[] = 'ecl-breadcrumbs__segment--last';
       }
 
-      $content = '<span class="breadcrumb__text">' . check_plain(decode_entities($item['content'])) . '</span>';
+      $content = check_plain(decode_entities($item['content']));
       $class = implode(' ', $classes);
       if (isset($item['url'])) {
         $full_item = l($content, $item['url'], [
@@ -91,7 +92,7 @@ function europa_preprocess_easy_breadcrumb(&$variables, $hook) {
         ]);
       }
       else {
-        $full_item = '<span class="' . $class . '">' . $content . '</span>';
+        $full_item = $content;
       }
 
       // TODO: Check if the active class actually appears.
