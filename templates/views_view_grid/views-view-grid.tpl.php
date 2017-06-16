@@ -2,10 +2,10 @@
 
 /**
  * @file
- * Contains template file for the Views "grid" format based on
- * ../grid/grid.tpl.php.
+ * Contains template file.
  */
 ?>
+
 <?php if (!empty($title)) : ?>
   <h3><?php print $title; ?></h3>
 <?php endif; ?>
