@@ -34,5 +34,6 @@ function europa_atomium_definition_table() {
  * Implements hook_preprocess_HOOK().
  */
 function europa_preprocess_table(&$variables, $hook) {
-  $variables['classes_array'][] = 'ecl-table';
+  $variables['attributes']['class'][] = 'ecl-table';
+  $variables['attributes_array'] = drupal_array_merge_deep($variables['attributes_array'], $variables['attributes']);
 }
