@@ -13,7 +13,11 @@ function europa_atomium_theme_grid() {
     'grid' => array(
       'variables' => array(
         'title' => NULL,
-        'rows' => NULL,
+        'caption' => NULL,
+        'rows' => array(),
+        'attributes_array' => array('class' => array('ecl-container')),
+        'row_classes' => array(),
+        'column_classes' => array(),
       ),
       'template' => 'grid',
     ),
@@ -28,7 +32,8 @@ function europa_atomium_definition_grid() {
     'label' => 'Grid',
     'description' => 'Grid layout.',
     'preview' => array(
-      'title' => 'A grid template',
+      'title' => 'A grid title',
+      'caption' => 'A grid caption',
       'rows' => array(
         array(
           'Entry first line 1',
@@ -46,4 +51,3 @@ function europa_atomium_definition_grid() {
     ),
   );
 }
-
