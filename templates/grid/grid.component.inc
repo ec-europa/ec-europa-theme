@@ -16,8 +16,8 @@ function europa_atomium_theme_grid() {
         'caption' => NULL,
         'rows' => array(),
         'attributes_array' => array('class' => array('ecl-container')),
-        'row_classes' => array(),
-        'column_classes' => array(),
+        'row_attributes' => array(),
+        'column_attributes' => array(),
       ),
       'template' => 'grid',
     ),
@@ -50,4 +50,38 @@ function europa_atomium_definition_grid() {
       ),
     ),
   );
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function europa_preprocess_grid(&$variables, $hook) {
+  foreach ($variables['rows'] as $row_key => $row) {
+    $variables['row_attributes'][$row_key] = array(
+      'class' => array(
+        'ecl-row',
+      ),
+    );
+
+    foreach ($row as $column_key => $column) {
+      $variables['column_attributes'][$column_key] = array(
+        'class' => array(
+          'ecl-column',
+        ),
+      );
+    }
+  }
+}
+
+/**
+ * Implements hook_process_HOOK().
+ */
+function europa_process_grid(&$variables, $hook) {
+  foreach ($variables['rows'] as $row_key => $row) {
+    $variables['row_attributes'][$row_key] = atomium_drupal_attributes($variables['row_attributes'][$row_key]);
+
+    foreach ($row as $column_key => $column) {
+      $variables['column_attributes'][$row_key][$column_key] = atomium_drupal_attributes($variables['column_attributes'][$column_key]);
+    }
+  }
 }
