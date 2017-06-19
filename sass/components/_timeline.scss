@@ -6,19 +6,39 @@ Markup: html/timeline.html
 Style guide timeline
 */
 
-.timeline {
-  position: relative;
-  float: left;
-  margin-bottom: 1.667em;
-  padding: 2em 0 0 1.667em;
+.timeline__wrapper {
   border-left: 4px solid $ec-yellow;
 
-  .listing__item {
-    padding: 0;
+  .btn-timeline {
+    @extend .btn-ctn;
+
+    margin: 0 0 0 1.667em;
+
+    &::after {
+      content: '\e81f' !important;
+    }
+  }
+}
+
+.timeline {
+  list-style: none;
+  position: relative;
+  margin-bottom: 1.667em;
+  padding: 2em 0 0 1.667em;
+
+  .timeline__item {
+    p {
+      margin-bottom: 1em;
+      color: $ec-grey75;
+
+      &:last-child {
+        margin-bottom: 1.425em;
+      }
+    }
   }
 
   .timeline__item-title {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.4em;
     line-height: 1em;
     font-weight: bold;
 
@@ -27,61 +47,13 @@ Style guide timeline
       left: -0.6em;
       width: 14px;
       height: 14px;
-      margin-top: 0.2em;
+      margin-top: 0.1em;
       content: '';
       background-color: #fff;
       border: 3px solid $ec-grey75;
       border-radius: 50%;
-    }
-  }
 
-  .timeline__text {
-    margin-top: 0.2em;
-    margin-bottom: 1em;
-
-    ul,
-    ol {
-      list-style: none !important;
-      padding-left: 0;
-    }
-
-    ul > li {
-      color: $ec-grey75 !important;
-    }
-
-    & > * {
-      margin-bottom: 0 !important;
-    }
-  }
-}
-
-.btn {
-  &.btn-time-line {
-    @extend .btn-ctn;
-
-    margin-bottom: 0;
-
-    &::after {
-      content: '\e81f';
-    }
-  }
-}
-
-.timeline--nopadding {
-  padding-top: 0.5em;
-}
-
-.view-biography-timeline .view-footer {
-  float: left;
-  width: 100%;
-  margin-top: 1.667em !important;
-  margin-bottom: 1.667em;
-}
-
-@include breakpoint(screen-xs-min) {
-  .timeline {
-    .timeline__item-title {
-      &::before {
+      @include breakpoint(screen-xs-min) {
         margin-left: 2px;
       }
     }

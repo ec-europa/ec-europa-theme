@@ -23,6 +23,37 @@
     }
   };
 
+  Drupal.behaviors.timeline = {
+    attach: function (context) {
+      $('.timeline').once('timeline', function () {
+        // Add the expander functionality only if necessary.
+        if ($(this).data('expander-disable') != 1) {
+          var $timelineItem = $('.timeline .timeline__item'),
+              timelineItemsCount = $timelineItem.length,
+              timeLineButton = '<button class="btn btn-timeline">' + Drupal.t('Show all timeline') + '</button>';
+
+          if (timelineItemsCount > 4) {
+            $('.timeline__wrapper').append(timeLineButton);
+            $timelineItem.each(function (i) {
+              if (i > 3) {
+                $(this).addClass('hidden');
+              }
+            });
+
+            $('.btn-timeline', this.parent).click(function (event) {
+              event.preventDefault();
+              console.log('oi');
+              $(this).hide();
+              $timelineItem.removeClass('hidden');
+              // Refreshing scrollspy to recalculate the offset.
+              $('body').scrollspy('refresh');
+            });
+          }
+        }
+      });
+    }
+  };
+
   Drupal.behaviors.equal_blocks = {
     attach: function (context) {
       $('.equal-height').once('equal-height-blocks', function () {
