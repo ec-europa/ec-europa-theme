@@ -1066,6 +1066,11 @@ function europa_preprocess_taxonomy_term(&$variables) {
  * Implements hook_preprocess_page().
  */
 function europa_preprocess_page(&$variables) {
+  // Disable the region holding the breadcrumb if settings say so.
+  if (drupal_is_front_page() && !(theme_get_setting('ec_europa_breadcrumb_home'))) {
+    hide($variables['page']['header_bottom']);
+  }
+
   // Small fix to maxe the link to the start page use the alias with language.
   $variables['front_page'] = url('<front>');
 
