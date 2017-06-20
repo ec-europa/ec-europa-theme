@@ -1158,7 +1158,7 @@ function europa_preprocess_page(&$variables) {
 
       if (!empty($variables['page']['content']['system_main']['term_heading'])) {
         if (!empty($variables['page']['content']['system_main']['nodes'])) {
-          $variables['page']['content']['system_main']['nodes']['main'] = $main;
+          $variables['page']['content']['system_main']['nodes']['#main'] = $main;
           $variables['page']['content']['system_main']['nodes']['#pre_render'] = ['_europa_term_heading'];
         }
       }
@@ -1172,7 +1172,7 @@ function europa_preprocess_page(&$variables) {
  * Pre-render function for taxonomy pages.
  */
 function _europa_term_heading($element) {
-  $element['#prefix'] = '<div class="container-fluid"><div class="' . $element['main'] . '">';
+  $element['#prefix'] = '<div class="container-fluid"><div class="' . $element['#main'] . '">';
   $element['#suffix'] = '</div></div>';
   return $element;
 }
