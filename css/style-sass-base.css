@@ -4571,7 +4571,7 @@ ul.nav-tabs,
 .nav-tabs {
   max-width: inherit !important;
   padding: 0;
-  margin-bottom: 2em !important;
+  margin-bottom: 2em;
   border-bottom: 2px solid #9f9f9f; }
   ul.nav-tabs > li,
   .nav-tabs > li {
@@ -4654,6 +4654,35 @@ Implementation of WAI-ARIA attributes on nav tabs for the CWS.
 */
 .js-tabcontent[aria-hidden=true] {
   display: none; }
+
+.tabs-row {
+  background: #004494; }
+
+ul.tabs--primary {
+  position: relative;
+  top: -2px;
+  margin-bottom: 0;
+  border-bottom: none;
+  border-top: 1px solid white; }
+  ul.tabs--primary li a {
+    color: #fff;
+    border-width: 0;
+    font-size: 0.889em; }
+    ul.tabs--primary li a:hover {
+      color: #ffd617; }
+    ul.tabs--primary li a:focus {
+      color: #404040; }
+  ul.tabs--primary li a.active {
+    border-width: 0;
+    font-weight: bold; }
+    ul.tabs--primary li a.active:hover, ul.tabs--primary li a.active:focus {
+      background: #ffd617;
+      color: #404040;
+      border-width: 0; }
+
+ul.tabs--primary:hover {
+  border-bottom: none;
+  border-top: 1px solid #ffd617; }
 
 /*
 Paragraphs

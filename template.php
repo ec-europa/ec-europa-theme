@@ -1032,12 +1032,12 @@ function europa_preprocess_node(&$variables) {
  */
 function europa_preprocess_taxonomy_term(&$variables) {
   // Add tabs to node object so we can put it in the DS template instead.
-  if ($variables['view_mode'] == 'taxonomy_term_page' && user_is_logged_in()) {
+  if ($variables['view_mode'] == 'full' && user_is_logged_in()) {
     $tasks = menu_local_tasks();
 
     if (!empty($tasks)) {
-      $tasks['#prefix'] = '<div class="tabs--primary nav nav-tabs">';
-      $tasks['#suffix'] = '</div>';
+      $tasks['#prefix'] = '<ul class="tabs--primary nav nav-tabs">';
+      $tasks['#suffix'] = '</ul>';
       $variables['local_tabs'] = drupal_render($tasks);
     }
   }
