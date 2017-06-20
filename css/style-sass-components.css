@@ -720,16 +720,16 @@ Style guide: buttons
     background-color: #fff;
     color: #004494;
     border-color: #fff; }
-  .btn.btn-ctn, .inpage-nav__navbar .btn-ctn.inpage-nav__toggle, .inpage-nav__navbar .timeline__wrapper .inpage-nav__toggle.btn-timeline, .timeline__wrapper .inpage-nav__navbar .inpage-nav__toggle.btn-timeline, .timeline__wrapper .btn.btn-timeline {
+  .btn.btn-ctn, .inpage-nav__navbar .btn-ctn.inpage-nav__toggle, .inpage-nav__navbar .timeline .inpage-nav__toggle.btn-timeline, .timeline .inpage-nav__navbar .inpage-nav__toggle.btn-timeline, .timeline .btn.btn-timeline {
     background-color: #ffd617;
     color: #000; }
-    .btn.btn-ctn:hover, .inpage-nav__navbar .btn-ctn.inpage-nav__toggle:hover, .inpage-nav__navbar .timeline__wrapper .inpage-nav__toggle.btn-timeline:hover, .timeline__wrapper .inpage-nav__navbar .inpage-nav__toggle.btn-timeline:hover, .timeline__wrapper .btn.btn-timeline:hover, .btn.btn-ctn:active, .inpage-nav__navbar .btn-ctn.inpage-nav__toggle:active, .inpage-nav__navbar .timeline__wrapper .inpage-nav__toggle.btn-timeline:active, .timeline__wrapper .inpage-nav__navbar .inpage-nav__toggle.btn-timeline:active, .timeline__wrapper .btn.btn-timeline:active {
+    .btn.btn-ctn:hover, .inpage-nav__navbar .btn-ctn.inpage-nav__toggle:hover, .inpage-nav__navbar .timeline .inpage-nav__toggle.btn-timeline:hover, .timeline .inpage-nav__navbar .inpage-nav__toggle.btn-timeline:hover, .timeline .btn.btn-timeline:hover, .btn.btn-ctn:active, .inpage-nav__navbar .btn-ctn.inpage-nav__toggle:active, .inpage-nav__navbar .timeline .inpage-nav__toggle.btn-timeline:active, .timeline .inpage-nav__navbar .inpage-nav__toggle.btn-timeline:active, .timeline .btn.btn-timeline:active {
       background-color: #ffd617;
       border-color: #404040; }
-    .btn.btn-ctn:focus, .inpage-nav__navbar .btn-ctn.inpage-nav__toggle:focus, .inpage-nav__navbar .timeline__wrapper .inpage-nav__toggle.btn-timeline:focus, .timeline__wrapper .inpage-nav__navbar .inpage-nav__toggle.btn-timeline:focus, .timeline__wrapper .btn.btn-timeline:focus {
+    .btn.btn-ctn:focus, .inpage-nav__navbar .btn-ctn.inpage-nav__toggle:focus, .inpage-nav__navbar .timeline .inpage-nav__toggle.btn-timeline:focus, .timeline .inpage-nav__navbar .inpage-nav__toggle.btn-timeline:focus, .timeline .btn.btn-timeline:focus {
       border-color: #404040;
       outline-color: #404040; }
-    .btn.btn-ctn::after, .inpage-nav__navbar .btn-ctn.inpage-nav__toggle::after, .inpage-nav__navbar .timeline__wrapper .inpage-nav__toggle.btn-timeline::after, .timeline__wrapper .inpage-nav__navbar .inpage-nav__toggle.btn-timeline::after, .timeline__wrapper .btn.btn-timeline::after {
+    .btn.btn-ctn::after, .inpage-nav__navbar .btn-ctn.inpage-nav__toggle::after, .inpage-nav__navbar .timeline .inpage-nav__toggle.btn-timeline::after, .timeline .inpage-nav__navbar .inpage-nav__toggle.btn-timeline::after, .timeline .btn.btn-timeline::after {
       margin-left: 10px; }
   .btn.btn-menu, .inpage-nav__navbar .btn-menu.inpage-nav__toggle {
     background-color: #004494;
@@ -840,7 +840,7 @@ a.btn[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]), .inpage-nav__
     a.btn[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]).btn-block::after, .inpage-nav__navbar a[href^="http"].inpage-nav__toggle:not(.is-internal):not([href*="ec.europa.eu"]).btn-block::after {
       position: static;
       line-height: inherit; }
-  a.btn[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]).btn-ctn::after, .inpage-nav__navbar a[href^="http"].inpage-nav__toggle:not(.is-internal):not([href*="ec.europa.eu"]).btn-ctn::after, .inpage-nav__navbar .timeline__wrapper a[href^="http"].inpage-nav__toggle.btn-timeline:not(.is-internal):not([href*="ec.europa.eu"])::after, .timeline__wrapper .inpage-nav__navbar a[href^="http"].inpage-nav__toggle.btn-timeline:not(.is-internal):not([href*="ec.europa.eu"])::after, .timeline__wrapper a.btn[href^="http"].btn-timeline:not(.is-internal):not([href*="ec.europa.eu"])::after, a.btn[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]).btn-menu::after, .inpage-nav__navbar a[href^="http"].inpage-nav__toggle:not(.is-internal):not([href*="ec.europa.eu"]).btn-menu::after {
+  a.btn[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]).btn-ctn::after, .inpage-nav__navbar a[href^="http"].inpage-nav__toggle:not(.is-internal):not([href*="ec.europa.eu"]).btn-ctn::after, .inpage-nav__navbar .timeline a[href^="http"].inpage-nav__toggle.btn-timeline:not(.is-internal):not([href*="ec.europa.eu"])::after, .timeline .inpage-nav__navbar a[href^="http"].inpage-nav__toggle.btn-timeline:not(.is-internal):not([href*="ec.europa.eu"])::after, .timeline a.btn[href^="http"].btn-timeline:not(.is-internal):not([href*="ec.europa.eu"])::after, a.btn[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]).btn-menu::after, .inpage-nav__navbar a[href^="http"].inpage-nav__toggle:not(.is-internal):not([href*="ec.europa.eu"]).btn-menu::after {
     line-height: 2.0 !important; }
 
 /*
@@ -1083,7 +1083,7 @@ Style guide: icon
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-.icon--after, .btn.btn-ctn::after, .inpage-nav__navbar .btn-ctn.inpage-nav__toggle::after, .inpage-nav__navbar .timeline__wrapper .inpage-nav__toggle.btn-timeline::after, .timeline__wrapper .inpage-nav__navbar .inpage-nav__toggle.btn-timeline::after, .timeline__wrapper .btn.btn-timeline::after, .btn.btn-menu::after, .inpage-nav__navbar .btn-menu.inpage-nav__toggle::after, .is-external::after, a[href^="http"]:not([href*="ec.europa.eu"]):not(.is-internal):not(.listing__item-link)::after, .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .listing__title::after,
+.icon--after, .btn.btn-ctn::after, .inpage-nav__navbar .btn-ctn.inpage-nav__toggle::after, .inpage-nav__navbar .timeline .inpage-nav__toggle.btn-timeline::after, .timeline .inpage-nav__navbar .inpage-nav__toggle.btn-timeline::after, .timeline .btn.btn-timeline::after, .btn.btn-menu::after, .inpage-nav__navbar .btn-menu.inpage-nav__toggle::after, .is-external::after, a[href^="http"]:not([href*="ec.europa.eu"]):not(.is-internal):not(.listing__item-link)::after, .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .listing__title::after,
 .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .highlighted-item h3::after, .breadcrumb__link-arrow, a.breadcrumb__link::after, .no-js .breadcrumb__segment--first::before, .breadcrumb--collapsible .breadcrumb__btn-separator::after, .file__btn::after, .file__translations .file__translations-control::after, .gallery-overlay__media .gallery-overlay__media-previous a::before,
 .gallery-overlay__media .gallery-overlay__media-previous i::before,
 .gallery-overlay__media .gallery-overlay__media-next a::before,
@@ -1101,7 +1101,7 @@ Style guide: icon
   text-decoration: underline;
   speak: none; }
 
-.icon--after, .btn.btn-ctn::after, .inpage-nav__navbar .btn-ctn.inpage-nav__toggle::after, .inpage-nav__navbar .timeline__wrapper .inpage-nav__toggle.btn-timeline::after, .timeline__wrapper .inpage-nav__navbar .inpage-nav__toggle.btn-timeline::after, .timeline__wrapper .btn.btn-timeline::after, .btn.btn-menu::after, .inpage-nav__navbar .btn-menu.inpage-nav__toggle::after, .is-external::after, a[href^="http"]:not([href*="ec.europa.eu"]):not(.is-internal):not(.listing__item-link)::after, .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .listing__title::after,
+.icon--after, .btn.btn-ctn::after, .inpage-nav__navbar .btn-ctn.inpage-nav__toggle::after, .inpage-nav__navbar .timeline .inpage-nav__toggle.btn-timeline::after, .timeline .inpage-nav__navbar .inpage-nav__toggle.btn-timeline::after, .timeline .btn.btn-timeline::after, .btn.btn-menu::after, .inpage-nav__navbar .btn-menu.inpage-nav__toggle::after, .is-external::after, a[href^="http"]:not([href*="ec.europa.eu"]):not(.is-internal):not(.listing__item-link)::after, .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .listing__title::after,
 .listing__item .listing__title a[href^="http"]:not(.is-internal):not([href*="ec.europa.eu"]) .highlighted-item h3::after, .breadcrumb__link-arrow, a.breadcrumb__link::after, .no-js .breadcrumb__segment--first::before, .breadcrumb--collapsible .breadcrumb__btn-separator::after, .file__btn::after, .file__translations .file__translations-control::after, .gallery-overlay__media .gallery-overlay__media-previous a::before,
 .gallery-overlay__media .gallery-overlay__media-previous i::before,
 .gallery-overlay__media .gallery-overlay__media-next a::before,
@@ -1232,7 +1232,7 @@ Style guide: icon
 .icon--up, .icon--up::before {
   content: '\e827'; }
 
-.icon--right, .btn.btn-ctn::after, .inpage-nav__navbar .btn-ctn.inpage-nav__toggle::after, .inpage-nav__navbar .timeline__wrapper .inpage-nav__toggle.btn-timeline::after, .timeline__wrapper .inpage-nav__navbar .inpage-nav__toggle.btn-timeline::after, .timeline__wrapper .btn.btn-timeline::after, .btn.btn-menu::after, .inpage-nav__navbar .btn-menu.inpage-nav__toggle::after, .icon--right::before, .gallery-overlay__media .gallery-overlay__media-next a::before,
+.icon--right, .btn.btn-ctn::after, .inpage-nav__navbar .btn-ctn.inpage-nav__toggle::after, .inpage-nav__navbar .timeline .inpage-nav__toggle.btn-timeline::after, .timeline .inpage-nav__navbar .inpage-nav__toggle.btn-timeline::after, .timeline .btn.btn-timeline::after, .btn.btn-menu::after, .inpage-nav__navbar .btn-menu.inpage-nav__toggle::after, .icon--right::before, .gallery-overlay__media .gallery-overlay__media-next a::before,
 .gallery-overlay__media .gallery-overlay__media-next i::before, .listing__title--arrow::after, .listing--cta .listing__item .listing__title::after, .listing__read-more::after, .notification__content .notification__btn::after {
   content: '\e828'; }
 
@@ -7227,28 +7227,28 @@ Markup: html/timeline.html
 
 Style guide timeline
 */
-.timeline__wrapper {
+.timeline {
   border-left: 4px solid #ffd617; }
-  .timeline__wrapper .btn-timeline {
+  .timeline .btn-timeline {
     margin: 0 0 0 1.667em; }
-    .timeline__wrapper .btn-timeline::after {
+    .timeline .btn-timeline::after {
       content: '\e81f' !important; }
 
-.timeline {
+.timeline__list {
   list-style: none;
   position: relative;
   margin-bottom: 1.667em;
   padding: 2em 0 0 1.667em; }
-  .timeline .timeline__item p {
+  .timeline__list .timeline__list__item p {
     margin-bottom: 1em;
     color: #575757; }
-    .timeline .timeline__item p:last-child {
+    .timeline__list .timeline__list__item p:last-child {
       margin-bottom: 1.425em; }
-  .timeline .timeline__item-title {
+  .timeline__list .timeline__list__item-title {
     margin-bottom: 0.4em;
     line-height: 1em;
     font-weight: bold; }
-    .timeline .timeline__item-title::before {
+    .timeline__list .timeline__list__item-title::before {
       position: absolute;
       left: -0.6em;
       width: 14px;
@@ -7259,7 +7259,7 @@ Style guide timeline
       border: 3px solid #575757;
       border-radius: 50%; }
       @media (min-width: 480px) {
-        .timeline .timeline__item-title::before {
+        .timeline__list .timeline__list__item-title::before {
           margin-left: 2px; } }
 
 /*

@@ -6,7 +6,7 @@ Markup: html/timeline.html
 Style guide timeline
 */
 
-.timeline__wrapper {
+.timeline {
   border-left: 4px solid $ec-yellow;
 
   .btn-timeline {
@@ -20,13 +20,13 @@ Style guide timeline
   }
 }
 
-.timeline {
+.timeline__list {
   list-style: none;
   position: relative;
   margin-bottom: 1.667em;
   padding: 2em 0 0 1.667em;
 
-  .timeline__item {
+  .timeline__list__item {
     p {
       margin-bottom: 1em;
       color: $ec-grey75;
@@ -37,7 +37,7 @@ Style guide timeline
     }
   }
 
-  .timeline__item-title {
+  .timeline__list__item-title {
     margin-bottom: 0.4em;
     line-height: 1em;
     font-weight: bold;
