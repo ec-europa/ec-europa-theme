@@ -186,6 +186,4 @@
   </div>
 </section>
 
-<footer class="ecl-footer">
-  <?php print render($footer); ?>
-</footer>
+<?php print render($footer); ?>

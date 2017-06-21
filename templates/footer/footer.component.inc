@@ -11,6 +11,7 @@
 function europa_atomium_theme_footer() {
   return array(
     'footer' => array(
+      'variables' => array(),
       'template' => 'footer',
     ),
   );
