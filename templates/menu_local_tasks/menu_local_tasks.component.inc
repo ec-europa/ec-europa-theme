@@ -19,6 +19,9 @@ function europa_preprocess_menu_local_tasks(&$variables, $hook) {
     $variables['menu_tab_links'] = $variables['primary']['#items'];
     $variables['primary']['#attributes']['class'][] = 'ecl-navigation';
     $variables['primary']['#attributes']['class'][] = 'ecl-navigation--tabs';
+
+    // Set the default nav title which is mandatory in the Europa component.
+    $variables['primary']['#title'] = t('Navigation');
   }
 
   // Secondary menu tabs preprocess.
