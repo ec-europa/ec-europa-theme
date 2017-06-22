@@ -12,7 +12,11 @@
     "drupal/drupal": "7.*",
     "drush/drush": "*",
     "drupal/views": "*",
-    "drupal/atomium": "*"
+    "drupal/atomium": "*",
+    "drupal/libraries": "*",
+    "drupal/date": "*",
+    "drupal/entity_translation": "*",
+    "drupal/drupal-extension": "^3.3"
   },
   "conflict": {
     "drupal/core": "8.*"
