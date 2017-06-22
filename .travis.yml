@@ -43,7 +43,7 @@ before_script:
   - sleep 4s
   - cd ..
   - ln -s web/sites/all/themes/contrib/europa/tests/behat.yml.dist
-  - ln -s web/sites/all/themes/contrib/ec-europa-theme/tests/features
+  - ln -s web/sites/all/themes/contrib/europa/tests/features
 
 script:
   - ./vendor/bin/behat
