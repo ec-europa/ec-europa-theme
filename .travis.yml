@@ -41,9 +41,10 @@ before_script:
   - ../vendor/bin/drush cc all
   - ../vendor/bin/drush --debug runserver :8888 > ~/debug.txt 2>&1 &
   - sleep 4s
+  - cd ..
 
 script:
-  - `which true`
+  - ./vendor/bin/behat
 
 notifications:
   email: false
