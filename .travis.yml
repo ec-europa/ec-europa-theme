@@ -28,7 +28,6 @@ before_script:
   - mysql -e 'create database drupal'
   - mkdir test-site
   - cp tests/composer.json test-site
-  - cp tests/behat.yml.dist test-site
   - cd test-site
   - composer install
   # Install Drupal target site.
@@ -43,6 +42,7 @@ before_script:
   - ../vendor/bin/drush --debug runserver :8888 > ~/debug.txt 2>&1 &
   - sleep 4s
   - cd ..
+  - ln -s web/sites/all/themes/contrib/europa/tests/behat.yml.dist
 
 script:
   - ./vendor/bin/behat
