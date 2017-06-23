@@ -14,14 +14,6 @@ install:
   - composer self-update
 
 before_script:
-  - sudo apt-get install apache2 libapache2-mod-fastcgi
-  - sudo cp ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf.default ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf
-  - sudo a2enmod rewrite actions fastcgi alias
-  - echo "cgi.fix_pathinfo = 1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
-  - ~/.phpenv/versions/$(phpenv version-name)/sbin/php-fpm
-  - sudo cp -f .travis.vhost /etc/apache2/sites-available/default
-  - sudo sed -e "s,/var/www,$TRAVIS_BUILD_DIR/test-site/web,g" --in-place /etc/apache2/sites-available/default
-  - sudo service apache2 restart
   # Set sendmail so drush doesn't throw an error during site install.
   - echo "sendmail_path=`which true`" >> `php --ini | grep "Loaded Configuration" | awk '{print $4}'`
   # Create database.
@@ -39,7 +31,7 @@ before_script:
   - ../vendor/bin/drush vset theme_default europa
   - ../vendor/bin/drush dis overlay update -y
   - ../vendor/bin/drush cc all
-  - ../vendor/bin/drush --debug runserver :8888 > ~/debug.txt 2>&1 &
+  - ../vendor/bin/drush --debug runserver :80 > ~/debug.txt 2>&1 &
   - sleep 4s
   - cd ..
   - ln -s web/sites/all/themes/contrib/europa/tests/behat.yml.dist
