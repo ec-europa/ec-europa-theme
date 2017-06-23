@@ -12,4 +12,3 @@ Feature: Pager
     When I click "5" in the "pager"
     And I click "7" in the "pager"
     Then I should see "‹ Previous 1 … 3 4 5 6 Page 7 8 9 10 11 … 15 Next ›" in the "pager"
-
