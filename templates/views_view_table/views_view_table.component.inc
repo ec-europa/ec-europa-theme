@@ -24,7 +24,7 @@ function europa_atomium_theme_views_view_table() {
         'row_attributes' => array(),
         'column_attributes' => array(),
       ),
-      'template' => 'views-view-grid',
+      'template' => 'views-view-table',
     ),
   );
 }
