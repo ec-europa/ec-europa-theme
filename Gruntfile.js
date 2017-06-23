@@ -31,6 +31,18 @@ module.exports = function (grunt) {
         }
       }
     },
+    cacheBust: {
+      fonts: {
+        options: {
+          assets: ['fonts/europa-icons/*'],
+          deleteOriginals: true
+          // queryString: true.
+        },
+        files: [{
+          src: ['sass/components/_icon.scss']
+        }]
+      }
+    },
     shell: {
       kss: {
         command: './node_modules/.bin/kss --config kss-config.json'
@@ -71,10 +83,11 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-cache-bust');
   grunt.loadNpmTasks('grunt-shell');
 
   grunt.registerTask('default', ['watch']);
-  grunt.registerTask('styleguide', ['clean', 'sass', 'shell', 'copy:main']);
+  grunt.registerTask('styleguide', ['clean', 'sass', 'cacheBust', 'shell', 'copy:main']);
   grunt.registerTask('copyall', ['copy:all']);
   grunt.registerTask('copytest', ['copy:test']);
   grunt.registerTask('kss', ['shell']);
