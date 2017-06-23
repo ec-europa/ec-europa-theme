@@ -16,7 +16,7 @@ class FeatureContext extends RawDrupalContext {
         'type' =>  $type,
         'title' => ucfirst($type) . " " . $i,
       ];
-      $this->getDrupal()->getDriver()->createNode($node);
+      $this->nodeCreate($node);
     }
   }
 
