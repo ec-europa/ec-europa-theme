@@ -6,6 +6,34 @@
  */
 
 /**
+ * Implements hook_preprocess_HOOK().
+ */
+function europa_preprocess_menu_link(&$variables, $hook) {
+$link = $variables['element']['#original_link'];
+  switch ($link['menu_name']) {
+    case 'main-menu':
+      $variables['attributes_array']['class'][] = 'ecl-navigation-menu__item';
+      $variables['output']['#options']['attributes']['class'][] = 'ecl-navigation-menu__link';
+      if ($link['in_active_trail']) {
+        $variables['attributes_array']['class'][] = 'ecl-navigation-menu__item--active';
+        $variables['output']['#options']['attributes']['class'][] = 'ecl-navigation-menu__link--active';
+      }
+      break;
+  }
+}
+
+/**
+ * Override theme_menu_link().
+ */
+function europa_menu_link__main_menu(&$variables) {
+
+  echo '<pre>';
+  print_r($variables);
+  die();
+  return theme_menu_link($variables);
+}
+
+/**
  * Override theme_menu_link().
  */
 function europa_menu_link__user_menu(&$variables) {
