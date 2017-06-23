@@ -11,7 +11,12 @@
 function europa_atomium_theme_footer() {
   return array(
     'footer' => array(
-      'variables' => array(),
+      'variables' => array(
+        'footer_left' => NULL,
+        'footer_right' => NULL,
+        'footer_middle' => NULL,
+        'footer_bottom' => NULL,
+      ),
       'template' => 'footer',
     ),
   );
@@ -37,8 +42,8 @@ function europa_atomium_definition_footer() {
  * Implements hook_preprocess_HOOK().
  */
 function europa_preprocess_footer(&$variables, $hook) {
-  $variables['footer_left'] = block_get_blocks_by_region('footer_left');
-  $variables['footer_right'] = block_get_blocks_by_region('footer_right');
-  $variables['footer_middle'] = block_get_blocks_by_region('footer_middle');
-  $variables['footer_bottom'] = block_get_blocks_by_region('footer_bottom');
+  array_map(function ($item) use (&$variables) {
+    $region = 'footer_' . $item;
+    $variables[$region] = block_get_blocks_by_region($region);
+  }, array('left', 'right', 'middle', 'bottom'));
 }
