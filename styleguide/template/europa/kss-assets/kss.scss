@@ -67,13 +67,6 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
   h5 { font-size: $kss-font-size * 1.875; }
   h6 { font-size: $kss-font-size * 1.75;  }
 
-  blockquote {
-    color: $kss-colors-quotes;
-    margin: 0;
-    padding-left: $kss-vertical-rhythm;
-    border-left: 0.5em mix($kss-colors-quotes, $kss-colors-background, 25%) solid;
-  }
-
   hr {
     display: block;
     height: 2px;
@@ -148,7 +141,7 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
     a[href]:after { content: " (" attr(href) ")"; }
     a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
     abbr[title]:after { content: " (" attr(title) ")"; }
-    pre, blockquote { border: 1px solid #999; padding-right: 1em; page-break-inside: avoid; }
+    pre { border: 1px solid #999; padding-right: 1em; page-break-inside: avoid; }
     tr, img { page-break-inside: avoid; }
     img { max-width: 100% !important; }
     p, h2, h3 { orphans: 3; widows: 3; }

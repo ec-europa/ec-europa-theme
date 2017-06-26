@@ -27,7 +27,7 @@ function europa_atomium_definition_blockquote() {
     'label' => 'Blockquote',
     'description' => 'Blockquote.',
     'preview' => array(
-      'markup' => 'My blockquote.',
+      'markup' => 'Blockquote element.',
     ),
   );
 }
@@ -41,4 +41,5 @@ function europa_preprocess_blockquote(&$variables, $hook) {
       '#markup' => $variables['markup'],
     ),
   );
+  $variables['attributes_array']['class'][] = 'ecl-blockquote';
 }

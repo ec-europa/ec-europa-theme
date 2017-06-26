@@ -5,12 +5,12 @@
  * Contains component file.
  */
 ?>
-<div class="lang-select-site clearfix">
-  <a href="<?php print $url; ?>" class="lang-select-site__link">
-    <span class="lang-select-site__label"><?php print render($label); ?></span>
-    <span class="lang-select-site__code">
-      <span class="icon icon--language lang-select-site__icon"></span>
-      <span class="lang-select-site__code-text"><?php print render($code); ?></span>
+<div class="ecl-lang-select-sites">
+  <a href="<?php print $url; ?>" class="ecl-lang-select-sites__link">
+    <span class="ecl-lang-select-sites__label"><?php print render($label); ?></span>
+    <span class="ecl-lang-select-sites__code">
+      <span class="ecl-icon ecl-icon--language ecl-lang-select-sites__icon"></span>
+      <span class="ecl-lang-select-sites__code-text"><?php print render($code); ?></span>
     </span>
   </a>
 </div>
