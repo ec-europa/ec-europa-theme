@@ -10,6 +10,7 @@
  * Implements hook_preprocess_HOOK().
  */
 function europa_preprocess_menu_tree(&$variables, $hook) {
+  $variables['title'] = t('Menu');
   if (isset($variables['#tree'])) {
     $children = element_children($variables['#tree']);
     if (isset($children[0])) {
@@ -17,6 +18,9 @@ function europa_preprocess_menu_tree(&$variables, $hook) {
       if ($item) {
         $menu = menu_load($item['#original_link']['menu_name']);
         $variables['title'] = $menu['title'];
+        if ($variables['depth'] > 1) {
+          $variables['attributes_array']['id'][] = 'nav-menu-expandable-group-' . $item['#original_link']['plid'];
+        }
       }
     }
   }

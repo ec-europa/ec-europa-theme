@@ -18,19 +18,16 @@ $link = $variables['element']['#original_link'];
         $variables['attributes_array']['class'][] = 'ecl-navigation-menu__item--active';
         $variables['output']['#options']['attributes']['class'][] = 'ecl-navigation-menu__link--active';
       }
+      // If the menu item has a submenu and has a depth of 1 render it as a button.
+      if (!empty($variables['sub_menu']) && $link['depth'] == 1) {
+        $variables['output']['#options']['attributes']['id'][] = 'nav-menu-expandable-label-' . $link['mlid'];
+        $variables['output']['#options']['attributes']['aria-controls'][] = 'nav-menu-expandable-group-' . $link['mlid'];
+        $variables['output']['#options']['attributes']['aria-expanded'][] = 'false';
+        $variables['output']['#options']['attributes']['aria-haspopup'][] = 'true';
+        $variables['output'] = '<button ' . drupal_attributes($variables['output']['#options']['attributes']) . '>' . $variables['output']['#text'] . '</button>';
+      }
       break;
   }
-}
-
-/**
- * Override theme_menu_link().
- */
-function europa_menu_link__main_menu(&$variables) {
-
-  echo '<pre>';
-  print_r($variables);
-  die();
-  return theme_menu_link($variables);
 }
 
 /**
