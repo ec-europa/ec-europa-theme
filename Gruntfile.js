@@ -18,7 +18,7 @@ module.exports = function (grunt) {
         }
       },
       fonts: {
-        files: ['fonts/europa-icons/*'],
+        files: ['fonts/europa-icons-src/*'],
         tasks: ['cacheBust', 'clean', 'sass', 'shell', 'copy:main'],
         options: {
           interrupt: true,
@@ -42,9 +42,10 @@ module.exports = function (grunt) {
       fonts: {
         options: {
           baseDir: 'sass',
-          assets: ['../fonts/europa-icons/*'],
+          assets: ['../fonts/europa-icons-src/*'],
           length: 8,
-          deleteOriginals: true
+          outputDir: '../fonts/europa-icons/',
+          clearOutputDir: true
         },
         files: [{
           cwd: 'sass/components',
