@@ -34,12 +34,13 @@ module.exports = function (grunt) {
     cacheBust: {
       fonts: {
         options: {
-          assets: ['fonts/europa-icons/*'],
+          baseDir: 'sass',
+          assets: ['../fonts/europa-icons/europa-icons.woff'],
           deleteOriginals: true
-          // queryString: true.
         },
         files: [{
-          src: ['sass/components/_icon.scss']
+          cwd: 'sass/comeponents',
+          src: ['_icon.scss']
         }]
       }
     },
