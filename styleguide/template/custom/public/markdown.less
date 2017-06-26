@@ -97,13 +97,6 @@ h6 { font-size: 0.9em; }
 // ------------------------------------------------------------------------------
 //   @group General Typography
 // ------------------------------------------------------------------------------
-blockquote {
-	color: @md-colors-quotes;
-	margin: 0;
-	padding-left: 1.5em;
-	border-left: 0.5em mix(@md-colors-quotes, @md-colors-background, 25%) solid;
-}
-
 hr {
 	display: block;
 	height: 2px;
@@ -198,7 +191,7 @@ td {
 	a[href]:after { content: " (" attr(href) ")"; }
 	abbr[title]:after { content: " (" attr(title) ")"; }
 	.ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
-	pre, blockquote { border: 1px solid #999; padding-right: 1em; page-break-inside: avoid; }
+	pre { border: 1px solid #999; padding-right: 1em; page-break-inside: avoid; }
 	tr, img { page-break-inside: avoid; }
 	img { max-width: 100% !important; }
 	@page :left { margin: 15mm 20mm 15mm 10mm; }

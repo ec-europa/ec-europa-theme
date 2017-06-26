@@ -9,10 +9,22 @@
  * Implements hook_preprocess_HOOK().
  */
 function europa_preprocess_menu_local_tasks(&$variables, $hook) {
+  // Primary menu tabs preprocess.
   if (isset($variables['primary']) && !empty($variables['primary'])) {
-    $variables['primary']['#attributes']['class'][] = 'nav';
-    $variables['primary']['#attributes']['class'][] = 'nav-tabs';
+    // Quite the theme implementation set in Atomium in order to
+    // define the template as expected.
+    unset($variables['primary']['#theme']);
+    unset($variables['primary']['#type']);
+
+    $variables['menu_tab_links'] = $variables['primary']['#items'];
+    $variables['primary']['#attributes']['class'][] = 'ecl-navigation';
+    $variables['primary']['#attributes']['class'][] = 'ecl-navigation--tabs';
+
+    // Set the default nav title which is mandatory in the Europa component.
+    $variables['primary']['#title'] = t('Navigation');
   }
+
+  // Secondary menu tabs preprocess.
   if (isset($variables['secondary']) && !empty($variables['secondary'])) {
     $variables['secondary']['#attributes']['class'][] = 'nav';
     $variables['secondary']['#attributes']['class'][] = 'nav-pills';
