@@ -19,6 +19,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "postinstall": "find node_modules/ -name '*.info' -type f | xargs /bin/rm -f"
+    "postinstall": "find node_modules/ -name '*.info' -type f | xargs /bin/rm -f",
+    "postinstall": "patch node_modules/grunt-cache-bust/tasks/cachebust.js < .patches/cachebust.js.patch"
   }
 }

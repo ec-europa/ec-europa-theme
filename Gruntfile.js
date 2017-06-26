@@ -16,6 +16,13 @@ module.exports = function (grunt) {
         options: {
           livereload: true
         }
+      },
+      fonts: {
+        files: ['fonts/europa-icons/*'],
+        tasks: ['cacheBust', 'clean', 'sass', 'shell', 'copy:main'],
+        options: {
+          interrupt: true,
+        },
       }
     },
     clean: ['styleguide/assets'],
@@ -35,11 +42,12 @@ module.exports = function (grunt) {
       fonts: {
         options: {
           baseDir: 'sass',
-          assets: ['../fonts/europa-icons/europa-icons.woff'],
+          assets: ['../fonts/europa-icons/*'],
+          length: 8,
           deleteOriginals: true
         },
         files: [{
-          cwd: 'sass/comeponents',
+          cwd: 'sass/components',
           src: ['_icon.scss']
         }]
       }
@@ -88,6 +96,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-shell');
 
   grunt.registerTask('default', ['watch']);
+  grunt.registerTask('fonts', ['watch']);
   grunt.registerTask('styleguide', ['clean', 'sass', 'cacheBust', 'shell', 'copy:main']);
   grunt.registerTask('copyall', ['copy:all']);
   grunt.registerTask('copytest', ['copy:test']);
