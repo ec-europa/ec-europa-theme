@@ -1,0 +1,14 @@
+--- cachebust.js	2017-04-04 22:03:04.000000000 +0200
++++ cachebust.js.patched	2017-06-26 13:02:04.100290082 +0200
+@@ -95,9 +95,9 @@
+             _.each(assetMap, function(hashed, original) {
+                 var replace = [
+                     // abs path
+-                    ['/' + original, '/' + hashed],
++                    [original, hashed],
+                     // relative
+-                    [grunt.util.repeat(fileDepth, '../') + original, grunt.util.repeat(fileDepth, '../') + hashed],
++                    [grunt.util.repeat(fileDepth, '../') + original, grunt.util.repeat(fileDepth, '../') + hashed]
+                 ];
+                 // find relative paths for shared dirs
+                 var originalDirParts = path.dirname(original).split('/');
