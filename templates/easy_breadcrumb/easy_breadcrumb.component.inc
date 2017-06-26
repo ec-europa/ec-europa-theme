@@ -15,6 +15,7 @@ function europa_atomium_theme_easy_breadcrumb() {
         'breadcrumb' => NULL,
         'segments_quantity' => NULL,
         'separator' => NULL,
+        'here' => NULL,
       ),
       'template' => 'easy-breadcrumb',
     ),
