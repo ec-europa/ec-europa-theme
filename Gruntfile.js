@@ -12,20 +12,23 @@ module.exports = function (grunt) {
     watch: {
       sass: {
         files: ['**/*.{scss,sass}', 'sass/**/*.html'],
-        tasks: ['clean', 'sass', 'shell', 'copy:main'],
+        tasks: ['clean:styleguide', 'sass', 'shell', 'copy:main'],
         options: {
           livereload: true
         }
       },
       fonts: {
         files: ['fonts/europa-icons-src/*'],
-        tasks: ['cacheBust', 'clean', 'sass', 'shell', 'copy:main'],
+        tasks: ['cacheBustAll'],
         options: {
           interrupt: true,
         },
       }
     },
-    clean: ['styleguide/assets'],
+    clean: {
+      styleguide: ['styleguide/assets'],
+      fonts: ['fonts/europa-icons/*']
+    },
     sass: {
       options: {
         sourceMap: true
@@ -44,7 +47,7 @@ module.exports = function (grunt) {
           baseDir: 'sass',
           assets: ['../fonts/europa-icons-src/*'],
           length: 8,
-          outputDir: '../fonts/europa-icons/',
+          outputDir: '../fonts/europa-icons',
           clearOutputDir: true
         },
         files: [{
@@ -56,6 +59,24 @@ module.exports = function (grunt) {
     shell: {
       kss: {
         command: './node_modules/.bin/kss --config kss-config.json'
+      }
+    },
+    replace: {
+      prepare: {
+        src: ['sass/components/_icon.scss'],
+        dest: 'sass/components/_icon.scss',
+        replacements: [{
+          from: /fonts\/europa-icons\/europa-icons\.(.*?)\./g,
+          to: 'fonts/europa-icons-src/europa-icons.'
+        }]
+      },
+      restore: {
+        src: ['sass/components/_icon.scss'],
+        dest: 'sass/components/_icon.scss',
+        replacements: [{
+          from: 'europa-icons-src',
+          to: 'europa-icons'
+        }]
       }
     },
     copy: {
@@ -95,10 +116,12 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-cache-bust');
   grunt.loadNpmTasks('grunt-shell');
+  grunt.loadNpmTasks('grunt-text-replace');
 
   grunt.registerTask('default', ['watch']);
   grunt.registerTask('fonts', ['watch']);
-  grunt.registerTask('styleguide', ['clean', 'sass', 'cacheBust', 'shell', 'copy:main']);
+  grunt.registerTask('cacheBustAll', ['replace:prepare', 'clean:fonts', 'cacheBust:fonts', 'styleguide']);
+  grunt.registerTask('styleguide', ['clean:styleguide', 'sass', 'shell', 'copy:main']);
   grunt.registerTask('copyall', ['copy:all']);
   grunt.registerTask('copytest', ['copy:test']);
   grunt.registerTask('kss', ['shell']);
