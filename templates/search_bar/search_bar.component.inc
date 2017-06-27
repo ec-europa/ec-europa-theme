@@ -18,13 +18,3 @@ function europa_atomium_theme_search_bar() {
     ),
   );
 }
-
-/**
- * Implements hook_atomium_definition_HOOK().
- */
-function europa_atomium_definition_search_bar() {
-  return array(
-    'label' => 'Site search bar',
-    'description' => 'Site search bar.',
-  );
-}
