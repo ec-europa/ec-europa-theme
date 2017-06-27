@@ -51,18 +51,11 @@ It defines the following modifiers:
 - Listing no padding
 - Listing short spaced
 
+Markup: html/listing.html
+
 Style guide listing
 */
 
-/*
-Listing default
-
-Default implementation of the listing component.
-
-Markup: html/listing.html
-
-Style guide listing.1
-*/
 
 .listing {
   @include clearfix();

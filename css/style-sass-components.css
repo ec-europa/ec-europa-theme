@@ -4822,16 +4822,9 @@ It defines the following modifiers:
 - Listing no padding
 - Listing short spaced
 
-Style guide listing
-*/
-/*
-Listing default
-
-Default implementation of the listing component.
-
 Markup: html/listing.html
 
-Style guide listing.1
+Style guide listing
 */
 .listing:before, .listing:after {
   content: " ";
