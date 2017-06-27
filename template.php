@@ -100,5 +100,28 @@ function _europa_form_set_css_class(array &$element, array $classes = array()) {
   if (isset($element['#parents']) && form_get_error($element) !== NULL && !empty($element['#validated'])) {
     $element['#attributes']['class'][] = 'ecl-text-input--has-error';
   }
+}
 
+/**
+ * Returns HTML for a dropdown.
+ */
+function europa_dropdown(array $variables) {
+  $items = $variables['items'];
+  $output = "";
+  $links = array();
+
+  $select = array(
+    '#title' => t('Create content'),
+    '#type' => 'select',
+    '#description' => t('Create content'),
+    '#options' => array('#' => t('Create content')),
+  );
+
+  foreach ($items as $key => $value) {
+    $links[$value] = t($key);
+  }
+  $select['#options'] = array_merge( $select['#options'], $links);
+
+  $output = form_select_options($select);
+  return $output;
 }
