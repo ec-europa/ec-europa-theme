@@ -15,7 +15,7 @@ sass/app.css
 css/*css.map
 
 # Ignore js libraries
-js/libraries/
+assets/js/libraries/
 
 # Ignore styleguide
 styleguide/assets/
