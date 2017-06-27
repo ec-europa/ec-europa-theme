@@ -15,8 +15,12 @@ function europa_preprocess_menu_link(&$variables, $hook) {
       $variables['attributes_array']['class'][] = 'ecl-navigation-menu__item';
       $variables['output']['#options']['attributes']['class'][] = 'ecl-navigation-menu__link';
       if ($link['in_active_trail']) {
-        $variables['attributes_array']['class'][] = 'ecl-navigation-menu__item--active';
-        $variables['output']['#options']['attributes']['class'][] = 'ecl-navigation-menu__link--active';
+        if ($link['depth'] == 1) {
+          $variables['attributes_array']['class'][] = 'ecl-navigation-menu__item--active';
+        }
+        else {
+          $variables['output']['#options']['attributes']['class'][] = 'ecl-navigation-menu__link--active';
+        }
       }
       // If the menu item has a submenu and has a depth of 1,
       // render it as a button.
