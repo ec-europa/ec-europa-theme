@@ -84,16 +84,13 @@ function europa_preprocess_easy_breadcrumb(&$variables, $hook) {
         $classes[] = 'ecl-breadcrumbs__segment--last';
       }
 
-      $content = check_plain(decode_entities($item['content']));
       $class = implode(' ', $classes);
+      $full_item = $item['content'];
       if (isset($item['url'])) {
-        $full_item = l($content, $item['url'], [
+        $full_item = l($item['content'], $item['url'], [
           'attributes' => $attributes,
           'html' => TRUE,
         ]);
-      }
-      else {
-        $full_item = $content;
       }
 
       // TODO: Check if the active class actually appears.
@@ -110,7 +107,9 @@ function europa_preprocess_easy_breadcrumb(&$variables, $hook) {
  * Generate the first breadcrumb items basing on a custom menu.
  */
 function _europa_breadcrumb_menu(&$variables) {
-  $menu_links = menu_tree('menu-dt-breadcrumb-menu');
+  module_load_include('inc', 'easy_breadcrumb', 'includes/easy_breadcrumb.blocks');
+
+  $menu_links = menu_tree('menu-breadcrumb-menu');
   $new_items = [];
   global $language;
   $front = drupal_is_front_page();
@@ -134,7 +133,7 @@ function _europa_breadcrumb_menu(&$variables) {
     if (!empty($new_items)) {
       // The menu is used as the starting point of the breadcrumb.
       $variables['breadcrumb'] = array_merge($new_items,
-        $variables['breadcrumb']);
+        (array) $variables['breadcrumb']);
       // Alter the number of segments in the breadcrumb.
       $variables['segments_quantity'] += $i;
     }
