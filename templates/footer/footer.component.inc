@@ -39,13 +39,3 @@ function europa_atomium_definition_footer() {
     ),
   );
 }
-
-/**
- * Implements hook_preprocess_HOOK().
- */
-function europa_preprocess_footer(&$variables, $hook) {
-  array_map(function ($item) use (&$variables) {
-    $region = 'footer_' . $item;
-    $variables[$region] = block_get_blocks_by_region($region);
-  }, array('left', 'right', 'middle', 'bottom', 'improved'));
-}
