@@ -4815,27 +4815,16 @@ Listing
 
 Component used to render list of entities, usually the landing page of a class.
 It defines the following modifiers:
-- Listing with no border;
-- Listing with no stripe;
-- Listing of persons, Listing CTA;
-- Listing line left;
-- Listing no padding;
-- Listing short spaced;
-- Listing line left.
-
-The width of the element listing__item is limited to 32em, a modifier is
-available to reset this limit, the first two examples are using that.
-
-Style guide listing
-*/
-/*
-Listing default
-
-Default implementation of the listing component.
+- Listing with no border
+- Listing with no stripe
+- Listing CTA
+- Listing line left
+- Listing no padding
+- Listing short spaced
 
 Markup: html/listing.html
 
-Style guide listing.1
+Style guide listing
 */
 .listing:before, .listing:after {
   content: " ";
@@ -4848,13 +4837,13 @@ Style guide listing.1
   display: none; }
 
 /*
-Listing agenda
+Date listings
 
 Listing for event like entities.
 
 Markup: html/listing--agenda.html
 
-Style guide listing.5
+Style guide listing.3
 */
 .listing--agenda .listing__item p {
   margin: 0; }
@@ -4877,20 +4866,26 @@ Style guide listing.5
   border-top: none; }
 
 /*
-Simple listing (title + text) modifiers
+Homepage Listings
 
-In this section we collect many modifiers, in the example the listing--teaser version of the component has been used.
+Specific style for home page listings
+
+Markup: html/listing--homepage.html
+
+Style guide listing.5
+*/
+/*
+Listings variants
 
 Markup: html/listing--teaser.html
 
-.listing--cta - Listing CTA
 .listing--short-spaced - Listing short spaced
 .listing--line-left - Listing line left
 .listing--no-border - Listing with no border
 .listing--nostripe - Listing with no stripe
 .listing--meta     - Listing meta
 
-Style guide listing.3
+Style guide listing.6
 */
 .listing--line-left .listing__title {
   font-size: 1.222em; }
@@ -4971,7 +4966,7 @@ The following example is a general one, using "Section" styling.
 
 Markup: html/listing--navigation.html
 
-Style guide listing.6
+Style guide listing.7
 */
 .listing--navigation .listing__item-link {
   display: block;
@@ -5165,13 +5160,13 @@ Style guide listing.6
     padding-top: 0.4em; } }
 
 /*
-Listing column left
+Listing thumbnails
 
-This is actually a modifier that applies changes to the listing__item element.
+This is a modifier that applies changes to the listing__item element.
 
 Markup: html/listing--column-left.html
 
-Style guide listing.1.2
+Style guide listing.2
 */
 .listing--column-left .listing__column-main {
   width: auto;
@@ -5185,7 +5180,7 @@ Style guide listing.1.2
   padding-right: 15px; }
 
 /*
-Listing title
+Title listings
 
 Listing title is the component modifier used to style a list of titles.
 
@@ -5220,7 +5215,7 @@ Listing layouts
 Listing layouts are implemented as modifiers of the listing__wrapper element
 which is actually the container of the component.
 
-Style guide listing.2
+Style guide listing.8
 */
 /*
 Listing two columns
@@ -5229,7 +5224,7 @@ This is a way to put two listings in two different columns.
 
 Markup: html/listing__wrapper--two-columns.html
 
-Style guide listing.2.1
+Style guide listing.8.1
 */
 /*
 Listing three columns
@@ -5238,16 +5233,16 @@ This is a way to put three listings in three different columns.
 
 Markup: html/listing__wrapper--three-columns.html
 
-Style guide listing.2.2
+Style guide listing.8.2
 */
 /*
-Listing three columns with featured item
+Listing three columns
 
 Listings with featured items in three columns.
 
 Markup: html/listing__wrapper--three-columns-featured-item.html
 
-Style guide listing.2.3
+Style guide listing.8.3
 */
 /*
 Listing item two rows
@@ -5256,7 +5251,7 @@ This is a way to put two listing_item in the same row.
 
 Markup: html/listing__wrapper--row-two.html
 
-Style guide listing.2.4
+Style guide listing.8.4
 */
 /*
 Listing item three rows
@@ -5265,7 +5260,7 @@ This is a way to put three listing_item in the same row.
 
 Markup: html/listing__wrapper--row-three.html
 
-Style guide listing.2.5
+Style guide listing.8.5
 */
 .listing__wrapper--maxwidth .listing__item {
   max-width: none; }
