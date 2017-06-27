@@ -9,7 +9,7 @@
  * Implements hook_preprocess_HOOK().
  */
 function europa_preprocess_menu_link(&$variables, $hook) {
-$link = $variables['element']['#original_link'];
+  $link = $variables['element']['#original_link'];
   switch ($link['menu_name']) {
     case 'main-menu':
       $variables['attributes_array']['class'][] = 'ecl-navigation-menu__item';
@@ -18,7 +18,8 @@ $link = $variables['element']['#original_link'];
         $variables['attributes_array']['class'][] = 'ecl-navigation-menu__item--active';
         $variables['output']['#options']['attributes']['class'][] = 'ecl-navigation-menu__link--active';
       }
-      // If the menu item has a submenu and has a depth of 1 render it as a button.
+      // If the menu item has a submenu and has a depth of 1,
+      // render it as a button.
       if (!empty($variables['sub_menu']) && $link['depth'] == 1) {
         $variables['output']['#options']['attributes']['id'][] = 'nav-menu-expandable-label-' . $link['mlid'];
         $variables['output']['#options']['attributes']['aria-controls'][] = 'nav-menu-expandable-group-' . $link['mlid'];
