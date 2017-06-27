@@ -5,17 +5,16 @@
  * Contains component file.
  */
 ?>
-  <div class="container-fluid site-header__container">
+<header class="ecl-site-header ecl-site-header--homepage" role="banner">
+ <div class="container-fluid ecl-site-header__container">
+ <section class="ecl-site-header__top-bar" aria-label="Site tools">
+   <div class="ecl-site-header__top-bar__wrapper">
+     <?php print render($lang_select_site); ?>
+   </div>
+ </section>
     <?php print render($logo); ?>
     <?php print render($site_slogan); ?>
-    <section class="top-bar" aria-label="Site tools">
-      <div class="top-bar__wrapper">
-        <?php print render($lang_select_site); ?>
-        <?php print render($search_bar); ?>
-         <h1 class="sr-only"><?php print $site_name; ?></h1>
-        <section class="site-menu__toggle">
-          <button class="btn btn-menu"><?php print $menu_str; ?></button>
-        </section>
-      </div>
-    </section>
+    <span class="ecl-sr-only"><?php print $site_name; ?></span>
+    <?php print render($search_bar); ?>
   </div>
+</header>
