@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Display Suite NE Bootstrap One Column Section Item.
+ * Display Suite NE One Column Section Item.
  */
 ?>
 <div class="listing listing--navigation">
