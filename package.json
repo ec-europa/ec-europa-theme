@@ -21,6 +21,6 @@
   },
   "scripts": {
     "postinstall": "find node_modules/ -name '*.info' -type f | xargs /bin/rm -f",
-    "postinstall": "patch node_modules/grunt-cache-bust/tasks/cachebust.js < .patches/cachebust.js.patch"
+    "postinstall": "patch --binary node_modules/grunt-cache-bust/tasks/cachebust.js < .patches/cachebust.js.patch"
   }
 }

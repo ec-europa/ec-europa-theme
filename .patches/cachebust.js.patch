@@ -1,14 +1,25 @@
---- cachebust.js	2017-04-04 22:03:04.000000000 +0200
-+++ cachebust.js.patched	2017-06-26 13:02:04.100290082 +0200
-@@ -95,9 +95,9 @@
+From 7c53d5e27cdeb69698bc30734e6b62236c53fb9b Mon Sep 17 00:00:00 2001
+From: planctus <davidepuntoferrante@gmail.com>
+Date: Wed, 28 Jun 2017 11:35:22 +0200
+Subject: [PATCH] patch
+
+---
+ cachebust.js | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/cachebust.js b/cachebust.js
+index d313ce2..5a6955f 100644
+--- a/cachebust.js
++++ b/cachebust.js
+@@ -95,7 +95,7 @@ module.exports = function(grunt) {
              _.each(assetMap, function(hashed, original) {
                  var replace = [
                      // abs path
 -                    ['/' + original, '/' + hashed],
 +                    [original, hashed],
                      // relative
--                    [grunt.util.repeat(fileDepth, '../') + original, grunt.util.repeat(fileDepth, '../') + hashed],
-+                    [grunt.util.repeat(fileDepth, '../') + original, grunt.util.repeat(fileDepth, '../') + hashed]
+                     [grunt.util.repeat(fileDepth, '../') + original, grunt.util.repeat(fileDepth, '../') + hashed],
                  ];
-                 // find relative paths for shared dirs
-                 var originalDirParts = path.dirname(original).split('/');
+-- 
+2.7.4
+
