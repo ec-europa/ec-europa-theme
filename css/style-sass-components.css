@@ -582,9 +582,9 @@ a.label:hover, a.label:focus {
   .label-warning[href]:hover, .label-warning[href]:focus {
     background-color: #ec971f; }
 
-.label-danger, .label--danger {
+.label-danger {
   background-color: #d9534f; }
-  .label-danger[href]:hover, [href].label--danger:hover, .label-danger[href]:focus, [href].label--danger:focus {
+  .label-danger[href]:hover, .label-danger[href]:focus {
     background-color: #c9302c; }
 
 .fade {
@@ -4536,10 +4536,11 @@ Markup: html/labels.html
 .label--highlight - Status open
 .label--status-closed - Status closed
 .label--status-upcoming - Status upcoming
-.label--danger - Danger
 .label--meta - Meta
 .label--meta-medium - Meta medium
-.label--high  - Meta high
+.label--high - Meta high
+.label--next - Next
+.label--no-padding-left - No padding left
 
 Styleguide labels
 */
@@ -4552,19 +4553,6 @@ Styleguide labels
   color: #404040;
   border-radius: 0;
   text-transform: uppercase; }
-
-.label--next {
-  background-color: #ffde39; }
-
-.label--danger {
-  color: #fff; }
-
-.label--highlight {
-  background-color: #ffd617;
-  color: #404040; }
-  .label--highlight.label--meta::after, .label--highlight.label--meta-medium::after {
-    content: "";
-    margin: 0; }
 
 .label--status-closed {
   background-color: #ebebeb;
@@ -4580,15 +4568,25 @@ Styleguide labels
   line-height: 2.75em;
   font-size: 0.778em; }
 
-.label--no-padding-left {
-  padding-left: 0; }
-
 .label--meta, .label--meta-medium {
   margin: 0.25em 1.3em 0.3em 0; }
 
 .label--meta-medium {
   margin: 0.35em 0.5em 0.45em 0;
   font-size: 0.75em; }
+
+.label--highlight {
+  background-color: #ffd617;
+  color: #404040; }
+  .label--highlight.label--meta::after, .label--highlight.label--meta-medium::after {
+    content: "";
+    margin: 0; }
+
+.label--next {
+  background-color: #ffde39; }
+
+.label--no-padding-left {
+  padding-left: 0; }
 
 /*
 Language select (Site)

@@ -6,10 +6,11 @@ Markup: html/labels.html
 .label--highlight - Status open
 .label--status-closed - Status closed
 .label--status-upcoming - Status upcoming
-.label--danger - Danger
 .label--meta - Meta
 .label--meta-medium - Meta medium
-.label--high  - Meta high
+.label--high - Meta high
+.label--next - Next
+.label--no-padding-left - No padding left
 
 Styleguide labels
 */
@@ -23,28 +24,6 @@ Styleguide labels
   color: $ec-grey;
   border-radius: 0;
   text-transform: uppercase;
-}
-
-.label--next {
-  background-color: $ec-yellow75;
-}
-
-.label--danger {
-  @extend .label-danger;
-
-  color: #fff;
-}
-
-.label--highlight {
-  background-color: $ec-yellow;
-  color: $ec-grey;
-
-  &.label--meta {
-    &::after {
-      content: "";
-      margin: 0;
-    }
-  }
 }
 
 .label--status-closed {
@@ -64,10 +43,6 @@ Styleguide labels
   font-size: $font-size-xsmall;
 }
 
-.label--no-padding-left {
-  padding-left: 0;
-}
-
 .label--meta {
   @extend .meta__item;
 
@@ -79,4 +54,24 @@ Styleguide labels
 
   margin: 0.35em 0.5em 0.45em 0;
   font-size: 0.75em;
+}
+
+.label--highlight {
+  background-color: $ec-yellow;
+  color: $ec-grey;
+
+  &.label--meta {
+    &::after {
+      content: "";
+      margin: 0;
+    }
+  }
+}
+
+.label--next {
+  background-color: $ec-yellow75;
+}
+
+.label--no-padding-left {
+  padding-left: 0;
 }
