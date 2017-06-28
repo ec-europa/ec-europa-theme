@@ -10,7 +10,6 @@ Markup: html/labels.html
 .label--meta-medium - Meta medium
 .label--high - Meta high
 .label--status - Status
-.label--upper - Uppercase label
 .label--next - Next
 
 Styleguide labels
@@ -75,11 +74,6 @@ Styleguide labels
 
 .label--next {
   background-color: $ec-yellow75;
-}
-
-.label--upper {
-  text-align: left;
-  text-transform: uppercase;
 }
 
 .label--status {
