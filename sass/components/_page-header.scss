@@ -53,7 +53,7 @@ Style guide: page-header.5
 
 .page-header {
   margin: 0;
-  padding: 0 0 1.25em;
+  padding: 0;
   background-color: $brand-primary;
   color: #fff;
   border-bottom: none;
@@ -82,10 +82,12 @@ Style guide: page-header.5
       font-size: $font-size-mid;
       color: $ec-blue25;
       font-weight: normal;
+      margin-bottom: 1.25em;
     }
 
     + .page-header__hero-title {
       padding-top: 1em;
+      margin-top: -1.25em;
 
       .col-lg-9 {
         h1 {
@@ -146,6 +148,7 @@ Style guide: page-header.5
 
   .page-header__hero-title {
     padding-top: 2.39em;
+    padding-bottom: 1.25em;
   }
 }
 

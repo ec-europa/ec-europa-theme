@@ -7,10 +7,10 @@
 @import "../bootstrap-sass/bootstrap/responsive-embed";
 
 // Importing bootstrap variables
-@import "mixins";
+@import "global/mixins";
 
 // Importing simple helpers.
-@import "helpers_components";
+@import "helpers/helpers-components";
 
 // Needed Base Components
 @import "base/btn";
@@ -27,7 +27,6 @@
 @import "components/date-block";
 @import "components/datepicker";
 @import "components/expandable";
-@import "components/facet";
 @import "components/featured-item";
 @import "components/feedback-form";
 @import "components/field";
@@ -71,4 +70,4 @@
 @import "components/table-responsive";
 
 // Drupal hacks
-@import "drupal-hacks";
+@import "helpers/drupal-hacks";
