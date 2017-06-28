@@ -9,8 +9,9 @@ Markup: html/labels.html
 .label--meta - Meta
 .label--meta-medium - Meta medium
 .label--high - Meta high
+.label--status - Status
+.label--upper - Uppercase label
 .label--next - Next
-.label--no-padding-left - No padding left
 
 Styleguide labels
 */
@@ -24,6 +25,10 @@ Styleguide labels
   color: $ec-grey;
   border-radius: 0;
   text-transform: uppercase;
+}
+
+.label--no-padding-left {
+  padding-left: 0;
 }
 
 .label--status-closed {
@@ -72,6 +77,12 @@ Styleguide labels
   background-color: $ec-yellow75;
 }
 
-.label--no-padding-left {
-  padding-left: 0;
+.label--upper {
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.label--status {
+  background-color: $ec-grey10;
+  color: $ec-grey;
 }

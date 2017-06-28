@@ -4539,8 +4539,9 @@ Markup: html/labels.html
 .label--meta - Meta
 .label--meta-medium - Meta medium
 .label--high - Meta high
+.label--status - Status
+.label--upper - Uppercase label
 .label--next - Next
-.label--no-padding-left - No padding left
 
 Styleguide labels
 */
@@ -4553,6 +4554,9 @@ Styleguide labels
   color: #404040;
   border-radius: 0;
   text-transform: uppercase; }
+
+.label--no-padding-left {
+  padding-left: 0; }
 
 .label--status-closed {
   background-color: #ebebeb;
@@ -4585,8 +4589,13 @@ Styleguide labels
 .label--next {
   background-color: #ffde39; }
 
-.label--no-padding-left {
-  padding-left: 0; }
+.label--upper {
+  text-align: left;
+  text-transform: uppercase; }
+
+.label--status {
+  background-color: #ebebeb;
+  color: #404040; }
 
 /*
 Language select (Site)
