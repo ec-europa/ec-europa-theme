@@ -3,18 +3,16 @@ Labels
 
 Markup: html/labels.html
 
-.label--default - Default
-.label--status - Status
-.label--highlight - Highlight
+.label--highlight - Status open
+.label--status-closed - Status closed
+.label--status-upcoming - Status upcoming
 .label--meta - Meta
-.label--upper - Uppercase label
-.label--primary - Primary
-.label--success - Success
-.label--info - Info
-.label--warning - Warning
-.label--danger - Danger
+.label--meta-medium - Meta medium
+.label--high - Meta high
+.label--next - Next
+.label--no-padding-left - No padding left
 
-Style guide labels
+Styleguide labels
 */
 
 .label {
@@ -25,51 +23,37 @@ Style guide labels
   letter-spacing: 0.12em;
   color: $ec-grey;
   border-radius: 0;
-}
-
-.label--default {
-  @extend .label-default;
-
-  color: #fff;
-}
-
-.label--primary {
-  @extend .label-primary;
-
-  color: #fff;
-}
-
-.label--success {
-  @extend .label-success;
-
-  color: #fff;
-}
-
-.label--info {
-  @extend .label-info;
-
-  color: #fff;
-}
-
-.label--warning {
-  @extend .label-warning;
-
-  color: #fff;
-}
-
-.label--next {
-  background-color: $ec-yellow75;
-}
-
-.label--danger {
-  @extend .label-danger;
-
-  color: #fff;
-}
-
-.label--upper {
-  text-align: left;
   text-transform: uppercase;
+}
+
+.label--status-closed {
+  background-color: $ec-grey10;
+  color: $ec-grey;
+}
+
+.label--status-upcoming {
+  background-color: $ec-yellow25;
+  color: $ec-grey;
+}
+
+.label--high {
+  min-height: 2.75em;
+  padding: 0.3em 1em;
+  line-height: 2.75em;
+  font-size: $font-size-xsmall;
+}
+
+.label--meta {
+  @extend .meta__item;
+
+  margin: 0.25em 1.3em 0.3em 0;
+}
+
+.label--meta-medium {
+  @extend .label--meta;
+
+  margin: 0.35em 0.5em 0.45em 0;
+  font-size: 0.75em;
 }
 
 .label--highlight {
@@ -84,36 +68,10 @@ Style guide labels
   }
 }
 
-.label--status {
-  background-color: $ec-grey10;
-  color: $ec-grey;
-}
-
-.label--block {
-  display: inline-block;
-  margin-bottom: 0.833em;
-}
-
-.label--high {
-  min-height: 2.75em;
-  padding: 0.3em 1em;
-  line-height: 2.75em;
-  font-size: $font-size-xsmall;
+.label--next {
+  background-color: $ec-yellow75;
 }
 
 .label--no-padding-left {
   padding-left: 0;
-}
-
-.label--meta {
-  @extend .meta__item;
-
-  margin: 0.25em 1.3em 0.3em 0;
-}
-
-.label--meta-medium {
-  @extend .label--meta;
-
-  margin: 0.35em 0.5em 0.45em 0;
-  font-size: 75%;
 }

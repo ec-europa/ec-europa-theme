@@ -557,34 +557,34 @@ a.label:hover, a.label:focus {
   text-decoration: none;
   cursor: pointer; }
 
-.label-default, .label--default {
+.label-default {
   background-color: #777777; }
-  .label-default[href]:hover, [href].label--default:hover, .label-default[href]:focus, [href].label--default:focus {
+  .label-default[href]:hover, .label-default[href]:focus {
     background-color: #5e5e5e; }
 
-.label-primary, .label--primary {
+.label-primary {
   background-color: #337ab7; }
-  .label-primary[href]:hover, [href].label--primary:hover, .label-primary[href]:focus, [href].label--primary:focus {
+  .label-primary[href]:hover, .label-primary[href]:focus {
     background-color: #286090; }
 
-.label-success, .label--success {
+.label-success {
   background-color: #5cb85c; }
-  .label-success[href]:hover, [href].label--success:hover, .label-success[href]:focus, [href].label--success:focus {
+  .label-success[href]:hover, .label-success[href]:focus {
     background-color: #449d44; }
 
-.label-info, .label--info {
+.label-info {
   background-color: #5bc0de; }
-  .label-info[href]:hover, [href].label--info:hover, .label-info[href]:focus, [href].label--info:focus {
+  .label-info[href]:hover, .label-info[href]:focus {
     background-color: #31b0d5; }
 
-.label-warning, .label--warning {
+.label-warning {
   background-color: #f0ad4e; }
-  .label-warning[href]:hover, [href].label--warning:hover, .label-warning[href]:focus, [href].label--warning:focus {
+  .label-warning[href]:hover, .label-warning[href]:focus {
     background-color: #ec971f; }
 
-.label-danger, .label--danger {
+.label-danger {
   background-color: #d9534f; }
-  .label-danger[href]:hover, [href].label--danger:hover, .label-danger[href]:focus, [href].label--danger:focus {
+  .label-danger[href]:hover, .label-danger[href]:focus {
     background-color: #c9302c; }
 
 .fade {
@@ -4533,18 +4533,16 @@ Labels
 
 Markup: html/labels.html
 
-.label--default - Default
-.label--status - Status
-.label--highlight - Highlight
+.label--highlight - Status open
+.label--status-closed - Status closed
+.label--status-upcoming - Status upcoming
 .label--meta - Meta
-.label--upper - Uppercase label
-.label--primary - Primary
-.label--success - Success
-.label--info - Info
-.label--warning - Warning
-.label--danger - Danger
+.label--meta-medium - Meta medium
+.label--high - Meta high
+.label--next - Next
+.label--no-padding-left - No padding left
 
-Style guide labels
+Styleguide labels
 */
 .label {
   display: inline-block;
@@ -4553,32 +4551,29 @@ Style guide labels
   font-weight: normal;
   letter-spacing: 0.12em;
   color: #404040;
-  border-radius: 0; }
-
-.label--default {
-  color: #fff; }
-
-.label--primary {
-  color: #fff; }
-
-.label--success {
-  color: #fff; }
-
-.label--info {
-  color: #fff; }
-
-.label--warning {
-  color: #fff; }
-
-.label--next {
-  background-color: #ffde39; }
-
-.label--danger {
-  color: #fff; }
-
-.label--upper {
-  text-align: left;
+  border-radius: 0;
   text-transform: uppercase; }
+
+.label--status-closed {
+  background-color: #ebebeb;
+  color: #404040; }
+
+.label--status-upcoming {
+  background-color: #fff4bb;
+  color: #404040; }
+
+.label--high {
+  min-height: 2.75em;
+  padding: 0.3em 1em;
+  line-height: 2.75em;
+  font-size: 0.778em; }
+
+.label--meta, .label--meta-medium {
+  margin: 0.25em 1.3em 0.3em 0; }
+
+.label--meta-medium {
+  margin: 0.35em 0.5em 0.45em 0;
+  font-size: 0.75em; }
 
 .label--highlight {
   background-color: #ffd617;
@@ -4587,29 +4582,11 @@ Style guide labels
     content: "";
     margin: 0; }
 
-.label--status {
-  background-color: #ebebeb;
-  color: #404040; }
-
-.label--block {
-  display: inline-block;
-  margin-bottom: 0.833em; }
-
-.label--high {
-  min-height: 2.75em;
-  padding: 0.3em 1em;
-  line-height: 2.75em;
-  font-size: 0.778em; }
+.label--next {
+  background-color: #ffde39; }
 
 .label--no-padding-left {
   padding-left: 0; }
-
-.label--meta, .label--meta-medium {
-  margin: 0.25em 1.3em 0.3em 0; }
-
-.label--meta-medium {
-  margin: 0.35em 0.5em 0.45em 0;
-  font-size: 75%; }
 
 /*
 Language select (Site)
