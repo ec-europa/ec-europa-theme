@@ -64,12 +64,6 @@ function europa_preprocess_status_messages(&$variables, $hook) {
     );
   }
 
-  // TODO: Should we use this or provide a status_messages.js in the component
-  // TODO: directory ?
-  drupal_add_js(
-    drupal_get_path('theme', 'europa') . '/assets/bootstrap-sass/js/bootstrap/alert.js'
-  );
-
   $variables[$hook] = array(
     $hook => $output,
   );
