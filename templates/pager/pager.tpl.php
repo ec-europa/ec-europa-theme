@@ -5,6 +5,7 @@
  * Contains template file.
  */
 ?>
+<?php if (!empty($pager)): ?>
 <div class="ecl-pager__wrapper">
   <ul class="ecl-pager">
 
@@ -47,3 +48,4 @@
     <?php endif ?>
   </ul>
 </div>
+<?php endif ?>
