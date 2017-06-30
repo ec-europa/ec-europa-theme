@@ -37,10 +37,8 @@
  * - $is_admin: Flags true when the current user is an administrator.
  * - $block_html_id: A valid HTML ID and guaranteed unique.
  *
- * @see bootstrap_preprocess_block()
  * @see template_preprocess()
  * @see template_preprocess_block()
- * @see bootstrap_process_block()
  * @see template_process()
  *
  * @ingroup themeable
