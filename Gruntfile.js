@@ -12,7 +12,7 @@ module.exports = function (grunt) {
     watch: {
       sass: {
         files: ['**/*.{scss,sass}', 'sass/**/*.html'],
-        tasks: ['clean', 'sass', 'shell', 'copy:main'],
+        tasks: ['sasslint', 'clean', 'sass', 'shell', 'copy:main'],
         options: {
           livereload: true
         }
@@ -35,6 +35,13 @@ module.exports = function (grunt) {
       kss: {
         command: './node_modules/.bin/kss --config kss-config.json'
       }
+    },
+    sasslint: {
+      options: {
+        bench: true,
+        config: '~/.sasslint.json'
+      },
+      target: ['sass/**/*.{scss,sass}', 'sass/*.{scss,sass}']
     },
     copy: {
       main: {
@@ -70,6 +77,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks('grunt-sass-lint');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-shell');
 
@@ -78,4 +86,5 @@ module.exports = function (grunt) {
   grunt.registerTask('copyall', ['copy:all']);
   grunt.registerTask('copytest', ['copy:test']);
   grunt.registerTask('kss', ['shell']);
+  grunt.registerTask('sass-lint', ['sasslint']);
 };
