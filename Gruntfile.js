@@ -12,7 +12,7 @@ module.exports = function (grunt) {
     watch: {
       sass: {
         files: ['**/*.{scss,sass}', 'sass/**/*.html'],
-        tasks: ['clean', 'sass', 'shell', 'copy:main'],
+        tasks: ['clean', 'sass', 'postcss', 'shell', 'copy:main'],
         options: {
           livereload: true
         }
@@ -34,6 +34,18 @@ module.exports = function (grunt) {
     shell: {
       kss: {
         command: './node_modules/.bin/kss --config kss-config.json'
+      }
+    },
+    postcss: {
+      options: {
+        map: true,
+        processors: [
+          require('autoprefixer')({browsers: 'last 2 versions'}),
+          require('cssnano')()
+        ]
+      },
+      dist: {
+        src: 'css/*.css'
       }
     },
     copy: {
@@ -72,9 +84,10 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-shell');
+  grunt.loadNpmTasks('grunt-postcss');
 
   grunt.registerTask('default', ['watch']);
-  grunt.registerTask('styleguide', ['clean', 'sass', 'shell', 'copy:main']);
+  grunt.registerTask('styleguide', ['clean', 'sass', 'postcss', 'shell', 'copy:main']);
   grunt.registerTask('copyall', ['copy:all']);
   grunt.registerTask('copytest', ['copy:test']);
   grunt.registerTask('kss', ['shell']);
