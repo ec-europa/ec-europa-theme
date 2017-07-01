@@ -15,6 +15,7 @@
     "grunt-sass": "~2.0.0",
     "grunt-postcss": "~0.8.0",
     "grunt-shell": "~2.1.0",
+    "postcss-discard-comments": "~2.0.2",
     "kss": "~3.0.0-beta.16",
     "node-sass": "^4.1.1"
   },

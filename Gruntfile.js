@@ -38,8 +38,9 @@ module.exports = function (grunt) {
     },
     postcss: {
       options: {
-        map: true,
+        map: false,
         processors: [
+          require('postcss-discard-comments'),
           require('autoprefixer')({browsers: 'last 2 versions'}),
           require('cssnano')()
         ]
