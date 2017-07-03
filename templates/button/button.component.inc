@@ -46,6 +46,17 @@ function europa_atomium_definition_button() {
         'attributes' => array(
           'class' => array(
             'ecl-button--call',
+            'ecl-button--caret-right',
+          ),
+        ),
+      ),
+      array(
+        'type' => 'submit',
+        'value' => 'Timeline',
+        'attributes' => array(
+          'class' => array(
+            'ecl-button--default',
+            'ecl-button--caret-down',
           ),
         ),
       ),
@@ -64,25 +75,6 @@ function europa_atomium_definition_button() {
         'attributes' => array(
           'class' => array(
             'ecl-button--form-primary',
-          ),
-        ),
-      ),
-      array(
-        'type' => 'submit',
-        'value' => 'Light',
-        'attributes' => array(
-          'class' => array(
-            'ecl-button--light',
-          ),
-        ),
-      ),
-      array(
-        'type' => 'submit',
-        'value' => 'Icon: Arrow up',
-        'attributes' => array(
-          'class' => array(
-            'ecl-button--default',
-            'ecl-button--arrow-up',
           ),
         ),
       ),
@@ -123,6 +115,17 @@ function europa_atomium_definition_button() {
           'class' => array(
             'ecl-button--default',
             'ecl-button--caret-left',
+          ),
+        ),
+      ),
+      array(
+        'type' => 'submit',
+        'value' => 'Primary button, block-wide, with caret-down',
+        'attributes' => array(
+          'class' => array(
+            'ecl-button--primary',
+            'ecl-button--block',
+            'ecl-button--caret-down',
           ),
         ),
       ),
