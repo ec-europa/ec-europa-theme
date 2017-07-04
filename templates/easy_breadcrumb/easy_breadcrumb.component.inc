@@ -108,7 +108,7 @@ function _europa_breadcrumb_menu(&$variables) {
   module_load_include('inc', 'easy_breadcrumb', 'includes/easy_breadcrumb.blocks');
 
   $menu_links = menu_tree('menu-breadcrumb-menu');
-  $new_items = [];
+  $new_items = array();
   global $language;
   $front = drupal_is_front_page();
 
@@ -121,7 +121,7 @@ function _europa_breadcrumb_menu(&$variables) {
           $options = ['language' => $language];
           $title = token_replace($menu_item['#title'], $menu_item,
             $options);
-          $new_items[] = _easy_breadcrumb_build_item($title, [],
+          $new_items[] = _easy_breadcrumb_build_item($title, array(),
             $menu_item['#href']);
           $i++;
         }
