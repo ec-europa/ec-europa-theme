@@ -59,8 +59,6 @@ function europa_preprocess_easy_breadcrumb(&$variables, $hook) {
   $html = '';
 
   if ($segments_quantity > 0) {
-    drupal_add_js(drupal_get_path('theme', 'europa') . '/assets/js/components/breadcrumb.js');
-
     for ($i = 0, $s = $segments_quantity; $i < $segments_quantity; ++$i) {
       $item = $breadcrumb[$i];
 
@@ -72,7 +70,7 @@ function europa_preprocess_easy_breadcrumb(&$variables, $hook) {
       $classes[] = 'ecl-breadcrumbs__segment';
 
       $attributes = [
-        'class' => ['ecl-breadcrumbs__link', 'plop'],
+        'class' => ['ecl-breadcrumbs__link'],
       ];
 
       if ($i == 0) {

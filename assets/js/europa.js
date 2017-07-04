@@ -93,7 +93,6 @@ function navTabs() {
 // Export
 
 exports.fileUpload = fileUpload;
-exports.breadcrumbs = breadcrumbs;
 exports.contextualNav = contextualNav;
 exports.datepicker = datepicker;
 exports.filters = filters;
