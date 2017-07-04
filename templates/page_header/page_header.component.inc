@@ -13,6 +13,11 @@ function europa_atomium_theme_page_header() {
     'page_header' => array(
       'variables' => array(
         'markup' => NULL,
+        'header_bottom' => NULL,
+        'site_name' => NULL,
+        'page_title' => NULL,
+        'page_intro' => NULL,
+        'page_meta' => NULL,
       ),
       'template' => 'page-header',
     ),
@@ -28,6 +33,11 @@ function europa_atomium_definition_page_header() {
     'description' => 'Page header.',
     'preview' => array(
       'markup' => '<p>The <strong>European Commission</strong> is the European Union’s executive body. It represents the interests of the European Union as a whole.</p>',
+      'header_bottom' => NULL,
+      'site_name' => NULL,
+      'page_title' => NULL,
+      'page_intro' => NULL,
+      'page_meta' => NULL,
     ),
   );
 }

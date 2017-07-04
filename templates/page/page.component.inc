@@ -80,4 +80,20 @@ function europa_preprocess_page(&$variables, $hook) {
   }
   $variables['site_header'] = array('#theme' => array('site_header'));
   $variables['messages'] = $variables['show_messages'] ? array('#theme' => array('status_messages')) : '';
+  $variables['page_header'] = array(
+    '#theme' => array('page_header'),
+    '#header_bottom' => $variables['page']['header_bottom'],
+    '#site_name' =>  $variables['site_name'],
+    '#title_prefix' => $variables['title_prefix'],
+    '#title_suffix' => $variables['title_suffix'],
+    '#page_title' => drupal_get_title(),
+    '#page_intro' => NULL,
+    '#page_meta' => NULL,
+    '#meta' => array('#theme' => array('meta')),
+  );
+  if (!empty($variables['node'])) {
+    if (!empty($variables['node']->field_ne_intro)) {
+      $variables['page_header']['page_intro'] = $variables['node']->field_ne_intro;
+    }
+  }
 }
