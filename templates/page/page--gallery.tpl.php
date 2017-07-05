@@ -85,5 +85,5 @@
  */
 ?>
 
-<h1><?php print $title; ?></h1>
+<h1 class="ecl-heading ecl-heading--h1"><?php print $title; ?></h1>
 <?php print render($page['content']); ?>

@@ -6,7 +6,8 @@
  */
 ?>
 <div class="ecl-page-header">
-    <div class="ecl-page-header__body">
+  <?php print render($breadcrumb); ?>
+  <div class="ecl-page-header__body">
       <?php print render($page_header); ?>
     </div>
 </div>
