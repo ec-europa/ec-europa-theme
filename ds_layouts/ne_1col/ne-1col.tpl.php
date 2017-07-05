@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Display Suite NE Bootstrap One Column.
+ * Display Suite NE One Column.
  * @TODO fix the
  */
 ?>

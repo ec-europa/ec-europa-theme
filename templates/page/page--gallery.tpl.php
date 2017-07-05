@@ -76,10 +76,8 @@
  * - $page['footer']:         Displayed at bottom of the page, on full
  *                            width -> latest update, copyright, ...
  *
- * @see bootstrap_preprocess_page()
  * @see template_preprocess()
  * @see template_preprocess_page()
- * @see bootstrap_process_page()
  * @see template_process()
  * @see html.tpl.php
  *
@@ -87,5 +85,5 @@
  */
 ?>
 
-<h1><?php print $title; ?></h1>
+<h1 class="ecl-heading ecl-heading--h1"><?php print $title; ?></h1>
 <?php print render($page['content']); ?>
