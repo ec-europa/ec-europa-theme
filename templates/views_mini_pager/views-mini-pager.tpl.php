@@ -6,5 +6,5 @@
  */
 ?>
 <div class="ecl-pager__wrapper">
-  <?php print render($pager); ?>
+  <?php print render($views_mini_pager); ?>
 </div>

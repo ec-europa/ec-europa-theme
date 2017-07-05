@@ -30,35 +30,37 @@ function europa_preprocess_pager(&$variables, $hook) {
   if (empty($variables[$hook])) {
     return;
   }
-  foreach ($variables['pager']['pager']['#items'] as $key => &$item) {
-    $item['#attributes']['class'][] = 'pager__item';
+  $variables[$hook][$hook]['#attributes']['class'] = 'ecl-pager';
+
+  foreach ($variables[$hook][$hook]['#items'] as $key => &$item) {
+    $item['#attributes']['class'][] = 'ecl-pager__item';
 
     if ('pager_previous' == $key) {
-      $item['#attributes']['class'][] = 'pager__item--previous';
+      $item['#attributes']['class'][] = 'ecl-pager__item--previous';
     }
     if ('pager_first' == $key) {
-      $item['#attributes']['class'][] = 'pager__item--first';
+      $item['#attributes']['class'][] = 'ecl-pager__item--first';
       $item['link']['#text'] = 1;
     }
     if (strpos($key, 'pager_ellipsis') !== FALSE) {
-      $item['#attributes']['class'][] = 'pager__item--ellipsis';
+      $item['#attributes']['class'][] = 'ecl-pager__item--ellipsis';
     }
     if ('pager_last' == $key) {
-      $item['#attributes']['class'][] = 'pager__item--last';
+      $item['#attributes']['class'][] = 'ecl-pager__item--last';
       $item['link']['#text'] = $variables['pager_total'][0];
     }
     if ('pager_next' == $key) {
-      $item['#attributes']['class'][] = 'pager__item--next';
+      $item['#attributes']['class'][] = 'ecl-pager__item--next';
     }
     if ('pager_current' == $key) {
-      $item['#attributes']['class'][] = 'pager__item--current';
+      $item['#attributes']['class'][] = 'ecl-pager__item--current';
       $item['#markup'] = array(
         'prefix' => array(
           '#theme' => 'html_tag',
           '#tag' => 'span',
           '#attributes' => array(
             'class' => array(
-              'pager__item__text',
+              'ecl-pager__item-text',
             ),
           ),
           '#value' => t('Page'),
@@ -74,7 +76,7 @@ function europa_preprocess_pager(&$variables, $hook) {
   }
 
   // Avoid duplicated link for the first item.
-  $items = $variables['pager']['pager']['#items'];
+  $items = $variables[$hook][$hook]['#items'];
   if (isset($items['pager_first'])) {
     // In Europa, the order of "first" and "last" elements are swapped.
     $items = array_swap_assoc('pager_previous', 'pager_first', $items);
@@ -87,10 +89,10 @@ function europa_preprocess_pager(&$variables, $hook) {
       }
     }
   }
-  $variables['pager']['pager']['#items'] = $items;
+  $variables[$hook][$hook]['#items'] = $items;
 
   // Avoid duplicated link for the last item.
-  $items = $variables['pager']['pager']['#items'];
+  $items = $variables[$hook][$hook]['#items'];
   if (isset($items['pager_last'])) {
     // In Europa, the order of "first" and "last" elements are swapped.
     $items = array_swap_assoc('pager_next', 'pager_last', $items);
@@ -103,10 +105,10 @@ function europa_preprocess_pager(&$variables, $hook) {
       }
     }
   }
-  $variables['pager']['pager']['#items'] = $items;
+  $variables[$hook][$hook]['#items'] = $items;
 
   // Remove empty links.
-  $items = $variables['pager']['pager']['#items'];
+  $items = $variables[$hook][$hook]['#items'];
   foreach ($items as $key => $item) {
     if ('pager_current' == $key) {
       continue;
@@ -118,7 +120,12 @@ function europa_preprocess_pager(&$variables, $hook) {
       unset($items[$key]);
     }
   }
-  $variables['pager']['pager']['#items'] = $items;
+  $variables[$hook][$hook]['#items'] = $items;
+
+  // Adds specific class to pager links.
+  foreach ($variables[$hook][$hook]['#items'] as &$item) {
+    $item['link']['#options']['attributes']['class'][] = 'ecl-pager__link';
+  }
 }
 
 /**
