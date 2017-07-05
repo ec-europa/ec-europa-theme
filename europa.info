@@ -34,16 +34,7 @@ stylesheets[all][] = assets/css/europa.css
 
 ; ========================================
 ; Scripts
-; ========================================
-;scripts[] = bootstrap-sass/js/bootstrap/affix.js
-;scripts[] = bootstrap-sass/js/bootstrap/alert.js
-;scripts[] = bootstrap-sass/js/bootstrap/collapse.js
-;scripts[] = bootstrap-sass/js/bootstrap/dropdown.js
-;scripts[] = bootstrap-sass/js/bootstrap/tooltip.js
-;scripts[] = bootstrap-sass/js/bootstrap/popover.js
-;scripts[] = bootstrap-sass/js/bootstrap/scrollspy.js
-;scripts[] = bootstrap-sass/js/bootstrap/tab.js
-;scripts[] = bootstrap-sass/js/bootstrap/transition.js
+
 scripts[] = assets/js/libraries/modernizr/modernizr.js
 scripts[] = assets/js/libraries/enquire.min.js
 scripts[] = assets/js/libraries/velocity.min.js
@@ -57,37 +48,10 @@ scripts[] = assets/js/components/table-responsive.js
 ; Settings
 ; ========================================
 
-; Region Wells
-; --------------
-settings[bootstrap_region_well-sidebar_first] = ''
-
 ; Visibility
 ; -------------
 settings[toggle_main_menu] = 0
 settings[toggle_secondary_menu] = 0
-
-; Tooltips
-; --------------
-settings[bootstrap_tooltip_enabled] = 0
-
-; Anchors
-; --------------
-settings[bootstrap_anchors_fix] = 0
-settings[bootstrap_anchors_smooth_scrolling] = 0
-
-; Popover
-; --------------
-settings[bootstrap_popover_enabled] = 1
-
-; Breadcrumbs
-; --------------
-settings[bootstrap_breadcrumb] = 0
-settings[bootstrap_breadcrumb_home] = 1
-settings[bootstrap_breadcrumb_title] = 1
-
-; Advanced
-; --------------
-settings[bootstrap_cdn] = ""
 
 ; Europa
 ; --------------
@@ -120,15 +84,6 @@ multisite_version = 2.2
 ; --------------
 ; Necessary module CSS.
 
-;exclude[css][] = 'modules/block/block.css'
-;exclude[css][] = 'modules/node/node.css'
-;exclude[css][] = 'modules/system/admin.css'
-;exclude[css][] = 'modules/system/system.css'
-;exclude[css][] = 'modules/system/system.admin.css'
-;exclude[css][] = 'modules/system/system.base.css'
-;exclude[css][] = 'misc/vertical-tabs.css'
-;exclude[css][] = 'modules/filter/filter.css'
-
 exclude[css][] = 'modules/aggregator/aggregator.css'
 exclude[css][] = 'modules/book/book.css'
 exclude[css][] = 'modules/block/block.css'
@@ -158,3 +113,5 @@ exclude[css][] = 'modules/taxonomy/taxonomy.css'
 exclude[css][] = 'modules/tracker/tracker.css'
 exclude[css][] = 'modules/update/update.css'
 exclude[css][] = 'modules/user/user.css'
+exclude[css][] = 'misc/vertical-tabs.css'
+exclude[css][] = 'modules/filter/filter.css'

@@ -8,7 +8,7 @@
  * Implements hook_preprocess_views_view_grid().
  */
 function europa_preprocess_views_view_grid(&$variables) {
-  $view = $vars['view'];
+  $view = $variables['view'];
   $result = $view->result;
   $options = $view->style_plugin->options;
   $handler = $view->style_plugin;
@@ -25,7 +25,7 @@ function europa_preprocess_views_view_grid(&$variables) {
     $col_count = 0;
     $row_count = 0;
     $count = 0;
-    foreach ($vars['rows'] as $row_index => $item) {
+    foreach ($variables['rows'] as $row_index => $item) {
       $count++;
       $row[] = $item;
       $row_indexes[$row_count][$col_count] = $row_index;
