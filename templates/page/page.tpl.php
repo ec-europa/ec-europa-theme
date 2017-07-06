@@ -167,10 +167,10 @@
     </div>
   </div>
 
-  <?php if (!empty($page['utility'])): ?>
+  <?php if (!empty($page['tools'])): ?>
     <div class="utility">
       <div class="container-fluid">
-        <?php print render($page['utility']); ?>
+        <?php print render($page['tools']); ?>
       </div>
     </div>
   <?php endif; ?>
