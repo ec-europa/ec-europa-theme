@@ -73,32 +73,3 @@ function europa_preprocess_pager(&$variables, $hook) {
     }
   }
 }
-
-/**
- * Helper function to swap two elements in an array.
- *
- * @param mixed $key1
- *   The key of the first element.
- * @param mixed $key2
- *   The key of the second element.
- * @param array $array
- *   The array containing the elements.
- *
- * @return array
- *   A new array with the elements swapped.
- */
-function array_swap_assoc($key1, $key2, array $array) {
-  $newArray = array();
-  foreach ($array as $key => $value) {
-    if ($key == $key1) {
-      $newArray[$key2] = $array[$key2];
-    }
-    elseif ($key == $key2) {
-      $newArray[$key1] = $array[$key1];
-    }
-    else {
-      $newArray[$key] = $value;
-    }
-  }
-  return $newArray;
-}
