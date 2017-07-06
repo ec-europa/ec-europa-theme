@@ -78,11 +78,7 @@ function europa_preprocess_page(&$variables, $hook) {
     '#theme' => array('page_header'),
     '#breadcrumb' => array(
       '#theme' => array('easy_breadcrumb'),
-      '#attributes' => array(
-        'class' => array(
-          'ecl-u-mh-xxs',
-        ),
-      ),
+      '#extra_class' => 'ecl-u-mh-xxs',
     ),
     '#identity' =>  $variables['site_name'],
     '#title_prefix' => $variables['title_prefix'],
