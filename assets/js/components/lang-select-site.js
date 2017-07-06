@@ -11,7 +11,7 @@
           closeBtn = '.splash-page__btn-close',
           body = 'body';
 
-      $('.lang-select-site').on('click', 'a.lang-select-site__link', function (event) {
+      $('.ecl-lang-select-sites').on('click', 'a.ecl-lang-select-sites__link', function (event) {
         // We only want to load it once.
         if (!$overlay.find(closeBtn).length) {
           $.get($(this).attr('href'), function (splashscreen) {

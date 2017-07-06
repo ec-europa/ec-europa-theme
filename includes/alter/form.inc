@@ -114,10 +114,8 @@ function europa_form_element(&$variables) {
   }
 
   // Putting description into variable since it is not going to change.
-  // Here Bootstrap tooltips have been removed since in current implemenation we
-  // will use descriptions that are displayed under <label> element.
   if (!empty($element['#description'])) {
-    $description = '<p class="help-block">' . $element['#description'] . '</p>';
+    $description = '<p class="ecl-help-block">' . $element['#description'] . '</p>';
   }
 
   $output = '<div' . drupal_attributes($attributes) . '>' . "\n";

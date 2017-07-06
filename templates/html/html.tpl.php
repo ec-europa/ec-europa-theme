@@ -36,7 +36,6 @@
  * - $classes String of classes that can be used to style contextually through
  *   CSS.
  *
- * @see bootstrap_preprocess_html()
  * @see template_preprocess()
  * @see template_preprocess_html()
  * @see template_process()

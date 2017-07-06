@@ -60,7 +60,7 @@ function europa_menu_tree__menu_nexteuropa_site_links(&$variables) {
 }
 
 /**
- * Bootstrap theme wrapper function for the primary menu links.
+ * Europa theme wrapper function for the secondary menu links.
  */
 function europa_menu_tree__secondary(&$variables) {
   return '<ul class="menu nav navbar-nav secondary">' . $variables['tree'] . '</ul>';

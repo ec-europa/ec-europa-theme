@@ -5,8 +5,9 @@
  * Contains template file.
  */
 ?>
-<div class="page-header page-header--large-intro">
-    <div class="container-fluid page-header__hero-title">
+<div class="ecl-page-header">
+  <?php print render($breadcrumb); ?>
+  <div class="ecl-page-header__body">
       <?php print render($page_header); ?>
     </div>
 </div>
