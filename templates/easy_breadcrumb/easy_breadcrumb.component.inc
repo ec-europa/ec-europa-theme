@@ -16,6 +16,7 @@ function europa_atomium_theme_easy_breadcrumb() {
         'segments_quantity' => NULL,
         'separator' => NULL,
         'here' => NULL,
+        'extra_class' => NULL,
       ),
       'template' => 'easy-breadcrumb',
     ),
@@ -44,6 +45,7 @@ function europa_atomium_definition_easy_breadcrumb() {
           'content' => t('My news title'),
         ),
       ),
+      'extra_class' => 'extraClassBreadcrumb',
     ),
   );
 }
