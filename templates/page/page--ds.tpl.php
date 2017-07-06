@@ -92,9 +92,28 @@
 <?php endif; ?>
 
 <header class="site-header" role="banner">
+  <div class="container-fluid">
+    <?php if (!($is_front) || theme_get_setting('ec_europa_site_header_home', 'europa')): ?>
+      <a href="<?php print $front_page; ?>" class="<?php print $logo_classes; ?>" title="<?php print $page_logo_title; ?>">
+        <span class="sr-only"><?php print $page_logo_title; ?></span>
+      </a>
+    <?php endif; ?>
+
+    <?php if ($is_front && !empty($site_slogan)): ?>
+      <p class="site-slogan"><?php print $site_slogan; ?></p>
+    <?php endif; ?>
+  </div>
   <?php print render($site_header); ?>
   <?php print render($page['header']); ?>
 </header>
+
+<?php if (!empty($page['header_bottom'])): ?>
+  <nav class="page-navigation" role="navigation">
+    <div class="container-fluid">
+      <?php print render($page['header_bottom']); ?>
+    </div>
+  </nav>
+<?php endif; ?>
 
 <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
   <section id="navbar" role="banner" class="<?php print $navbar_classes; ?>">
