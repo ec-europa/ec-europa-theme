@@ -35,12 +35,6 @@ function europa_preprocess_page(&$variables, $hook) {
   $node = &$variables['node'];
 
   if (isset($node)) {
-    // Adding generic introduction field to be later rendered in page template.
-    $introduction = variable_get('ec_europa_introduction_field', FALSE);
-
-    $variables['ec_europa_introduction'] = isset($node->{$introduction})
-      ? field_view_field('node', $node, $introduction, ['label' => 'hidden']) : NULL;
-
     // Check if Display Suite is handling node.
     if (module_exists('ds')) {
       $layout = ds_get_layout('node', $node->type, 'full');
@@ -82,18 +76,31 @@ function europa_preprocess_page(&$variables, $hook) {
   $variables['messages'] = $variables['show_messages'] ? array('#theme' => array('status_messages')) : '';
   $variables['page_header'] = array(
     '#theme' => array('page_header'),
-    '#header_bottom' => $variables['page']['header_bottom'],
-    '#site_name' =>  $variables['site_name'],
+    '#breadcrumb' => array(
+      '#theme' => array('easy_breadcrumb'),
+      '#attributes' => array(
+        'class' => array(
+          'ecl-u-mh-xxs',
+        ),
+      ),
+    ),
+    '#identity' =>  $variables['site_name'],
     '#title_prefix' => $variables['title_prefix'],
     '#title_suffix' => $variables['title_suffix'],
-    '#page_title' => drupal_get_title(),
-    '#page_intro' => NULL,
-    '#page_meta' => NULL,
-    '#meta' => array('#theme' => array('meta')),
+    '#title' => drupal_get_title(),
+    '#introduction' => NULL,
+    '#meta' => array(
+      '#theme' => array('meta'),
+      '#type' => NULL,
+      '#timestamp' => NULL,
+      '#date' => NULL,
+      '#location' => NULL,
+    ),
   );
-  if (!empty($variables['node'])) {
-    if (!empty($variables['node']->field_ne_intro)) {
-      $variables['page_header']['page_intro'] = $variables['node']->field_ne_intro;
-    }
+  if (isset($node)) {
+    // Adding generic introduction field to be later rendered in page template.
+    $introduction = variable_get('ec_europa_introduction_field', FALSE);
+    $variables['page_header']['introduction'] = isset($node->{$introduction})
+      ? field_view_field('node', $node, $introduction, ['label' => 'hidden']) : NULL;
   }
 }
