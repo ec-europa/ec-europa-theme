@@ -21,7 +21,7 @@ Feature: Pager
     Then I should see "‹ Previous 1 2 3 4 Page 5 6 7 8 9 … 50 Next ›" in the "pager"
 
     When I click "Next ›"
-    Then I should see "‹ Previous 2 3 4 5 Page 6 7 8 9 10 … 50 Next ›" in the "pager"
+    Then I should see "‹ Previous 1 2 3 4 5 Page 6 7 8 9 10 … 50 Next ›" in the "pager"
 
     When I click "Next ›"
     Then I should see "‹ Previous 1 … 3 4 5 6 Page 7 8 9 10 11 … 50 Next ›" in the "pager"

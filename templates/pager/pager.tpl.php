@@ -17,11 +17,13 @@
 
     <?php for ($cursor = $pager_first; $cursor <= $pager_last; $cursor++): ?>
 
-      <?php if (($pager_last - $quantity > 1) && $cursor == $pager_first): ?>
+      <?php if (($pager_last - $quantity >= 1) && $cursor == $pager_first): ?>
         <li class="ecl-pager__item ecl-pager__item--first">
           <a class="ecl-pager__link" title="<?php t('Go to page !page', array('!page' => 1)) ?>" href="<?php print $links['pager_first']['url'] ?>">1</a>
         </li>
-        <li class="ecl-pager__item ecl-pager__item--ellipsis">…</li>
+        <?php if ($pager_last - $quantity > 1): ?>
+          <li class="ecl-pager__item ecl-pager__item--ellipsis">…</li>
+        <?php endif ?>
       <?php endif ?>
 
       <?php if ($cursor == $pager_current): ?>
