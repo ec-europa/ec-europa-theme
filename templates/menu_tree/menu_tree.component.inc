@@ -8,33 +8,29 @@
 /**
  * Implements hook_preprocess_HOOK().
  */
-function europa_preprocess_menu_tree(&$variables, $hook) {
+function europa_preprocess_menu_tree__main_menu(&$variables, $hook) {
   if (isset($variables['#tree'])) {
     $children = element_children($variables['#tree']);
     if (isset($children[0])) {
       $item = $variables['#tree'][$children[0]];
       if ($item) {
         $original_link = $item['#original_link'];
-        switch ($original_link['menu_name']) {
-          case 'main-menu':
-            $menu = menu_load($original_link['menu_name']);
-            $variables['title'] = $menu['title'];
-            if ($variables['depth'] > 1) {
-              $variables['attributes_array']['id'][] = 'nav-menu-expandable-group-' . $original_link['plid'];
-            }
-            if ($variables['depth'] == 1) {
-              $variables['attributes_array']['class'][] = 'ecl-navigation-menu__root';
-              $variables['attributes_array']['id'][] = 'nav-menu-expandable-root';
-            }
-            else {
-              $variables['attributes_array']['class'][] = 'ecl-navigation-menu__group';
-            }
-            break;
+        $menu = menu_load($original_link['menu_name']);
+        $variables['title'] = $menu['title'];
+        if ($variables['depth'] > 1) {
+          $variables['attributes_array']['id'][] = 'nav-menu-expandable-group-' . $original_link['plid'];
+        }
+        if ($variables['depth'] == 1) {
+
+          $variables['attributes_array']['class'][] = 'ecl-navigation-menu__root';
+          $variables['attributes_array']['id'][] = 'nav-menu-expandable-root';
+        }
+        else {
+          $variables['attributes_array']['class'][] = 'ecl-navigation-menu__group';
         }
       }
     }
   }
-
 }
 
 /**
