@@ -74,16 +74,19 @@ function europa_preprocess_page(&$variables, $hook) {
   }
   $variables['site_header'] = array('#theme' => array('site_header'));
   $variables['messages'] = $variables['show_messages'] ? array('#theme' => array('status_messages')) : '';
+
+  // Get the breadcrumb block content.
+  $breadcrumb = module_invoke('easy_breadcrumb', 'block_view', 'easy_breadcrumb');
+  $easy_breadcrumb = &$breadcrumb['content']['easy_breadcrumb'];
+  $easy_breadcrumb['#attributes'] =  array(
+    'class' => array(
+      'ecl-u-mh-xxs',
+    ),
+  );
+
   $variables['page_header'] = array(
     '#theme' => array('page_header'),
-    '#breadcrumb' => array(
-      '#theme' => array('easy_breadcrumb'),
-      '#attributes' => array(
-        'class' => array(
-          'ecl-u-mh-xxs',
-        ),
-      ),
-    ),
+    '#breadcrumb' => $breadcrumb,
     '#identity' =>  $variables['site_name'],
     '#title_prefix' => $variables['title_prefix'],
     '#title_suffix' => $variables['title_suffix'],
