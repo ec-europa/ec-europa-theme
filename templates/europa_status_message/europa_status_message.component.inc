@@ -27,6 +27,6 @@ function europa_atomium_theme_europa_status_message() {
  */
 function europa_preprocess_europa_status_message(&$variables) {
   if (!empty($variables['message_classes']) && is_array($variables['message_classes'])) {
-    $variables['message_classes'] = ' ' . implode(' ', $variables['message_classes']);
+    $variables['message_classes'] = implode(' ', $variables['message_classes']);
   }
 }
