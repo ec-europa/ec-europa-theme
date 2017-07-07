@@ -30,6 +30,7 @@ regions[footer_bottom] = Footer bottom
 ; ========================================
 ; Stylesheets
 ; ========================================
+stylesheets[all][] = assets/css/ecl.css
 stylesheets[all][] = assets/css/europa.css
 
 ; ========================================

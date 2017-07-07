@@ -55,3 +55,41 @@ This theme includes a particular mechanism in order to format contents that invo
 This mechanism is based on a namespacing CSS class put on the field value container (see "europa_preprocess_block()"
 and "europa_preprocess_field()").
 This css class is "ecl-editor".
+
+## Compile ECL 
+
+Requirements:
+
+- [Node.js](https://nodejs.org/en/): `>= 6.9.5`
+- [Yarn](https://yarnpkg.com/en/): `>= 0.20.3`
+
+Setup your environment by running:
+ 
+```
+$ npm install
+```
+
+Build it by running:
+
+```
+$ npm run build
+```
+
+This will:
+
+1. Compile ECL SASS in `./css/base.css` 
+2. Compile local `./sass/style.scss` in `./css/style.css`
+3. Copy ECL fonts in `./fonts`
+4. Copy ECL images in `./images`
+5. Copy ECL Twig templates in `./templates/components`
+
+## Update ECL
+
+Update the ECL by changing the `@ec-europa/ecl-components-preset-base` version in `package.json` and running:
+
+```
+$ npm run build
+```
+
+This will update assets such as images and fonts and re-compile CSS, resulting changes are meant to be committed to this
+repository since we cannot require theme users and/or deployment procedures to build the theme locally.
