@@ -51,10 +51,10 @@ function europa_preprocess_page(&$variables, $hook) {
           $variables['node']->header_bottom = $variables['page']['header_bottom'];
           unset($variables['page']['header_bottom']);
         }
-        if (isset($variables['page']['tools'])) {
+        if (isset($variables['page']['utility'])) {
           // Move the utility to the node.
-          $variables['node']->tools = $variables['page']['tools'];
-          unset($variables['page']['tools']);
+          $variables['node']->utility = $variables['page']['utility'];
+          unset($variables['page']['utility']);
         }
         ctools_class_add($layout['layout']);
 

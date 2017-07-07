@@ -157,10 +157,10 @@
   </section>
 <?php endif; ?>
 
-<?php if (!empty($page['tools'])): ?>
+<?php if (!empty($page['utility'])): ?>
   <div class="utility">
     <div class="container-fluid">
-      <?php print render($page['tools']); ?>
+      <?php print render($page['utility']); ?>
     </div>
   </div>
 <?php endif; ?>
