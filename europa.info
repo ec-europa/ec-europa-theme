@@ -65,6 +65,7 @@ settings[ec_europa_breadcrumb_home] = 1
 settings[ec_europa_site_header_home] = 1
 settings[ec_europa_improved_website_home] = 1
 settings[ec_europa_multilingual] = 1
+settings[allow_css_double_underscores] = 1
 
 ; Breakpoints
 ; --------------
