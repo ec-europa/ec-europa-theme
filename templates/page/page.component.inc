@@ -92,18 +92,12 @@ function europa_preprocess_page(&$variables, $hook) {
     '#title_suffix' => $variables['title_suffix'],
     '#title' => drupal_get_title(),
     '#introduction' => NULL,
-    '#meta' => array(
-      '#theme' => array('meta'),
-      '#type' => NULL,
-      '#timestamp' => NULL,
-      '#date' => NULL,
-      '#location' => NULL,
-    ),
+    '#meta' => array(),
   );
   if (isset($node)) {
     // Adding generic introduction field to be later rendered in page template.
     $introduction = variable_get('ec_europa_introduction_field', FALSE);
-    $variables['page_header']['introduction'] = isset($node->{$introduction})
+    $variables['page_header']['#introduction'] = isset($node->{$introduction})
       ? field_view_field('node', $node, $introduction, ['label' => 'hidden']) : NULL;
   }
 }
