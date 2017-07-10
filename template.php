@@ -107,7 +107,6 @@ function _europa_form_set_css_class(array &$element, array $classes = array()) {
  */
 function europa_dropdown(array $variables) {
   $items = $variables['items'];
-  $output = "";
   $links = array();
 
   $select = array(
@@ -122,6 +121,28 @@ function europa_dropdown(array $variables) {
   }
   $select['#options'] = array_merge( $select['#options'], $links);
 
-  $output = form_select_options($select);
-  return $output;
+  return form_select_options($select);
+}
+
+/**
+ * Case array_search() with partial matches.
+ *
+ * @param string $needle
+ *   The string to search for.
+ * @param array $haystack
+ *   The array to search in.
+ *
+ * @return mixed
+ *   The key for needle if it is found in the
+ *   array, FALSE otherwise.
+ *
+ * @author Bran van der Meer <branmovic@gmail.com>
+ */
+function _europa_array_find($needle, array $haystack) {
+  foreach ($haystack as $key => $value) {
+    if (FALSE !== stripos($value, $needle)) {
+      return $key;
+    }
+  }
+  return FALSE;
 }

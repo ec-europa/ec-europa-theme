@@ -8,6 +8,34 @@
 /**
  * Implements hook_preprocess_HOOK().
  */
+function europa_preprocess_menu_tree__main_menu(&$variables, $hook) {
+  if (isset($variables['#tree'])) {
+    $children = element_children($variables['#tree']);
+    if (isset($children[0])) {
+      $item = $variables['#tree'][$children[0]];
+      if ($item) {
+        $original_link = $item['#original_link'];
+        $menu = menu_load($original_link['menu_name']);
+        $variables['title'] = $menu['title'];
+        if ($variables['depth'] > 1) {
+          $variables['attributes_array']['id'][] = 'nav-menu-expandable-group-' . $original_link['plid'];
+        }
+        if ($variables['depth'] == 1) {
+
+          $variables['attributes_array']['class'][] = 'ecl-navigation-menu__root';
+          $variables['attributes_array']['id'][] = 'nav-menu-expandable-root';
+        }
+        else {
+          $variables['attributes_array']['class'][] = 'ecl-navigation-menu__group';
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
 function europa_menu_tree__user_menu(&$variables) {
   $tree = $variables['tree'];
   global $user;
