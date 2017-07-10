@@ -190,6 +190,25 @@ function europa_form_element(&$variables) {
       case "checkbox":
         $attributes['class'][] = 'checkbox';
         $is_checkbox = TRUE;
+        // DTTSB-2111 - Supporting links inside checkboxes label.
+        if (preg_match('#<a\b[^>]*>(.*?)</a>#', $element['#title'], $link)) {
+          // This is likely to be redundant.
+          $element['#title'] = filter_xss($element['#title']);
+          // Get the clean label..
+          $element['#title'] = str_replace($link[0], '', $element['#title']);
+          // Build the label markup.
+          $title = theme('form_element_label', $variables);
+          // Unset the label otherwise it would be printed twice.
+          unset($element['#title']);
+          // Adding target _blank if not in place.
+          if (strpos($link[0], '#target=#') === FALSE) {
+            $link[0] = str_replace('<a ', '<a target="_blank" ', $link[0]);
+          }
+
+          // Re-add the label + the link found after the inpu tag.
+          $element['#field_suffix'] = $title . ' ' . $link[0];
+          $attributes['class'][] = 'checkbox--with-link';
+        }
         break;
 
       case "managed_file":
