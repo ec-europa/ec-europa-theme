@@ -27,7 +27,12 @@ function europa_preprocess_menu_link__main_menu(&$variables, $hook) {
     $variables['output']['#options']['attributes']['aria-controls'][] = 'nav-menu-expandable-group-' . $link['mlid'];
     $variables['output']['#options']['attributes']['aria-expanded'][] = 'false';
     $variables['output']['#options']['attributes']['aria-haspopup'][] = 'true';
-    $variables['output'] = '<button ' . drupal_attributes($variables['output']['#options']['attributes']) . '>' . $variables['output']['#text'] . '</button>';
+    $variables['output'] = array(
+      '#type' => 'html_tag',
+      '#tag' => 'button',
+      '#attributes' => drupal_attributes($variables['output']['#options']['attributes']),
+      '#value' => $variables['output']['#text'],
+    );
   }
 }
 
