@@ -205,7 +205,7 @@ function europa_form_element(&$variables) {
             $link[0] = str_replace('<a ', '<a target="_blank" ', $link[0]);
           }
 
-          // Re-add the label + the link found after the inpu tag.
+          // Re-add the label + the link found after the input tag.
           $element['#field_suffix'] = $title . ' ' . $link[0];
           $attributes['class'][] = 'checkbox--with-link';
         }
