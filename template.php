@@ -100,5 +100,27 @@ function _europa_form_set_css_class(array &$element, array $classes = array()) {
   if (isset($element['#parents']) && form_get_error($element) !== NULL && !empty($element['#validated'])) {
     $element['#attributes']['class'][] = 'ecl-text-input--has-error';
   }
+}
 
+/**
+ * Case array_search() with partial matches.
+ *
+ * @param string $needle
+ *   The string to search for.
+ * @param array $haystack
+ *   The array to search in.
+ *
+ * @return mixed
+ *   The key for needle if it is found in the
+ *   array, FALSE otherwise.
+ *
+ * @author Bran van der Meer <branmovic@gmail.com>
+ */
+function _europa_array_find($needle, array $haystack) {
+  foreach ($haystack as $key => $value) {
+    if (FALSE !== stripos($value, $needle)) {
+      return $key;
+    }
+  }
+  return FALSE;
 }
