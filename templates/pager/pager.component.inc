@@ -72,4 +72,13 @@ function europa_preprocess_pager(&$variables, $hook) {
       );
     }
   }
+
+  $variables['previous_title'] = t('Go to previous page');
+  $variables['previous_label'] = "‹ " . t('Previous');
+  $variables['next_title'] = t('Go to next page');
+  $variables['next_label'] = t('Next') . " ›";
+  $variables['goto_title'] = t('Go to page');
+  $variables['page_label'] = t('Page');
+
+
 }
