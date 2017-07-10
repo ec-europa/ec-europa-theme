@@ -30,7 +30,7 @@ function europa_preprocess_menu_link__main_menu(&$variables, $hook) {
     $variables['output'] = array(
       '#type' => 'html_tag',
       '#tag' => 'button',
-      '#attributes' => drupal_attributes($variables['output']['#options']['attributes']),
+      '#attributes' => $variables['output']['#options']['attributes'],
       '#value' => $variables['output']['#text'],
     );
   }
