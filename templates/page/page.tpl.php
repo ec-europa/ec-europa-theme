@@ -99,33 +99,8 @@
 
 </header>
 
-<?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
-  <section id="navbar" role="banner" class="<?php print render($navbar_classes); ?>">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>
-
-      <div class="navbar-collapse collapse">
-        <nav role="navigation">
-        <?php if (!empty($primary_nav)): ?>
-          <?php print render($primary_nav); ?>
-        <?php endif; ?>
-        <?php if (!empty($secondary_nav)): ?>
-          <?php print render($secondary_nav); ?>
-        <?php endif; ?>
-        <?php if (!empty($page['navigation'])): ?>
-          <?php print render($page['navigation']); ?>
-        <?php endif; ?>
-        </nav>
-      </div>
-    </div>
-  </section>
+<?php if (!empty($page['navigation'])): ?>
+  <?php print render($page['navigation']); ?>
 <?php endif; ?>
 
 <section class="main-content">
