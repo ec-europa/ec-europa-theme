@@ -29,11 +29,6 @@
  * @see template_preprocess_search_block_form()
  */
 ?>
-<div class="input-group">
-  <label class="search-form__textfield-wrapper">
-    <?php print $search['search_block_form']; ?>
-  </label>
-  <span class="search-form__button-wrapper input-group-btn">
-    <?php print $search['actions']; ?>
-  </span>
-</div>
+
+<?php print $search['search_block_form']; ?>
+<?php print $search['actions']; ?>
