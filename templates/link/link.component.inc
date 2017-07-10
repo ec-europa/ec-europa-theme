@@ -5,28 +5,28 @@
  * Contains component file.
  */
 
-function europa_preprocess_link__default(&$variables, $hook) {
+function europa_preprocess_link__default(&$variables) {
   $variables['attributes_array']['class'] = array(
     'ecl-button',
     'ecl-button--default'
   );
 }
 
-function europa_preprocess_link__primary(&$variables, $hook) {
+function europa_preprocess_link__primary(&$variables) {
   $variables['attributes_array']['class'] = array(
     'ecl-button',
     'ecl-button--primary'
   );
 }
 
-function europa_preprocess_link__secondary(&$variables, $hook) {
+function europa_preprocess_link__secondary(&$variables) {
   $variables['attributes_array']['class'] = array(
     'ecl-button',
     'ecl-button--secondary'
   );
 }
 
-function europa_preprocess_link__call(&$variables, $hook) {
+function europa_preprocess_link__call(&$variables) {
   $variables['attributes_array']['class'] = array(
     'ecl-button',
     'ecl-button--call',
@@ -34,7 +34,7 @@ function europa_preprocess_link__call(&$variables, $hook) {
   );
 }
 
-function europa_preprocess_link__timeline(&$variables, $hook) {
+function europa_preprocess_link__timeline(&$variables) {
   $variables['attributes_array']['class'] = array(
     'ecl-button',
     'ecl-button--call',
@@ -42,21 +42,21 @@ function europa_preprocess_link__timeline(&$variables, $hook) {
   );
 }
 
-function europa_preprocess_link__form(&$variables, $hook) {
+function europa_preprocess_link__form(&$variables) {
   $variables['attributes_array']['class'] = array(
     'ecl-button',
     'ecl-button--form'
   );
 }
 
-function europa_preprocess_link__form_primary(&$variables, $hook) {
+function europa_preprocess_link__form_primary(&$variables) {
   $variables['attributes_array']['class'] = array(
     'ecl-button',
-    'ecl-button--form'
+    'ecl-button--form-primary'
   );
 }
 
-function europa_preprocess_link__caret_up(&$variables, $hook) {
+function europa_preprocess_link__caret_up(&$variables) {
   $variables['attributes_array']['class'] = array(
     'ecl-button',
     'ecl-button--default',
@@ -64,7 +64,7 @@ function europa_preprocess_link__caret_up(&$variables, $hook) {
   );
 }
 
-function europa_preprocess_link__caret_right(&$variables, $hook) {
+function europa_preprocess_link__caret_right(&$variables) {
   $variables['attributes_array']['class'] = array(
     'ecl-button',
     'ecl-button--default',
@@ -72,7 +72,7 @@ function europa_preprocess_link__caret_right(&$variables, $hook) {
   );
 }
 
-function europa_preprocess_link__caret_down(&$variables, $hook) {
+function europa_preprocess_link__caret_down(&$variables) {
   $variables['attributes_array']['class'] = array(
     'ecl-button',
     'ecl-button--default',
@@ -80,7 +80,7 @@ function europa_preprocess_link__caret_down(&$variables, $hook) {
   );
 }
 
-function europa_preprocess_link__caret_left(&$variables, $hook) {
+function europa_preprocess_link__caret_left(&$variables) {
   $variables['attributes_array']['class'] = array(
     'ecl-button',
     'ecl-button--default',
@@ -88,13 +88,11 @@ function europa_preprocess_link__caret_left(&$variables, $hook) {
   );
 }
 
-function europa_preprocess_link__primary_block(&$variables, $hook) {
-
+function europa_preprocess_link__primary_block(&$variables) {
   $variables['attributes_array']['class'] = array(
     'ecl-button',
     'ecl-button--primary',
     'ecl-button--block',
     'ecl-button--caret-down'
   );
-
 }

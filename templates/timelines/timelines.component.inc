@@ -36,9 +36,8 @@ function europa_atomium_definition_timelines() {
         '#value' => 'Show all timeline',
         '#attributes' => array(
           'class' => array(
-            'btn',
-            'btn-time',
-            'btn-time-line',
+            'ecl-button--call',
+            'ecl-button--caret-down',
           ),
         ),
       ),

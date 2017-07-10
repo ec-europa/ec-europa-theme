@@ -146,3 +146,77 @@ function europa_preprocess_button(&$variables) {
     $variables['attributes_array']['class'][] = 'ecl-button--default';
   }
 }
+
+function europa_preprocess_button__primary(&$variables) {
+  $variables['attributes_array']['class'] = array(
+    'ecl-button--primary'
+  );
+}
+
+function europa_preprocess_button__secondary(&$variables) {
+  $variables['attributes_array']['class'] = array(
+    'ecl-button--secondary'
+  );
+}
+
+function europa_preprocess_button__call(&$variables) {
+  $variables['attributes_array']['class'] = array(
+    'ecl-button--call',
+    'ecl-button--caret-right'
+  );
+}
+
+function europa_preprocess_button__timeline(&$variables) {
+  $variables['attributes_array']['class'] = array(
+    'ecl-button--call',
+    'ecl-button--caret-down'
+  );
+}
+
+function europa_preprocess_button__form(&$variables) {
+  $variables['attributes_array']['class'] = array(
+    'ecl-button--form'
+  );
+}
+
+function europa_preprocess_button__form_primary(&$variables) {
+  $variables['attributes_array']['class'] = array(
+    'ecl-button--form-primary'
+  );
+}
+
+function europa_preprocess_button__caret_up(&$variables) {
+  $variables['attributes_array']['class'] = array(
+    'ecl-button--default',
+    'ecl-button--caret-up'
+  );
+}
+
+function europa_preprocess_button__caret_right(&$variables) {
+  $variables['attributes_array']['class'] = array(
+    'ecl-button--default',
+    'ecl-button--caret-right'
+  );
+}
+
+function europa_preprocess_button__caret_down(&$variables) {
+  $variables['attributes_array']['class'] = array(
+    'ecl-button--default',
+    'ecl-button--caret-down'
+  );
+}
+
+function europa_preprocess_button__caret_left(&$variables, $hook) {
+  $variables['attributes_array']['class'] = array(
+    'ecl-button--default',
+    'ecl-button--caret_left'
+  );
+}
+
+function europa_preprocess_button__primary_block(&$variables, $hook) {
+  $variables['attributes_array']['class'] = array(
+    'ecl-button--primary',
+    'ecl-button--block',
+    'ecl-button--caret-down'
+  );
+}
