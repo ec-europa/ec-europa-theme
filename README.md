@@ -27,9 +27,14 @@ The platform provides two modules to facilitate building your site and integrate
 with views and display suite. 
 More information about their usage can be found in their respective README files.
 
-#### nexteuropa_core_views
+#### nexteuropa_formatters
 
-The module allows to set a component layout of your choice to a views row.
+This module provides default theme implementations for custom ECL formatters
+
+#### nexteuropa_formatters_views
+
+This module extends nexteuropa_formatters with custom view plugins that
+render content using ECL formatters
 
 ###nexteuropa_fields_formatters
 
