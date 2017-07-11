@@ -14,7 +14,6 @@ function europa_atomium_theme_logo() {
       'template' => 'logo',
       'variables' => array(
         'title' => '',
-        'url' => '',
         'type' => '',
       ),
     ),
@@ -29,10 +28,7 @@ function europa_atomium_definition_logo() {
     'label' => 'Logo',
     'description' => 'Logo.',
     'preview' => array(
-      array(
-        'title' => 'Home - European Commission',
-        'url' => 'https://ec.europa.eu/info/index',
-      ),
+      'title' => 'Home - European Commission',
     ),
   );
 }
@@ -43,7 +39,11 @@ function europa_atomium_definition_logo() {
 function atomium_preprocess_logo(&$variables) {
 
   $variables['attributes_array']['title'] = $variables['title'];
-  $variables['attributes_array']['href'] = $variables['url'];
+
+  if (empty($variables['attributes_array']['href'])) {
+    $variables['attributes_array']['href'] = "#top";
+  }
+
   if (empty($variables['attributes_array']['class'])) {
     $variables['attributes_array']['class'] = array();
   }
