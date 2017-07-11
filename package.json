@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@ec-europa/ecl-builder": "^0.9.0",
-    "@ec-europa/ecl-components-preset-base": "^0.7.0",
+    "@ec-europa/ecl-components-preset-base": "^0.8.0",
     "npm-run-all": "4.0.2"
   },
   "engines": {
