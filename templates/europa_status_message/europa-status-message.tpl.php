@@ -17,8 +17,6 @@
   <?php endif; ?>
 
   <?php if ($message_body): ?>
-    <p class="ecl-message__body">
-      <?php print render($message_body); ?>
-    </p>
+    <?php print render($message_body); ?>
   <?php endif; ?>
 </div>
