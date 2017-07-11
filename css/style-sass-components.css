@@ -2961,27 +2961,33 @@ Style guide gallery
   .mediagallery__item:first-child .mediagallery__item_container {
     margin-left: 0; }
   .mediagallery__item:hover .mediagallery__caption {
-    display: block;
-    /* Fallback for non-webkit. */
-    display: -webkit-box; }
+    opacity: 1; }
 
 .mediagallery__caption {
-  display: none;
+  display: block;
+  /* Fallback for non-webkit. */
+  display: -webkit-box;
   position: absolute;
+  opacity: 0;
   bottom: 0;
   width: 100%;
   height: 4em;
-  padding: 5px 10px 5px 5px;
+  padding: 5px 10px;
   overflow: hidden;
   background-color: #404040;
   font-size: 0.667em;
   color: #fff;
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical; }
+  -webkit-box-orient: vertical;
+  -webkit-transition: opacity 0.5s ease-in;
+  -moz-transition: opacity 0.5s ease-in;
+  -ms-transition: opacity 0.5s ease-in;
+  -o-transition: opacity 0.5s ease-in;
+  transition: opacity 0.5s ease-in; }
 
 .mediagallery__item.has-icon .mediagallery__caption {
-  padding-right: 4.0em !important; }
+  padding-right: 4.5em; }
 
 .mediagallery__item.has-icon .mediagallery__icon {
   position: absolute;
@@ -4847,9 +4853,7 @@ Style guide listing.3
   border-top: none; }
 
 /*
-Homepage Listings
-
-Specific style for home page listings
+Highlighted Listings
 
 Markup: html/listing--homepage.html
 
