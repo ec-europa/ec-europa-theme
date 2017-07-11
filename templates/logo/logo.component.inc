@@ -15,7 +15,7 @@ function europa_atomium_theme_logo() {
       'variables' => array(
         'title' => '',
         'url' => '',
-        'classes' => array(),
+        'external_class' => array(),
         'type' => '',
       ),
     ),
@@ -37,22 +37,23 @@ function europa_atomium_definition_logo() {
  * Implements hook_preprocess_HOOK().
  */
 function atomium_preprocess_logo(&$variables) {
+
+  $variables['attributes_array']['title'] = $variables['title'];
+  $variables['attributes_array']['href'] = $variables['url'];
+  if (empty($variables['attributes_array']['class'])) {
+    $variables['attributes_array']['class'] = array('ecl-logo');
+  }
   if (!empty($variables['type'])) {
     switch ($variables['type']) {
       case 'below':
-        $variables['classes'][] = 'ecl-logo--logotypebelow';
+        $variables['attributes_array']['class'][] = 'ecl-logo--logotypebelow';
         break;
 
       case 'right':
-        $variables['classes'][] = 'ecl-logo--logotype';
+        $variables['attributes_array']['class'][] = 'ecl-logo--logotype';
         break;
 
     }
   }
-  if (!empty($variables['classes'])) {
-    if (is_array($variables['classes'])) {
-      $variables['classes'] = implode(' ', $variables['classes']);
-    }
-    $variables['classes'] = ' ' . $variables['classes'];
-  }
+  $variables['attributes_array']['class'] = array_merge($variables['attributes_array']['class'], $variables['external_class']);
 }
