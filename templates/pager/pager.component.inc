@@ -27,125 +27,58 @@ function europa_atomium_definition_pager() {
  * Implements hook_preprocess_HOOK().
  */
 function europa_preprocess_pager(&$variables, $hook) {
+  global $pager_page_array, $pager_total;
+
   if (empty($variables[$hook])) {
     return;
   }
-  foreach ($variables['pager']['pager']['#items'] as $key => &$item) {
-    $item['#attributes']['class'][] = 'pager__item';
 
-    if ('pager_previous' == $key) {
-      $item['#attributes']['class'][] = 'pager__item--previous';
-    }
-    if ('pager_first' == $key) {
-      $item['#attributes']['class'][] = 'pager__item--first';
-      $item['link']['#text'] = 1;
-    }
-    if (strpos($key, 'pager_ellipsis') !== FALSE) {
-      $item['#attributes']['class'][] = 'pager__item--ellipsis';
-    }
-    if ('pager_last' == $key) {
-      $item['#attributes']['class'][] = 'pager__item--last';
-      $item['link']['#text'] = $variables['pager_total'][0];
-    }
-    if ('pager_next' == $key) {
-      $item['#attributes']['class'][] = 'pager__item--next';
-    }
-    if ('pager_current' == $key) {
-      $item['#attributes']['class'][] = 'pager__item--current';
-      $item['#markup'] = array(
-        'prefix' => array(
-          '#theme' => 'html_tag',
-          '#tag' => 'span',
-          '#attributes' => array(
-            'class' => array(
-              'pager__item__text',
-            ),
-          ),
-          '#value' => t('Page'),
-        ),
-        'separator' => array(
-          '#markup' => ' ',
-        ),
-        'value' => array(
-          '#markup' => $item['#markup'],
-        ),
+  // Max is the maximum page number.
+  $element = $variables['element'];
+  $quantity = $variables['quantity'];
+  $pager_max = $pager_total[$element];
+  $pager_middle = ceil($quantity / 2);
+  $pager_current = $pager_page_array[$element] + 1;
+  $pager_first = $pager_current - $pager_middle + 1;
+
+  $pager_last = $pager_current + $quantity - $pager_middle;
+  if ($pager_current < $pager_middle) {
+    $pager_last = $quantity;
+  }
+
+  // Make sure that last page is not higher of total number of pages.
+  if ($pager_last > $pager_max) {
+    $pager_last = $pager_max;
+  }
+
+  // If pages are less than $quantity then display them all.
+  if ($pager_max <= $quantity) {
+    $pager_first = 1;
+    $pager_last = $pager_max;
+  }
+
+  // Pass along pager figures for later processing.
+  $variables['pager_first'] = $pager_first < 1 ? 1 : $pager_first;
+  $variables['pager_middle'] = $pager_middle;
+  $variables['pager_last'] = $pager_last;
+  $variables['pager_current'] = $pager_page_array[$element] + 1;
+  $variables['pager_max'] = $pager_max;
+
+  foreach ($variables['pager']['pager']['#items'] as $key => $item) {
+    if (isset($item['link'])) {
+      $variables['links'][$key] = array(
+        'url' => url($item['link']['#path'], $item['link']['#options']),
+        'label' => $item['link']['#text'],
       );
     }
   }
 
-  // Avoid duplicated link for the first item.
-  $items = $variables['pager']['pager']['#items'];
-  if (isset($items['pager_first'])) {
-    // In Europa, the order of "first" and "last" elements are swapped.
-    $items = array_swap_assoc('pager_previous', 'pager_first', $items);
-    $first = $items['pager_first'];
-    foreach ($items as $key => $item) {
-      if (strpos($key, 'pager_link') !== FALSE) {
-        if ($first['link']['#text'] == $item['link']['#text']) {
-          unset($items[$key]);
-        }
-      }
-    }
-  }
-  $variables['pager']['pager']['#items'] = $items;
+  $variables['previous_title'] = t('Go to previous page');
+  $variables['previous_label'] = "‹ " . t('Previous');
+  $variables['next_title'] = t('Go to next page');
+  $variables['next_label'] = t('Next') . " ›";
+  $variables['goto_title'] = t('Go to page');
+  $variables['page_label'] = t('Page');
 
-  // Avoid duplicated link for the last item.
-  $items = $variables['pager']['pager']['#items'];
-  if (isset($items['pager_last'])) {
-    // In Europa, the order of "first" and "last" elements are swapped.
-    $items = array_swap_assoc('pager_next', 'pager_last', $items);
-    $last = $items['pager_last'];
-    foreach ($items as $key => $item) {
-      if (strpos($key, 'pager_link') !== FALSE) {
-        if ($last['link']['#text'] == $item['link']['#text']) {
-          unset($items[$key]);
-        }
-      }
-    }
-  }
-  $variables['pager']['pager']['#items'] = $items;
 
-  // Remove empty links.
-  $items = $variables['pager']['pager']['#items'];
-  foreach ($items as $key => $item) {
-    if ('pager_current' == $key) {
-      continue;
-    }
-    if (strpos($key, 'pager_ellipsis') !== FALSE) {
-      continue;
-    }
-    if (empty($item['link']['#text'])) {
-      unset($items[$key]);
-    }
-  }
-  $variables['pager']['pager']['#items'] = $items;
-}
-
-/**
- * Helper function to swap two elements in an array.
- *
- * @param mixed $key1
- *   The key of the first element.
- * @param mixed $key2
- *   The key of the second element.
- * @param array $array
- *   The array containing the elements.
- *
- * @return array
- *   A new array with the elements swapped.
- */
-function array_swap_assoc($key1, $key2, array $array) {
-  $newArray = array();
-  foreach ($array as $key => $value) {
-    if ($key == $key1) {
-      $newArray[$key2] = $array[$key2];
-    }
-    elseif ($key == $key2) {
-      $newArray[$key1] = $array[$key1];
-    }
-    else {
-      $newArray[$key] = $value;
-    }
-  }
-  return $newArray;
 }

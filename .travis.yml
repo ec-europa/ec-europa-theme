@@ -1,0 +1,44 @@
+language: php
+
+git:
+  depth: 1
+
+php:
+  - 5.6
+
+env:
+  global:
+    - PATH=$PATH:/home/travis/.composer/vendor/bin
+
+install:
+  - composer self-update
+
+before_script:
+  # Set sendmail so drush doesn't throw an error during site install.
+  - echo "sendmail_path=`which true`" >> `php --ini | grep "Loaded Configuration" | awk '{print $4}'`
+  # Create database.
+  - mysql -e 'create database drupal'
+  - mkdir test-site
+  - cp tests/composer.json test-site
+  - cd test-site
+  - composer install
+  # Install Drupal target site.
+  - cd web
+  - ../vendor/bin/drush si standard -y --db-url=mysql://travis:@127.0.0.1/drupal
+  # Test latest commit on current branch.
+  - git clone --branch=$TRAVIS_BRANCH https://github.com/$TRAVIS_REPO_SLUG.git sites/all/themes/contrib/europa
+  - ../vendor/bin/drush en atomium europa views views_ui libraries entity_translation date date_views date_popup date_api -y
+  - ../vendor/bin/drush vset theme_default europa
+  - ../vendor/bin/drush dis overlay update -y
+  - ../vendor/bin/drush cc all
+  - ../vendor/bin/drush --debug runserver :8888 > ~/debug.txt 2>&1 &
+  - sleep 4s
+  - cd ..
+  - ln -s web/sites/all/themes/contrib/europa/tests/behat.yml.dist
+  - ln -s web/sites/all/themes/contrib/europa/tests/features
+
+script:
+  - ./vendor/bin/behat
+
+notifications:
+  email: false
