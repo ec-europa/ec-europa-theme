@@ -1,5 +1,5 @@
 {
-  "name": "oe_theme",
+  "name": "ec-europa-theme",
   "license": "EUPL-1.1",
   "version": "0.0.1",
   "description": "OpenEuropa base theme.",
@@ -11,9 +11,9 @@
     "build": "npm-run-all --parallel build:*"
   },
   "dependencies": {
-    "npm-run-all": "4.0.2",
-    "@ec-europa/ecl-builder": "0.8.0",
-    "@ec-europa/ecl-components-preset-base": "^0.7.0"
+    "@ec-europa/ecl-builder": "^0.9.0",
+    "@ec-europa/ecl-components-preset-base": "^0.7.0",
+    "npm-run-all": "4.0.2"
   },
   "engines": {
     "node": ">=6.9.5",

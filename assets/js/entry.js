@@ -1,8 +1,5 @@
-var ECL = (function (exports) {
-'use strict';
-
 // const path = require("path");
-// This logic for finding the path to the js files needs to be improved.
+// This logic for finding the path to the js files.
 // const source_folder = __dirname + "/node_modules/@ec-europa";
 
 // export * from "./node_modules/@ec-europa/ecl-dropdowns/ecl-dropdowns";
@@ -17,7 +14,3 @@ var ECL = (function (exports) {
 // export * from './components/ecl-inpage-navs/inpage-navs';
 // export * from './components/ecl-timelines/timelines';
 // export * from './components/ecl-profile-topbars/profile-topbars';
-
-return exports;
-
-}({}));
