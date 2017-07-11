@@ -1,0 +1,22 @@
+{
+  "name": "ec-europa-theme",
+  "license": "EUPL-1.1",
+  "version": "0.0.1",
+  "description": "OpenEuropa base theme.",
+  "private": true,
+  "scripts": {
+    "build:copy": "ecl-builder copy",
+    "build:styles": "ecl-builder styles",
+    "build:scripts": "ecl-builder scripts",
+    "build": "npm-run-all --parallel build:*"
+  },
+  "dependencies": {
+    "@ec-europa/ecl-builder": "^0.9.2",
+    "@ec-europa/ecl-components-preset-base": "^0.8.0",
+    "npm-run-all": "4.0.2"
+  },
+  "engines": {
+    "node": ">=6.9.5",
+    "yarn": "^0.20.3"
+  }
+}

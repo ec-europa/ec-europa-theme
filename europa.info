@@ -30,6 +30,7 @@ regions[footer_bottom] = Footer bottom
 ; ========================================
 ; Stylesheets
 ; ========================================
+stylesheets[all][] = assets/css/ecl.css
 stylesheets[all][] = assets/css/europa.css
 
 ; ========================================
@@ -40,7 +41,7 @@ scripts[] = assets/js/libraries/enquire.min.js
 scripts[] = assets/js/libraries/velocity.min.js
 scripts[] = assets/js/libraries/jquery.equalheight.min.js
 scripts[] = assets/js/misc/ajax.js
-scripts[] = assets/js/europa.js
+scripts[] = assets/js/ecl.js
 scripts[] = assets/js/europa_tabs.js
 scripts[] = assets/js/components/table-responsive.js
 
