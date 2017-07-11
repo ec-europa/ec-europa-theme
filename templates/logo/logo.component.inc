@@ -15,7 +15,6 @@ function europa_atomium_theme_logo() {
       'variables' => array(
         'title' => '',
         'url' => '',
-        'external_class' => array(),
         'type' => '',
       ),
     ),
@@ -29,7 +28,12 @@ function europa_atomium_definition_logo() {
   return array(
     'label' => 'Logo',
     'description' => 'Logo.',
-    'preview' => array(),
+    'preview' => array(
+      array(
+        'title' => 'Home - European Commission',
+        'url' => 'https://ec.europa.eu/info/index',
+      ),
+    ),
   );
 }
 
@@ -41,8 +45,9 @@ function atomium_preprocess_logo(&$variables) {
   $variables['attributes_array']['title'] = $variables['title'];
   $variables['attributes_array']['href'] = $variables['url'];
   if (empty($variables['attributes_array']['class'])) {
-    $variables['attributes_array']['class'] = array('ecl-logo');
+    $variables['attributes_array']['class'] = array();
   }
+  $variables['attributes_array']['class'][] = 'ecl-logo';
   if (!empty($variables['type'])) {
     switch ($variables['type']) {
       case 'below':
@@ -55,5 +60,4 @@ function atomium_preprocess_logo(&$variables) {
 
     }
   }
-  $variables['attributes_array']['class'] = array_merge($variables['attributes_array']['class'], $variables['external_class']);
 }
