@@ -47,7 +47,6 @@ function europa_preprocess_site_header(&$variables, $hook) {
     '#title' => 'Home - European Commission',
     '#attributes_array' => array(
       'class' => array('ecl-site-header__logo'),
-      'href' => 'https://ec.europa.eu/info/index',
     ),
   );
 }

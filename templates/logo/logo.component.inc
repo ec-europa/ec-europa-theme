@@ -41,7 +41,7 @@ function atomium_preprocess_logo(&$variables) {
   $variables['attributes_array']['title'] = $variables['title'];
 
   if (empty($variables['attributes_array']['href'])) {
-    $variables['attributes_array']['href'] = "#top";
+    $variables['attributes_array']['href'] = "https://ec.europa.eu/info/index";
   }
 
   if (empty($variables['attributes_array']['class'])) {
