@@ -80,7 +80,7 @@ This will:
 1. Compile ECL SASS to `./assets/css/ecl.css`
 2. Transpile ECL JavaScript dependencies from `./assets/js/entry.js` to `./assets/js/ecl.js`
 3. Copy ECL fonts to `./assets/fonts/`
-4. Copy ECL images to `./assets/images`
+4. Copy ECL images to `./assets/images/`
 
 For more details about these build steps, check [`ecl-builder` documentation](https://www.npmjs.com/package/@ec-europa/ecl-builder)
 
