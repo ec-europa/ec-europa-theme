@@ -93,11 +93,8 @@
 </section>
 <?php endif; ?>
 
-<header class="site-header" role="banner">
 <?php print render($site_header); ?>
-<?php print render($page['header']); ?>
 
-</header>
 
 <?php if (!empty($page['navigation'])): ?>
   <?php print render($page['navigation']); ?>

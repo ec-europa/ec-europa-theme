@@ -5,6 +5,6 @@
  * Contains template file.
  */
 ?>
-<a href="#top" class="ecl-logo ecl-logo--logotype site-header__logo" title="<?php print $page_logo_title; ?>">
-    <span class="ecl-sr-only"><?php print $page_logo_title; ?></span>
+<a href="<?php print $url; ?>" class="ecl-logo<?php print $classes; ?>" title="<?php print $title; ?>">
+    <span class="ecl-sr-only"><?php print $title; ?></span>
 </a>

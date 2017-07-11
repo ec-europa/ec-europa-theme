@@ -13,7 +13,10 @@ function europa_atomium_theme_logo() {
     'logo' => array(
       'template' => 'logo',
       'variables' => array(
-        'page_logo_title' => t('Home'),
+        'title' => '',
+        'url' => '',
+        'classes' => array(),
+        'type' => '',
       ),
     ),
   );
@@ -28,4 +31,28 @@ function europa_atomium_definition_logo() {
     'description' => 'Logo.',
     'preview' => array(),
   );
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function atomium_preprocess_logo(&$variables) {
+  if (!empty($variables['type'])) {
+    switch ($variables['type']) {
+      case 'below':
+        $variables['classes'][] = 'ecl-logo--logotypebelow';
+        break;
+
+      case 'right':
+        $variables['classes'][] = 'ecl-logo--logotype';
+        break;
+
+    }
+  }
+  if (!empty($variables['classes'])) {
+    if (is_array($variables['classes'])) {
+      $variables['classes'] = implode(' ', $variables['classes']);
+    }
+    $variables['classes'] = ' ' . $variables['classes'];
+  }
 }
