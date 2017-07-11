@@ -5,7 +5,7 @@ module.exports = {
   scripts: [
     {
       entry: path.resolve(__dirname, "assets/js/entry.js"),
-      dest: path.resolve(__dirname, "assets/js/europa.js"),
+      dest: path.resolve(__dirname, "assets/js/ecl.js"),
       options: {
         sourceMap: false,
         moduleName: "ECL"
