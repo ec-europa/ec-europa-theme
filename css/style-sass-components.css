@@ -6382,6 +6382,15 @@ Style guide: page-header.5
     background-color: #fff;
     color: #004494; } }
 
+.node-info-homepage.view-mode-homepage_political .page-header .page-header__hero-title .field__items {
+  max-width: 550px; }
+
+.node-info-homepage.view-mode-homepage_political .page-header .page-header__hero-title p {
+  width: auto;
+  min-width: 180px;
+  display: inline-block;
+  padding: 22px 15px 22px 33px; }
+
 .node-info-homepage.view-mode-homepage_political .page-header .page-header__hero-title a {
   text-decoration: none; }
   .node-info-homepage.view-mode-homepage_political .page-header .page-header__hero-title a:hover {
