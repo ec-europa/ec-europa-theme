@@ -190,23 +190,24 @@ function europa_form_element(&$variables) {
       case "checkbox":
         $attributes['class'][] = 'checkbox';
         $is_checkbox = TRUE;
-        // DTTSB-2111 - Supporting links inside checkboxes label.
-        if (preg_match('#<a\b[^>]*>(.*?)</a>#', $element['#title'], $link)) {
-          // This is likely to be redundant.
-          $element['#title'] = filter_xss($element['#title']);
-          // Get the clean label..
-          $element['#title'] = str_replace($link[0], '', $element['#title']);
+        $element['#title'] = filter_xss($element['#title']);
+
+        // Supports anchors inside the checkbox label.
+        if (preg_match('/<a\b[^>]*>(.*?)<\/a>/is', $element['#title'], $link)) {
+          $anchor = $link[0];
+          // Get the clean label.
+          $element['#title'] = trim(str_replace($anchor, '', $element['#title']));
           // Build the label markup.
           $title = theme('form_element_label', $variables);
           // Unset the label otherwise it would be printed twice.
           unset($element['#title']);
-          // Adding target _blank if not in place.
-          if (strpos($link[0], '#target=#') === FALSE) {
-            $link[0] = str_replace('<a ', '<a target="_blank" ', $link[0]);
+          // Adds target _blank if not in place.
+          if (!preg_match('/<a.*?target=[^>]*?>/is', $anchor)) {
+            $anchor = preg_replace('/<a([^>]+)>/is', '<a$1 target="_blank">', $anchor);
           }
 
-          // Re-add the label + the link found after the input tag.
-          $element['#field_suffix'] = $title . ' ' . $link[0];
+          // Re-adds the label and the anchor found after the input tag.
+          $element['#field_suffix'] = $title . ' ' . $anchor;
           $attributes['class'][] = 'checkbox--with-link';
         }
         break;
