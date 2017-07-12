@@ -6,6 +6,20 @@
  */
 
 /**
+ * Implements hook_atomium_theme_HOOK().
+ */
+function europa_atomium_theme_status_messages() {
+  return array(
+    'status_messages' => array(
+      'variables' => array(
+        'messages' => array(),
+      ),
+      'template' => 'status-messages',
+    ),
+  );
+}
+
+/**
  * Implements hook_atomium_definition_HOOK().
  */
 function europa_atomium_definition_status_messages() {
@@ -14,17 +28,24 @@ function europa_atomium_definition_status_messages() {
     'description' => 'Status messages.',
     'preview' => array(
       'messages' => array(
-        'error' => array(
-          t('Dummy error message'),
+        'success' => array(
+          'Success message',
         ),
-        'status' => array(
-          t('Dummy status message'),
+        'informative' => array(
+          'Informative message',
         ),
         'warning' => array(
-          t('Dummy warning message'),
+          'Warning message',
         ),
-        'info' => array(
-          t('Dummy info message'),
+        'error' => array(
+          'Error message',
+        ),
+        'live_stream' => array(
+          'Live Stream message',
+        ),
+        'status' => array(
+          'Status message 1',
+          'Status message 2',
         ),
       ),
     ),
@@ -36,35 +57,34 @@ function europa_atomium_definition_status_messages() {
  */
 function europa_preprocess_status_messages(&$variables, $hook) {
   $status_heading = array(
-    'status' => t('Success'),
-    'error' => t('Error'),
-    'warning' => t('Warning'),
-    'info' => t('Information'),
+    'success' => t('Success message'),
+    'informative' => t('Informative message'),
+    'live_stream' => t('Live Stream message'),
   );
 
-  $variables += array(
-    $hook => array(
-      $hook => array(),
-    ),
+  $status_modifier = array(
+    'success' => 'success',
+    'informative' => 'informative',
+    'live_stream' => 'live_stream',
+    'status' => 'success',
+    'warning' => 'warning',
+    'error' => 'error',
   );
 
-  $output = array();
-  foreach ($variables[$hook][$hook] as $type => $messages) {
-    unset($messages['messages']['#title']);
+  foreach ($variables['status_messages']['status_messages'] as $type => &$messages) {
+    if(!empty($status_modifier[$type])) {
+      $messages['modifier'] = $status_modifier[$type];
+    }
 
-    $output[$type] = array(
-      '#theme' => array('europa_status_message__' . $type),
-      '#message_classes' => array(
-        $type,
-        'alert',
-      ),
-      '#message_title' => $status_heading[$type],
-      '#message_type' => $type . ' message',
-      '#message_body' => $messages['messages'],
-    );
+    if ((empty($messages['messages']['#title'])) AND (!empty($status_modifier[$type]))) {
+      $messages['messages']['#title'] = $status_heading[$type];
+    }
+    $messages['status_heading'] = $messages['messages']['#title'];
+
+    if (empty($messages['messages']['#attributes']['class'])) {
+      $messages['messages']['#attributes']['class'] = array();
+    }
+    $messages['messages']['#attributes']['class'][] = "ecl-message__body";
+    $messages['messages']['#attributes']['class'][] = "ecl-list";
   }
-
-  $variables[$hook] = array(
-    $hook => $output,
-  );
 }
