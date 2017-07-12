@@ -164,6 +164,11 @@ Style guide: page-header.5
 .page-header--image {
   background: transparent url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) center/cover no-repeat;
 }
+//@include breakpoint(screen-md-min) {
+//  .page-header--image {
+//    background-size: auto;
+//  }
+//}
 
 // Drupal connect.
 .node-type-info-homepage .page-header {
@@ -216,6 +221,14 @@ Style guide: page-header.5
     height: 320px;
 
     .page-header__hero-title {
+      margin: 245px 0 0;
+    }
+  }
+}
+
+@include breakpoint(screen-sm-min) {
+  .page-header--xlarge-intro {
+    .page-header__hero-title {
       margin: auto;
       padding-top: 5em;
       background-color: transparent;
@@ -253,7 +266,7 @@ Style guide: page-header.5
       }
     }
 
-    @include breakpoint(screen-msm-min) {
+    @include breakpoint(screen-sm-min) {
       .page-header__hero-title {
         a {
           color: $ec-blue;

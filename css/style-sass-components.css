@@ -4847,9 +4847,7 @@ Style guide listing.3
   border-top: none; }
 
 /*
-Homepage Listings
-
-Specific style for home page listings
+Highlighted Listings
 
 Markup: html/listing--homepage.html
 
@@ -6364,28 +6362,32 @@ Style guide: page-header.5
   .page-header--xlarge-intro, .node-info-homepage.view-mode-homepage_political .page-header {
     height: 320px; }
     .page-header--xlarge-intro .page-header__hero-title, .node-info-homepage.view-mode-homepage_political .page-header .page-header__hero-title {
-      margin: auto;
-      padding-top: 5em;
-      background-color: transparent; }
-    .page-header--xlarge-intro .field__label--above, .node-info-homepage.view-mode-homepage_political .page-header .field__label--above {
-      width: 146px;
-      height: 34px;
-      margin: 0;
-      line-height: 34px;
-      background-color: #003776;
-      text-align: center; }
-    .page-header--xlarge-intro p, .node-info-homepage.view-mode-homepage_political .page-header p {
-      width: 550px;
-      padding: 22px 5px 22px 33px;
-      background-color: #fff;
-      color: #004494; } }
+      margin: 245px 0 0; } }
+
+@media (min-width: 768px) {
+  .page-header--xlarge-intro .page-header__hero-title, .node-info-homepage.view-mode-homepage_political .page-header .page-header__hero-title {
+    margin: auto;
+    padding-top: 5em;
+    background-color: transparent; }
+  .page-header--xlarge-intro .field__label--above, .node-info-homepage.view-mode-homepage_political .page-header .field__label--above {
+    width: 146px;
+    height: 34px;
+    margin: 0;
+    line-height: 34px;
+    background-color: #003776;
+    text-align: center; }
+  .page-header--xlarge-intro p, .node-info-homepage.view-mode-homepage_political .page-header p {
+    width: 550px;
+    padding: 22px 5px 22px 33px;
+    background-color: #fff;
+    color: #004494; } }
 
 .node-info-homepage.view-mode-homepage_political .page-header .page-header__hero-title a {
   text-decoration: none; }
   .node-info-homepage.view-mode-homepage_political .page-header .page-header__hero-title a:hover {
     text-decoration: underline; }
 
-@media (min-width: 622px) {
+@media (min-width: 768px) {
   .node-info-homepage.view-mode-homepage_political .page-header .page-header__hero-title a {
     color: #004494; }
     .node-info-homepage.view-mode-homepage_political .page-header .page-header__hero-title a:hover {
