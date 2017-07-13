@@ -9,24 +9,6 @@ atomium_include('atomium', 'includes/alter');
 atomium_include('europa', 'includes/alter');
 
 /**
- * Implements hook_theme().
- */
-function europa_theme($existing, $type, $theme, $path) {
-  return [
-    'europa_status_message' => [
-      'template' => 'status_message',
-      'path' => $path . '/templates',
-      'variables' => [
-        'message_classes' => '',
-        'message_title' => '',
-        'message_type' => '',
-        'message_body' => '',
-      ],
-    ],
-  ];
-}
-
-/**
  * Overrides theme_form_required_marker().
  */
 function europa_form_required_marker($variables) {
