@@ -191,7 +191,6 @@ function europa_form_element(&$variables) {
         $attributes['class'][] = 'checkbox';
         $is_checkbox = TRUE;
         $element['#title'] = filter_xss($element['#title']);
-
         // Supports anchors inside the checkbox label.
         if (preg_match('/<a\b[^>]*>(.*?)<\/a>/is', $element['#title'], $link)) {
           $anchor = $link[0];
@@ -291,10 +290,12 @@ function europa_form_element(&$variables) {
   }
   // @todo This would be better handled in a theme_form_element_label override.
   if (!empty($anchor)) {
+    // Add the link.
     $output .= $anchor;
-    preg_match('/<span class="form-required\b[^>]*>(.*?)<\/span>/is', $output, $required);
 
-    if (!empty($required[0])) {
+    if (!empty($variables['element']['#required'])) {
+      // Find the form-required span and put it after the link.
+      preg_match('/<span class="form-required\b[^>]*>(.*?)<\/span>/is', $output, $required);
       $output = str_replace($required[0], '', $output) . $required[0];
     }
   }
