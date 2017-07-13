@@ -27,7 +27,9 @@
       <?php endif; ?>
       <?php if (!empty($introduction)): ?>
         <div class="ecl-page-header__intro">
-          <?php print render($introduction); ?>
+          <p class="ecl-paragraph ecl-paragraph--l">
+            <?php print render($introduction); ?>
+          </p>
         </div>
       <?php endif; ?>
   </div>
