@@ -28,6 +28,8 @@ function europa_atomium_definition_easy_breadcrumb() {
     'label' => 'Easy breadcrumb',
     'description' => 'Easy breadcrumb.',
     'preview' => array(
+      'prefix' => '<div style="background-color: #004494; padding: 5px 15px 15px; float: left; width: 100%;">',
+      'suffix' => '</div>',
       'segments_quantity' => 3,
       'breadcrumb' => array(
         array(
@@ -39,7 +41,7 @@ function europa_atomium_definition_easy_breadcrumb() {
           'url' => '/',
         ),
         array(
-          'content' => t('My news title'),
+          'content' => '',
         ),
       ),
     ),

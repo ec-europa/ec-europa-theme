@@ -17,7 +17,11 @@ function europa_preprocess_block(&$variables) {
       break;
 
     case 'menu-nexteuropa-service-links':
-    case 'cce-basic-config-footer-ipg':
+    case 'menu-nexteuropa-site-links':
+    case 'menu-nexteuropa-social-media':
+    case 'menu-nexteuropa-inst-links':
+      $variables['title'] = $block->subject;
+      $variables['title_attributes_array']['class'][] = array('ecl-h4', 'ecl-footer__title');
       $block->subject = '';
       break;
 
@@ -32,6 +36,11 @@ function europa_preprocess_block(&$variables) {
       // Add class to block.
       $variables['classes_array'][] = 'ecl-lang-select-sites';
       $variables['link'] = url('splash') . '?' . drupal_get_destination()['destination'];
+      break;
+
+    case 'inline_navigation':
+      $variables['classes_array'][] = 'inpage-nav__wrapper';
+      $variables['title_attributes_array']['class'][] = 'inpage-nav__block-title';
       break;
   }
 
@@ -118,8 +127,12 @@ function europa_preprocess_block(&$variables) {
     }
   }
 
-  if ($block->delta == 'inline_navigation') {
-    $variables['classes_array'][] = 'inpage-nav__wrapper';
-    $variables['title_attributes_array']['class'][] = 'inpage-nav__block-title';
+  if (isset($variables['elements']['#markup'])) {
+    // If "#markup" is set, that means it is the case of custom block
+    // with "body field" that can contain simple HTML tags without "ecl"
+    // classes.
+    // Then the namespace CSS class must be added.
+    $variables['content']['#attributes']['class'][] = 'ecl-editor';
+    $variables['content_attributes_array']['class'][] = 'ecl-editor';
   }
 }

@@ -11,6 +11,7 @@
 function europa_preprocess_page(&$variables, $hook) {
   // Small fix to maxe the link to the start page use the alias with language.
   $variables['front_page'] = url('<front>');
+
   // Add information about the number of sidebars.
   if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
     $variables['content_column_class'] = 'ecl-col-6';
@@ -20,14 +21,6 @@ function europa_preprocess_page(&$variables, $hook) {
   }
   else {
     $variables['content_column_class'] = 'ecl-col-12';
-  }
-
-  // Set footer region column classes.
-  if (!empty($variables['page']['footer_right'])) {
-    $variables['footer_column_class'] = 'ecl-col-8';
-  }
-  else {
-    $variables['footer_column_class'] = 'ecl-col-12';
   }
 
   $variables['page_logo_title'] = t('Home - @sitename', ['@sitename' => variable_get('site_name', 'European Commission')]);
@@ -94,10 +87,20 @@ function europa_preprocess_page(&$variables, $hook) {
     '#introduction' => NULL,
     '#meta' => array(),
   );
+
   if (isset($node)) {
     // Adding generic introduction field to be later rendered in page template.
     $introduction = variable_get('ec_europa_introduction_field', FALSE);
     $variables['page_header']['#introduction'] = isset($node->{$introduction})
       ? field_view_field('node', $node, $introduction, ['label' => 'hidden']) : NULL;
   }
+
+  $variables['footer'] = array(
+    '#theme' => array('footer'),
+    '#footer_left' => $variables['page']['footer_left'],
+    '#footer_right' => $variables['page']['footer_right'],
+    '#footer_middle' => $variables['page']['footer_middle'],
+    '#footer_bottom' => $variables['page']['footer_bottom'],
+    '#footer_improved' => $variables['page']['footer_improved'],
+  );
 }

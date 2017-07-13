@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Default theme implementation to display a block.
@@ -44,9 +43,6 @@
  * @ingroup themeable
  */
 ?>
-<?php print render($title_prefix); ?>
-<?php if (!empty($title)): ?>
-  <h4<?php print render($title_attributes); ?>><?php print render($title); ?></h4>
-<?php endif; ?>
-<?php print render($title_suffix); ?>
-<?php print render($content); ?>
+<select class="ecl-select <?php print $classes; ?>" id="<?php print $block_html_id; ?>" name="<?php print $block_html_id; ?>"<?php print $attributes; ?> onchange="location = this.options[this.selectedIndex].value;">
+  <?php print $content['#markup'] ?>
+</select>

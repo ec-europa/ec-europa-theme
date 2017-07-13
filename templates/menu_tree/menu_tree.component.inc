@@ -34,75 +34,62 @@ function europa_preprocess_menu_tree__main_menu(&$variables, $hook) {
 }
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements hook_preprocess_hook().
  */
-function europa_menu_tree__user_menu(&$variables) {
-  $tree = $variables['tree'];
+function europa_preprocess_menu_tree__user_menu(&$variables, $hook) {
   global $user;
-  $logged_in_user = '';
-  if ($user->uid > 0) {
-    $logged_in_user = t('Logged in as %username', array('%username' => format_username($user)));
+  $variables['logged_in_user'] = '';
+  if (!user_is_anonymous()) {
+    $variables['logged_in_user'] = t('Logged in as %username', array('%username' => format_username($user)));
   }
-  return '<ul class="site-user-menu__list">' . $logged_in_user . $tree . '</ul>';
+  $variables['attributes_array']['class'][] = 'site-user-menu__list';
 }
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements hook_preprocess_hook().
  */
-function europa_menu_tree__menu_nexteuropa_service_links(&$variables) {
-  return _europa_menu_tree_footer($variables['tree'], TRUE);
+function europa_preprocess_menu_tree__menu_nexteuropa_service_links(&$variables, $hook) {
+  $variables['attributes_array']['class'][] = 'ecl-footer__menu';
+  $variables['attributes_array']['class'][] = 'ecl-list-inline';
 }
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements hook_preprocess_hook().
  */
-function europa_menu_tree__menu_service_tools(&$variables) {
-  return _europa_menu_tree_footer($variables['tree'], TRUE);
+function europa_preprocess_menu_tree__menu_service_tools(&$variables, $hook) {
+  $variables['attributes_array']['class'][] = 'ecl-footer__menu';
+  $variables['attributes_array']['class'][] = 'ecl-list-inline';
 }
 
 /**
- * Europa theme wrapper function for the EC menu links.
- *
- * @see theme_menu_tree()
+ * Implements hook_preprocess_hook().
  */
-function europa_menu_tree__menu_nexteuropa_social_media(&$variables) {
-  return _europa_menu_tree_footer($variables['tree'], TRUE);
+function europa_preprocess_menu_tree__menu_nexteuropa_social_media(&$variables, $hook) {
+  $variables['attributes_array']['class'][] = 'ecl-footer__menu';
+  $variables['attributes_array']['class'][] = 'ecl-list-inline';
 }
 
 /**
- * Europa theme wrapper function for the EC menu links.
- *
- * @see theme_menu_tree()
+ * Implements hook_preprocess_hook().
  */
-function europa_menu_tree__menu_nexteuropa_inst_links(&$variables) {
-  return _europa_menu_tree_footer($variables['tree']);
+function europa_preprocess_menu_tree__menu_nexteuropa_inst_links(&$variables, $hook) {
+  $variables['attributes_array']['class'][] = 'ecl-footer__menu';
 }
 
 /**
- * Europa theme wrapper function for the EC menu links.
- *
- * @see theme_menu_tree()
+ * Implements hook_preprocess_hook().
  */
-function europa_menu_tree__menu_nexteuropa_site_links(&$variables) {
-  return _europa_menu_tree_footer($variables['tree']);
+function europa_preprocess_menu_tree__menu_nexteuropa_site_links(&$variables, $hook) {
+  $variables['attributes_array']['class'][] = 'ecl-footer__menu';
 }
 
 /**
- * Europa theme wrapper function for the secondary menu links.
+ * Implements hook_preprocess_hook().
  */
-function europa_menu_tree__secondary(&$variables) {
-  return '<ul class="menu nav navbar-nav secondary">' . $variables['tree'] . '</ul>';
-}
-
-/**
- * Create the needed wrapper for menus in the footer.
- */
-function _europa_menu_tree_footer($tree, $inline = FALSE) {
-  $classes[] = 'footer__menu';
-
-  if ($inline) {
-    $classes[] = 'ul-list-inline';
-  }
-
-  return '<ul class="' . implode(' ', $classes) . '">' . $tree . '</ul>';
+function europa_preprocess_menu_tree__secondary(&$variables, $hook) {
+  // TODO: is this still necessary ?
+  $variables['attributes_array']['class'][] = 'menu';
+  $variables['attributes_array']['class'][] = 'nav';
+  $variables['attributes_array']['class'][] = 'navbar-nav';
+  $variables['attributes_array']['class'][] = 'secondary';
 }

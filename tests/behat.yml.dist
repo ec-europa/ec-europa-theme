@@ -1,0 +1,25 @@
+default:
+  suites:
+    default:
+      contexts:
+        - FeatureContext
+        - Drupal\DrupalExtension\Context\DrupalContext
+        - Drupal\DrupalExtension\Context\MinkContext
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - Drupal\DrupalExtension\Context\MarkupContext
+  extensions:
+    Behat\MinkExtension:
+      goutte: ~
+      selenium2: ~
+      base_url: http://localhost:8888
+    Drupal\DrupalExtension:
+      blackbox: ~
+      api_driver: 'drupal'
+      drupal:
+        drupal_root: 'web'
+      region_map:
+        footer: "#footer"
+        pager: ".ecl-pager__wrapper"
+  formatters:
+    progress: ~

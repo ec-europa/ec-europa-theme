@@ -9,36 +9,44 @@
  * Implements hook_preprocess_HOOK().
  */
 function europa_preprocess_field(&$variables) {
-  if (isset($variables['element']['#label'])) {
-    $variables['label'] = $variables['element']['#label'];
+  $element = &$variables['element'];
+  if (isset($element['#label'])) {
+    $variables['label'] = $element['#label'];
   }
 
   // @TODO refactor Add the tpl classes here
   // Changing label for the field to display stripped out values.
   switch ($variables['element']['#field_name']) {
     case 'field_core_social_network_links':
-      $variables['element']['before'] = t('Follow the latest progress and get involved.');
-      $variables['element']['after'] = l(t('Other social networks'), variable_get('dt_core_other_social_networks_link', 'http://europa.eu/contact/social-networks/index_en.htm'));
+      $element['before'] = t('Follow the latest progress and get involved.');
+      $element['after'] = l(t('Other social networks'), variable_get('dt_core_other_social_networks_link', 'http://europa.eu/contact/social-networks/index_en.htm'));
       break;
   }
-  if ($variables['element']['#field_type'] <> 'ds') {
-    // Get more field information.
-    $field = field_info_field($variables['element']['#field_name']);
+  if ($element['#field_type'] <> 'ds') {
     // Initialize parameter.
     $allow_attribute = TRUE;
     // If it is not a tranlateable entityreference field we should continue.
-    if ($field['type'] == "entityreference" && $field['translatable'] == 0) {
+    if ($element['#field_type'] == "entityreference" && $element['#field_translatable'] == 0) {
       $allow_attribute = FALSE;
     }
     if ($allow_attribute) {
       // The default language code.
       $content_langcode = $GLOBALS['language_content']->language;
       // When the language is different from content.
-      if (isset($variables['element']['#language'])
-        && $variables['element']['#language'] <> LANGUAGE_NONE
-        && $variables['element']['#language'] <> $content_langcode
+      if (isset($element['#language'])
+        && $element['#language'] <> LANGUAGE_NONE
+        && $element['#language'] <> $content_langcode
       ) {
-        $variables['attributes_array']['lang'] = $variables['element']['#language'];
+        $variables['attributes_array']['lang'] = $element['#language'];
+      }
+    }
+
+    // In case of "Long text" or "Long text and summary" field, inject the
+    // namespace class in the item class.
+    if (in_array($element['#field_type'], array('text_with_summary', 'text_long'))) {
+      $attributes_item = &$variables['attributes_item'];
+      foreach ($variables['items'] as $delta => $item) {
+        $attributes_item[$delta]['class'][] = 'ecl-editor';
       }
     }
   }
