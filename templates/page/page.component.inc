@@ -74,8 +74,6 @@ function europa_preprocess_page(&$variables, $hook) {
     '#title_prefix' => $variables['title_prefix'],
     '#title_suffix' => $variables['title_suffix'],
     '#title' => drupal_get_title(),
-    '#introduction' => NULL,
-    '#meta' => array(),
   );
 
   if (isset($node)) {
