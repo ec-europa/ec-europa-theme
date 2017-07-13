@@ -195,19 +195,13 @@ function europa_form_element(&$variables) {
         // Supports anchors inside the checkbox label.
         if (preg_match('/<a\b[^>]*>(.*?)<\/a>/is', $element['#title'], $link)) {
           $anchor = $link[0];
-          // Get the clean label.
+          // Get the clean label text.
           $element['#title'] = trim(str_replace($anchor, '', $element['#title']));
-          // Build the label markup.
-          $title = theme('form_element_label', $variables);
-          // Unset the label otherwise it would be printed twice.
-          unset($element['#title']);
           // Adds target _blank if not in place.
           if (!preg_match('/<a.*?target=[^>]*?>/is', $anchor)) {
             $anchor = preg_replace('/<a([^>]+)>/is', '<a$1 target="_blank">', $anchor);
           }
 
-          // Re-adds the label and the anchor found after the input tag.
-          $element['#field_suffix'] = $title . ' ' . $anchor;
           $attributes['class'][] = 'checkbox--with-link';
         }
         break;
@@ -294,6 +288,15 @@ function europa_form_element(&$variables) {
       }
 
       $output .= $feedback_message;
+  }
+  // @todo This would be better handled in a theme_form_element_label override.
+  if (!empty($anchor)) {
+    $output .= $anchor;
+    preg_match('/<span class="form-required\b[^>]*>(.*?)<\/span>/is', $output, $required);
+
+    if (!empty($required[0])) {
+      $output = str_replace($required[0], '', $output) . $required[0];
+    }
   }
 
   $output .= "</div>\n";
