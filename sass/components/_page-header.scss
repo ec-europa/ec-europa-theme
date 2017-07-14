@@ -164,11 +164,6 @@ Style guide: page-header.5
 .page-header--image {
   background: transparent url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) center/cover no-repeat;
 }
-//@include breakpoint(screen-md-min) {
-//  .page-header--image {
-//    background-size: auto;
-//  }
-//}
 
 // Drupal connect.
 .node-type-info-homepage .page-header {
@@ -198,7 +193,7 @@ Style guide: page-header.5
 
   .page-header__hero-title {
     min-height: 75px;
-    margin: 75px 0 0;
+    margin: 150px 0 0;
     padding: 16px;
     background-color: $ec-blue120;
   }
@@ -256,6 +251,10 @@ Style guide: page-header.5
   .page-header {
     @extend .page-header--xlarge-intro;
 
+    &.page-header--image {
+      background-position: top -35px left 50%;
+    }
+
     .page-header__hero-title {
       .field__items {
         max-width: 550px;
@@ -265,7 +264,7 @@ Style guide: page-header.5
         width: auto;
         min-width: 180px;
         display: inline-block;
-        padding: 22px 15px 22px 33px;
+        padding-right: 15px;
       }
 
       a {
@@ -278,6 +277,10 @@ Style guide: page-header.5
     }
 
     @include breakpoint(screen-sm-min) {
+      &.page-header--image {
+        background-position: center;
+      }
+
       .page-header__hero-title {
         a {
           color: $ec-blue;
