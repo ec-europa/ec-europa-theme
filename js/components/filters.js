@@ -135,27 +135,6 @@
           });
         }
       });
-
-      // Check and show Clear button.
-      if (window.location.search !== '') {
-        var showButton = false,
-            elementValue = '';
-
-        $('.filters input, .filters select').each(function () {
-          elementValue = $(this).val();
-          if (elementValue != '' && elementValue != 'All') {
-            console.log(':' + elementValue + ':');
-            showButton = true;
-          }
-        });
-        if (showButton) {
-
-          $('.filters__btn-reset').show();
-        }
-        else {
-          $('.filters__btn-reset').hide();
-        }
-      }
     }
   };
 })(jQuery);

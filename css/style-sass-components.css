@@ -2708,7 +2708,8 @@ Style guide filters.filters
   margin-bottom: 20px; }
 
 .filters__btn-submit {
-  width: 100%; }
+  width: 100%;
+  text-align: center; }
 
 .filters__btn-reset {
   width: 100%;
@@ -4847,9 +4848,7 @@ Style guide listing.3
   border-top: none; }
 
 /*
-Homepage Listings
-
-Specific style for home page listings
+Highlighted Listings
 
 Markup: html/listing--homepage.html
 
