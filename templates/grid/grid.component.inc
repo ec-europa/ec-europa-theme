@@ -12,7 +12,6 @@ function europa_atomium_theme_grid() {
   return array(
     'grid' => array(
       'variables' => array(
-        'title' => NULL,
         'rows' => NULL,
       ),
       'template' => 'grid',
@@ -28,22 +27,25 @@ function europa_atomium_definition_grid() {
     'label' => 'Grid',
     'description' => 'Grid layout.',
     'preview' => array(
-      'title' => 'A grid template',
       'rows' => array(
         array(
-          'Entry first line 1',
-          'Entry first Line 2',
+          '1 of 2',
+          '1 of 2',
         ),
         array(
-          'Entry line 1.',
-          'Entry line 2.',
-        ),
-        array(
-          'Entry last line 1.',
-          'Entry last line 2.',
+          '1 of 3',
+          '2 of 3',
+          '3 of 3',
         ),
       ),
     ),
   );
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function atomium_preprocess_grid(&$variables) {
+  $variables['attributes_array']['class'][] = 'ecl-container';
 }
 
