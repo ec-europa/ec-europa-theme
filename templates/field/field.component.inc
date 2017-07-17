@@ -50,7 +50,4 @@ function europa_preprocess_field(&$variables) {
       }
     }
   }
-  // Set the attributes to the element.
-  $variables['attributes'] = (empty($variables['attributes_array']) ? '' : drupal_attributes($variables['attributes_array']));
-
 }

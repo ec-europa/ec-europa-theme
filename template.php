@@ -5,21 +5,7 @@
  * template.php
  */
 
-atomium_include('atomium', 'includes/alter');
 atomium_include('europa', 'includes/alter');
-
-/**
- * Overrides theme_form_required_marker().
- */
-function europa_form_required_marker($variables) {
-  // This is also used in the installer, pre-database setup.
-  $t = get_t();
-  $attributes = [
-    'class' => 'form-required text-danger',
-    'title' => $t('This field is required.'),
-  ];
-  return '<span' . drupal_attributes($attributes) . '>*</span>';
-}
 
 /**
  * Implements hook_date_popup_process_alter().
@@ -32,6 +18,8 @@ function europa_date_popup_process_alter(&$element, &$form_state, $context) {
 
 /**
  * Override theme_file_link().
+ *
+ * TODO: Convert this into a preprocess function.
  */
 function europa_file_link($variables) {
   if (function_exists('_nexteuropa_formatters_file_markup')) {
@@ -52,6 +40,8 @@ function europa_file_link($variables) {
 
 /**
  * Pre-render function for taxonomy pages.
+ *
+ * TODO: This function doesn't seems to be used in this theme.
  */
 function _europa_term_heading($element) {
   $element['#prefix'] = '<div class="container-fluid"><div class="' . $element['main'] . '">';

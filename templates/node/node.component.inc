@@ -4,6 +4,7 @@
  * @file
  * Contains component file.
  */
+
 /**
  * Implements hook_preprocess_node().
  */
