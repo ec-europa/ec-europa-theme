@@ -44,8 +44,7 @@
  * @ingroup themeable
  */
 ?>
-<section id="<?php print render($block_html_id); ?>" class="<?php print render($classes); ?> clearfix"<?php print render($attributes); ?>>
-
+<section<?php print render($attributes); ?>>
   <?php print render($title_prefix); ?>
   <?php if (!empty($title)): ?>
     <h3<?php print render($title_attributes); ?>><?php print render($title); ?></h3>
@@ -57,5 +56,4 @@
     <?php print render($content); ?>
   </div>
   <?php endif; ?>
-
 </section>

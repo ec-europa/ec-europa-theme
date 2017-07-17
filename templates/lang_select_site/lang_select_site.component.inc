@@ -44,11 +44,12 @@ function europa_preprocess_lang_select_site(&$variables, $hook) {
   $lang_select = module_invoke('language_selector_site', 'block_view', 'language_selector_site');
   $variables['code'] = $lang_select['content']['code'];
   $variables['label'] = $lang_select['content']['label'];
-  $options = array(
-    'html' => TRUE,
-    'query' => array(
-      drupal_get_destination(),
-    ),
+  $variables['url'] = url(
+    'language-selector/site-language', array(
+      'html' => TRUE,
+      'query' => array(
+        drupal_get_destination(),
+      ),
+    )
   );
-  $variables['url'] = url('language-selector/site-language', $options);
 }

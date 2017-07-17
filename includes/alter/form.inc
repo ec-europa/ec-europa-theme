@@ -10,12 +10,32 @@
  */
 function europa_form_alter(&$form, &$form_state, $form_id) {
   if (isset($form['views_bulk_operations'])) {
-    $children = element_children($form['views_bulk_operations']);
-    foreach ($children as $child) {
+    foreach (element_children($form['views_bulk_operations']) as $child) {
       if ($form['views_bulk_operations'][$child]['#type'] == 'checkbox') {
         $form['views_bulk_operations'][$child]['#title'] = ' ';
       }
     }
+  }
+
+  // Custom recursive function to alter all the #theme keys of form elements.
+  _europa_form_element_theme_alter($form, $form_state, $form_id);
+}
+
+/**
+ * Custom callback.
+ *
+ * This function will alter all the element in a form and update their
+ * #theme key to append the $form_id at the end so we can preprocess them.
+ */
+function _europa_form_element_theme_alter(&$form, &$form_state, $form_id) {
+  foreach (element_children($form) as $key) {
+    if (isset($form[$key]['#type']) && empty($form[$key]['#defaults_loaded']) && ($info = element_info($form[$key]['#type']))) {
+      if (isset($info['#theme'])) {
+        $form[$key]['#theme'] = $info['#theme'] . '__' . $form_id;
+      }
+    }
+
+    _europa_form_element_theme_alter($form[$key], $form_state, $form_id);
   }
 }
 

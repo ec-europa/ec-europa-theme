@@ -74,11 +74,9 @@ function europa_preprocess_pager(&$variables, $hook) {
   }
 
   $variables['previous_title'] = t('Go to previous page');
-  $variables['previous_label'] = "‹ " . t('Previous');
+  $variables['previous_label'] = t('@arrow Previous', array('@arrow' => '‹'));
   $variables['next_title'] = t('Go to next page');
-  $variables['next_label'] = t('Next') . " ›";
+  $variables['next_label'] = t('Next @arrow', array('@arrow' => '›'));
   $variables['goto_title'] = t('Go to page');
   $variables['page_label'] = t('Page');
-
-
 }
