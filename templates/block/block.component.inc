@@ -21,7 +21,8 @@ function europa_preprocess_block(&$variables) {
     case 'menu-nexteuropa-social-media':
     case 'menu-nexteuropa-inst-links':
       $variables['title'] = $block->subject;
-      $variables['title_attributes_array']['class'][] = array('ecl-h4', 'ecl-footer__title');
+      $variables['title_attributes_array']['class'][] = 'ecl-h4';
+      $variables['title_attributes_array']['class'][] = 'ecl-footer__title';
       $block->subject = '';
       break;
 
