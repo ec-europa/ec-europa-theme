@@ -4422,6 +4422,9 @@ Style guide form.checkbox
     text-decoration: none;
     top: .25em; }
 
+.checkbox--with-link a {
+  font-size: 0.889em; }
+
 .no-svg .checkbox input[type="checkbox"]:checked + label::before {
   background: none !important; }
 
