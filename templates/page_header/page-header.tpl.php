@@ -6,7 +6,6 @@
  */
 ?>
 <div class="ecl-page-header">
-    <!-- TODO: Where is coming this variable $breadcrumb ? -->
   <?php print render($breadcrumb); ?>
   <div class="ecl-page-header__body">
       <?php if (!empty($identity)): ?>
