@@ -45,3 +45,8 @@ libraries[scrollTo][destination] = "themes/europa"
 libraries[scrollTo][directory_name] = "js/libraries"
 libraries[scrollTo][download][type] = "get"
 libraries[scrollTo][download][url] = "https://raw.githubusercontent.com/flesler/jquery.scrollTo/2.1.2/jquery.scrollTo.min.js"
+
+libraries[scrollTo][destination] = "themes/europa"
+libraries[scrollTo][directory_name] = "js/libraries"
+libraries[scrollTo][download][type] = "get"
+libraries[scrollTo][download][url] = "https://raw.githubusercontent.com/makandra/superclamp/master/dist/superclamp.min.js"

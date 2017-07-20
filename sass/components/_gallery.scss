@@ -52,50 +52,59 @@ Style guide gallery
     .mediagallery__item_container {
       margin-left: 0;
     }
+
+    &.has-icon {
+      .mediagallery__icon {
+        right: 0;
+      }
+    }
   }
 
   &:hover {
     .mediagallery__caption {
-      display: block; /* Fallback for non-webkit. */
-      display: -webkit-box;
+      opacity: 1;
     }
   }
 }
 
-.mediagallery__caption {
-  display: none;
+.mediagallery__item_info {
+  width: 100%;
   position: absolute;
   bottom: 0;
-  width: 100%;
-  height: 4em;
-  padding: 5px 10px 5px 5px;
-  overflow: hidden;
-  background-color: $ec-grey;
+  box-sizing: border-box;
+  height: 2.667em;
+}
+
+.mediagallery__caption {
   font-size: 0.667em;
   color: #fff;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  display: block;
+  padding: 5px 10px;
+  height: 4em;
+  opacity: 0;
+  background: $ec-grey;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s ease-in-out;
+  -ms-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .mediagallery__item.has-icon {
   .mediagallery__caption {
-    padding-right: 4.0em !important;
+    padding-right: 4.5em;
   }
 
   .mediagallery__icon {
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: 5px;
     width: 2.667em;
     height: 2.667em;
     padding: 0;
     background-color: $ec-grey;
     color: #fff;
     text-align: center;
-    overflow: hidden;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
 
     .icon {
       line-height: 2.667em;
@@ -104,27 +113,6 @@ Style guide gallery
       &::before {
         margin-right: 0;
       }
-    }
-
-    .icon--camera {
-      line-height: 4.000em;
-      font-size: 0.667em;
-    }
-  }
-}
-
-// Firefox alternative to webkit-line-clamp.
-@-moz-document url-prefix() {
-  .mediagallery__caption {
-    &::after {
-      content: "...";
-      position: absolute;
-      top: 0;
-      right: 0;
-      margin-top: 2.0em;
-      padding: 0 20px 1px 45px;
-      background: linear-gradient(to right, rgba(255, 255, 255, 0), $ec-grey 50%) repeat scroll 0 0 rgba(0, 0, 0, 0);
-      font-weight: bold;
     }
   }
 }
@@ -184,8 +172,6 @@ Style guide: gallery.overlay
 
   @include breakpoint(screen-md-min) {
     display: flex;
-    display: -ms-flexbox;
-    display: -webkit-flex;
     width: 90vw;
     max-width: 1440px;
     height: 800px;
@@ -197,8 +183,6 @@ Style guide: gallery.overlay
 // Main container.
 .gallery-overlay__media {
   display: flex;
-  display: -ms-flexbox;
-  display: -webkit-flex;
   height: 325px;
   width: 100%;
   padding: 0;
@@ -212,8 +196,6 @@ Style guide: gallery.overlay
   .gallery-overlay__media-previous,
   .gallery-overlay__media-next {
     display: flex;
-    display: -ms-flexbox;
-    display: -webkit-flex;
     align-items: center;
     -ms-flex-align: center;
     -webkit-align-content: center;
@@ -270,14 +252,8 @@ Style guide: gallery.overlay
 
   .gallery-overlay__media-item-list__wrapper {
     display: flex;
-    display: -ms-flexbox;
-    display: -webkit-flex;
     align-items: center;
-    -ms-flex-align: center;
-    -webkit-align-content: center;
     justify-content: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
     width: 83.33333333%;
     max-width: 840px;
     max-height: 100%;

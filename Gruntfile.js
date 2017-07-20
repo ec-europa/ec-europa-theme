@@ -12,13 +12,23 @@ module.exports = function (grunt) {
     watch: {
       sass: {
         files: ['**/*.{scss,sass}', 'sass/**/*.html'],
-        tasks: ['sasslint', 'clean', 'sass', 'shell', 'copy:main'],
+        tasks: ['sasslint', 'clean', 'sass', 'postcss', 'shell', 'copy:main'],
         options: {
           livereload: true
         }
+      },
+      fonts: {
+        files: ['fonts/europa-icons-src/*'],
+        tasks: ['cacheBustAll'],
+        options: {
+          interrupt: true
+        }
       }
     },
-    clean: ['styleguide/assets'],
+    clean: {
+      styleguide: ['styleguide/assets'],
+      fonts: ['fonts/europa-icons/*']
+    },
     sass: {
       options: {
         sourceMap: true
@@ -29,6 +39,21 @@ module.exports = function (grunt) {
           'css/style-sass-base.css': 'sass/app_base.scss',
           'css/style-sass-components.css' : 'sass/app_components.scss'
         }
+      }
+    },
+    cacheBust: {
+      fonts: {
+        options: {
+          baseDir: 'sass',
+          assets: ['../fonts/europa-icons-src/*'],
+          length: 8,
+          outputDir: '../fonts/europa-icons',
+          clearOutputDir: true
+        },
+        files: [{
+          cwd: 'sass/components',
+          src: ['_icon.scss']
+        }]
       }
     },
     shell: {
@@ -42,6 +67,37 @@ module.exports = function (grunt) {
         config: '~/.sasslint.json'
       },
       target: ['sass/**/*.{scss,sass}', 'sass/*.{scss,sass}']
+    },
+    postcss: {
+      options: {
+        map: false,
+        processors: [
+          require('postcss-discard-comments'),
+          require('autoprefixer')({browsers: 'last 2 versions'}),
+          require('cssnano')()
+        ]
+      },
+      dist: {
+        src: 'css/*.css'
+      }
+    },
+    replace: {
+      prepare: {
+        src: ['sass/components/_icon.scss'],
+        dest: 'sass/components/_icon.scss',
+        replacements: [{
+          from: /fonts\/europa-icons\/europa-icons\.(.*?)\./g,
+          to: 'fonts/europa-icons-src/europa-icons.'
+        }]
+      },
+      restore: {
+        src: ['sass/components/_icon.scss'],
+        dest: 'sass/components/_icon.scss',
+        replacements: [{
+          from: 'europa-icons-src',
+          to: 'europa-icons'
+        }]
+      }
     },
     copy: {
       main: {
@@ -79,10 +135,15 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-sass-lint');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-cache-bust');
   grunt.loadNpmTasks('grunt-shell');
+  grunt.loadNpmTasks('grunt-postcss');
+  grunt.loadNpmTasks('grunt-text-replace');
 
   grunt.registerTask('default', ['watch']);
-  grunt.registerTask('styleguide', ['clean', 'sass', 'shell', 'copy:main']);
+  grunt.registerTask('fonts', ['watch']);
+  grunt.registerTask('cacheBustAll', ['replace:prepare', 'clean:fonts', 'cacheBust:fonts', 'styleguide']);
+  grunt.registerTask('styleguide', ['clean', 'sass', 'postcss', 'shell', 'copy:main']);
   grunt.registerTask('copyall', ['copy:all']);
   grunt.registerTask('copytest', ['copy:test']);
   grunt.registerTask('kss', ['shell']);
