@@ -62,48 +62,91 @@ function europa_preprocess_menu_link__menu_service_tools(&$variables, $hook) {
  * Implements hook_preprocess_hook().
  */
 function europa_preprocess_menu_link__menu_nexteuropa_service_links(&$variables, $hook) {
-  $variables['attributes_array']['class'][] = 'ecl-footer__menu-item';
   $variables['attributes_array']['class'][] = 'ecl-list-inline__item';
-  $variables['output']['#options']['attributes']['class'][] = 'ecl-footer__link';
+  $variables['output']['#options']['attributes']['class'] = array_diff(
+    $variables['output']['#options']['attributes']['class'],
+    array('ecl-link--standalone')
+  );
+}
 
-  // Rules and exceptions for the footer.
-  _europa_footer_add_class_icon($variables['output']['#options']['attributes']['class']);
-  _europa_array_delete(array('ecl-link--standalone'), $variables['output']['#options']['attributes']['class']);
+/**
+ * Implements hook_preprocess_hook().
+ */
+function europa_preprocess_menu_link__menu_nexteuropa_service_links__footer(&$variables, $hook) {
+  $variables = _europa_menu_link_footer_alter($variables);
 }
 
 /**
  * Implements hook_preprocess_hook().
  */
 function europa_preprocess_menu_link__menu_nexteuropa_social_media(&$variables, $hook) {
-  $variables['attributes_array']['class'][] = 'ecl-footer__menu-item';
   $variables['attributes_array']['class'][] = 'ecl-list-inline__item';
-  $variables['output']['#options']['attributes']['class'][] = 'ecl-footer__link';
+  $variables['output']['#options']['attributes']['class'] = array_diff(
+    $variables['output']['#options']['attributes']['class'],
+    array('ecl-link--standalone')
+  );
+}
 
-  // Rules and exceptions for the footer.
-  _europa_footer_add_class_icon($variables['output']['#options']['attributes']['class']);
-  _europa_array_delete(array('ecl-link--standalone'), $variables['output']['#options']['attributes']['class']);
+/**
+ * Implements hook_preprocess_hook().
+ */
+function europa_preprocess_menu_link__menu_nexteuropa_social_media__footer(&$variables, $hook) {
+  $variables = _europa_menu_link_footer_alter($variables);
 }
 
 /**
  * Implements hook_preprocess_hook().
  */
 function europa_preprocess_menu_link__menu_nexteuropa_inst_links(&$variables, $hook) {
-  $variables['attributes_array']['class'][] = 'ecl-footer__menu-item';
-  $variables['output']['#options']['attributes']['class'][] = 'ecl-footer__link';
+  $variables['output']['#options']['attributes']['class'] = array_diff(
+    $variables['output']['#options']['attributes']['class'],
+    array('ecl-link--standalone')
+  );
+}
 
-  // Rules and exceptions for the footer.
-  _europa_footer_add_class_icon($variables['output']['#options']['attributes']['class']);
-  _europa_array_delete(array('ecl-link--standalone'), $variables['output']['#options']['attributes']['class']);
+/**
+ * Implements hook_preprocess_hook().
+ */
+function europa_preprocess_menu_link__menu_nexteuropa_inst_links__footer(&$variables, $hook) {
+  $variables = _europa_menu_link_footer_alter($variables);
 }
 
 /**
  * Implements hook_preprocess_hook().
  */
 function europa_preprocess_menu_link__menu_nexteuropa_site_links(&$variables, $hook) {
+  $variables['output']['#options']['attributes']['class'] = array_diff(
+    $variables['output']['#options']['attributes']['class'],
+    array('ecl-link--standalone')
+  );
+}
+
+/**
+ * Implements hook_preprocess_hook().
+ */
+function europa_preprocess_menu_link__menu_nexteuropa_site_links__footer(&$variables, $hook) {
+  $variables = _europa_menu_link_footer_alter($variables);
+}
+
+/**
+ * Alter specific menu link for the footer.
+ *
+ * @param array $variables
+ *   The array of variables.
+ *
+ * @return array
+ *   The array of variables.
+ */
+function _europa_menu_link_footer_alter(array $variables) {
   $variables['attributes_array']['class'][] = 'ecl-footer__menu-item';
   $variables['output']['#options']['attributes']['class'][] = 'ecl-footer__link';
 
-  // Rules and exceptions for the footer.
-  _europa_footer_add_class_icon($variables['output']['#options']['attributes']['class']);
-  _europa_array_delete(array('ecl-link--standalone'), $variables['output']['#options']['attributes']['class']);
+  $classes = &$variables['output']['#options']['attributes']['class'];
+  if (!empty($classes) && in_array('ecl-icon', $classes)) {
+    $classes[] = 'ecl-footer__social-icon';
+  }
+
+  // As we pass the parameter with reference, this is not mandatory.
+  // It is just to ensure compatibility with the two way of working.
+  return $variables;
 }

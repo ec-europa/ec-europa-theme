@@ -26,21 +26,20 @@ function europa_atomium_theme_link() {
  * Implements hook_preprocess_HOOK().
  */
 function europa_preprocess_link(&$variables, $hook) {
-
   $classes = &$variables['attributes_array']['class'];
 
-  if (FALSE === _europa_array_find('ecl-', $classes)) {
+  if (_europa_array_find('ecl-', $classes)) {
     $classes[] = 'ecl-link';
   }
 
-  // Add the class for the external links
+  // Add the class for the external links.
   if (_europa_url_is_external($variables['path']) && (!in_array('ecl-icon', $classes))) {
     $classes[] = 'ecl-link--external';
   }
 
   // Add the span tag for the icon.
   if (in_array('ecl-icon', $classes)) {
-    $icon_classes = array_filter($classes, function($class, $key) use (&$classes) {
+    $icon_classes = array_filter($classes, function ($class, $key) use (&$classes) {
       if (FALSE !== stripos($class, 'ecl-icon') || FALSE !== stripos($class, '__social-icon')) {
         unset($classes[$key]);
         return TRUE;

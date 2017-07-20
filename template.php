@@ -99,9 +99,9 @@ function europa_dropdown(array $variables) {
   );
 
   foreach ($items as $key => $value) {
-    $links[$value] = t($key);
+    $links[$value] = $key;
   }
-  $select['#options'] = array_merge( $select['#options'], $links);
+  $select['#options'] = array_merge($select['#options'], array_map('t', $links));
 
   return form_select_options($select);
 }
@@ -130,50 +130,21 @@ function _europa_array_find($needle, array $haystack) {
 }
 
 /**
- * Delete all elements in the needle into haystack.
- *
- * @param array $needle
- *   The array of string to search for.
- * @param array $haystack
- *   The array to search in.
- */
-function _europa_array_delete(array $needle, array &$haystack) {
-  array_filter($haystack, function($class, $key) use (&$needle, &$haystack) {
-    if (in_array($class, $needle)) {
-      unset($haystack[$key]);
-      return TRUE;
-    }
-    return FALSE;
-  }, ARRAY_FILTER_USE_BOTH);
-}
-
-/**
- * Add a specifique class for the footer.
- *
- * @param array $classes
- *   The array of classes.
- */
-function _europa_footer_add_class_icon(array &$classes) {
-  if(!empty($classes) && in_array('ecl-icon', $classes)){
-    $classes[] = 'ecl-footer__social-icon';
-  }
-}
-
-/**
  * Returns TRUE if a path is external to Drupal and 'ec.europa.eu' domain.
  *
- * @param $path
+ * @param string $path
  *   The internal path or external URL being linked to, such as "node/34" or
  *   "http://example.com/foo".
  *
- * @return
+ * @return bool
  *   Boolean TRUE or FALSE, where TRUE indicates an external path.
  */
 function _europa_url_is_external($path) {
-  if(TRUE === url_is_external($path)) {
+  if (TRUE === url_is_external($path)) {
     if (FALSE === stripos(parse_url($path, PHP_URL_HOST), 'europa.eu')) {
       return TRUE;
     }
   }
+
   return FALSE;
 }
