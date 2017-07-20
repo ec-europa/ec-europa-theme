@@ -190,18 +190,20 @@ function europa_form_element(&$variables) {
       case "checkbox":
         $attributes['class'][] = 'checkbox';
         $is_checkbox = TRUE;
-        $element['#title'] = filter_xss($element['#title']);
-        // Supports anchors inside the checkbox label.
-        if (preg_match('/<a\b[^>]*>(.*?)<\/a>/is', $element['#title'], $link)) {
-          $anchor = $link[0];
-          // Get the clean label text.
-          $element['#title'] = trim(str_replace($anchor, '', $element['#title']));
-          // Adds target _blank if not in place.
-          if (!preg_match('/<a.*?target=[^>]*?>/is', $anchor)) {
-            $anchor = preg_replace('/<a([^>]+)>/is', '<a$1 target="_blank">', $anchor);
-          }
+        if (isset($element['#title'])) {
+          $element['#title'] = filter_xss($element['#title']);
+          // Supports anchors inside the checkbox label.
+          if (preg_match('/<a\b[^>]*>(.*?)<\/a>/is', $element['#title'], $link)) {
+            $anchor = $link[0];
+            // Get the clean label text.
+            $element['#title'] = trim(str_replace($anchor, '', $element['#title']));
+            // Adds target _blank if not in place.
+            if (!preg_match('/<a.*?target=[^>]*?>/is', $anchor)) {
+              $anchor = preg_replace('/<a([^>]+)>/is', '<a$1 target="_blank">', $anchor);
+            }
 
-          $attributes['class'][] = 'checkbox--with-link';
+            $attributes['class'][] = 'checkbox--with-link';
+          }
         }
         break;
 
