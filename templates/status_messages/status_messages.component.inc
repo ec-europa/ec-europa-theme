@@ -6,7 +6,7 @@
  */
 
 /**
- * Implements hook_atomium_theme_HOOK().
+ * Implements hook_atomium_theme_hook().
  */
 function europa_atomium_theme_status_messages() {
   return array(
@@ -20,7 +20,7 @@ function europa_atomium_theme_status_messages() {
 }
 
 /**
- * Implements hook_atomium_definition_HOOK().
+ * Implements hook_atomium_definition_hook().
  */
 function europa_atomium_definition_status_messages() {
   return array(
@@ -53,7 +53,7 @@ function europa_atomium_definition_status_messages() {
 }
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements hook_preprocess_hook().
  */
 function europa_preprocess_status_messages(&$variables, $hook) {
   $status_heading = array(

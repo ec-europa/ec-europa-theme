@@ -6,7 +6,7 @@
  */
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements hook_preprocess_hook().
  */
 function europa_preprocess_page(&$variables, $hook) {
   // Small fix to maxe the link to the start page use the alias with language.

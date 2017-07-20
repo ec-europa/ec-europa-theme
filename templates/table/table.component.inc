@@ -6,7 +6,7 @@
  */
 
 /**
- * Implements hook_atomium_definition_HOOK().
+ * Implements hook_atomium_definition_hook().
  */
 function europa_atomium_definition_table() {
   return array(
@@ -31,7 +31,7 @@ function europa_atomium_definition_table() {
 }
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements hook_preprocess_hook().
  */
 function europa_preprocess_table(&$variables, $hook) {
   // We needs this patch in order to have the <tfoot> tag working properly:

@@ -6,7 +6,7 @@
  */
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements hook_preprocess_hook().
  */
 function europa_preprocess_form_element(&$variables, $hook) {
   $element = &$variables['element'];
@@ -33,7 +33,7 @@ function europa_preprocess_form_element(&$variables, $hook) {
  *
  * @see europa_preprocess_form_element()
  */
-function _europa_preprocess_form_element__query_text(&$variables) {
+function _europa_preprocess_form_element__query_text(&$variables, $hook) {
   $element = $variables['element'];
   if (empty($element['#name']) || $element['#name'] != 'QueryText') {
     return;

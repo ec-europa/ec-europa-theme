@@ -6,9 +6,9 @@
  */
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements hook_preprocess_hook().
  */
-function europa_preprocess_field(&$variables) {
+function europa_preprocess_field(&$variables, $hook) {
   $element = &$variables['element'];
   if (isset($element['#label'])) {
     $variables['label'] = $element['#label'];

@@ -6,7 +6,7 @@
  */
 
 /**
- * Implements hook_atomium_theme_HOOK().
+ * Implements hook_atomium_theme_hook().
  */
 function europa_atomium_theme_lang_select_site() {
   return array(
@@ -22,7 +22,7 @@ function europa_atomium_theme_lang_select_site() {
 }
 
 /**
- * Implements hook_atomium_definition_HOOK().
+ * Implements hook_atomium_definition_hook().
  */
 function europa_atomium_definition_lang_select_site() {
   global $language;
@@ -38,7 +38,7 @@ function europa_atomium_definition_lang_select_site() {
 }
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements hook_preprocess_hook().
  */
 function europa_preprocess_lang_select_site(&$variables, $hook) {
   $lang_select = module_invoke('language_selector_site', 'block_view', 'language_selector_site');

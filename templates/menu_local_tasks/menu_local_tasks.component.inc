@@ -6,7 +6,7 @@
  */
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements hook_preprocess_hook().
  */
 function europa_preprocess_menu_local_tasks(&$variables, $hook) {
   // Primary menu tabs preprocess.

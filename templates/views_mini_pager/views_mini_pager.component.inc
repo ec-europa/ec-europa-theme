@@ -6,7 +6,7 @@
  */
 
 /**
- * Implements hook_atomium_theme_HOOK().
+ * Implements hook_atomium_theme_hook().
  */
 function europa_atomium_theme_views_mini_pager() {
   return array(
@@ -26,7 +26,7 @@ function europa_atomium_theme_views_mini_pager() {
 }
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements hook_preprocess_hook().
  */
 function europa_preprocess_views_mini_pager(&$variables, $hook) {
     $variables[$hook]['#theme'] = 'pager';

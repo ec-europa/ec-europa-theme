@@ -6,7 +6,7 @@
  */
 
 /**
- * Implements hook_atomium_theme_HOOK().
+ * Implements hook_atomium_theme_hook().
  */
 function europa_atomium_theme_footer() {
   return array(
@@ -24,7 +24,7 @@ function europa_atomium_theme_footer() {
 }
 
 /**
- * Implements hook_atomium_definition_HOOK().
+ * Implements hook_atomium_definition_hook().
  */
 function europa_atomium_definition_footer() {
 

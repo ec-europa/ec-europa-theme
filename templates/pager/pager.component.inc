@@ -6,7 +6,7 @@
  */
 
 /**
- * Implements hook_atomium_definition_HOOK().
+ * Implements hook_atomium_definition_hook().
  */
 function europa_atomium_definition_pager() {
   return array(
@@ -24,7 +24,7 @@ function europa_atomium_definition_pager() {
 }
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements hook_preprocess_hook().
  */
 function europa_preprocess_pager(&$variables, $hook) {
   global $pager_page_array, $pager_total;
