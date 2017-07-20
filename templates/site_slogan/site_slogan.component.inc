@@ -6,7 +6,7 @@
  */
 
 /**
- * Implements hook_atomium_theme_HOOK().
+ * Implements hook_atomium_theme_hook().
  */
 function europa_atomium_theme_site_slogan() {
   return array(
@@ -20,7 +20,7 @@ function europa_atomium_theme_site_slogan() {
 }
 
 /**
- * Implements hook_atomium_definition_HOOK().
+ * Implements hook_atomium_definition_hook().
  */
 function europa_atomium_definition_site_slogan() {
   return array(
@@ -33,7 +33,7 @@ function europa_atomium_definition_site_slogan() {
 }
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements hook_preprocess_hook().
  */
 function europa_preprocess_site_slogan(&$variables, $hook) {
   $variables[$hook] = array(

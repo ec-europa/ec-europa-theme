@@ -6,7 +6,7 @@
  */
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements hook_preprocess_hook().
  */
 function europa_preprocess_form_required_marker(&$variables, $hook) {
   $t = get_t();

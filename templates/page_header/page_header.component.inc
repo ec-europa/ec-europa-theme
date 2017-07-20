@@ -6,7 +6,7 @@
  */
 
 /**
- * Implements hook_atomium_theme_HOOK().
+ * Implements hook_atomium_theme_hook().
  */
 function europa_atomium_theme_page_header() {
   return array(
@@ -24,7 +24,7 @@ function europa_atomium_theme_page_header() {
 }
 
 /**
- * Implements hook_atomium_definition_HOOK().
+ * Implements hook_atomium_definition_hook().
  */
 function europa_atomium_definition_page_header() {
   return array(
@@ -51,7 +51,7 @@ function europa_atomium_definition_page_header() {
 }
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements hook_preprocess_hook().
  */
 function europa_preprocess_page_header(&$variables, $hook) {
   module_load_include('inc', 'easy_breadcrumb', 'includes/easy_breadcrumb.blocks');

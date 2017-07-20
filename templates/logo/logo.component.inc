@@ -6,7 +6,7 @@
  */
 
 /**
- * Implements hook_atomium_theme_HOOK().
+ * Implements hook_atomium_theme_hook().
  */
 function europa_atomium_theme_logo() {
   return array(
@@ -21,7 +21,7 @@ function europa_atomium_theme_logo() {
 }
 
 /**
- * Implements hook_atomium_definition_HOOK().
+ * Implements hook_atomium_definition_hook().
  */
 function europa_atomium_definition_logo() {
   return array(
@@ -34,9 +34,9 @@ function europa_atomium_definition_logo() {
 }
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements hook_preprocess_hook().
  */
-function atomium_preprocess_logo(&$variables) {
+function atomium_preprocess_logo(&$variables, $hook) {
   $variables['attributes_array'] += array(
     'class' => array(),
     'href' => 'https://ec.europa.eu/info/index',

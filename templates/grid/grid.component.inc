@@ -6,7 +6,7 @@
  */
 
 /**
- * Implements hook_atomium_theme_HOOK().
+ * Implements hook_atomium_theme_hook().
  */
 function europa_atomium_theme_grid() {
   return array(
@@ -20,7 +20,7 @@ function europa_atomium_theme_grid() {
 }
 
 /**
- * Implements hook_atomium_definition_HOOK().
+ * Implements hook_atomium_definition_hook().
  */
 function europa_atomium_definition_grid() {
   return array(
@@ -43,7 +43,7 @@ function europa_atomium_definition_grid() {
 }
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements hook_preprocess_hook().
  */
 function atomium_preprocess_grid(&$variables, $hook) {
   $variables['attributes_array']['class'][] = 'ecl-container';

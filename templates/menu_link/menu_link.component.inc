@@ -6,7 +6,7 @@
  */
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements hook_preprocess_hook().
  */
 function europa_preprocess_menu_link__main_menu(&$variables, $hook) {
   $link = $variables['element']['#original_link'];

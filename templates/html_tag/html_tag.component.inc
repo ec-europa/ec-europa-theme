@@ -6,7 +6,7 @@
  */
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements hook_preprocess_hook().
  */
 function europa_preprocess_html_tag(&$variables, $hook) {
   $headers = ['h1', 'h2', 'h3', 'h4', 'h5'];

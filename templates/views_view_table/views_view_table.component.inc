@@ -6,7 +6,7 @@
  */
 
 /**
- * Implements hook_preprocess_views_view_table().
+ * Implements hook_preprocess_hook().
  */
 function europa_preprocess_views_view_table(&$variables, $hook) {
   $variables['classes_array'][] = 'ecl-table';

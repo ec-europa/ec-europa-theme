@@ -6,9 +6,9 @@
  */
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements hook_preprocess_hook().
  */
-function europa_preprocess_block(&$variables) {
+function europa_preprocess_block(&$variables, $hook) {
   $block = $variables['block'];
 
   switch ($block->delta) {
