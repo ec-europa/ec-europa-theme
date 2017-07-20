@@ -23,6 +23,12 @@
     }
   };
 
+  Drupal.behaviors.clampline = {
+    attach: function (context) {
+      $('.mediagallery__caption').clamp();
+    },
+  };
+
   Drupal.behaviors.timeline = {
     attach: function (context) {
       $('.timeline').once('timeline', function () {
