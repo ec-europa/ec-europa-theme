@@ -38,6 +38,7 @@
     "public/js/components/collapse.js",
     "public/js/components/transition.js",
     "public/js/components/inpage_nav.js",
+    "public/js/libraries/superclamp.min.js",
     "public/js/europa.js"
   ],
   "destination": "styleguide/assets",
