@@ -84,7 +84,7 @@ Style guide gallery
   opacity: 0;
   background: $ec-grey;
   -webkit-transition: opacity 0.3s ease-in-out;
-  -moz-transition: opacity 0.3s ease-in-tou;
+  -moz-transition: opacity 0.3s ease-in-out;
   -ms-transition: opacity 0.3s ease-in-out;
   -o-transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out;
@@ -172,8 +172,6 @@ Style guide: gallery.overlay
 
   @include breakpoint(screen-md-min) {
     display: flex;
-    display: -ms-flexbox;
-    display: -webkit-flex;
     width: 90vw;
     max-width: 1440px;
     height: 800px;
@@ -185,8 +183,6 @@ Style guide: gallery.overlay
 // Main container.
 .gallery-overlay__media {
   display: flex;
-  display: -ms-flexbox;
-  display: -webkit-flex;
   height: 325px;
   width: 100%;
   padding: 0;
@@ -200,8 +196,6 @@ Style guide: gallery.overlay
   .gallery-overlay__media-previous,
   .gallery-overlay__media-next {
     display: flex;
-    display: -ms-flexbox;
-    display: -webkit-flex;
     align-items: center;
     -ms-flex-align: center;
     -webkit-align-content: center;
@@ -258,14 +252,8 @@ Style guide: gallery.overlay
 
   .gallery-overlay__media-item-list__wrapper {
     display: flex;
-    display: -ms-flexbox;
-    display: -webkit-flex;
     align-items: center;
-    -ms-flex-align: center;
-    -webkit-align-content: center;
     justify-content: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
     width: 83.33333333%;
     max-width: 840px;
     max-height: 100%;

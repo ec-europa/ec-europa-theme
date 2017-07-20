@@ -12,7 +12,7 @@ module.exports = function (grunt) {
     watch: {
       sass: {
         files: ['**/*.{scss,sass}', 'sass/**/*.html'],
-        tasks: ['clean:styleguide', 'sass', 'shell', 'copy:main'],
+        tasks: ['clean', 'sass', 'postcss', 'shell', 'copy:main'],
         options: {
           livereload: true
         }
@@ -21,8 +21,8 @@ module.exports = function (grunt) {
         files: ['fonts/europa-icons-src/*'],
         tasks: ['cacheBustAll'],
         options: {
-          interrupt: true,
-        },
+          interrupt: true
+        }
       }
     },
     clean: {
@@ -59,6 +59,19 @@ module.exports = function (grunt) {
     shell: {
       kss: {
         command: './node_modules/.bin/kss --config kss-config.json'
+      }
+    },
+    postcss: {
+      options: {
+        map: false,
+        processors: [
+          require('postcss-discard-comments'),
+          require('autoprefixer')({browsers: 'last 2 versions'}),
+          require('cssnano')()
+        ]
+      },
+      dist: {
+        src: 'css/*.css'
       }
     },
     replace: {
@@ -116,12 +129,13 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-cache-bust');
   grunt.loadNpmTasks('grunt-shell');
+  grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-text-replace');
 
   grunt.registerTask('default', ['watch']);
   grunt.registerTask('fonts', ['watch']);
   grunt.registerTask('cacheBustAll', ['replace:prepare', 'clean:fonts', 'cacheBust:fonts', 'styleguide']);
-  grunt.registerTask('styleguide', ['clean:styleguide', 'sass', 'shell', 'copy:main']);
+  grunt.registerTask('styleguide', ['clean', 'sass', 'postcss', 'shell', 'copy:main']);
   grunt.registerTask('copyall', ['copy:all']);
   grunt.registerTask('copytest', ['copy:test']);
   grunt.registerTask('kss', ['shell']);
