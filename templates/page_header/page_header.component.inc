@@ -16,6 +16,7 @@ function europa_atomium_theme_page_header() {
         'title' => NULL,
         'introduction' => NULL,
         'meta' => NULL,
+        'breadcrumb' => NULL,
       ),
       'template' => 'page-header',
     ),
@@ -53,12 +54,12 @@ function europa_atomium_definition_page_header() {
  * Implements hook_preprocess_HOOK().
  */
 function europa_preprocess_page_header(&$variables, $hook) {
-  $breadcrumb = module_invoke('easy_breadcrumb', 'block_view', 'easy_breadcrumb');
-  $easy_breadcrumb = &$breadcrumb['content']['easy_breadcrumb'];
-  $easy_breadcrumb['#attributes_array'] =  array(
+  module_load_include('inc', 'easy_breadcrumb', 'includes/easy_breadcrumb.blocks');
+
+  $variables['breadcrumb'] = _easy_breadcrumb_block();
+  $variables['breadcrumb']['easy_breadcrumb']['#attributes_array'] = array(
     'class' => array(
       'ecl-u-mh-xxs',
     ),
   );
-  $variables['breadcrumb'] = $breadcrumb;
 }
