@@ -106,7 +106,7 @@ function europa_preprocess_easy_breadcrumb(&$variables, $hook) {
 /**
  * Generate the first breadcrumb items basing on a custom menu.
  */
-function _europa_breadcrumb_menu(&$variables, $hook) {
+function _europa_breadcrumb_menu(&$variables) {
   module_load_include('inc', 'easy_breadcrumb', 'includes/easy_breadcrumb.blocks');
 
   $menu_links = menu_tree('menu-breadcrumb-menu');

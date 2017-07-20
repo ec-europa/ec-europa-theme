@@ -33,7 +33,7 @@ function europa_preprocess_form_element(&$variables, $hook) {
  *
  * @see europa_preprocess_form_element()
  */
-function _europa_preprocess_form_element__query_text(&$variables, $hook) {
+function _europa_preprocess_form_element__query_text(&$variables) {
   $element = $variables['element'];
   if (empty($element['#name']) || $element['#name'] != 'QueryText') {
     return;
