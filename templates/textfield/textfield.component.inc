@@ -29,7 +29,7 @@ function europa_preprocess_textfield(&$variables, $hook) {
  *
  * @see europa_preprocess_textfield()
  */
-function _europa_preprocess_textfield__query_text(&$variables, $hook) {
+function _europa_preprocess_textfield__query_text(&$variables) {
   $element = &$variables['element'];
   if (empty($element['#name']) || $element['#name'] != 'QueryText') {
     return;
