@@ -26,18 +26,23 @@ function europa_atomium_theme_link() {
  * Implements hook_preprocess_HOOK().
  */
 function europa_preprocess_link(&$variables, $hook) {
-  if(FALSE === _europa_array_find('ecl-', $variables['attributes_array']['class'])){
-    $variables['attributes_array']['class'][] = 'ecl-link';
-    if (function_exists('url_is_external') && url_is_external($variables['path'])) {
-      $variables['attributes_array']['class'][] = 'ecl-link--external';
-    }
+
+  $classes = &$variables['attributes_array']['class'];
+
+  if (FALSE === _europa_array_find('ecl-', $classes)) {
+    $classes[] = 'ecl-link';
+  }
+
+  // Add the class for the external links
+  if (_europa_url_is_external($variables['path']) && (!in_array('ecl-icon', $classes))) {
+    $classes[] = 'ecl-link--external';
   }
 
   // Add the span tag for the icon.
-  if(in_array('ecl-icon', $variables['attributes_array']['class'])){
-    $icon_classes = array_filter($variables['attributes_array']['class'], function($class, $key) use (&$variables) {
+  if (in_array('ecl-icon', $classes)) {
+    $icon_classes = array_filter($classes, function($class, $key) use (&$classes) {
       if (FALSE !== stripos($class, 'ecl-icon') || FALSE !== stripos($class, '__social-icon')) {
-        unset($variables['attributes_array']['class'][$key]);
+        unset($classes[$key]);
         return TRUE;
       }
       return FALSE;

@@ -150,11 +150,30 @@ function _europa_array_delete(array $needle, array &$haystack) {
 /**
  * Add a specifique class for the footer.
  *
- * @param array $haystack
+ * @param array $classes
  *   The array of classes.
  */
 function _europa_footer_add_class_icon(array &$classes) {
   if(!empty($classes) && in_array('ecl-icon', $classes)){
     $classes[] = 'ecl-footer__social-icon';
   }
+}
+
+/**
+ * Returns TRUE if a path is external to Drupal and 'ec.europa.eu' domain.
+ *
+ * @param $path
+ *   The internal path or external URL being linked to, such as "node/34" or
+ *   "http://example.com/foo".
+ *
+ * @return
+ *   Boolean TRUE or FALSE, where TRUE indicates an external path.
+ */
+function _europa_url_is_external($path) {
+  if(TRUE === url_is_external($path)) {
+    if (FALSE === stripos(parse_url($path, PHP_URL_HOST), 'europa.eu')) {
+      return TRUE;
+    }
+  }
+  return FALSE;
 }

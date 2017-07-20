@@ -64,11 +64,11 @@ function europa_preprocess_menu_link__menu_service_tools(&$variables, $hook) {
 function europa_preprocess_menu_link__menu_nexteuropa_service_links(&$variables, $hook) {
   $variables['attributes_array']['class'][] = 'ecl-footer__menu-item';
   $variables['attributes_array']['class'][] = 'ecl-list-inline__item';
-  $variables['output']['#options']['attributes']['class'][] = 'ecl-link--footer';
+  $variables['output']['#options']['attributes']['class'][] = 'ecl-footer__link';
 
   // Rules and exceptions for the footer.
   _europa_footer_add_class_icon($variables['output']['#options']['attributes']['class']);
-  _europa_array_delete(array('ecl-link','ecl-link--standalone'), $variables['output']['#options']['attributes']['class']);
+  _europa_array_delete(array('ecl-link--standalone'), $variables['output']['#options']['attributes']['class']);
 }
 
 /**
@@ -77,11 +77,11 @@ function europa_preprocess_menu_link__menu_nexteuropa_service_links(&$variables,
 function europa_preprocess_menu_link__menu_nexteuropa_social_media(&$variables, $hook) {
   $variables['attributes_array']['class'][] = 'ecl-footer__menu-item';
   $variables['attributes_array']['class'][] = 'ecl-list-inline__item';
-  $variables['output']['#options']['attributes']['class'][] = 'ecl-link--footer';
+  $variables['output']['#options']['attributes']['class'][] = 'ecl-footer__link';
 
   // Rules and exceptions for the footer.
   _europa_footer_add_class_icon($variables['output']['#options']['attributes']['class']);
-  _europa_array_delete(array('ecl-link','ecl-link--standalone'), $variables['output']['#options']['attributes']['class']);
+  _europa_array_delete(array('ecl-link--standalone'), $variables['output']['#options']['attributes']['class']);
 }
 
 /**
@@ -89,11 +89,11 @@ function europa_preprocess_menu_link__menu_nexteuropa_social_media(&$variables, 
  */
 function europa_preprocess_menu_link__menu_nexteuropa_inst_links(&$variables, $hook) {
   $variables['attributes_array']['class'][] = 'ecl-footer__menu-item';
-  $variables['output']['#options']['attributes']['class'][] = 'ecl-link--footer';
+  $variables['output']['#options']['attributes']['class'][] = 'ecl-footer__link';
 
   // Rules and exceptions for the footer.
   _europa_footer_add_class_icon($variables['output']['#options']['attributes']['class']);
-  _europa_array_delete(array('ecl-link','ecl-link--standalone'), $variables['output']['#options']['attributes']['class']);
+  _europa_array_delete(array('ecl-link--standalone'), $variables['output']['#options']['attributes']['class']);
 }
 
 /**
@@ -101,9 +101,9 @@ function europa_preprocess_menu_link__menu_nexteuropa_inst_links(&$variables, $h
  */
 function europa_preprocess_menu_link__menu_nexteuropa_site_links(&$variables, $hook) {
   $variables['attributes_array']['class'][] = 'ecl-footer__menu-item';
-  $variables['output']['#options']['attributes']['class'][] = 'ecl-link--footer';
+  $variables['output']['#options']['attributes']['class'][] = 'ecl-footer__link';
 
   // Rules and exceptions for the footer.
   _europa_footer_add_class_icon($variables['output']['#options']['attributes']['class']);
-  _europa_array_delete(array('ecl-link','ecl-link--standalone'), $variables['output']['#options']['attributes']['class']);
+  _europa_array_delete(array('ecl-link--standalone'), $variables['output']['#options']['attributes']['class']);
 }
