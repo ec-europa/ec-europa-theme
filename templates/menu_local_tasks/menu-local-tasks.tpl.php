@@ -16,5 +16,11 @@
   </nav>
 <?php endif; ?>
 <?php if ($secondary): ?>
-  <?php print render($secondary); ?>
+  <nav class="ecl-navigation-list-wrapper">
+    <ul class="ecl-navigation-list ecl-navigation-list--default">
+      <?php foreach ($secondary_menu_tab_links as $menu_tab_link): ?>
+        <?php print render($menu_tab_link); ?>
+      <?php endforeach; ?>
+    </ul>
+  </nav>
 <?php endif; ?>

@@ -122,9 +122,39 @@ function europa_dropdown(array $variables) {
  */
 function _europa_array_find($needle, array $haystack) {
   foreach ($haystack as $key => $value) {
-    if (FALSE !== stripos($value, $needle)) {
+    if (is_string($value) && FALSE !== stripos($value, $needle)) {
       return $key;
     }
   }
   return FALSE;
+}
+
+/**
+ * Delete all elements in the needle into haystack.
+ *
+ * @param array $needle
+ *   The array of string to search for.
+ * @param array $haystack
+ *   The array to search in.
+ */
+function _europa_array_delete(array $needle, array &$haystack) {
+  array_filter($haystack, function($class, $key) use (&$needle, &$haystack) {
+    if (in_array($class, $needle)) {
+      unset($haystack[$key]);
+      return TRUE;
+    }
+    return FALSE;
+  }, ARRAY_FILTER_USE_BOTH);
+}
+
+/**
+ * Add a specifique class for the footer.
+ *
+ * @param array $haystack
+ *   The array of classes.
+ */
+function _europa_footer_add_class_icon(array &$classes) {
+  if(!empty($classes) && in_array('ecl-icon', $classes)){
+    $classes[] = 'ecl-footer__social-icon';
+  }
 }
