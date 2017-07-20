@@ -77,6 +77,12 @@ Style guide form.checkbox
   }
 }
 
+.checkbox--with-link {
+  a {
+    font-size: $font-size-little;
+  }
+}
+
 // Turning off completely custom checkboxes when SVG's are not available
 .no-svg {
   .checkbox {
