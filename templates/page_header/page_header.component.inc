@@ -55,7 +55,7 @@ function europa_atomium_definition_page_header() {
 function europa_preprocess_page_header(&$variables, $hook) {
   $breadcrumb = module_invoke('easy_breadcrumb', 'block_view', 'easy_breadcrumb');
   $easy_breadcrumb = &$breadcrumb['content']['easy_breadcrumb'];
-  $easy_breadcrumb['#attributes_array'] = array
+  $easy_breadcrumb['#attributes_array'] = array(
     'class' => array(
       'ecl-u-mh-xxs',
     ),
