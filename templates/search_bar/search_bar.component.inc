@@ -26,6 +26,9 @@ function europa_atomium_definition_search_bar() {
   return array(
     'label' => 'Search bar',
     'description' => 'Search bar.',
+    'preview' => array(
+      'search_form' => module_invoke('nexteuropa_europa_search', 'block_view', 'nexteuropa_europa_search_form'),
+    ),
   );
 }
 
@@ -46,13 +49,13 @@ function europa_preprocess_search_bar(&$variables, $hook) {
   }
 
   // Generate the search form.
-  $variables['search_form'] = drupal_get_form('nexteuropa_europa_search_search_form');
+  $variables['search_form'] = module_invoke('nexteuropa_europa_search', 'block_view', 'nexteuropa_europa_search_form');
 
   // Add CSS to the form tag.
-  $variables['search_form']['#attributes']['class'][] = 'ecl-search-form';
+  $variables['search_form']['content']['#attributes']['class'][] = 'ecl-search-form';
 
   // Shortcut.
-  $block_search_input = &$variables['search_form']['search_input_group'];
+  $block_search_input = &$variables['search_form']['content']['search_input_group'];
 
   // Remove incompatible container from the form.
   unset($block_search_input['#prefix']);
