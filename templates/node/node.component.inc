@@ -4,10 +4,11 @@
  * @file
  * Contains component file.
  */
+
 /**
- * Implements hook_preprocess_node().
+ * Implements hook_preprocess_hook().
  */
-function europa_preprocess_node(&$variables) {
+function europa_preprocess_node(&$variables, $hook) {
   // Add information about the number of sidebars.
   if (!empty($variables['left']) && !empty($variables['right'])) {
     $variables['content_column_class'] = 'ecl-col-md-6';

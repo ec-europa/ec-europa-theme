@@ -44,6 +44,10 @@
  * @ingroup themeable
  */
 ?>
-<select class="ecl-select <?php print $classes; ?>" id="<?php print $block_html_id; ?>" name="<?php print $block_html_id; ?>"<?php print $attributes; ?> onchange="location = this.options[this.selectedIndex].value;">
-  <?php print $content['#markup'] ?>
-</select>
+<section<?php print render($attributes); ?>>
+  <?php if (!empty($content)): ?>
+  <div class="block__content">
+    <?php print render($content); ?>
+  </div>
+  <?php endif; ?>
+</section>

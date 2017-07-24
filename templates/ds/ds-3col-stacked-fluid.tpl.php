@@ -7,11 +7,20 @@
  * @TODO update once new grid style is defined.
  */
 
-  // Add sidebar classes so that we can apply the correct width to the center region in css.
-  if (($left && !$right) || ($right && !$left)) $classes .= ' group-one-sidebar';
-  if ($left && $right) $classes .= ' group-two-sidebars';
-  if ($left) $classes .= ' group-sidebar-left';
-  if ($right) $classes .= ' group-sidebar-right';
+// Add sidebar classes so that we can apply the correct width to
+// the center region in css.
+if (($left && !$right) || ($right && !$left)) {
+  $classes .= ' group-one-sidebar';
+}
+if ($left && $right) {
+  $classes .= ' group-two-sidebars';
+}
+if ($left) {
+  $classes .= ' group-sidebar-left';
+}
+if ($right) {
+  $classes .= ' group-sidebar-right';
+}
 ?>
 <<?php print $layout_wrapper; print $layout_attributes; ?> class="ds-3col-stacked-fluid <?php print $classes;?> clearfix">
 

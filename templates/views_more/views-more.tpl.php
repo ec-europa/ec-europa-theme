@@ -13,6 +13,7 @@
  */
 ?>
 <?php
+// TODO: This must be done in a preprocess.
 // Sometimes we have a special url and in these cases we manually replace it.
 // We strictly limit it, because this is not replacing substitutions.
 $available_blocks = ['latest_block', 'block'];

@@ -6,13 +6,12 @@
  */
 
 /**
- * Implements hook_atomium_theme_HOOK().
+ * Implements hook_atomium_theme_hook().
  */
 function europa_atomium_theme_grid() {
   return array(
     'grid' => array(
       'variables' => array(
-        'title' => NULL,
         'rows' => NULL,
       ),
       'template' => 'grid',
@@ -21,29 +20,31 @@ function europa_atomium_theme_grid() {
 }
 
 /**
- * Implements hook_atomium_definition_HOOK().
+ * Implements hook_atomium_definition_hook().
  */
 function europa_atomium_definition_grid() {
   return array(
     'label' => 'Grid',
     'description' => 'Grid layout.',
     'preview' => array(
-      'title' => 'A grid template',
       'rows' => array(
         array(
-          'Entry first line 1',
-          'Entry first Line 2',
+          '1 of 2',
+          '1 of 2',
         ),
         array(
-          'Entry line 1.',
-          'Entry line 2.',
-        ),
-        array(
-          'Entry last line 1.',
-          'Entry last line 2.',
+          '1 of 3',
+          '2 of 3',
+          '3 of 3',
         ),
       ),
     ),
   );
 }
 
+/**
+ * Implements hook_preprocess_hook().
+ */
+function europa_preprocess_grid(&$variables, $hook) {
+  $variables['attributes_array']['class'][] = 'ecl-container';
+}
