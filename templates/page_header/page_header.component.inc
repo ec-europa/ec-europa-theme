@@ -62,4 +62,16 @@ function europa_preprocess_page_header(&$variables, $hook) {
     ),
   );
   $variables['breadcrumb'] = $breadcrumb;
+
+  // @TODO Analyze why this code creates issue in the pager on travis.
+  /*
+   * module_load_include('inc', 'easy_breadcrumb', 'includes/easy_breadcrumb.
+   * blocks');
+   * $variables['breadcrumb'] = _easy_breadcrumb_block();
+   * $variables['breadcrumb']['easy_breadcrumb']['#attributes_array'] = array(
+   *   'class' => array(
+   *     'ecl-u-mh-xxs',
+   *   ),
+   * );
+   */
 }
