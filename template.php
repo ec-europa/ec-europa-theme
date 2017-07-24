@@ -140,11 +140,5 @@ function _europa_array_find($needle, array $haystack) {
  *   Boolean TRUE or FALSE, where TRUE indicates an external path.
  */
 function _europa_url_is_external($path) {
-  if (TRUE === url_is_external($path)) {
-    if (FALSE === stripos(parse_url($path, PHP_URL_HOST), 'europa.eu')) {
-      return TRUE;
-    }
-  }
-
-  return FALSE;
+  return url_is_external($path) && !stripos(parse_url($path, PHP_URL_HOST), 'europa.eu');
 }
