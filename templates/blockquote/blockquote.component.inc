@@ -33,10 +33,3 @@ function europa_atomium_definition_blockquote() {
     ),
   );
 }
-
-/**
- * Implements hook_preprocess_hook().
- */
-function europa_preprocess_blockquote(&$variables, $hook) {
-  $variables['attributes_array']['class'][] = 'ecl-blockquote';
-}
