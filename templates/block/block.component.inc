@@ -16,11 +16,17 @@ function europa_preprocess_block(&$variables) {
       $variables['classes_array'][] = 'block--full-width';
       break;
 
-    case 'menu-nexteuropa-service-links':
     case 'menu-nexteuropa-site-links':
     case 'menu-nexteuropa-social-media':
     case 'menu-nexteuropa-inst-links':
       $variables['title'] = $block->subject;
+      $variables['title_attributes_array']['class'][] = 'ecl-h4';
+      $variables['title_attributes_array']['class'][] = 'ecl-footer__title';
+      $block->subject = '';
+      break;
+
+    case 'menu-nexteuropa-service-links':
+      $variables['title'] = '';
       $variables['title_attributes_array']['class'][] = 'ecl-h4';
       $variables['title_attributes_array']['class'][] = 'ecl-footer__title';
       $block->subject = '';
