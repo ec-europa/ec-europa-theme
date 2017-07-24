@@ -34,5 +34,6 @@ function europa_atomium_definition_table() {
  * Implements hook_preprocess_hook().
  */
 function europa_preprocess_table(&$variables, $hook) {
+  $variables['attributes']['class'][] = 'ecl-table';
   $variables['attributes']['class'][] = 'table-responsive';
 }
