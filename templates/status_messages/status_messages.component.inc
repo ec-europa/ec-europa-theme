@@ -72,11 +72,11 @@ function europa_preprocess_status_messages(&$variables, $hook) {
   );
 
   foreach ($variables['status_messages']['status_messages'] as $type => &$messages) {
-    if(!empty($status_modifier[$type])) {
+    if (!empty($status_modifier[$type])) {
       $messages['modifier'] = $status_modifier[$type];
     }
 
-    if ((empty($messages['messages']['#title'])) AND (!empty($status_modifier[$type]))) {
+    if ((empty($messages['messages']['#title'])) && (!empty($status_modifier[$type]))) {
       $messages['messages']['#title'] = $status_heading[$type];
     }
     $messages['status_heading'] = $messages['messages']['#title'];

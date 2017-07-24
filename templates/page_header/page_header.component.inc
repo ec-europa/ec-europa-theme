@@ -42,8 +42,8 @@ function europa_atomium_definition_page_header() {
         '#location'  => 'Brussels',
         '#attributes_array'  => array(
           'class' => array(
-            'ecl-meta--header'
-          )
+            'ecl-meta--header',
+          ),
         ),
       ),
     ),

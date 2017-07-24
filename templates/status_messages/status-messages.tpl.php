@@ -6,7 +6,11 @@
  */
 ?>
 <?php foreach ($status_messages['status_messages'] as $status_message): ?>
-  <div class="ecl-message <?php if (!empty($status_message['modifier'])): ?>ecl-message--<?php  print render($status_message['modifier']) ?><?php endif; ?>" role="alert">
+  <div class="ecl-message<?php
+  if (!empty($status_message['modifier'])) {
+    print ' ecl-message--' . $status_message['modifier'];
+  }
+  ?>" role="alert">
     <?php if (!empty($status_message['status_heading'])): ?>
       <span class="ecl-sr-only"><?php  print render($status_message['status_heading']) ?></span>
     <?php endif; ?>

@@ -44,5 +44,3 @@ function europa_atomium_definition_meta() {
 function europa_preprocess_meta(&$variables, $hook) {
   $variables['attributes_array']['class'][] = 'ecl-meta';
 }
-
-
