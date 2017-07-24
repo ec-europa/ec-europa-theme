@@ -16,7 +16,6 @@ function europa_atomium_theme_page_header() {
         'title' => NULL,
         'introduction' => NULL,
         'meta' => NULL,
-        'breadcrumb' => NULL,
       ),
       'template' => 'page-header',
     ),
