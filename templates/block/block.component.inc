@@ -144,5 +144,5 @@ function europa_preprocess_block(&$variables, $hook) {
 
   $variables['attributes_array']['class'] = drupal_array_merge_deep($variables['attributes_array']['class'], $variables['classes_array']);
   $variables['attributes_array']['id'] = $variables['block_html_id'];
-  $variables['attributes_array']['class'][] = 'clearfix';
+  $variables['attributes_array']['class'][] = 'ecl-clearfix';
 }
