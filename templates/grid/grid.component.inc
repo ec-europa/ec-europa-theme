@@ -45,6 +45,6 @@ function europa_atomium_definition_grid() {
 /**
  * Implements hook_preprocess_hook().
  */
-function atomium_preprocess_grid(&$variables) {
+function europa_preprocess_grid(&$variables) {
   $variables['attributes_array']['class'][] = 'ecl-container';
 }
