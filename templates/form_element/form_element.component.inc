@@ -14,7 +14,9 @@ function europa_preprocess_form_element(&$variables, $hook) {
     $variables['theme_hook_suggestions'][] = 'form_element__' . $element['#name'];
   }
 
-  $variables['theme_hook_suggestions'][] = 'form_element__' . $element['#id'];
+  if (!empty($element['#id'])) {
+    $variables['theme_hook_suggestions'][] = 'form_element__' . $element['#id'];
+  }
 
   // Each function below proceeds specific pre-process related to the type of
   // form element or to the form element itself that is currently treated.

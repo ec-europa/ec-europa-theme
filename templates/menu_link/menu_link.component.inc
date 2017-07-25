@@ -6,6 +6,14 @@
  */
 
 /**
+ * Implements hook_preprocess_hook().
+ */
+function europa_preprocess_menu_link(&$variables, $hook) {
+  $variables['output']['#options']['attributes']['class'][] = 'ecl-link';
+  $variables['output']['#options']['attributes']['class'][] = 'ecl-link--standalone';
+}
+
+/**
  * Implements hook_preprocess_HOOK().
  */
 function europa_preprocess_menu_link__main_menu(&$variables, $hook) {
@@ -37,68 +45,108 @@ function europa_preprocess_menu_link__main_menu(&$variables, $hook) {
 }
 
 /**
- * Override theme_menu_link().
+ * Implements hook_preprocess_hook().
  */
-function europa_menu_link__user_menu(&$variables) {
-
-  $variables['element']['#attributes']['class'][] = 'site-user-menu__option';
-  return theme_menu_link($variables);
+function europa_preprocess_menu_link__user_menu(&$variables, $hook) {
+  $variables['attributes_array']['class'][] = 'site-user-menu__option';
 }
 
 /**
- * Override theme_menu_link().
+ * Implements hook_preprocess_hook().
  */
-function europa_menu_link__menu_nexteuropa_service_links(&$variables) {
-  return _europa_menu_link__footer($variables);
+function europa_preprocess_menu_link__menu_service_tools(&$variables, $hook) {
+  $variables['attributes_array']['class'][] = 'ecl-list-inline__item';
 }
 
 /**
- * Override theme_menu_link().
+ * Implements hook_preprocess_hook().
  */
-function europa_menu_link__menu_service_tools(&$variables) {
-  return _europa_menu_link__footer($variables);
+function europa_preprocess_menu_link__menu_nexteuropa_service_links(&$variables, $hook) {
+  $variables['attributes_array']['class'][] = 'ecl-list-inline__item';
+  $variables['output']['#options']['attributes']['class'] = array_diff(
+    $variables['output']['#options']['attributes']['class'],
+    array('ecl-link--standalone')
+  );
 }
 
 /**
- * Override theme_menu_link().
+ * Implements hook_preprocess_hook().
  */
-function europa_menu_link__menu_nexteuropa_social_media(&$variables) {
-  return _europa_menu_link__footer($variables);
+function europa_preprocess_menu_link__menu_nexteuropa_service_links__footer(&$variables, $hook) {
+  $variables = _europa_menu_link_footer_alter($variables);
 }
 
 /**
- * Override theme_menu_link().
+ * Implements hook_preprocess_hook().
  */
-function europa_menu_link__menu_nexteuropa_inst_links(&$variables) {
-  return _europa_menu_link__footer($variables);
+function europa_preprocess_menu_link__menu_nexteuropa_social_media(&$variables, $hook) {
+  $variables['attributes_array']['class'][] = 'ecl-list-inline__item';
+  $variables['output']['#options']['attributes']['class'] = array_diff(
+    $variables['output']['#options']['attributes']['class'],
+    array('ecl-link--standalone')
+  );
 }
 
 /**
- * Override theme_menu_link().
+ * Implements hook_preprocess_hook().
  */
-function europa_menu_link__menu_nexteuropa_site_links(&$variables) {
-  return _europa_menu_link__footer($variables);
+function europa_preprocess_menu_link__menu_nexteuropa_social_media__footer(&$variables, $hook) {
+  $variables = _europa_menu_link_footer_alter($variables);
 }
 
 /**
- * Helper applying BEM to footer menu item links.
+ * Implements hook_preprocess_hook().
+ */
+function europa_preprocess_menu_link__menu_nexteuropa_inst_links(&$variables, $hook) {
+  $variables['output']['#options']['attributes']['class'] = array_diff(
+    $variables['output']['#options']['attributes']['class'],
+    array('ecl-link--standalone')
+  );
+}
+
+/**
+ * Implements hook_preprocess_hook().
+ */
+function europa_preprocess_menu_link__menu_nexteuropa_inst_links__footer(&$variables, $hook) {
+  $variables = _europa_menu_link_footer_alter($variables);
+}
+
+/**
+ * Implements hook_preprocess_hook().
+ */
+function europa_preprocess_menu_link__menu_nexteuropa_site_links(&$variables, $hook) {
+  $variables['output']['#options']['attributes']['class'] = array_diff(
+    $variables['output']['#options']['attributes']['class'],
+    array('ecl-link--standalone')
+  );
+}
+
+/**
+ * Implements hook_preprocess_hook().
+ */
+function europa_preprocess_menu_link__menu_nexteuropa_site_links__footer(&$variables, $hook) {
+  $variables = _europa_menu_link_footer_alter($variables);
+}
+
+/**
+ * Alter specific menu link for the footer.
  *
  * @param array $variables
- *   Link render array.
+ *   The array of variables.
  *
- * @return string
- *   HTML markup
+ * @return array
+ *   The array of variables.
  */
-function _europa_menu_link__footer(array &$variables) {
-  $element = $variables['element'];
-  $sub_menu = '';
+function _europa_menu_link_footer_alter(array $variables) {
+  $variables['attributes_array']['class'][] = 'ecl-footer__menu-item';
+  $variables['output']['#options']['attributes']['class'][] = 'ecl-footer__link';
 
-  if ($element['#below']) {
-    $sub_menu = drupal_render($element['#below']);
+  $classes = &$variables['output']['#options']['attributes']['class'];
+  if (!empty($classes) && in_array('ecl-icon', $classes)) {
+    $classes[] = 'ecl-footer__social-icon';
   }
 
-  $element['#attributes']['class'][] = 'footer__menu-item';
-
-  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
-  return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
+  // As we pass the parameter with reference, this is not mandatory.
+  // It is just to ensure compatibility with the two way of working.
+  return $variables;
 }

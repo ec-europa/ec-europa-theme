@@ -9,24 +9,6 @@ atomium_include('atomium', 'includes/alter');
 atomium_include('europa', 'includes/alter');
 
 /**
- * Implements hook_theme().
- */
-function europa_theme($existing, $type, $theme, $path) {
-  return [
-    'europa_status_message' => [
-      'template' => 'status_message',
-      'path' => $path . '/templates',
-      'variables' => [
-        'message_classes' => '',
-        'message_title' => '',
-        'message_type' => '',
-        'message_body' => '',
-      ],
-    ],
-  ];
-}
-
-/**
  * Overrides theme_form_required_marker().
  */
 function europa_form_required_marker($variables) {
@@ -103,6 +85,28 @@ function _europa_form_set_css_class(array &$element, array $classes = array()) {
 }
 
 /**
+ * Returns HTML for a dropdown.
+ */
+function europa_dropdown(array $variables) {
+  $items = $variables['items'];
+  $links = array();
+
+  $select = array(
+    '#title' => t('Create content'),
+    '#type' => 'select',
+    '#description' => t('Create content'),
+    '#options' => array('#' => t('Create content')),
+  );
+
+  foreach ($items as $key => $value) {
+    $links[$value] = $key;
+  }
+  $select['#options'] = array_merge($select['#options'], array_map('t', $links));
+
+  return form_select_options($select);
+}
+
+/**
  * Case array_search() with partial matches.
  *
  * @param string $needle
@@ -118,9 +122,23 @@ function _europa_form_set_css_class(array &$element, array $classes = array()) {
  */
 function _europa_array_find($needle, array $haystack) {
   foreach ($haystack as $key => $value) {
-    if (FALSE !== stripos($value, $needle)) {
+    if (is_string($value) && FALSE !== stripos($value, $needle)) {
       return $key;
     }
   }
   return FALSE;
+}
+
+/**
+ * Returns TRUE if a path is external to Drupal and 'ec.europa.eu' domain.
+ *
+ * @param string $path
+ *   The internal path or external URL being linked to, such as "node/34" or
+ *   "http://example.com/foo".
+ *
+ * @return bool
+ *   Boolean TRUE or FALSE, where TRUE indicates an external path.
+ */
+function _europa_url_is_external($path) {
+  return url_is_external($path) && !stripos(parse_url($path, PHP_URL_HOST), 'europa.eu');
 }

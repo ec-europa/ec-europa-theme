@@ -46,43 +46,17 @@ function europa_atomium_definition_button() {
         'attributes' => array(
           'class' => array(
             'ecl-button--call',
+            'ecl-button--caret-right',
           ),
         ),
       ),
       array(
         'type' => 'submit',
-        'value' => 'Form',
-        'attributes' => array(
-          'class' => array(
-            'ecl-button--form',
-          ),
-        ),
-      ),
-      array(
-        'type' => 'submit',
-        'value' => 'Form primary',
-        'attributes' => array(
-          'class' => array(
-            'ecl-button--form-primary',
-          ),
-        ),
-      ),
-      array(
-        'type' => 'submit',
-        'value' => 'Light',
-        'attributes' => array(
-          'class' => array(
-            'ecl-button--light',
-          ),
-        ),
-      ),
-      array(
-        'type' => 'submit',
-        'value' => 'Icon: Arrow up',
+        'value' => 'Timeline',
         'attributes' => array(
           'class' => array(
             'ecl-button--default',
-            'ecl-button--arrow-up',
+            'ecl-button--caret-down',
           ),
         ),
       ),
@@ -126,6 +100,17 @@ function europa_atomium_definition_button() {
           ),
         ),
       ),
+      array(
+        'type' => 'submit',
+        'value' => 'Primary button, block-wide, with caret-down',
+        'attributes' => array(
+          'class' => array(
+            'ecl-button--primary',
+            'ecl-button--block',
+            'ecl-button--caret-down',
+          ),
+        ),
+      ),
     ),
   );
 }
@@ -142,4 +127,93 @@ function europa_preprocess_button(&$variables) {
   if (_europa_array_find('ecl-button--', $variables['attributes_array']['class']) === FALSE) {
     $variables['attributes_array']['class'][] = 'ecl-button--default';
   }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function europa_preprocess_button__primary(&$variables) {
+  $variables['attributes_array']['class'] = array(
+    'ecl-button--primary',
+  );
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function europa_preprocess_button__secondary(&$variables) {
+  $variables['attributes_array']['class'] = array(
+    'ecl-button--secondary',
+  );
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function europa_preprocess_button__call(&$variables) {
+  $variables['attributes_array']['class'] = array(
+    'ecl-button--call',
+    'ecl-button--caret-right',
+  );
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function europa_preprocess_button__timeline(&$variables) {
+  $variables['attributes_array']['class'] = array(
+    'ecl-button--call',
+    'ecl-button--caret-down',
+  );
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function europa_preprocess_button__caret_up(&$variables) {
+  $variables['attributes_array']['class'] = array(
+    'ecl-button--default',
+    'ecl-button--caret-up',
+  );
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function europa_preprocess_button__caret_right(&$variables) {
+  $variables['attributes_array']['class'] = array(
+    'ecl-button--default',
+    'ecl-button--caret-right',
+  );
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function europa_preprocess_button__caret_down(&$variables) {
+  $variables['attributes_array']['class'] = array(
+    'ecl-button--default',
+    'ecl-button--caret-down',
+  );
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function europa_preprocess_button__caret_left(&$variables, $hook) {
+  $variables['attributes_array']['class'] = array(
+    'ecl-button--default',
+    'ecl-button--caret_left',
+  );
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function europa_preprocess_button__primary_block(&$variables, $hook) {
+  $variables['attributes_array']['class'] = array(
+    'ecl-button--primary',
+    'ecl-button--block',
+    'ecl-button--caret-down',
+  );
 }

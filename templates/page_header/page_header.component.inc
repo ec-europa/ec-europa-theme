@@ -12,7 +12,10 @@ function europa_atomium_theme_page_header() {
   return array(
     'page_header' => array(
       'variables' => array(
-        'markup' => NULL,
+        'identity' => NULL,
+        'title' => NULL,
+        'introduction' => NULL,
+        'meta' => NULL,
       ),
       'template' => 'page-header',
     ),
@@ -27,7 +30,21 @@ function europa_atomium_definition_page_header() {
     'label' => 'Page header',
     'description' => 'Page header.',
     'preview' => array(
-      'markup' => '<p>The <strong>European Commission</strong> is the European Union’s executive body. It represents the interests of the European Union as a whole.</p>',
+      'identity' => 'Digital single market',
+      'title' => 'Business, Economy, Euro',
+      'introduction' => 'EU economy, finance and the euro, and practical information for EU businesses and entrepreneurs on product safety, environmental regulations, trade with non-EU countries and competition rules.',
+      'meta' => array(
+        '#theme' => array('meta'),
+        '#type' => 'News article',
+        '#timestamp' => '2015-07-06T17:44:28+02:00',
+        '#date' => '6 July 2015',
+        '#location'  => 'Brussels',
+        '#attributes_array'  => array(
+          'class' => array(
+            'ecl-meta--header'
+          )
+        ),
+      ),
     ),
   );
 }
@@ -36,9 +53,12 @@ function europa_atomium_definition_page_header() {
  * Implements hook_preprocess_HOOK().
  */
 function europa_preprocess_page_header(&$variables, $hook) {
-  $variables[$hook] = array(
-    $hook => array(
-      '#markup' => $variables['markup'],
+  $breadcrumb = module_invoke('easy_breadcrumb', 'block_view', 'easy_breadcrumb');
+  $easy_breadcrumb = &$breadcrumb['content']['easy_breadcrumb'];
+  $easy_breadcrumb['#attributes_array'] =  array(
+    'class' => array(
+      'ecl-u-mh-xxs',
     ),
   );
+  $variables['breadcrumb'] = $breadcrumb;
 }

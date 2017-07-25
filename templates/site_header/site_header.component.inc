@@ -22,8 +22,6 @@ function europa_atomium_theme_site_header() {
         'search_bar' => array(
           '#theme' => array('search_bar'),
         ),
-        'site_slogan' => NULL,
-        'site_name' => NULL,
       ),
     ),
   );
@@ -44,13 +42,11 @@ function europa_atomium_definition_site_header() {
  * Implements hook_preprocess_HOOK().
  */
 function europa_preprocess_site_header(&$variables, $hook) {
-  if (drupal_is_front_page() && !empty(variable_get('site_slogan'))) {
-    $variables['site_slogan'] = array(
-      '#type' => 'html_tag',
-      '#tag' => 'p',
-      '#value' => variable_get('site_slogan'),
-    );
-  }
-  $variables['site_name'] = variable_get('site_name', '');
-  $variables['menu_str'] = t('Menu');
+  $variables['logo'] = array(
+    '#theme' => 'logo',
+    '#title' => 'Home - European Commission',
+    '#attributes_array' => array(
+      'class' => array('ecl-site-header__logo'),
+    ),
+  );
 }

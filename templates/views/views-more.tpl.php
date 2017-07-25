@@ -22,6 +22,6 @@ if ($view->name == 'announcements'
   $more_url = $view->display[$view->current_display]->handler->options['link_url'];
 endif;
 ?>
-<div class="more-link">
-  <a class="listing__read-more" href="<?php print $more_url; ?>"><?php print $link_text; ?></a>
+<div class="ecl-clearfix" style="width: 50%">
+  <a href="<?php print $more_url; ?>" class="ecl-link ecl-link--all"><?php print $link_text; ?></a>
 </div>

@@ -84,7 +84,6 @@
  * @ingroup themeable
  */
 ?>
-
 <?php if (!empty($page['header_top'])): ?>
 <section class="header-top">
   <div class="container-fluid">
@@ -93,55 +92,17 @@
 </section>
 <?php endif; ?>
 
-<header class="site-header" role="banner">
 <?php print render($site_header); ?>
 <?php print render($page['header']); ?>
-
-</header>
 
 <?php if (!empty($page['navigation'])): ?>
   <?php print render($page['navigation']); ?>
 <?php endif; ?>
 
 <section class="main-content">
-  <!-- Page Header -->
-  <div class="page-header <?php if (isset($header_back)) : print ' page-header--image';
- endif; ?>">
-  <?php if (!empty($page['header_bottom'])): ?>
-    <nav class="page-navigation" role="navigation">
-      <div class="container-fluid">
-        <?php print render($page['header_bottom']); ?>
-      </div>
-    </nav>
-  <?php endif; ?>
-    
-  <?php if (theme_get_setting('ec_europa_improved_website', 'europa')): ?>
-    <?php if (!$is_front || $is_front && theme_get_setting('ec_europa_improved_website_home', 'europa')): ?>
-    <div class="container-fluid page-header__site-identification">
-      <h3><?php print $site_name; ?></h3>
-    </div>
-    <?php endif; ?>
-  <?php endif; ?>
-    
-    <div class="container-fluid page-header__hero-title">
-      <div class="row padding-reset">
-        <div class="col-lg-9">
-          <?php print render($title_prefix); ?>
-          <?php if (!empty($page['custom_title'])): ?>
-            <?php print render($page['custom_title']); ?>
-          <?php else: ?>
-            <h1 class="ecl-heading ecl-heading--h1"><?php print render($title); ?></h1>
-          <?php endif; ?>
-          <?php print render($title_suffix); ?>
+  <?php print render($page_header); ?>
 
-          <?php if(!empty($ec_europa_introduction)): ?>
-            <?php print render($ec_europa_introduction); ?>
-          <?php endif; ?>
-        </div>
-      </div>
-    </div>
-  </div>
-
+  <!-- Utility sections -->
   <?php if (!empty($page['utility'])): ?>
     <div class="utility">
       <div class="container-fluid">
@@ -205,48 +166,4 @@
   </div>
 </section>
 
-<footer class="footer">
-<?php if (!empty($page['footer_improved'])): ?>
-  <section class="footer__improved">
-    <div class="container-fluid">
-      <?php print render($page['footer_improved']); ?>
-    </div>
-  </section>
-<?php endif; ?>
-
-  <div class="footer__top">
-    <div class="container-fluid">
-      <div class="row">
-      <?php if (!empty($page['footer_left'])): ?>
-        <div class="footer__column">
-          <?php print render($page['footer_left']); ?>
-        </div>
-      <?php endif; ?>
-
-      <?php if (!empty($page['footer_middle'])): ?>
-        <div class="footer__column">
-          <?php print render($page['footer_middle']); ?>
-        </div>
-      <?php endif; ?>
-
-      <?php if (!empty($page['footer_right'])): ?>
-        <div class="footer__column">
-          <?php print render($page['footer_right']); ?>
-        </div>
-      <?php endif; ?>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer__bottom">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-12">
-        <?php if (!empty($page['footer_bottom'])): ?>
-          <?php print render($page['footer_bottom']); ?>
-        <?php endif; ?>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
+<?php print render($footer); ?>

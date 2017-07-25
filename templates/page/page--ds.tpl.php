@@ -91,34 +91,8 @@
 </section>
 <?php endif; ?>
 
-<header class="site-header" role="banner">
-  <div class="container-fluid">
-
-  <?php if (!($is_front) || theme_get_setting('ec_europa_site_header_home', 'europa')): ?>
-    <a href="<?php print $front_page; ?>" class="<?php print $logo_classes; ?>" title="<?php print $page_logo_title; ?>">
-      <span class="sr-only"><?php print $page_logo_title; ?></span>
-    </a>
-  <?php endif; ?>
-    
-  <?php if ($is_front && !empty($site_slogan)): ?>
-    <p class="site-slogan"><?php print $site_slogan; ?></p>
-  <?php endif; ?>
-
-  <?php if (!empty($page['header'])): ?>
-    <section class="top-bar" aria-label="Site tools">
-      <div>
-        <div class="top-bar__wrapper">
-        <?php if ($is_front): ?>
-          <h1 class="sr-only"><?php print $site_name; ?></h1>
-          <h2 class="sr-only"><?php print t('Classes'); ?></h2>
-        <?php endif; ?>
-          <?php print render($page['header']); ?>
-        </div>
-      </div>
-    </section>
-  <?php endif; ?>
-  </div>
-</header>
+<?php print render($site_header); ?>
+<?php print render($page['header']); ?>
 
 <?php if (!empty($page['header_bottom'])): ?>
   <nav class="page-navigation" role="navigation">
@@ -141,6 +115,8 @@
 <?php endif; ?>
 
 <section class="main-content">
+  <?php print render($page_header); ?>
+
   <!-- Generic sections -->
   <div class="container-fluid">
     <?php if (!empty($page['help'])): ?>
@@ -159,48 +135,4 @@
   </div>
 </section>
 
-<footer class="footer">
-<?php if (!empty($page['footer_improved'])): ?>
-  <section class="footer__improved">
-    <div class="container-fluid">
-      <?php print render($page['footer_improved']); ?>
-    </div>
-  </section>
-<?php endif; ?>
-
-  <div class="footer__top">
-    <div class="container-fluid">
-      <div class="row">
-      <?php if (!empty($page['footer_left'])): ?>
-        <div class="footer__column">
-          <?php print render($page['footer_left']); ?>
-        </div>
-      <?php endif; ?>
-
-      <?php if (!empty($page['footer_middle'])): ?>
-        <div class="footer__column">
-          <?php print render($page['footer_middle']); ?>
-        </div>
-      <?php endif; ?>
-    
-      <?php if (!empty($page['footer_right'])): ?>
-        <div class="footer__column">
-          <?php print render($page['footer_right']); ?>
-        </div>
-      <?php endif; ?>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer__bottom">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-12">
-        <?php if (!empty($page['footer_bottom'])): ?>
-          <?php print render($page['footer_bottom']); ?>
-        <?php endif; ?>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
+<?php print render($footer); ?>
