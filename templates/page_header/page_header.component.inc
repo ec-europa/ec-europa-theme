@@ -54,24 +54,16 @@ function europa_atomium_definition_page_header() {
  * Implements hook_preprocess_hook().
  */
 function europa_preprocess_page_header(&$variables, $hook) {
-  $breadcrumb = module_invoke('easy_breadcrumb', 'block_view', 'easy_breadcrumb');
-  $easy_breadcrumb = &$breadcrumb['content']['easy_breadcrumb'];
-  $easy_breadcrumb['#attributes_array'] = array(
-    'class' => array(
-      'ecl-u-mh-xxs',
-    ),
-  );
-  $variables['breadcrumb'] = $breadcrumb;
-
-  // @TODO Analyze why this code creates issue in the pager on travis.
-  /*
-   * module_load_include('inc', 'easy_breadcrumb', 'includes/easy_breadcrumb.
-   * blocks');
-   * $variables['breadcrumb'] = _easy_breadcrumb_block();
-   * $variables['breadcrumb']['easy_breadcrumb']['#attributes_array'] = array(
-   *   'class' => array(
-   *     'ecl-u-mh-xxs',
-   *   ),
-   * );
-   */
+  if (module_exists('easy_breadcrumb')) {
+    // @TODO: The file includes/easy_breadcrumb.blocks.inc
+    // @TODO: only exists in easy_breadcrumb <= 7.x-2.12
+    // @TODO: Please refactor when upgrading easy_breadcrumb.
+    module_load_include('inc', 'easy_breadcrumb', 'includes/easy_breadcrumb.blocks');
+    $variables['breadcrumb'] = _easy_breadcrumb_block();
+    $variables['breadcrumb']['easy_breadcrumb']['#attributes_array'] = array(
+      'class' => array(
+        'ecl-u-mh-xxs',
+      ),
+    );
+  }
 }
