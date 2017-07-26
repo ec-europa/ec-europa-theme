@@ -5,19 +5,30 @@
     "grunt-cli": "~1.2.0"
   },
   "devDependencies": {
-    "grunt": "^1.0.1",
+    "grunt": "~1.0.1",
     "grunt-contrib-clean": "~1.0.0",
     "grunt-contrib-copy": "~1.0.0",
     "grunt-contrib-watch": "~1.0.0",
+    "postcss": "~6.0.4",
+    "autoprefixer": "~7.1.1",
+    "cssnano": "~3.10.0",
     "grunt-sass": "~2.0.0",
+    "grunt-postcss": "~0.8.0",
     "grunt-shell": "~2.1.0",
+    "postcss-discard-comments": "~2.0.2",
+    "grunt-cache-bust": "~1.5.1",
+    "grunt-shell": "~2.1.0",
+    "grunt-text-replace": "~0.4.0",
     "kss": "~3.0.0-beta.16",
+    "sass-lint": "~1.10.2",
+    "grunt-sass-lint": "^0.2.*",
     "node-sass": "^4.1.1"
   },
   "engines": {
     "node": ">=0.10.0"
   },
   "scripts": {
-    "postinstall": "find node_modules/ -name '*.info' -type f | xargs /bin/rm -f"
+    "postinstall": "find node_modules/ -name '*.info' -type f | xargs /bin/rm -f",
+    "postinstall": "patch --binary node_modules/grunt-cache-bust/tasks/cachebust.js < .patches/cachebust.js.patch"
   }
 }
