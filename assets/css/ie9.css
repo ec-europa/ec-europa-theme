@@ -1,0 +1,33 @@
+.views-widget .form-select {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-right: 0;
+}
+.views-widget .form-select select {
+  background: none;
+  z-index: 99;
+  width: 115%;
+}
+.views-widget .form-select .select-list-arrow {
+  z-index: 50;
+  width: 2.75em;
+  height: 42px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: url("../images/png/arrow-down--white.png"), url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mMI/w8AAbABVyRmoCYAAAAASUVORK5CYII=);
+  background-repeat: no-repeat, repeat;
+  background-size: 1.1em 0.6134969325em, 2.75em 100%;
+  background-position: center center;
+  cursor: pointer;
+}
+.views-widget .form-select:hover select {
+  border-color: #004494;
+}
+.views-widget .form-select:hover .select-list-arrow {
+  background: url("../images/png/arrow-down--white.png"), url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNgcJnyHwAC+AHYTZq+IgAAAABJRU5ErkJggg==);
+  background-size: 1.1em 0.6134969325em, 2.75em 100%;
+  background-position: center center;
+  background-repeat: no-repeat, repeat;
+}
