@@ -4,10 +4,11 @@
  * @file
  * Contains component file.
  */
+
 /**
- * Implements hook_preprocess_views_view_grid().
+ * Implements hook_preprocess_hook().
  */
-function europa_preprocess_views_view_grid(&$variables) {
+function europa_preprocess_views_view_grid(&$variables, $hook) {
   $view = $variables['view'];
   $result = $view->result;
   $options = $view->style_plugin->options;
@@ -48,12 +49,12 @@ function europa_preprocess_views_view_grid(&$variables) {
     }
   }
   else {
-    $num_rows = floor(count($vars['rows']) / $columns);
+    $num_rows = floor(count($variables['rows']) / $columns);
     // The remainders are the 'odd' columns that are slightly longer.
-    $remainders = count($vars['rows']) % $columns;
+    $remainders = count($variables['rows']) % $columns;
     $row = 0;
     $col = 0;
-    foreach ($vars['rows'] as $count => $item) {
+    foreach ($variables['rows'] as $count => $item) {
       $rows[$row][$col] = $item;
       $row_indexes[$row][$col] = $count;
       $row++;
@@ -125,11 +126,4 @@ function europa_preprocess_views_view_grid(&$variables) {
   else {
     $vars['caption'] = '';
   }
-}
-
-/**
- * Implements hook_preprocess_views_view_table().
- */
-function europa_preprocess_views_view_table(&$variables) {
-  $variables['classes_array'][] = 'table-responsive';
 }

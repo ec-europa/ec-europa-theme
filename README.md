@@ -35,12 +35,21 @@ All the templates are provided inside the theme:
  - views templates
  - display suite templates
 
-The platform provides the following two modules to facilitate building your site and integrate with Views and Display Suite:
- 
- - **NextEuropa Core Views `nexteuropa_core_views`**: The module allows to set a component layout of your choice to a views row.
-More information about their usage can be found in their respective README files.
- - **NextEuropa Fields Formatters `nexteuropa_fields_formatters`**: The module allows to set a component layout to a field of your choice, in views 
-or in the content type 'Manage fields' screen of display suite.
+The platform provides the following modules to facilitate building your site and to integrate with Views and Fields:
+
+#### NextEuropa Formatters (nexteuropa_formatters)
+
+This module provides default theme implementations for custom ECL formatters.
+
+#### NextEuropa Formatters - Views (nexteuropa_formatters_views)
+
+This module extends nexteuropa_formatters with custom view plugins that
+render content using ECL formatters.
+
+#### NextEuropa Formatters - Fields (nexteuropa_formatters_fields)
+
+This module extends nexteuropa_formatters with custom field formatters that
+render field value using ECL formatters.
 
 ## Tests
 

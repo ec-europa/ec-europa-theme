@@ -6,9 +6,9 @@
  */
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements hook_preprocess_hook().
  */
-function europa_preprocess_block(&$variables) {
+function europa_preprocess_block(&$variables, $hook) {
   $block = $variables['block'];
 
   switch ($block->delta) {
@@ -16,12 +16,19 @@ function europa_preprocess_block(&$variables) {
       $variables['classes_array'][] = 'block--full-width';
       break;
 
-    case 'menu-nexteuropa-service-links':
     case 'menu-nexteuropa-site-links':
     case 'menu-nexteuropa-social-media':
     case 'menu-nexteuropa-inst-links':
       $variables['title'] = $block->subject;
-      $variables['title_attributes_array']['class'][] = array('ecl-h4', 'ecl-footer__title');
+      $variables['title_attributes_array']['class'][] = 'ecl-h4';
+      $variables['title_attributes_array']['class'][] = 'ecl-footer__title';
+      $block->subject = '';
+      break;
+
+    case 'menu-nexteuropa-service-links':
+      $variables['title'] = '';
+      $variables['title_attributes_array']['class'][] = 'ecl-h4';
+      $variables['title_attributes_array']['class'][] = 'ecl-footer__title';
       $block->subject = '';
       break;
 
@@ -97,8 +104,7 @@ function europa_preprocess_block(&$variables) {
 
   // Replace block-title class with block__title in order to keep BEM structure
   // of classes.
-  $block_title_class = array_search('block-title', $variables['title_attributes_array']['class']);
-  if ($block_title_class !== FALSE) {
+  if ($block_title_class = array_search('block-title', $variables['title_attributes_array']['class'])) {
     unset($variables['title_attributes_array']['class'][$block_title_class]);
   }
   $variables['title_attributes_array']['class'][] = 'block__title';
@@ -118,7 +124,7 @@ function europa_preprocess_block(&$variables) {
 
           // Passing block id to Drupal.settings in order to pass it through
           // data attribute in the collapsible panel.
-          drupal_add_js(['europa' => ['exposedBlockId' => $variables['block_html_id']]], 'setting');
+          drupal_add_js(array('europa' => array('exposedBlockId' => $variables['block_html_id'])), 'setting');
 
           // Adding filters.js file.
           drupal_add_js(drupal_get_path('theme', 'europa') . '/assets/js/components/filters.js');
@@ -135,4 +141,8 @@ function europa_preprocess_block(&$variables) {
     $variables['content']['#attributes']['class'][] = 'ecl-editor';
     $variables['content_attributes_array']['class'][] = 'ecl-editor';
   }
+
+  $variables['attributes_array']['class'] = drupal_array_merge_deep($variables['attributes_array']['class'], $variables['classes_array']);
+  $variables['attributes_array']['class'][] = 'ecl-clearfix';
+  $variables['attributes_array']['id'] = $variables['block_html_id'];
 }

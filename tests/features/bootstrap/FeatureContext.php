@@ -8,12 +8,14 @@ use Drupal\DrupalExtension\Context\RawDrupalContext;
 class FeatureContext extends RawDrupalContext {
 
   /**
+   * Function Node of Type.
+   *
    * @Given :amount nodes of type :type
    */
   public function nodesOfType($amount, $type) {
     for ($i = 0; $i < $amount; $i++) {
       $node = (object) [
-        'type' =>  $type,
+        'type' => $type,
         'title' => ucfirst($type) . " " . $i,
       ];
       $this->nodeCreate($node);

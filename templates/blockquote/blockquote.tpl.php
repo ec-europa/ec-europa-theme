@@ -5,6 +5,9 @@
  * Contains template file.
  */
 ?>
-<blockquote class="ecl-blockquote"<?php print $attributes; ?>>
-  <p><?php print render($blockquote);?></p>
-</blockquote>
+<div<?php print render($attributes); ?>>
+    <blockquote class="ecl-blockquote__quote">
+        <p class="ecl-blockquote__body"><?php print render($body); ?></p>
+    </blockquote>
+    <div class="ecl-blockquote__author"><?php print render($author); ?></div>
+</div>

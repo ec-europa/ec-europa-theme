@@ -6,22 +6,22 @@
  */
 
 /**
- * Implements hook_atomium_theme_HOOK().
+ * Implements hook_atomium_theme_hook().
  */
 function europa_atomium_theme_logo() {
   return array(
     'logo' => array(
       'template' => 'logo',
       'variables' => array(
-        'title' => '',
-        'type' => '',
+        'title' => NULL,
+        'type' => NULL,
       ),
     ),
   );
 }
 
 /**
- * Implements hook_atomium_definition_HOOK().
+ * Implements hook_atomium_definition_hook().
  */
 function europa_atomium_definition_logo() {
   return array(
@@ -34,20 +34,16 @@ function europa_atomium_definition_logo() {
 }
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements hook_preprocess_hook().
  */
-function atomium_preprocess_logo(&$variables) {
-
+function europa_preprocess_logo(&$variables, $hook) {
+  $variables['attributes_array'] += array(
+    'class' => array(),
+    'href' => 'https://ec.europa.eu/info/index',
+  );
   $variables['attributes_array']['title'] = $variables['title'];
-
-  if (empty($variables['attributes_array']['href'])) {
-    $variables['attributes_array']['href'] = "https://ec.europa.eu/info/index";
-  }
-
-  if (empty($variables['attributes_array']['class'])) {
-    $variables['attributes_array']['class'] = array();
-  }
   $variables['attributes_array']['class'][] = 'ecl-logo';
+
   if (!empty($variables['type'])) {
     switch ($variables['type']) {
       case 'below':
@@ -55,6 +51,7 @@ function atomium_preprocess_logo(&$variables) {
         break;
 
       case 'right':
+        // TODO: Check if this is valid.
         $variables['attributes_array']['class'][] = 'ecl-logo--logotype';
         break;
 

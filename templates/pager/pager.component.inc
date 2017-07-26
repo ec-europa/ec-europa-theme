@@ -6,7 +6,7 @@
  */
 
 /**
- * Implements hook_atomium_definition_HOOK().
+ * Implements hook_atomium_definition_hook().
  */
 function europa_atomium_definition_pager() {
   return array(
@@ -24,7 +24,7 @@ function europa_atomium_definition_pager() {
 }
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements hook_preprocess_hook().
  */
 function europa_preprocess_pager(&$variables, $hook) {
   global $pager_page_array, $pager_total;
@@ -74,11 +74,9 @@ function europa_preprocess_pager(&$variables, $hook) {
   }
 
   $variables['previous_title'] = t('Go to previous page');
-  $variables['previous_label'] = "‹ " . t('Previous');
+  $variables['previous_label'] = t('@arrow Previous', array('@arrow' => '‹'));
   $variables['next_title'] = t('Go to next page');
-  $variables['next_label'] = t('Next') . " ›";
+  $variables['next_label'] = t('Next @arrow', array('@arrow' => '›'));
   $variables['goto_title'] = t('Go to page');
   $variables['page_label'] = t('Page');
-
-
 }

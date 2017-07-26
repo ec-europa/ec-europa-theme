@@ -26,6 +26,7 @@
 ?>
 <?php if (!empty($q)): ?>
   <?php
+    // TODO: What is this ???
     // This ensures that, if clean URLs are off, the 'q' is added first so that
     // it shows up first in the URL.
     print $q;

@@ -5,21 +5,7 @@
  * template.php
  */
 
-atomium_include('atomium', 'includes/alter');
 atomium_include('europa', 'includes/alter');
-
-/**
- * Overrides theme_form_required_marker().
- */
-function europa_form_required_marker($variables) {
-  // This is also used in the installer, pre-database setup.
-  $t = get_t();
-  $attributes = [
-    'class' => 'form-required text-danger',
-    'title' => $t('This field is required.'),
-  ];
-  return '<span' . drupal_attributes($attributes) . '>*</span>';
-}
 
 /**
  * Implements hook_date_popup_process_alter().
@@ -32,6 +18,8 @@ function europa_date_popup_process_alter(&$element, &$form_state, $context) {
 
 /**
  * Override theme_file_link().
+ *
+ * TODO: Convert this into a preprocess function.
  */
 function europa_file_link($variables) {
   if (function_exists('_nexteuropa_formatters_file_markup')) {
@@ -52,6 +40,8 @@ function europa_file_link($variables) {
 
 /**
  * Pre-render function for taxonomy pages.
+ *
+ * TODO: This function doesn't seems to be used in this theme.
  */
 function _europa_term_heading($element) {
   $element['#prefix'] = '<div class="container-fluid"><div class="' . $element['main'] . '">';
@@ -99,9 +89,9 @@ function europa_dropdown(array $variables) {
   );
 
   foreach ($items as $key => $value) {
-    $links[$value] = t($key);
+    $links[$value] = $key;
   }
-  $select['#options'] = array_merge( $select['#options'], $links);
+  $select['#options'] = array_merge($select['#options'], array_map('t', $links));
 
   return form_select_options($select);
 }
@@ -122,9 +112,23 @@ function europa_dropdown(array $variables) {
  */
 function _europa_array_find($needle, array $haystack) {
   foreach ($haystack as $key => $value) {
-    if (FALSE !== stripos($value, $needle)) {
+    if (is_string($value) && FALSE !== stripos($value, $needle)) {
       return $key;
     }
   }
   return FALSE;
+}
+
+/**
+ * Returns TRUE if a path is external to Drupal and 'ec.europa.eu' domain.
+ *
+ * @param string $path
+ *   The internal path or external URL being linked to, such as "node/34" or
+ *   "http://example.com/foo".
+ *
+ * @return bool
+ *   Boolean TRUE or FALSE, where TRUE indicates an external path.
+ */
+function _europa_url_is_external($path) {
+  return url_is_external($path) && !stripos(parse_url($path, PHP_URL_HOST), 'europa.eu');
 }

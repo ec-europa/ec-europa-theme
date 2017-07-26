@@ -6,7 +6,7 @@
  */
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements hook_preprocess_hook().
  */
 function europa_preprocess_menu_local_tasks(&$variables, $hook) {
   // Primary menu tabs preprocess.
@@ -20,5 +20,9 @@ function europa_preprocess_menu_local_tasks(&$variables, $hook) {
 
     // Set the default nav title which is mandatory in the Europa component.
     $variables['primary']['#title'] = t('Navigation');
+  }
+
+  if (isset($variables['secondary']) && !empty($variables['secondary'])) {
+    $variables['secondary_menu_tab_links'] = $variables['secondary']['#items'];
   }
 }
