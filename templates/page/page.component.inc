@@ -6,7 +6,7 @@
  */
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements hook_preprocess_hook().
  */
 function europa_preprocess_page(&$variables, $hook) {
   // Small fix to maxe the link to the start page use the alias with language.
@@ -70,7 +70,7 @@ function europa_preprocess_page(&$variables, $hook) {
 
   $variables['page_header'] = array(
     '#theme' => array('page_header'),
-    '#identity' =>  $variables['site_name'],
+    '#identity' => $variables['site_name'],
     '#title_prefix' => $variables['title_prefix'],
     '#title_suffix' => $variables['title_suffix'],
     '#title' => drupal_get_title(),

@@ -6,13 +6,14 @@
  */
 
 /**
- * Implements hook_atomium_theme_HOOK().
+ * Implements hook_atomium_theme_hook().
  */
 function europa_atomium_theme_blockquote() {
   return array(
     'blockquote' => array(
       'variables' => array(
-        'markup' => NULL,
+        'body' => NULL,
+        'author' => NULL,
       ),
       'template' => 'blockquote',
     ),
@@ -20,26 +21,22 @@ function europa_atomium_theme_blockquote() {
 }
 
 /**
- * Implements hook_atomium_definition_HOOK().
+ * Implements hook_atomium_definition_hook().
  */
 function europa_atomium_definition_blockquote() {
   return array(
     'label' => 'Blockquote',
     'description' => 'Blockquote.',
     'preview' => array(
-      'markup' => 'Blockquote element.',
+      'body' => 'Blockquote body.',
+      'author' => 'Blockquote author.',
     ),
   );
 }
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements hook_preprocess_hook().
  */
 function europa_preprocess_blockquote(&$variables, $hook) {
-  $variables[$hook] = array(
-    $hook => array(
-      '#markup' => $variables['markup'],
-    ),
-  );
   $variables['attributes_array']['class'][] = 'ecl-blockquote';
 }

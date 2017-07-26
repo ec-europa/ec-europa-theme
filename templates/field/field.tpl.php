@@ -5,7 +5,7 @@
  * Contains template file.
  */
 ?>
-<div class="field">
+<div<?php print render($attributes); ?>>
     <div class="field__label"><?php print $label ?></div>
     <div class="field__items">
       <?php foreach ($items as $delta => $item) : ?>

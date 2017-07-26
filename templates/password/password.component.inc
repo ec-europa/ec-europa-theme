@@ -6,7 +6,7 @@
  */
 
 /**
- * Implements hook_preprocess_HOOK() for the form password.
+ * Implements hook_preprocess_hook().
  */
 function europa_preprocess_password(&$variables, $hook) {
   $element = &$variables['element'];
