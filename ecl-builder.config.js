@@ -22,6 +22,13 @@ module.exports = {
       options: {
         sourceMap: false
       }
+    },
+    {
+      entry: path.resolve(__dirname, "assets/src/scss/editor-index.scss"),
+      dest: path.resolve(__dirname, "wysiwyg/editor.css"),
+      options: {
+        sourceMap: false
+      }
     }
   ],
   copy: [
