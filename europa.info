@@ -51,6 +51,7 @@ scripts[] = js/misc/ajax.js
 scripts[] = js/europa.js
 scripts[] = js/europa_tabs.js
 scripts[] = js/components/table-responsive.js
+scripts[] = js/libraries/superclamp.min.js
 
 ; ========================================
 ; Settings
