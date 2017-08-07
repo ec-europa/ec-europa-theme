@@ -54,10 +54,9 @@
       // Runs only once.
       // Add throbber next to content type and items count text.
       $filters.once('filters', function () {
-        var throbber = '<div class="ajax-progress ajax-progress-throbber"><i class="icon icon--spinner is-spinning"></i></div>';
         $(document).ajaxStart(function (event) {
-          if (typeof event.currentTarget.activeElement.form === 'undefined' && event.currentTarget.activeElement.form.id === filtersFormId) {
-            $itemsNumber.prepend(throbber);
+          if (event.currentTarget.activeElement.form == 'undefined' && event.currentTarget.activeElement.form.id === filtersFormId) {
+            $itemsNumber.prepend('<div class="ajax-progress ajax-progress-throbber"><i class="icon icon--spinner is-spinning"></i></div>');
           }
         });
 
