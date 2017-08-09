@@ -193,7 +193,7 @@ Style guide: page-header.5
 
   .page-header__hero-title {
     min-height: 75px;
-    margin: 75px 0 0;
+    margin: 150px 0 0;
     padding: 16px;
     background-color: $ec-blue120;
   }
@@ -215,6 +215,14 @@ Style guide: page-header.5
   .page-header--xlarge-intro {
     height: 320px;
 
+    .page-header__hero-title {
+      margin: 245px 0 0;
+    }
+  }
+}
+
+@include breakpoint(screen-sm-min) {
+  .page-header--xlarge-intro {
     .page-header__hero-title {
       margin: auto;
       padding-top: 5em;
@@ -243,7 +251,22 @@ Style guide: page-header.5
   .page-header {
     @extend .page-header--xlarge-intro;
 
+    &.page-header--image {
+      background-position: top -35px left 50%;
+    }
+
     .page-header__hero-title {
+      .field__items {
+        max-width: 550px;
+      }
+
+      p {
+        width: auto;
+        min-width: 180px;
+        display: inline-block;
+        padding-right: 15px;
+      }
+
       a {
         text-decoration: none;
 
@@ -253,7 +276,11 @@ Style guide: page-header.5
       }
     }
 
-    @include breakpoint(screen-msm-min) {
+    @include breakpoint(screen-sm-min) {
+      &.page-header--image {
+        background-position: center;
+      }
+
       .page-header__hero-title {
         a {
           color: $ec-blue;

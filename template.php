@@ -190,6 +190,21 @@ function europa_form_element(&$variables) {
       case "checkbox":
         $attributes['class'][] = 'checkbox';
         $is_checkbox = TRUE;
+        if (isset($element['#title'])) {
+          $element['#title'] = filter_xss($element['#title']);
+          // Supports anchors inside the checkbox label.
+          if (preg_match('/<a\b[^>]*>(.*?)<\/a>/is', $element['#title'], $link)) {
+            $anchor = $link[0];
+            // Get the clean label text.
+            $element['#title'] = trim(str_replace($anchor, '', $element['#title']));
+            // Adds target _blank if not in place.
+            if (!preg_match('/<a.*?target=[^>]*?>/is', $anchor)) {
+              $anchor = preg_replace('/<a([^>]+)>/is', '<a$1 target="_blank">', $anchor);
+            }
+
+            $attributes['class'][] = 'checkbox--with-link';
+          }
+        }
         break;
 
       case "managed_file":
@@ -274,6 +289,17 @@ function europa_form_element(&$variables) {
       }
 
       $output .= $feedback_message;
+  }
+  // @todo This would be better handled in a theme_form_element_label override.
+  if (!empty($anchor)) {
+    // Add the link.
+    $output .= $anchor;
+
+    if (!empty($variables['element']['#required'])) {
+      // Find the form-required span and put it after the link.
+      preg_match('/<span class="form-required\b[^>]*>(.*?)<\/span>/is', $output, $required);
+      $output = str_replace($required[0], '', $output) . $required[0];
+    }
   }
 
   $output .= "</div>\n";
@@ -753,10 +779,13 @@ function europa_preprocess_block(&$variables) {
 
   // Replace block-title class with block__title in order to keep BEM structure
   // of classes.
-  $block_title_class = array_search('block-title', $variables['title_attributes_array']['class']);
-  if ($block_title_class !== FALSE) {
-    unset($variables['title_attributes_array']['class'][$block_title_class]);
+  if (!empty($variables['title_attributes_array']['class'])) {
+    $block_title_class = array_search('block-title', $variables['title_attributes_array']['class']);
+    if ($block_title_class !== FALSE) {
+      unset($variables['title_attributes_array']['class'][$block_title_class]);
+    }
   }
+
   $variables['title_attributes_array']['class'][] = 'block__title';
 
   if (isset($block->bid)) {
@@ -1067,7 +1096,7 @@ function europa_preprocess_taxonomy_term(&$variables) {
 function europa_preprocess_page(&$variables) {
   // Disable the region holding the breadcrumb if settings say so.
   if (drupal_is_front_page() && !(theme_get_setting('ec_europa_breadcrumb_home'))) {
-    hide($variables['page']['header_bottom']);
+    $variables['page']['header_bottom'] = [];
   }
 
   // Small fix to maxe the link to the start page use the alias with language.
@@ -1158,7 +1187,7 @@ function europa_preprocess_page(&$variables) {
 
       if (!empty($variables['page']['content']['system_main']['term_heading'])) {
         if (!empty($variables['page']['content']['system_main']['nodes'])) {
-          $variables['page']['content']['system_main']['nodes']['main'] = $main;
+          $variables['page']['content']['system_main']['nodes']['#main'] = $main;
           $variables['page']['content']['system_main']['nodes']['#pre_render'] = ['_europa_term_heading'];
         }
       }
@@ -1172,7 +1201,7 @@ function europa_preprocess_page(&$variables) {
  * Pre-render function for taxonomy pages.
  */
 function _europa_term_heading($element) {
-  $element['#prefix'] = '<div class="container-fluid"><div class="' . $element['main'] . '">';
+  $element['#prefix'] = '<div class="container-fluid"><div class="' . $element['#main'] . '">';
   $element['#suffix'] = '</div></div>';
   return $element;
 }
