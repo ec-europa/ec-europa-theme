@@ -3,7 +3,7 @@
  * JS file for Europa theme.
  */
 
-(function ($, Drupal, PiwikDTT) {
+(function ($, Drupal) {
   Drupal.europa = Drupal.europa || {};
   Drupal.europa.breakpoints = Drupal.europa.breakpoints || {};
 
@@ -235,4 +235,4 @@
       }
     }
   };
-})(jQuery, Drupal, PiwikDTT);
+})(jQuery, Drupal);
