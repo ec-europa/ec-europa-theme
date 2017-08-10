@@ -9,7 +9,7 @@
     attach: function (context, settings) {
       var $filters        = $('.filters'),
           $filtersSubmit  = $('.filters__btn-submit', $filters),
-          filtersFormId   = $filters.find('form').attr('id');
+          filtersFormId   = $filters.find('form').attr('id'),
           refineText      = Drupal.t('Refine'),
           hideText        = Drupal.t('Hide'),
           clearAll        = Drupal.t('Clear all'),
@@ -25,11 +25,11 @@
       // Function for hiding Submit and Reset buttons.
       var hideFilterButtons = function () {
         $('.filters__btn-collapse, .filters__btn-reset--small').hide();
-      }
+      };
 
       var showFilterButtons = function () {
         $('.filters__btn-collapse, .filters__btn-reset--small').show();
-      }
+      };
 
       // Adding buttons for the filters.
       if ($resultsCount.is(':visible') && !$('.filters__btn-collapse').length) {
@@ -137,15 +137,10 @@
                 $(this).children('.close').remove();
                 showFilterButtons();
               });
-            },
+            }
           });
         }
       });
-
-      // Check and show Clear button.
-      if (window.location.search != "") {
-        $(".js-showonsubmit").show();
-      }
     }
   };
 })(jQuery);
