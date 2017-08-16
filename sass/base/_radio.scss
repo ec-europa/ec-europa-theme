@@ -69,8 +69,6 @@ Style guide form.radio
     label::before {
       border: 1px solid #cccccc;
       background: none !important;
-      -webkit-transition: border 0.15s ease-in-out;
-      -o-transition: border 0.15s ease-in-out;
       transition: border 0.15s ease-in-out;
     }
   }

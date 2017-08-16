@@ -21,16 +21,16 @@ Style guide form.checkbox
     opacity: 0;
     z-index: 1;
 
-    // Checked state.
-    &:checked + label::before {
-      background-image: url('../images/svg/checkbox-checked--blue.svg');
-    }
-
     // Focus state, not checked.
     &:focus + label::before {
       border: 3px solid $form-control-border-color-focus;
     }
   }
+
+  &.checked label::before,
+  input:checked + label::before {
+    background-image: url('../images/svg/checkbox-checked--blue.svg');
+  }     
 
   label {
     position: relative;
@@ -77,6 +77,12 @@ Style guide form.checkbox
   }
 }
 
+.checkbox--with-link {
+  a {
+    font-size: $font-size-little;
+  }
+}
+
 // Turning off completely custom checkboxes when SVG's are not available
 .no-svg {
   .checkbox {
@@ -90,8 +96,6 @@ Style guide form.checkbox
       border: 1px solid #cccccc !important;
       border-radius: 5px !important;
       background: none !important;
-      -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
-      -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
       transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
     }
   }

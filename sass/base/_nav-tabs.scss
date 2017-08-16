@@ -12,7 +12,7 @@ ul.nav-tabs,
 .nav-tabs {
   max-width: inherit !important;
   padding: 0;
-  margin-bottom: 2em !important;
+  margin-bottom: 2em;
   border-bottom: 2px solid $ec-grey50;
 
   @extend .hidden-print;
@@ -129,4 +129,47 @@ Implementation of WAI-ARIA attributes on nav tabs for the CWS.
 */
 .js-tabcontent[aria-hidden=true] {
   display: none;
+}
+
+.tabs-row {
+  background: $brand-primary;
+}
+
+ul.tabs--primary {
+  position: relative;
+  top: -2px;
+  margin-bottom: 0;
+  border-bottom: none;
+  border-top: 1px solid white;
+
+  li a {
+    color: #fff;
+    border-width: 0;
+    font-size: $font-size-little;
+
+    &:hover {
+      color: $ec-yellow;
+    }
+
+    &:focus {
+      color: $ec-grey;
+    }
+  }
+
+  li a.active {
+    border-width: 0;
+    font-weight: bold;
+
+    &:hover,
+    &:focus {
+      background: $ec-yellow;
+      color: $ec-grey;
+      border-width: 0;
+    }
+  }
+}
+
+ul.tabs--primary:hover {  
+  border-bottom: none;
+  border-top: 1px solid $ec-yellow;
 }

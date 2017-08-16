@@ -3,15 +3,28 @@
  * JS file for Europa theme.
  */
 
-(function ($) {
+(function ($, Drupal) {
   Drupal.europa = Drupal.europa || {};
   Drupal.europa.breakpoints = Drupal.europa.breakpoints || {};
 
   // TODO:
-  // Populate the breakpoints with those comming from Breakpoints module.
+  // Populate the breakpoints with those coming from Breakpoints module.
   // @see breakpoints js module for potential solution.
   Drupal.europa.breakpoints.medium = 'screen and (min-width: 480px)';
   Drupal.europa.breakpoints.small = 'screen and (min-width: 768px)';
+
+  Drupal.behaviors.toggle_reset_button_if_required = {
+    attach: function (context) {
+      $(document).delegate('body', 'toggleResetButtonIfRequired', function (event, data) {
+        if ($('.filters__facet-tag').length) {
+          $('.js-showonsubmit').show();
+        }
+        else {
+          $('.js-showonsubmit').hide();
+        }
+      });
+    }
+  };
 
   // This is for fixing the automatic zoom in IOS.
   Drupal.behaviors.noZoom = {
@@ -20,6 +33,12 @@
         $('meta[name=viewport]').remove();
         $('head').append('<meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=0">');
       });
+    }
+  };
+
+  Drupal.behaviors.clampline = {
+    attach: function (context) {
+      $('.mediagallery__caption').clamp();
     }
   };
 
@@ -175,6 +194,7 @@
 
   var trackElements = [],
       errorEventSent = 'Piwik, trackEvent was not fired up.';
+
   /**
    * Acts like a wrapper for Piwik push method.
    *
@@ -215,4 +235,4 @@
       }
     }
   };
-})(jQuery);
+})(jQuery, Drupal);

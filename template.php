@@ -190,6 +190,21 @@ function europa_form_element(&$variables) {
       case "checkbox":
         $attributes['class'][] = 'checkbox';
         $is_checkbox = TRUE;
+        if (isset($element['#title'])) {
+          $element['#title'] = filter_xss($element['#title']);
+          // Supports anchors inside the checkbox label.
+          if (preg_match('/<a\b[^>]*>(.*?)<\/a>/is', $element['#title'], $link)) {
+            $anchor = $link[0];
+            // Get the clean label text.
+            $element['#title'] = trim(str_replace($anchor, '', $element['#title']));
+            // Adds target _blank if not in place.
+            if (!preg_match('/<a.*?target=[^>]*?>/is', $anchor)) {
+              $anchor = preg_replace('/<a([^>]+)>/is', '<a$1 target="_blank">', $anchor);
+            }
+
+            $attributes['class'][] = 'checkbox--with-link';
+          }
+        }
         break;
 
       case "managed_file":
@@ -274,6 +289,17 @@ function europa_form_element(&$variables) {
       }
 
       $output .= $feedback_message;
+  }
+  // @todo This would be better handled in a theme_form_element_label override.
+  if (!empty($anchor)) {
+    // Add the link.
+    $output .= $anchor;
+
+    if (!empty($variables['element']['#required'])) {
+      // Find the form-required span and put it after the link.
+      preg_match('/<span class="form-required\b[^>]*>(.*?)<\/span>/is', $output, $required);
+      $output = str_replace($required[0], '', $output) . $required[0];
+    }
   }
 
   $output .= "</div>\n";
@@ -1039,8 +1065,8 @@ function europa_preprocess_taxonomy_term(&$variables) {
     $tasks = menu_local_tasks();
 
     if (!empty($tasks)) {
-      $tasks['#prefix'] = '<div class="tabs--primary nav nav-tabs">';
-      $tasks['#suffix'] = '</div>';
+      $tasks['#prefix'] = '<ul class="tabs--primary nav nav-tabs">';
+      $tasks['#suffix'] = '</ul>';
       $variables['local_tabs'] = drupal_render($tasks);
     }
   }
