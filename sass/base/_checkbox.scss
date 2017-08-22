@@ -21,16 +21,16 @@ Style guide form.checkbox
     opacity: 0;
     z-index: 1;
 
-    // Checked state.
-    &:checked + label::before {
-      background-image: url('../images/svg/checkbox-checked--blue.svg');
-    }
-
     // Focus state, not checked.
     &:focus + label::before {
       border: 3px solid $form-control-border-color-focus;
     }
   }
+
+  &.checked label::before,
+  input:checked + label::before {
+    background-image: url('../images/svg/checkbox-checked--blue.svg');
+  }     
 
   label {
     position: relative;
