@@ -8,11 +8,12 @@ Style guide timeline
 
 .timeline {
   border-left: 4px solid $ec-yellow;
+  margin-bottom: 1.667em;
 
   .btn-timeline {
     @extend .btn-ctn;
 
-    margin: 0 0 0 1.667em;
+    margin: 0 0 1.667em 1.667em;
 
     &::after {
       content: '\e81f' !important;
@@ -26,14 +27,13 @@ Style guide timeline
   margin-bottom: 1.667em;
   padding: 2em 0 0 1.667em;
 
-  .timeline__list__item {
-    p {
-      margin-bottom: 1em;
-      color: $ec-grey75;
+  .timeline__list__item,
+  .timeline__list__item__text ul li {
+    margin-bottom: 1em;
+    color: $ec-grey75;
 
-      &:last-child {
-        margin-bottom: 1.425em;
-      }
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 
