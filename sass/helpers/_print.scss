@@ -1,0 +1,16 @@
+@media print {
+  .section--content-top-middle-right,
+  .section__group.group-middle-social-links,
+  .section--force-bottom,
+  .region-sidebar-first {
+    display: none;
+  }
+
+  img {
+    display: none;
+    
+    .field--body & {
+      display: inline;
+    }
+  }
+}

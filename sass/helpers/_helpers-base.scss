@@ -14,19 +14,3 @@
     @extend .clear-bottom-spacing;
   }
 }
-
-@media print {
-  .section--content-top-middle-right,
-  .section__group.group-middle-social-links,
-  .section--force-bottom {
-    display: none;
-  }
-
-  img {
-    display: none;
-    
-    .field--body & {
-      display: inline;
-    }
-  }
-}
