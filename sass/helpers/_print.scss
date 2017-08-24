@@ -8,8 +8,12 @@
 
   img {
     display: none;
-    
-    .field--body & {
+  }
+
+  .field--body .file.file--image {
+    display: inline !important;
+
+    img {
       display: inline;
     }
   }
