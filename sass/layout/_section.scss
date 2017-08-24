@@ -135,6 +135,19 @@ $section-spacing: 1.667em;
   }
 }
 
+@media print {
+  .section__group,
+  .section,
+  .field-group-section_group { 
+    margin: 1em 0;
+
+    &:not(.section):first-child,
+    &:not(.section):last-child {
+      margin: 0;
+    }
+  }
+}
+
 .section__group--collapsible {
   padding: 0 !important;
 

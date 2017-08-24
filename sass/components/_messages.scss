@@ -82,6 +82,13 @@ Style guide: messages
   }
 }
 
+@media print {
+  .messages {
+    padding: 0.5em 0 0.5em 0.5em;
+    min-height: auto;
+  }
+}
+
 // Bootstrap overrides.
 .alert {
   margin: 1.667em 0;
