@@ -8,6 +8,7 @@ Style guide contextnav
 
 .context-nav {
   @extend .row;
+  @extend .hidden-print;
 
   font-size: $font-size-xsmall;
 

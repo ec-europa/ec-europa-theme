@@ -77,6 +77,8 @@ Style guide social
 }
 
 .social-media-links--webtool-horizontal {
+   @extend .hidden-print;
+   
   .wtShareList {
     background-color: transparent;
     padding: 0;

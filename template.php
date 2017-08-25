@@ -190,6 +190,7 @@ function europa_form_element(&$variables) {
       case "checkbox":
         $attributes['class'][] = 'checkbox';
         $is_checkbox = TRUE;
+
         if (isset($element['#title'])) {
           $element['#title'] = filter_xss($element['#title']);
           // Supports anchors inside the checkbox label.

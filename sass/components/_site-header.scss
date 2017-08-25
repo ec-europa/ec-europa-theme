@@ -7,6 +7,7 @@ Style guide: siteheader
 */
 
 .site-header {
+  @extend .hidden-print;
   overflow: hidden;
   color: $brand-primary;
   padding: 14px 0 0;
@@ -22,10 +23,6 @@ Style guide: siteheader
     & {
       padding: 14px 0;
     }
-  }
-
-  @media print {
-    -webkit-print-color-adjust: exact;
   }
 
   & > .container-fluid {
