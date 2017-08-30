@@ -10,7 +10,7 @@
       var $filters        = $('.filters'),
           $filtersSubmit  = $('.filters__btn-submit', $filters),
           filtersFormId   = $filters.find('form').attr('id'),
-          refineText      = Drupal.t('Filter by'),
+          refineText      = Drupal.t('Apply'),
           hideText        = Drupal.t('Hide'),
           clearAll        = Drupal.t('Clear all'),
           $resultsCount   = $('.filters__result-count'),

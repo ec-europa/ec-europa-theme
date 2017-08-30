@@ -83,10 +83,6 @@ function europa_form_required_marker($variables) {
  * Implements hook_form_BASE_FORM_ID_alter().
  */
 function europa_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
-  // Button value change on all the views exposed forms is due to a
-  // design/ux requirement which uses the 'Filter by' label for all the
-  // filter forms.
-  $form['submit']['#value'] = t('Filter by');
   $form['submit']['#attributes']['class'][] = 'btn-primary';
   $form['submit']['#attributes']['class'][] = 'filters__btn-submit';
   $form['reset']['#attributes']['class'][] = 'filters__btn-reset';
