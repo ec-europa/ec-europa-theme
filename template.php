@@ -789,7 +789,8 @@ function europa_preprocess_block(&$variables) {
     // Check if the block is a exposed form.
     // This is checked by looking at the $block->bid which in case
     // of views exposed filters, always contains 'views--exp-' string.
-    if (strpos($block->bid, 'views--exp-') !== FALSE || strpos($block->info, 'Exposed form') !== FALSE) {
+    if (strpos($block->bid, 'views--exp-') !== FALSE 
+      || (!empty($block->info) && strpos($block->info, 'Exposed form') !== FALSE)) {
       if (isset($block->context) && $context = context_load($block->context)) {
         // @todo Find a different way for doing this, we shouldn't hardcode the title here.
         $block->subject = t('Filter by');
