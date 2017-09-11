@@ -24,7 +24,7 @@ Style guide datepicker
 
   // Datepicker header.
   .ui-datepicker-header {
-    background-color: $ec-grey;
+    background: $ec-grey;
     border: none;
     border-radius: 0;
     padding: 0 !important;
@@ -32,12 +32,13 @@ Style guide datepicker
     line-height: 50px;
 
     .ui-datepicker-prev,
-    .ui-datepicker-next {
+    .ui-datepicker-next,
+    .ui-state-hover {
       display: block;
       height: 100%;
       width: 50px;
       top: 0;
-      background-color: transparent;
+      background: transparent;
       border: none;
 
       &:hover {
@@ -123,6 +124,7 @@ Style guide datepicker
     border-right: 10px solid transparent;
     border-left: 10px solid transparent;
     border-bottom: 10px solid transparent;
+    margin-bottom: 0;
 
     th {
       font-size: $font-size-little;
@@ -133,7 +135,7 @@ Style guide datepicker
 
   .ui-state-default {
     border: none;
-    background-color: #fff;
+    background: #fff;
     color: $ec-grey;
     text-align: center;
     margin: 1px;

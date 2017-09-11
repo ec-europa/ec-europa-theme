@@ -83,10 +83,6 @@ function europa_form_required_marker($variables) {
  * Implements hook_form_BASE_FORM_ID_alter().
  */
 function europa_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
-  // Button value change on all the views exposed forms is due to a
-  // design/ux requirement which uses the 'Refine results' label for all the
-  // filter forms.
-  $form['submit']['#value'] = t('Refine results');
   $form['submit']['#attributes']['class'][] = 'btn-primary';
   $form['submit']['#attributes']['class'][] = 'filters__btn-submit';
   $form['reset']['#attributes']['class'][] = 'filters__btn-reset';
@@ -793,14 +789,17 @@ function europa_preprocess_block(&$variables) {
     // Check if the block is a exposed form.
     // This is checked by looking at the $block->bid which in case
     // of views exposed filters, always contains 'views--exp-' string.
-    if (strpos($block->bid, 'views--exp-') !== FALSE) {
+    if (strpos($block->bid, 'views--exp-') !== FALSE 
+      || (!empty($block->info) && strpos($block->info, 'Exposed form') !== FALSE)) {
       if (isset($block->context) && $context = context_load($block->context)) {
+        // @todo Find a different way for doing this, we shouldn't hardcode the title here.
+        $block->subject = t('Filter by');
+        
         // If our block is the first, we set the subject. This way, if we expose
         // a second block for the same view, we will not duplicate the title.
         if (array_search($block->bid, array_keys($context->reactions['block']['blocks'])) === 0) {
           $variables['classes_array'][] = 'filters';
           $variables['title_attributes_array']['class'][] = 'filters__title';
-          $block->subject = t('Filter by');
 
           // Passing block id to Drupal.settings in order to pass it through
           // data attribute in the collapsible panel.
