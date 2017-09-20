@@ -44,6 +44,10 @@ p {
   font-size: $font-size-little;
 }
 
+.paragraph--xsmall {
+  font-size: $font-size-xsmall;
+}
+
 .text-small {
   @include text-small();
 }
