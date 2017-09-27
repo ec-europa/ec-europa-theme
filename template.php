@@ -794,7 +794,6 @@ function europa_preprocess_block(&$variables) {
       if (isset($block->context) && $context = context_load($block->context)) {
         // @todo Find a different way for doing this, we shouldn't hardcode the title here.
         $block->subject = t('Filter by');
-
         // If our block is the first, we set the subject. This way, if we expose
         // a second block for the same view, we will not duplicate the title.
         if (array_search($block->bid, array_keys($context->reactions['block']['blocks'])) === 0) {

@@ -439,6 +439,7 @@ Style guide listing.7
 
   a:not(.listing__item-link) {
     z-index: 2;
+    position: relative;
   }
 
   a.listing__title {
