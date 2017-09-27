@@ -21,6 +21,7 @@ Style guide datepicker
   font-family: $font-family-sans-serif;
   border: none;
   border-radius: 0;
+  z-index: 9999 !important;
 
   // Datepicker header.
   .ui-datepicker-header {
