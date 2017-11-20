@@ -7,14 +7,14 @@
   Drupal.behaviors.europa_filters = {
 
     attach: function (context, settings) {
-      var $filters        = $('.filters'),
-          $filtersSubmit  = $('.filters__btn-submit', $filters),
-          filtersFormId   = $filters.find('form').attr('id'),
-          refineText      = Drupal.t('Apply'),
-          hideText        = Drupal.t('Hide'),
-          clearAll        = Drupal.t('Clear all'),
-          $resultsCount   = $('.filters__result-count'),
-          $itemsNumber    = $('.filters__items-number');
+      var $filters       = $('.filters'),
+          $filtersSubmit = $('.filters__btn-submit', $filters),
+          filtersFormId  = $filters.find('form').attr('id'),
+          refineText     = Drupal.t('Apply'),
+          hideText       = Drupal.t('Hide'),
+          clearAll       = Drupal.t('Clear all'),
+          $resultsCount  = $('.filters__result-count'),
+          $itemsNumber   = $('.filters__items-number');
 
       // Checking if IE8 is used.
       var oldIE = false;

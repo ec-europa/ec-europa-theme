@@ -86,4 +86,26 @@
  * @ingroup themeable
  */
 ?>
-<?php print render($page['content']); ?>
+<style>
+  .gallery-overlay__container {
+    display: table;
+    width: 100vw;
+    height: 100vh;
+    background-color: #535353;
+  }
+
+  .gallery-overlay__wrapper > div {
+    display: inline-block;
+  }
+
+  .gallery-overlay__wrapper {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+</style>
+<div class="gallery-overlay__container">
+  <div class="gallery-overlay__wrapper">
+    <?php print render($page['content']); ?>
+  </div>
+</div>

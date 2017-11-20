@@ -114,41 +114,7 @@ Style guide listing.3
   }
 }
 
-/*
-Title listings
 
-Listing title is the component modifier used to style a list of titles.
-
-Markup: html/listing--title.html
-
-.listing--title-medium - Listing title medium
-
-Style guide listing.4
-*/
-
-// listing--title modifier.
-.listing--title {
-  // Half of the normal padding for the element.
-  .listing__item {
-    padding: 0.61em 0;
-
-    p {
-      margin-top: 0.5em;
-    }
-  }
-
-  .listing__title {
-    display: block;
-    margin: 0;
-    padding-right: 2em;
-    text-decoration: none;
-
-    // @todo What is this here for?
-    &::after {
-      line-height: 1.6;
-    }
-  }
-}
 
 /*
 Highlighted Listings
@@ -439,7 +405,6 @@ Style guide listing.7
 
   a:not(.listing__item-link) {
     z-index: 2;
-    position: relative;
   }
 
   a.listing__title {
@@ -464,6 +429,42 @@ Style guide listing.7
           @include _listing_external_link_mixin();
         }
       }
+    }
+  }
+}
+
+/*
+Title listings
+
+Listing title is the component modifier used to style a list of titles.
+
+Markup: html/listing--title.html
+
+.listing--title-medium - Listing title medium
+
+Style guide listing.4
+*/
+
+// listing--title modifier.
+.listing--title {
+  // Half of the normal padding for the element.
+  .listing__item {
+    padding: 0.61em 0;
+
+    p {
+      margin-top: 0.5em;
+    }
+  }
+
+  .listing__title {
+    display: block;
+    margin: 0;
+    padding-right: 2em;
+    text-decoration: none;
+
+    // @todo What is this here for?
+    &::after {
+      line-height: 1.6;
     }
   }
 }

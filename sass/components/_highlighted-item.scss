@@ -31,3 +31,8 @@ Style guide highlighted-item
   padding: 0 1em;
   color: $brand-primary;
 }
+
+// @todo To be removed when ticket DTTSB-2513 is done.
+.listing__item-link:hover + .listing__column-main h3.highlighted-item__content {
+  text-decoration: underline;
+}

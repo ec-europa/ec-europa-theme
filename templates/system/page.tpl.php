@@ -195,12 +195,8 @@
   </div>
 
   <!-- Generic sections -->
-  <div class="tabs-row">
+  <div class="row">
     <div class="container-fluid">
-      <?php if (!empty($tabs)): ?>
-        <?php print render($tabs); ?>
-      <?php endif; ?>
-
       <?php if (!empty($page['help'])): ?>
         <?php print render($page['help']); ?>
       <?php endif; ?>
@@ -212,6 +208,13 @@
   </div>
 
   <div class="page-content">
+  <?php if (!empty($tabs['#primary'])): ?>
+    <div class="tabs-row">
+      <div class="container-fluid">
+        <?php print render($tabs); ?>
+      </div>
+    </div>
+  <?php endif; ?>
     <div class="container-fluid">
 
     <?php if (($theme_settings['improved'] && $theme_settings['improved_header'] == 'basic') && (!empty($page['custom_title']) || !empty($title))): ?>

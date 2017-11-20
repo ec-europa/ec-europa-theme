@@ -583,7 +583,7 @@ function europa_form_nexteuropa_europa_search_search_form_alter(&$form, &$form_s
  */
 function _europa_breadcrumb_menu(&$variables) {
   global $language;
-  $menu = theme_get_setting('ec_europa_breadcrumb_menu');
+  $menu = theme_get_setting('ec_europa_breadcrumb_menu', 'europa');
   $menu_links = menu_tree($menu);
   $new_items = [];
   $front = drupal_is_front_page();
@@ -720,51 +720,6 @@ function europa_preprocess_block(&$variables) {
       break;
   }
 
-  // Page-level language switcher.
-  if (isset($block->bid) && $block->bid === 'language_selector_page-language_selector_page') {
-    global $language;
-
-    // selectify.js is the library to convert between ul and select.
-    drupal_add_js(drupal_get_path('theme', 'europa') . '/js/selectify.js');
-    drupal_add_js(drupal_get_path('theme', 'europa') . '/js/components/lang-switcher.js');
-
-    // Initialize variables.
-    $not_available = '';
-    $served = '';
-    $other = '';
-
-    if (!empty($variables['elements']['not_available']['#markup'])) {
-      $not_available = '<li class="lang-select-page__option lang-select-page__unavailable">' . $variables['elements']['not_available']['#markup']->native . '</li>';
-    }
-
-    if (!empty($variables['elements']['served']['#markup'])) {
-      $served = '<li class="lang-select-page__option is-selected">' . $variables['elements']['served']['#markup']->native . '</li>';
-    }
-
-    if (!empty($variables['elements']['other']['#markup'])) {
-      foreach ($variables['elements']['other']['#markup'] as $code => $lang) {
-        $options = [];
-        $options['query'] = drupal_get_query_parameters();
-        $options['query']['2nd-language'] = $code;
-        $options['attributes']['lang'] = $code;
-        $options['attributes']['hreflang'] = $code;
-        $options['attributes']['rel'] = 'alternate';
-        $options['language'] = $language;
-
-        $other .= '<li class="lang-select-page__option lang-select-page__other">' . l($lang->native, current_path(), $options) . '</li>';
-      }
-    }
-
-    // Add class to block.
-    $variables['classes_array'][] = 'lang-select-page lang-select-page--transparent';
-
-    // Add content to block.
-    $content = "<span class='lang-select-page__icon icon icon--generic-lang'></span>";
-    $content .= "<ul class='lang-select-page__list'>" . $not_available . $served . $other . '</ul>';
-
-    $variables['content'] = $content;
-  }
-
   // Site-level language switcher.
   if (theme_get_setting('ec_europa_multilingual', 'europa')
     && !empty($block->bid)
@@ -794,6 +749,7 @@ function europa_preprocess_block(&$variables) {
       if (isset($block->context) && $context = context_load($block->context)) {
         // @todo Find a different way for doing this, we shouldn't hardcode the title here.
         $block->subject = t('Filter by');
+
         // If our block is the first, we set the subject. This way, if we expose
         // a second block for the same view, we will not duplicate the title.
         if (array_search($block->bid, array_keys($context->reactions['block']['blocks'])) === 0) {
@@ -1143,8 +1099,6 @@ function europa_preprocess_page(&$variables) {
       if ($layout && isset($layout['is_nexteuropa']) && $layout['is_nexteuropa'] == TRUE) {
         // If our display suite layout has a header region.
         if (isset($layout['regions']['left_header'])) {
-          // Move the header_bottom to the node.
-          $variables['node']->header_bottom = $variables['page']['header_bottom'];
           unset($variables['page']['header_bottom']);
         }
         ctools_class_add($layout['layout']);
@@ -1155,11 +1109,6 @@ function europa_preprocess_page(&$variables) {
 
         // This disables message-printing on ALL page displays.
         $variables['show_messages'] = FALSE;
-
-        // Add tabs to node object so we can put it in the DS template instead.
-        if (isset($variables['tabs'])) {
-          $node->local_tabs = drupal_render($variables['tabs']);
-        }
 
         // Use page__ds.tpl.php unless it is an exception.
         $custom_page_templates = ['page__gallery'];
@@ -1175,6 +1124,7 @@ function europa_preprocess_page(&$variables) {
     $ds_layout = ds_get_layout('taxonomy_term', $type, 'full');
 
     if (module_exists('ds') && $ds_layout) {
+      unset($variables['page']['header_bottom']);
       $variables['theme_hook_suggestions'][] = 'page__ds';
       $main = !empty($ds_layout['settings']['regions']['left']) ? 'col-md-9 col-md-offset-3' : 'col-md-12';
       // Default drupal taxonomy page outputs this message

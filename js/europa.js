@@ -106,7 +106,7 @@
               $last_column = '';
 
           if ($wrapper.find('.highlighted-item__content').length > 0) {
-            selector = '.listing__item-link .highlighted-item__content';
+            selector = '.listing__column-main  .highlighted-item__content';
           }
 
           // Two column listing blocks.

@@ -5,7 +5,6 @@ Markup: html/paragraphs.html
 
 .paragraph--intro - Intro
 .paragraph--small - Small body text
-.paragraph--xsmall - Smaller body text
 
 Style guide Typography.paragraphs
 */
@@ -43,10 +42,6 @@ p {
 
 .paragraph--small {
   font-size: $font-size-little;
-}
-
-.paragraph--xsmall {
-  font-size: $font-size-xsmall;
 }
 
 .text-small {

@@ -1,9 +1,9 @@
 {
-    "name": "ec-europa/ec-europa-theme",
-    "description": "Theme for Drupal 7 developed by the DTT site builder team",
-    "git-version": "1.0",
-    "type": "drupal-theme",
-    "require": {
-        "ec-europa/ec-europa-theme-tools": "@dev"
-    }
+  "name": "ec-europa/ec-europa-theme",
+  "description": "Theme for Drupal 7 developed by the DTT site builder team",
+  "git-version": "1.0",
+  "type": "drupal-theme",
+  "require": {
+    "ec-europa/ec-europa-theme-tools": "@dev"
+  }
 }

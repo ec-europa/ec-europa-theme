@@ -35,6 +35,13 @@
   }
 }
 
+// Priority policy Area page hack.
+.node-type-priority-policy-area {
+  .field-name-social-bookmark-webtools {
+    clear: left;
+  }
+}
+
 // In-page navigation hack.
 .region-sidebar-first {
   padding: 1.667em 0;

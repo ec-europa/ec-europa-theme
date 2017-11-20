@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Define the display of a image file.
